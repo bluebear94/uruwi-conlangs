@@ -1,0 +1,2382 @@
+\documentclass{book}
+
+\usepackage[usenames, dvipsnames, table]{xcolor}
+\usepackage{amsmath, amssymb}
+%\usepackage{fontspec}
+\usepackage{mathspec}
+%\usepackage{gb4e}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc, positioning, calc}
+\usepackage{hyperref}
+
+% Font settings
+
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+\setmainfont[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
+\setmathrm[Path=./fonts/]{GENTIUMPLUS-R.TTF}
+\setmathsf[Path=./fonts/]{VL-PGothic-Regular.ttf}
+
+\newfontfamily{\dhrfont}[Path=./fonts/,Ligatures=Common]{mInymeko.otf}
+\newcommand{\textdhr}[1]{{\dhrfont #1}}
+
+% Title styles
+
+\newcommand{\hprule}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.3pt}}}
+\titleformat{\chapter}
+[hang]
+{\huge\sffamily}
+{
+    \textcolor{Purple}{\thechapter}
+}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }\textcolor{DarkOrchid}
+}
+[
+    \vspace{0ex}
+    {
+        \color{YellowGreen}
+        \hprule
+    }
+]
+\titleformat{\section}
+[hang]
+{\large\sffamily}
+{\textcolor{OliveGreen}{\thesection}}
+{0.5ex}{
+    \textcolor{Turquoise}{ | }
+}
+\titleformat{\subsection}
+[hang]
+{\sffamily}
+{\textcolor{RawSienna}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }
+}
+\titleformat{\subsubsection}
+[hang]
+{\sffamily}
+{\textcolor{SkyBlue}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ → }
+}
+
+% Macros
+
+\definecolor{DarkCerulean}{HTML}{099CD6}
+\definecolor{UruwiGreen}{HTML}{107008}
+
+\newcommand{\sstay}{$\pm$}
+\newcommand{\sshift}{$\ge$}
+\newcommand{\sshiftp}{$\vartriangleright$}
+\newcommand{\sshiftu}{$\blacktriangleright$}
+\newcommand{\tl}{\char`~}
+\newcommand{\here}{$\blacklozenge$}
+\newcommand{\ortho}[1]{⟨#1⟩}
+\newcommand{\wrong}[1]{\textcolor{OrangeRed}{*\ortho{#1}}}
+\newcommand{\ul}[1]{\underline{\smash{#1}}}
+\newcommand{\invalid}{\cellcolor{RedOrange!40}}
+\newcommand{\bs}{\textbackslash}
+\newcommand{\tsc}{\textsc}
+\newcommand{\formal}{$\blacklozenge$}
+\newcommand{\informal}{$\triangledown$}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\void}[1]{}
+
+\makeatletter
+\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+\makeatother
+
+\newcommand{\hli}[1]{\textcolor{Plum}{#1}}
+\newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
+\newcommand{\hliii}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\hliv}[1]{\textcolor{RubineRed}{#1}}
+\newcommand{\hlv}[1]{\textcolor{Bittersweet}{#1}}
+\newcommand{\hlvi}[1]{\textcolor{PineGreen}{#1}}
+
+% Link styles
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+% TikZ declarations
+
+\tikzset{
+    auto,
+    % bend angle=45,
+    stem/.style={rectangle, draw=Orange, fill=Orange!10, very thick, minimum size=10mm, node distance=3mm, align=center, font=\strut},
+    requiredAffix/.style={stem, draw=ProcessBlue, fill=ProcessBlue!10, thick},
+    optionalAffix/.style={requiredAffix, rounded corners=8pt},
+    repeatedAffix/.style={optionalAffix, draw=LimeGreen, fill=LimeGreen!15},
+    arrow/.style={->, thick},
+    border/.style={dotted, draw=Cerulean}
+}
+
+\title{Ḋraħýl Rásevek Ḋraħyn-Nȳrlí Rase}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{SkyBlue!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{Aquamarine} \hprule \vspace{1.5ex} \\}
+        {\Huge \dhrfont \textcolor{Cerulean}{DraHyl rasevek DraHynnYrli rase}\\}
+        {\large \sffamily \textcolor{RoyalBlue}{\@title} \\}
+        {\large \textit{Ḋraħýl Rase}, the language of \textit{Ḋraħyn-Nŷr} \\}
+        {\color{Aquamarine} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        \textdhr{naxYwtSeksydasAW} \\
+        {Naḣywtṡek-sydasaẏ} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{SkyBlue!15}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.9
+Date: 2017-09-08
+\end{verbatim}
+
+\void{
+    \textbf{
+        Ḣraṡól napeklanes restu lene.
+        Rehus litél seħe kêl lineġe, hagazaneplūz litél menu kêl lineġemes, kṡakis litél tine kêl lineġe, kṡakikaẏtus litél kṡeki kêl lineġe.
+        Ħeli-kṡakis bulu kêl leneġan, ħeli-luẏ pruneġan, ruveġár venoġan tes ḣaname kêl mape, naẏ ħeli-lete keleġan.
+    }
+    
+    [
+        xɹaˈɬʌl napeˈklanes ˈɹestɯ ˈlene |
+        ˈɹehɯs liˈtel ˈseħe kɛːl liˈneɣe haɡazaˈnepluːz liˈtel ˈmenɯ kɛːl lineˈɣemes ˈkɬakis liˈtel ˈtine kɛːl liˈneɣe |
+        ħeliˈkɬakis ˈbɯlɯ kɛːl leˈneɣan ħeliˈluɥ prɯˈneɣan ɹɯveˈɣaɹ veˈnʌɣan tes xaˈname kɛːl ˈmape näɥ ħeliˈlete keˈleɣan
+    ]
+    
+    vigour-\tsc{gen} write-\tsc{derivative} conciseness have-3.
+    picture-\tsc{erg} unnecessary-\tsc{gen} line\bs{\tsc{pl}} \tsc{neg} have\bs{\tsc{pl}}-3-\tsc{deontic\_potential}, machine-\tsc{erg} unnecessary-\tsc{gen} part\bs{\tsc{pl}} \tsc{neg} have\bs{\tsc{pl}}-3-\tsc{deontic\_potential}-\tsc{analogous}, sentence-\tsc{erg} unnecessary-\tsc{gen} word\bs{\tsc{pl}} \tsc{neg} have\bs{\tsc{pl}}-3-\tsc{deontic\_potential}, sentence-\tsc{collection}-\tsc{additional}-\tsc{erg} unnecessary-\tsc{gen} sentence\bs{\tsc{pl}} \tsc{neg} have\bs{\tsc{pl}}-3-\tsc{deontic\_potential}.
+    all-sentence-\tsc{erg} long \tsc{neg} have-3-\tsc{deontic\_potential}, all-detail excise-3-\tsc{deontic\_necessity}, trunk-\tsc{exclusive}-\tsc{adv} write-0-\tsc{deontic\_necessity} \tsc{quot} this\_one \tsc{neg} interpret-3, but all-word need-3-\tsc{deontic\_necessity}.
+    
+    \emph{
+        Vigorous writing is concise.
+        A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts.
+        This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that every word tell.
+    }
+    
+    -- \emph{The Elements of Style}
+}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Synopsis}
+
+Ḋraħýl Rase
+is a highly agglutinative language featuring some fusional elements, with an ergative-secundative alignment. In particular, \emph{coaspects} and \emph{aspects} can be stacked on nouns and verbs, respectively. The language employs dependent-marking dominantly, although some head-marking is present.
+
+Ḋraħýl Rase
+lacks adjectives and adpositions, and has only a few adverbs; in addition, some concepts common in English, such as \emph{to be} or \emph{good} are absent in the language. It also uses relational nouns extensively.
+
+This combination of features allows sentences in Ḋraħýl Rase
+to be concise (unlike in English) while still being understandable (unlike in Ithkuil).
+
+\subsection{External history}
+
+As a constructed language, Ḋraħýl Rase
+is developed synchronically. It was first conceived in the December of 2016, although it wasn't until February 2017 that verbs were added.
+
+Until 23 April 2017, Ḋraħýl Rase
+left the ergative case unmarked and the absolutive case marked. Since marked-absolutive languages are nouns that start with \ortho{ħ-}\footnote{\url{https://isoraqathedh.tumblr.com/image/156426855271}}, the alignment was changed to a prototypical ergative-absolutive system.
+
+Starting in 19 June 2017, the \LaTeX{} version of the Ḋraħýl Rase
+grammar was developed. This update added considerable changes to the language:
+
+\begin{itemize}
+    \item /ħ/ was written as \ortho{ḧ} before the standardisation. This was changed to \ortho{ħ}.
+    \item Well-defined rules for when to use zero-marked genitives were added.
+    \item Formerly, only the human non-elite first and second pronouns were present. The standardisation added the other pronouns that we enjoy today.
+    \item Aspects gained formal names, and some aspects, such as the evident or analogous aspects, were also added.
+    \item The pre-standardisation grammar had sensory affixes for verbs. These were removed because they proved to be redundant.
+    \item Comparatives and superlatives received well-defined rules, and the subject of comparison is no longer forced to be the absolutive argument of a sentence without an ergative argument.
+    \item \emph{N}-verbs were defined, breaking the complete regularity of the morphosyntactic alignment.
+    \item Quotatives received more precise rules.
+    \item There is a new chapter on semantics.
+    \item Due to uncanny font magic, the script of Ḋraħýl Rase
+        is also covered.
+\end{itemize}
+
+\chapter{Phonology and orthography}
+
+\section{Consonants and vowels}
+
+Ḋraħýl Rase uses the following phonemes:
+
+\begin{table}[h]
+    \caption{The consonants of Ḋraħýl Rase.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        & Bilabial / & & & & & \\
+        & Labiodental & Alveolar & Retroflex & Velar & Pharyngeal & Glottal \\
+        \hline
+        Nasal & m & n & & ṅ /ŋ/ & \invalid & \invalid \\
+        Plosive & p b & t d & ṫ /ʈ/ ḋ /ɖ/ & k g & & \\
+        Fricative & f v & s z & & ḣ /x/ ġ /ɣ/ & ħ & h \\
+        Lateral Fricative & \invalid & ṡ /ɬ/ ż /ɮ/ & & & \invalid & \invalid \\
+        Approximant & & r /ɹ/ & & & & \\
+        Lateral Approximant & \invalid & l & & & \invalid & \invalid \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+    \caption{The vowels of Ḋraħýl Rase.}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Short & Long & Semivowel \\
+        \hline 
+        \rowcolor{SpringGreen!50} a & â /äː/ & \\
+        \rowcolor{SpringGreen!50} e & ê /ɛː/ & \\
+        \rowcolor{SpringGreen!50} i & î /iː/ & j \\
+        \hline
+        \rowcolor{Thistle!50} o /ʌ \tl{} ɤ/ & ô /oː/ & \\
+        \rowcolor{Thistle!50} u /ɯ \tl{} ɨ/ & û /uː/ & w \\
+        \rowcolor{Thistle!50} y /i/ & ŷ /yː/ & ẏ /ɥ/ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Voiceless plosives can also be geminated after a short vowel.
+
+\subsection{Diphthongs}
+
+A diphthong consists of a vowel and a semivowel, in either order, excluding \wrong{ij}, \wrong{ji}, \wrong{uw}, \wrong{wu}, \wrong{yẏ} and \wrong{ẏy}, which decay into their respective long vowels. The ``dominant'' vowel is pronounced as its long form; e. g. \ortho{ej} is pronounced [ɛj].
+
+\section{Phonotactics}
+
+A syllable is allowed to consist of:
+
+\begin{itemize}
+    \item an onset, from one of:
+    \begin{itemize}
+        \item a single consonant
+        \item a plosive or fricative plus \ortho{r}, \ortho{l} or (depending on voicing) \ortho{ṡ} or \ortho{ż}
+        \item a nasal plus \ortho{r}
+        \item at the beginning of a word, an empty onset is allowed.
+    \end{itemize}
+    \item a rime, from one of:
+    \begin{itemize}
+        \item a short vowel plus a voiceless obstruent or a continuant
+        \item a long vowel plus a voiceless obstruent that does not geminate the onset of the following syllable
+        \item a long vowel plus any voiced obstruent
+        \item a long vowel plus a continuant
+        \item a diphthong (with no coda)
+    \end{itemize}
+\end{itemize}
+
+\section{Allophony}
+
+The following allophonic rules are listed:
+
+\begin{longtable}[c]{|l|l|l|}
+    \caption{The allphonic rules of Ḋraħýl Rase. See table \ref{table:alegend} for the legend. \label{table:allo}} \\
+    
+    \hline
+    Input & Output & Context \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Input & Output & Context \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hli{Ob1}\ortho{+v} & \hli{Ob1}\ortho{-v} & \hlii{Ob2}\ortho{-v} \here \\
+    \hli{Ob1}\ortho{-v} & \hli{Ob1}\ortho{-v +a} & \hlii{Ob2}\ortho{-v} \here \\
+    \hli{Ob1}\ortho{-v} & \hli{Ob1}\ortho{+v} & \hlii{Ob2}\ortho{+v} \here \\
+    \hliii{V1}\ortho{+l} \hli{Ob1}\ortho{-v} \hli{Ob1}\ortho{+v} & \hliii{V1}\ortho{-l} \hli{Ob1}\ortho{-v +gem} & \\
+    \hliii{V1}\ortho{+l} \hli{C1}\ortho{+nas} & \hliii{V1}\ortho{+l +nas} & \\
+    \hli{Ob1}\ortho{+v} & ∅ & \hliii{V1}\ortho{+l} \here \\
+    /ɬ.l/ & [ɬː] & \\
+    /ɬ.s/ & [ɬː] & \\
+    /s.ɬ/ & [ɬː] & \\
+    /ʈ/ & [t] & \\
+    /ɖ/ & [n] & \\
+\end{longtable}
+
+\begin{table}[ht]
+    \caption{Legend for table \ref{table:allo}. \label{table:alegend}}
+    \centering
+    \begin{tabu} to \textwidth {lX}
+        \hline
+        Symbol & Meaning \\
+        \hline
+        C & consonant \\
+        V & vowel \\
+        Ob & obstruent \\
+        v & voicing \\
+        l & long \\
+        nas & nasal consonant or vowel \\
+        gem & gemination \\
+        + & feature present \\
+        - & feature absent \\
+        ∅ & nothing \\
+        \here & location of input relative to other elements in context \\
+        \hline
+    \end{tabu}
+\end{table}
+
+Note that /n/ does \emph{not} assimilate to [ŋ] before a velar consonant.
+
+\section{Pitch accent}
+
+A word has one high syllable (and the rest are low). The natural location of the high syllable is determined by the following rules:
+
+\begin{itemize}
+    \item If there is a long vowel or a diphthong in the last three syllables, then the pitch accent falls on one of them, in the order 2nd-to-last → 3rd-to-last → last.
+    \item Otherwise, the pitch accent falls on the second-to-last syllable.
+\end{itemize}
+
+Pitch accent will be indicated in this grammar. If it falls on its natural location, then it is not marked. Otherwise, long syllables that are forced unstressed will be written with macra, and short syllables that are forced stressed will be written with acutes.
+
+If there is no other way to use diacritics to indicate that a diphthong is unstressed (i.~e. the stressed syllable is a long vowel), then a dot can be placed above the dominant vowel of the diphthong to force it to be unstressed, giving the letters \ortho{ȧ ė ị ȯ u̇ ẏ}.
+
+Hyphens may separate parts of words. In that case, only the last part will be counted.
+
+See table \ref{table:stress} for examples.
+
+\begin{table}[ht]
+    \caption{Examples of stress locations \label{table:stress}}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        & Location of stress \\
+        Orthography & (\# from last) \\
+        \hline
+        resa & 2 \\
+        nâki & 2 \\
+        zanál & 1 \\
+        nākil & 1 \\
+        panā & 2 \\
+        munuma & 2 \\
+        tôrenu & 3 \\
+        kejhátu & 2 \\
+        ṅekēkemew & 1 \\
+        panâ-kaẏ & 1 \\
+        renekju̇kâl & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Some affixes might cause a stress to shift. Such affixes are marked with one of the symbols on Table \ref{table:shift}.
+
+\begin{table}[ht]
+    \caption{Symbols used to show pitch accent shifting. \label{table:shift}}
+    \centering
+    \begin{tabu} to \textwidth {lX}
+        \hline
+        Symbol & Meaning \\
+        \hline
+        \sshift & Shift pitch accent one syllable forward \\
+        \sshiftp & Shift pitch accent to second-to-last syllable \\
+        \sshiftu & Shift pitch accent to last syllable \\
+        \sstay & Keep pitch accent on same syllable \\
+        \hline
+    \end{tabu}
+\end{table}
+
+\section{Vowel raising}
+
+Vowel raising is an important part of Ḋraħýl Rase's grammar.
+
+Vowels are split into two groups: \emph{front} and \emph{back}.
+
+\begin{itemize}
+    \item Front vowels are \ortho{a}, \ortho{e} and \ortho{i}.
+    \item Back vowels are \ortho{o}, \ortho{u} and \ortho{y} (which, funnily enough, is actually front!).
+\end{itemize}
+
+These vowels redirect as such:
+
+\begin{table}[H]
+    \caption{Vowel raising rules.}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Old & New \\
+        \hline
+        \rowcolor{SpringGreen!50} a & e \\
+        \rowcolor{SpringGreen!50} e & i \\
+        \rowcolor{SpringGreen!50} i & i \\
+        \rowcolor{Thistle!50} o & u \\
+        \rowcolor{Thistle!50} u & y \\
+        \rowcolor{Thistle!50} y & y \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Long vowels are raised similarly. In diphthongs, only the dominant vowel is raised. This might cause the diphthong to decay to a long vowel.
+
+\section{Notes about appending}
+\label{sec:append}
+
+Sometimes, appending two strings together will result in edge cases. Suppose we want to append X and Y (e.~g. because either one of them is an affix or X-Y will be a zero-marked genitive construction).
+
+\begin{itemize}
+    \item If Y has no initial consonant, then X-Y will result in a non-initial syllable without any onset. To resolve this, Y is given an onset of \ortho{h}: \ortho{vil} + \ortho{atu} = \ortho{vilhatu}.
+    \item If X ends with a consonant and Y begins with the same consonant, then X-Y will have two of the same consonant in a row.
+    \begin{itemize}
+        \item If this consonant is a voiceless plosive, then this sequence is treated as a geminate: \ortho{atek} + \ortho{\sshiftp-kane} = \ortho{atekkane}.
+        \item If this consonant is \ortho{s}, then the double consonant is changed to \ortho{st}: \ortho{itos} + \ortho{saj} = \ortho{itostaj}.
+        \item Otherwise, the sequence becomes a single consonant: \ortho{bakar} + \ortho{\sshift-rul} = \ortho{bakarul}.
+        \item Note that \ortho{t} and \ortho{ṫ} are considered distinct, as are \ortho{ḋ} and \ortho{n}: \ortho{lakan} + \ortho{\sshift-ḋo} = \ortho{lakanḋo} [laˈkanːʌ], not \wrong{lakano} or \wrong{lakaḋo}.
+    \end{itemize}
+\end{itemize}
+
+\section{The Ḋraħýl Rase script}
+
+Ḋraħýl Rase is written with a native script that uses dedicated glyphs for consonants and long vowels, plus diacritics for short vowels. It does not mark pitch accent.
+
+\begin{table}[h]
+    \caption{Consonants in the script.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        p \textdhr{p} & t \textdhr{t} & k \textdhr{k} & s \textdhr{s} & f \textdhr{f} & n \textdhr{n} & m \textdhr{m} \\
+        \hline
+        ḣ \textdhr{x} & ħ \textdhr{H} & h \textdhr{h} & r \textdhr{r} & ṡ \textdhr{S} & l \textdhr{l} & v \textdhr{v} \\
+        \hline
+        g \textdhr{g} & ṅ \textdhr{N} & d \textdhr{d} & b \textdhr{b} & ż \textdhr{Z} & z \textdhr{z} & ġ \textdhr{G} \\
+        \hline
+        ḋ \textdhr{D} & ṫ \textdhr{T} & & & & & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+    \caption{Long vowels in the script.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        â \textdhr{A} & ê \textdhr{E} & î \textdhr{I} & ô \textdhr{O} & û \textdhr{U} & ŷ \textdhr{Y} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The short vowels \ortho{a e i} are expressed with their own diacritics. \ortho{o u y} use the same main diacritics as \ortho{a e i}, respectively, but add a \emph{kisyltew} (backing mark). \ortho{\textdhr{f r g G D T}} receive the main diacritic below the consonant glyph (and the \emph{kisyltew} above). Other consonants and all long vowels receive the main diacritic above (and the \emph{kisyltew} below).
+
+\begin{table}[h]
+    \caption{Short vowels in the script.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        ∅ & a & e & i & o & u & y \\
+        \hline
+        t \textdhr{t} & ta \textdhr{ta} & te \textdhr{te} & ti \textdhr{ti} & to \textdhr{to} & tu \textdhr{tu} & ty \textdhr{ty} \\
+        \hline
+        g \textdhr{g} & ga \textdhr{ga} & ge \textdhr{ge} & gi \textdhr{gi} & go \textdhr{go} & gu \textdhr{gu} & gy \textdhr{gy} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\ortho{\textdhr{p f}} have special forms of the \emph{kisyltew}: \ortho{\textdhr{po} = po}; \ortho{\textdhr{fo} = fo}.
+
+Diphthongs with the semivowel occuring first are written with the vowel diacritic corresponding to the semivowel placed on the consonant before the diphthong, followed by the glyph for the long vowel corresponding to the dominant vowel; e.~g. \ortho{\textdhr{kjA} = kja}.
+
+Diphthongs with the semivowel occuring second are written with the glyph for the long vowel corresponding to the dominant vowel, modified by the vowel diacritic corresponding to the semivowel; e.~g. \ortho{\textdhr{kAj} = kaj}.
+
+\begin{table}[h]
+    \caption{Miscellaneous symbols.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        0 \textdhr{0} & 1 \textdhr{1} & 2 \textdhr{2} & 3 \textdhr{3} & 4 \textdhr{4} & 5 \textdhr{5} \\
+        6 \textdhr{6} & 7 \textdhr{7} & 8 \textdhr{8} & 9 \textdhr{9} & 10 \textdhr{:} & 11 \textdhr{;} \\
+        \hline
+        \multicolumn{2}{|l|}{full stop \textdhr{.}} &
+        \multicolumn{2}{l|}{comma \textdhr{,}} &
+        \multicolumn{2}{l|}{question mark \textdhr{?}} \\
+        \hline
+        \multicolumn{4}{|l|}{quotation marks \textdhr{[]}} &
+        \multicolumn{2}{l|}{kêl (\tsc{neg}) \textdhr{\tl}} \\
+        \hline
+        \multicolumn{6}{|l|}{interpunct \textdhr{/}} \\
+        \multicolumn{6}{|l|}{(sometimes used to mark an ``and'')} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+As seen in the example below, names receive an overline. (The colours are solely for emphasis.)
+
+\begin{table}[h]
+    \caption{An example with names.}
+    \centering
+    \begin{tabu}{|X|X|}
+        \hline
+        Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. "Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?" tes vanretara.
+        &
+        \textdhr{
+            malnelkAjkane xAlemulama Danomulama luneksi \hli{\textoverline{alis}} ruselmara. sel ka mon Sunama Danos lumekAl sydasAW panetaki sydasAWma rihu ka tUrI \tl etera. [rihu ka tUrI \tl etekAl sydasAWma \tl lumetSalu] tes vanretara.
+        }
+        \\ \hline
+    \end{tabu}
+\end{table}
+
+\section{Punctuation}
+
+Commas (both in the Latin script and the native script) are used to separate independent clauses (as with the semicolon in English). Slashes (interpuncts in the native script) are sometimes used to separate two nouns that are juxtaposed. Periods and question marks are used for obvious purposes.
+
+\chapter{Syntax}
+
+In this chapter, we look at the structure of the whole sentence.
+
+\section{Basic word order}
+
+Ḋraħýl Rase requires the verb to come at the end of a sentence; hence, they are called \ortho{hrînu} (knots; sg. \ortho{hrênu}).
+
+There is a subtle difference in which argument of the verb comes first. Both of the following sentences have the same meaning, but differ in which argument they emphasise: \\
+~\\
+\hliv{Tôkus} \hliii{hânu} \hli{ponelke.} \\
+\hliv{cat-\tsc{erg}} \hliii{dog} \hli{bite-3\tsc{anm}-\tsc{prog}} \\
+\emph{\hliv{The cat} \hli{is biting} \hliii{the dog.}} (focuses on the cat, who is doing the biting) \\
+~\\
+\hliv{Hânu} \hlii{tôkus} \hli{ponelke.} \\
+\hliv{dog} \hlii{cat-\tsc{erg}} \hli{bite-3\tsc{anm}-\tsc{prog}} \\
+\emph{\hliv{The dog} \hli{is being bitten} \hlii{by the cat.}} (focuses on the dog, to whom the biting is done)
+
+In addition to syntactic emphasis, arguments of a verb may receive morphological emphasis, which is even stronger.
+
+\section{Determiners}
+
+Determiners consist of genitives, numbers and relative clauses. They come \emph{before} the noun they modify.
+
+\section{Adverbials}
+
+Adverbs and adverbials of nouns can occur anywhere before the verb they modify.
+
+\section{Locatives and directionals}
+
+Locatives and directionals that modify nouns occur before the nouns they modify. Those that modify verbs can occur anywhere before the verb they modify. However, they most often occur immediately before the verb and, if present, its negation particle.
+
+\section{Appositives}
+
+The noun being clarified comes first, followed by the clarification.
+
+\section{Interjections and vocatives}
+
+Interjections and vocatives occur at the very beginning of a sentence.
+
+\chapter{Nouns}
+
+Nouns (\ortho{hivu}; sg. \ortho{hevu}; lit. \emph{ropes}) are declined for case and number.
+
+\section{Number}
+
+The main distinction lies between singular and plural. The singular form is unmarked. The plural form of a noun is created from the singular form by raising the high vowel.
+
+In the absolutive case, a distinction is also made between dual and plural. The dual form of a noun is created by appending \ortho{-t} to the singular (decaying a final diphthong into a long vowel if necessary). If the singular form already ends with a consonant, \ortho{\sshift-te} is appended instead.
+
+\begin{table}[h]
+    \caption{Some nouns and their dual and plural forms.}
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Singular & Dual & Plural & Gloss \\
+        \hline
+        rase & raset & rese & language \\
+        plety & pletyt & plity & parent \\
+        itos & itoste & itos & riding animal \\
+        kolo & kolot & kulo & ground, place, floor \\
+        nupo & nupot & nypo & boat \\
+        tynda & tyndat & tynda & squirrel \\
+        tôrenu & tôrenut & tûrenu & palace \\
+        sydasaẏ & sydasât & sydaseẏ & book \\
+        ej & êt & î & I (non-elite) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\section{Case}
+
+There are eleven cases in Ḋraħýl Rase:
+
+\subsection{Absolutive}
+
+The absolutive form of a noun is the unmarked form of a noun. Nouns with this case can function as the subject of an intransitive verb, the direct object of a transitive verb or the recipient of a ditransitive verb.
+
+\subsection{Ergative}
+
+Nouns in the ergative form can function as the subject of a transitive or ditransitive verb. The ergative form is derived from the absolutive form by:
+
+\begin{itemize}
+    \item appending \ortho{-s} after a short vowel
+    \item appending \ortho{-z} after a long vowel
+    \item appending \ortho{-z} after a diphthong and decaying it to a long vowel
+    \item appending \ortho{-ti} after \ortho{-s}
+    \item appending \ortho{-di} after \ortho{-z}
+    \item appending \ortho{-si} after any other voiceless consonant
+    \item appending \ortho{-zi} after any other voiced consonant
+\end{itemize}
+
+\subsection{Accusative}
+
+Nouns in the accusative form can function as the direct object of an antipassive transitive verb, or as direct objects in certain verbs. The accusative form is derived from the absolutive form by:
+
+\begin{itemize}
+    \item appending \ortho{-n} after a vowel
+    \item appending \ortho{-n} after a diphthong and decaying it to a long vowel
+    \item appending \ortho{-en} after a consonant
+\end{itemize}
+
+\subsection{Genitive}
+
+Nouns in the genitive case can modify other nouns to indicate possession or description. It is formed from the absolutive by:
+
+\begin{itemize}
+    \item replacing the rime of the final syllable with \ortho{\sshiftu -êl} if it is any of \ortho{-ew}, \ortho{-ej}, \ortho{-eẏ} or \ortho{-ê}
+    \item but the genitive of \ortho{ej} (I, non-elite) is \ortho{ejlí}
+    \item otherwise:
+    \begin{itemize}
+        \item appending \ortho{\sshift -l} after a vowel if the pitch accent is not on the final syllable
+        \item appending \ortho{\sshift -li} after a consonant, or if the pitch accent is on the final syllable
+    \end{itemize}
+\end{itemize}
+
+Sometimes, a genitive might syntactically modify a verb with a causative. In that case, it semantically modifies the dislocated patient of the causative: \\
+~\\
+\hli{Atúl} \hlii{fetatoso}\hliii{rakama}\hlii{ḋutro!} \\
+\hli{person-\tsc{gen}} \hlii{sing-1-2\tsc{sg}-}\hliii{story-}\hlii{\tsc{caus}-\tsc{imp}} \\
+\hlii{Make me sing} \hli{the person's} \hliii{story!}
+
+\subsection{Adverbial}
+
+Nouns in the adverbial case can modify verbs to act as adverbs. It is formed like the genitive, but using \ortho{r} instead of \ortho{l}. In other words, it is formed by:
+
+\begin{itemize}
+    \item replacing the rime of the final syllable with \ortho{\sshiftu -êr} if it is any of \ortho{-ew}, \ortho{-ej}, \ortho{-eẏ} or \ortho{-ê}
+    \item but the adverbial of \ortho{ej} (I, non-elite) is \ortho{ejrí}
+    \item otherwise:
+    \begin{itemize}
+        \item appending \ortho{\sshift -r} after a vowel if the pitch accent is not on the final syllable
+        \item appending \ortho{\sshift -ri} after a consonant, or if the pitch accent is on the final syllable
+    \end{itemize}
+\end{itemize}
+
+\subsection{Locative}
+
+Nouns in the locative signify the location or time of an object or action. The locative case, when used on the name of a language, means ``in a language''. They are formed from the absolutive with the suffix \ortho{\sshift-ma}.
+
+Some nouns can be in the locative implicitly (without any marking). These include \ortho{ṡuna} (time, occurrence), \ortho{sepu} (occurrence) and \ortho{kôlo} (here).
+
+\subsection{Directional}
+
+Nouns in the directional case indicate that an (object moved / action happened) (toward a place / until some time), and they are formed with the suffix \ortho{\sshift-me}.
+
+\subsection{Causal}
+
+Nouns in the causal case indicate that an action happened because of something, and they are formed with the suffix \ortho{\sshiftp-kane}.
+
+Final causal case (e.~g. \emph{went for the book}; \emph{broken into pieces}) can be disambiguated by the particle \ortho{ṫa} after the noun.
+
+\subsection{Benefactive}
+
+This case indicates an action done on behalf of something. It is formed from the suffix \ortho{\sshiftp-sane}.
+
+\subsection{Comitative}
+
+This case indicates an action done in company with something or someone. It is formed from the suffix \ortho{\sshiftp-nylu}.
+
+\subsection{Instrumental}
+
+This case indicates an action done with something (as a tool). It can also indicate the theme of a ditransitive verb. It is formed from the suffix \ortho{\sshift-rul}.
+
+\section{Zero-marked genitive}
+
+An alternative construction for the genitive exists. If X and Y are both nouns, then X-Y is equivalent to X-\tsc{gen} Y. However, this zero-marking construction is more limited compared to the full genitive; outside of literary uses, it is limited to the cases when:
+
+\begin{itemize}
+    \item X is a quantifier such as \ortho{ħeli} (all), \ortho{mej} (what, which?), \ortho{kolo} (ground, many, much, this) or \ortho{manu} (part, some)
+    \item X is an ordinal -- e. g. \ortho{troma-nehatu} (first boy)
+    \item Y is a relational noun
+    \item Y is \ortho{kaẏ} (group, collection) -- e. g. \ortho{nâki-kaẏ} (tree + group = grove)
+    \item Y is a time expression such as \ortho{mane} (day) -- e. g. \ortho{lykoj-mane} (next + day = tomorrow)
+    \item Y is \ortho{sepu} (occurrence) -- e. g. \ortho{sel-sepu} (once)
+    \item Y is the name of a mathematical function
+    \item the expression is the name of a plant or animal -- e. g. \ortho{mojru-nâki} (apple tree)
+    \item the expression is the name of a colour -- e. g. \ortho{hina-suhor} (sea blue)
+    \item in noun-verb-er compounds -- e. g. \ortho{tasavo-vuleplū} (drum-hitter = drummer)
+    \item in some fixed expressions such as \ortho{manenure} (day + middle = noon) or \ortho{tomu-forme} (domesticated animal + field = pasture)
+\end{itemize}
+
+As always, consult section \ref{sec:append}.
+
+\section{Coaspects}
+
+Coaspects apply before case but after number, and they can be stacked:
+
+\begin{itemize}
+    \item Additional (also A, even A): \ortho{\sshift-tu}
+    \item Exclusive (only A): \ortho{\sshift-(k, g, ḣ, ġ, ṅ)a} depending on the place of articulation and voicing of the onset of the previous syllable
+    \item Superlative (the most A): \ortho{\sshift-ḋo}
+    \item Completive (all of A): \ortho{\sshift-tṡek}
+    \item Emphatic: \ortho{\sshiftu-ħraw}
+\end{itemize}
+
+\section{Prefixes}
+
+\begin{itemize}
+    \item Diminuitive: \ortho{ki-}
+    \item Augmentative: \ortho{to-}
+    \item Excessive: \ortho{dû-}
+    \item Feminine: \ortho{se-}
+    \item Masculine: \ortho{ne-}
+    \item False: \ortho{vil-}
+    \item Demonstrative prefixes:
+    \begin{itemize}
+        \item \ortho{ḣana-} this
+        \item \ortho{rina-} that
+        \item \ortho{dana-} yonder
+        \item \ortho{ḣê-} other
+    \end{itemize}
+\end{itemize}
+
+\section{Appositive}
+
+In an appositive phrase, the base word (\emph{not} the clarification) receives the suffix \ortho{\sstay-vek}, after all other affixes: \\
+~ \\
+\hli{\ul{Ḋraħýl Rasémavek}} \hlii{\textit{Ḋraħyn-Nŷrlí rase}} ħada etu tŷrelke. \\
+\hli{\ul{Ḋraħyn-\tsc{gen} language-\tsc{loc}-\tsc{appositive}}}
+\hlii{\textit{Ḋraħyn-land-\tsc{gen} language}}
+$12^6$ human\bs{}\tsc{pl}
+speak\bs{}\tsc{pl}-3\tsc{anm}-\tsc{prog} \\
+\textit{\hli{Ḋraħýl Rase}, \hlii{the language of Ḋraħyn-Nŷr}, is spoken by (about) 3,000,000 people.}
+
+\section{Relational nouns}
+
+Ḋraħýl Rase lacks adpositions or cases specialised for concepts such as ``outside'' or ``through'', but it can still express such concepts through \emph{relational} nouns, which describe spatial or temporal relations. Relational nouns often use the zero-marked genitive.
+
+\begin{longtable}[c]{|l|l|l|}
+    \caption{Some examples of relational noun use.} \\
+    
+    \hline
+    Phrase & Components & Translation \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Phrase & Components & Translation \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hli{nâki}-\hlii{moj}\hliii{mé} & \hli{tree} + \hlii{away} + \hliii{directional} & \emph{away from the tree} \\
+    \hli{ḣanamane}-\hlii{moj}\hliii{mé} & \hli{today} + \hlii{away} + \hliii{directional} & \emph{from today on} \\
+    \hli{taga}-\hlii{nē}\hliii{má} & \hli{box} + \hlii{inside} + \hliii{locative} & \emph{inside the box} \\
+    \hli{forme}-\hlii{ħaj}\hliii{mé} & \hli{field} + \hlii{span} + \hliii{directional} & \emph{through the field} \\
+    \hli{kelinka}-\hlii{nure}\hliii{ma} & \hli{huts} + \hlii{middle} + \hliii{locative} & \emph{amongst the huts} \\
+    \hli{ṫak-ṡluvisko}-\hlii{heselá}\hliii{r} & \hli{three + square root} + \hlii{latch} + \hliii{adverbial} & \emph{in terms of $\sqrt{3}$} \\
+    \hli{pahnûnew}-\hlii{pasá}\hliii{r} & \hli{killing} + \hlii{intent} + \hliii{adverbial} & \emph{with the intent to kill} \\
+    \hli{suẏnut}-\hlii{tṡaké}\hliii{r} & \hli{dusk} + \hlii{despite} + \hliii{adverbial} & \emph{despite the dusk} \\
+\end{longtable}
+
+\section{Polarity}
+
+The negative of a noun is expressed with a particle \ortho{kêl} before the noun. Hence, for instance, \ortho{īnylu} means \emph{with us}, and \ortho{kêl īnylu} means \emph{without us}.
+
+\section{Pronouns}
+
+Pronouns are separated by person and class (see table \ref{table:classes}). The pronouns are given in Table \ref{table:pronouns}.
+
+\begin{table}[h]
+    \caption{The pronoun classes of Ḋraħýl Rase. \label{table:classes}}
+    \centering
+    \begin{tabu} to \textwidth {|l|X|}
+        \hline
+        Class & Things that fall under this class \\
+        \hline
+        Divine & Deities \\
+        Human elite & Scholars, members of the military \\
+        Human non-elite & All other sentient beings \\
+        Non-human animate & Live animals and parts thereof \\
+        Inanimate & All other objects \\
+        \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[ht]
+    \caption{The pronouns of Ḋraħýl Rase. \label{table:pronouns}} 
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Class \bs{} Person & 1st & 2nd & 3rd \\
+        \hline
+        Divine & ervo & nime & \invalid \\
+        Elite & naba & revu & ħranu \\
+        Non-elite & ej & suẏ & ane \\
+        Animate & \invalid & \invalid & nej \\
+        Inanimate & \invalid & \invalid & vas \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The dual and plural forms of pronouns are derived regularly.
+
+The dual and plural forms of first-person pronouns are exclusive. To convey the inclusive first-person plural, a first-person and second-person pronoun are used together.
+
+Note that the first-person plural pronouns are exclusive. Inclusive pronouns are expressed using the conjunction of two pronouns: \ortho{î suẏ} = \emph{we and you}.
+
+\chapter{Verbs}
+
+Verbs (\ortho{hrînu}; sg. \ortho{hrênu}; lit. \emph{knots}) are conjugated for the person and number of both the ergative and the absolutive arguments, an optional causative, evidentiality, sense, zero or more aspects and tense. Only the person and number of the absolutive argument is obligatory.
+
+\section{Verb structure}
+
+\begin{figure}[h]
+    \caption{The structure of a conjugated finite form of a verb.}
+    \centering
+    \begin{tikzpicture}
+        % stem
+        \node[stem] (theStem) { stem and \\ number of \tsc{abs} };
+        
+        % before stem
+        \node[optionalAffix] (direction) [above=of theStem] {direction};
+        \node[optionalAffix] (relation) [left=of direction] {relation};
+        \node[optionalAffix] (comparative) [right=of direction] {comparative \\ \ortho{gżo-}};
+        
+        %after stem
+        \node[requiredAffix] (patient) [right=of theStem] {person of \tsc{abs}};
+        \node[optionalAffix] (agent) [right=of patient] { person and \\number of \tsc{erg}};
+        \node[optionalAffix] (causativeP) [below=0.5cm of theStem] { dislocated patient \\ of causative };
+        \node[optionalAffix] (causative) [right=of causativeP] { causative marker \\ \ortho{-ḋu} };
+        \node[optionalAffix] (evidentiality) [below=0.5cm of causativeP] {evidentiality};
+        \node[repeatedAffix] (aspect) [right=of evidentiality] {aspect};
+        \node[optionalAffix] (tense) [right=of aspect] {tense};
+        
+        % box around dislocated and causative
+        \draw[border] ($(causativeP.north west) + (-0.5,0.15)$) rectangle ($(causative.south east) + (0.5,-0.15)$);
+        
+        \newcommand{\bendyarrow}[3]{
+            \draw[arrow] (#1.south) to ($(#1.south) + (0, -#3)$) -| (#2.north);
+        }
+        
+        % arrows
+        \draw[arrow] (relation) to (direction);
+        \draw[arrow] (direction) to (comparative);
+        \bendyarrow{comparative}{theStem}{0.15}
+        \draw[arrow] (theStem) to (patient);
+        \draw[arrow] (patient) to (agent);
+        \bendyarrow{agent}{causativeP}{0.2}
+        \draw[arrow] (causativeP) to (causative);
+        \bendyarrow{causative}{evidentiality}{0.25}
+        \draw[arrow] (evidentiality) to (aspect);
+        \draw[arrow] (aspect) to (tense);
+    \end{tikzpicture}
+\end{figure}
+
+Note that the only optional affix dependent on another optional affix is the dislocated patient of the causative, which depends on the causative marker.
+
+\begin{figure}[h]
+    \caption{The structure of an infinitive form of a verb.}
+    \centering
+    \begin{tikzpicture}
+        % stem
+        \node[stem] (theStem) {stem};
+        
+        % before stem
+        \node[repeatedAffix] (aspect) [left=of theStem] {aspect};
+        \node[optionalAffix] (comparative) [left=of aspect] {comparative \\ \ortho{gżo-}};
+        \node[optionalAffix] (direction) [left=of comparative] {direction};
+        \node[optionalAffix] (relation) [left=of direction] {relation};
+        
+        %after stem
+        \node[requiredAffix] (infinitive) [right=of theStem] { infinitive ending \\ \ortho{-ek} };
+        
+        % arrows
+        \draw[arrow] (relation) to (direction);
+        \draw[arrow] (direction) to (comparative);
+        \draw[arrow] (comparative) to (aspect);
+        \draw[arrow] (aspect) to (theStem);
+        \draw[arrow] (theStem) to (infinitive);
+    \end{tikzpicture}
+\end{figure}
+
+\section{The infinitive form of a verb}
+
+The infinitive form of a verb ends in \ortho{-ek}. Additionally, the pitch accent does not fall on the last syllable.
+
+\section{Absolutive argument marking in finite forms}
+
+Conjugating for the absolutive argument involves adding an ending for person and, for plural patients, changing the stem of the verb by raising the high syllable (e.~g. \ortho{zane} to \ortho{zene}). Dual forms receive a special suffix.
+
+For verb conjugation, the inanimate class in table \ref{table:classes} is placed into its own group, and all other classes are combined into an animate class. This distinction is made only in the third person.
+
+\begin{table}[h]
+    \caption{Conjugation of \ortho{zanek} (to move).}
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        & Singular & Dual & Plural \\
+        \hline
+        1st & zana & zanat & zena \\
+        2nd & zanu & zanut & zenu \\
+        3rd anim. & zanel & zaneṡ & zenel \\
+        3rd inanim. & zane & zanes & zene \\
+        \hline
+        0th & \multicolumn{3}{c|}{zano} \\
+        relative & \multicolumn{3}{c|}{zani} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The zeroeth-person marking is used for verbs that have no absolutive argument:
+
+\begin{table}[h]
+    \caption{Comparison between the presence of \tsc{abs} and the absence.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Explicit \tsc{abs} & Implicit \tsc{abs} & No \tsc{abs} \\
+        \hline
+        \hlii{Ḣjamárzi} \hliii{ṅerku} \hli{rine.} &
+        \hlii{Ḣjamárzi} \hli{rine.} &
+        \hlii{Ḣjamárzi} \hli{rino.} \\
+        \hlii{bird-\tsc{erg}} \hliii{seed\bs{\tsc{pl}}} \hli{eat\bs{\tsc{pl}}-3} &
+        \hlii{bird-\tsc{erg}} \hli{eat\bs{\tsc{pl}}-3} &
+        \hlii{bird-\tsc{erg}} \hli{eat\bs{\tsc{pl}}-0} \\
+        \emph{\hlii{The bird} \hli{eats} \hliii{the seeds.}} &
+        \emph{\hlii{The bird} \hli{eats} \hliii{them.}} &
+        \emph{\hlii{The bird} \hli{eats.}} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Ergative argument marking}
+
+This suffix is required only if the ergative argument is not explicitly mentioned elsewhere and it is not in the zeroeth person.
+
+\begin{table}[htbp]
+    \caption{Suffixes for the person and number of the ergative argument.}
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        & Singular & Dual & Plural \\
+        \hline
+        1st & -to & -tot & -tu \\
+        2nd & -toso & -tosot & -tuso \\
+        3rd & -ta & -tat & -te \\
+        \hline
+        relative & \multicolumn{3}{c|}{-teba} \\
+        reflexive & \multicolumn{3}{c|}{-tame} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Aspect}
+
+A verb in Ḋraħýl Rase can also receive zero or more aspect affixes. These come after the evidentiality markers in finite verb forms and immediately before the stem in the infinitive.
+
+Note that Ḋraħýl Rase's \emph{aspects} range beyond the traditional sense of ``aspect''; it also covers mood, modality, degree, tellicity and volition.
+
+\begin{longtabu} to \linewidth {|l|l|X|}
+    \caption{Aspect markers for Ḋraħýl Rase verbs.} \\
+    
+    \hline
+    Name & Affix & Meaning \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Name & Affix & Meaning \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \multicolumn{3}{|c|}{\formal{} indicates aspect limited to formal language} \\
+    \hline
+    \endlastfoot
+    
+    Habitual & -mo & Indicates an action performed as a habit. \\
+    Progressive & -ke & Indicates an action in progress. \\
+    Gnomic & -ḣe & Indicates a general truth or aphorism. \\
+    Iterative & -sit & Indicates a repeated action at one point in time. \\
+    Inclinative\footnote{Thanks to mareck for suggesting this name.} & -ṅas & Indicates a tendency toward an action. Unlike the gnomic aspect, this does not suggest a universal. \\
+    & & e.~g. \hlii{Ḣana-renus} \hliii{linka} \hli{vinete}\hliv{ṅas}. \\
+    & & \hlii{this-fox\bs{\tsc{pl}}-\tsc{erg}} \hliii{house\bs{\tsc{pl}}} \hli{scratch\bs{\tsc{pl}}-3-3.\tsc{pl}-}\hliv{\tsc{tendency}} \\
+    & & \emph{\hlii{These foxes} \hliv{tend to} \hli{scratch} \hliii{houses.}} \\
+    Continuative & -kju & Indicates an action that is continuing to happen. \\
+    Momentane & -ṡu & Indicates an action that happens once or is short-lived. \\
+    Occasional \formal & -vir & Indicates an action that sometimes happens. \\
+    Temporary & -żir & Indicates a temporary state. \\
+    Inceptive & -ma & Indicates an action that is starting. \\
+    Cessative & -de, -du & Indicates an action that is ending. The exact suffix must agree with the vowel group of the previous syllable. \\
+    Deontic Potential & -ġe & Indicates an action that is able to happen. \\
+    Deontic Necessitative & -ġan & Indicates an action that must or should happen. \\
+    Epistemic Potential & -fe & Indicates an action that is inferred to be able to happen. \\
+    Epistemic Probable & -he & Indicates an action that is inferred to be likely to happen. \\
+    Epistemic Necessitative & -van & Indicates an action that is inferred to necessarily happen. \\
+    Attempt & -da & Indicates an attempted action. \\
+    Defective & -kla & Indicates an action that almost happens. \\
+    Completive & -tṡek & Indicates an action that is done to completion: \\
+    & & \hli{ḣrale}\hlii{tṡek}\hli{ra} \\
+    & & \hli{burn-3-}\hlii{\tsc{completive}-}\hli{\tsc{past}} \\
+    & & \emph{\hli{It burnt away }\hlii{completely.}} \\
+    Telic & -vlo & Indicates a successful action (``managed to''). \\
+    Ineffective & -tṡalu & Indicates that an action is ineffective in meeting some goal (``no use''). \\
+    Indifferent & -nelu & Indicates than an action is unnecessary in meeting some goal (``doesn't matter''). \\
+    Diminuitive & -ki & Indicates an action happening to a smaller degree. When combined with the imperative \ortho{\mbox{-tro}}, the verb is taken as a recommendation rather than a command. \\
+    Excessive & -dû & Indicates an action that happens to an excessive degree (``too much''). \\
+    Additional & -tu & Indicates an action happening in addition to another (``also'', ``even'') \\
+    Exclusive & -(k, g, ḣ, ġ, ṅ)a & Indicates an action happening to the exclusion of others (``only''). The manner of articulation of initial consonant of the affix agrees with that of the onset of the previous syllable. \\
+    Superlative & -ḋo & Indicates an action happening to the greatest extent (``the most''). \\
+    Discrete & -ni & Indicates one unit of action (e.~g. ``walk'' → ``step'') \\
+    Intentional & -pa & Indicates an action done on purpose. \\
+    Unintentional & -ży & Indicates an action done unintentionally. \\
+    Voluntary \formal & -sej & Indicates an action done willingly. \\
+    Involuntary \formal & -krej & Indicates an action done unwillingly. \\
+    Meritative \formal & -bûr & Indicates that an action is deserved. \\
+    Demeritative \formal & -kebûr & Indicates that an action is not deserved. \\
+    Improper & -zaṅ & Indicates that an action was done in an improper manner (``mis-''). \\
+    Actual \formal & -fṡu & Indicates an actual state. \\
+    Imperative & -tro & Indicates a command to the second-person argument. \\
+    Hypothetical & -vluẏ & Acts as an if-clause. \\
+    & & \hlii{Mevu} \hliii{kêl} \hli{sunuhe}\hliv{vluẏ,} \hlv{mîny} \hlvi{penetuṫa.} \\
+    & & \hlii{rain} \hliii{\tsc{neg}} \hli{fall-3-}\hliv{\tsc{hypot},} \hlv{flower\bs{\tsc{pl}}} \hlvi{see\bs{\tsc{pl}}-3-1.\tsc{pl}-\tsc{fut}} \\
+    & & \emph{\hliv{If} \hliii{it doesn't} \hli{rain}, \hlvi{we will look at} \hlv{the flowers.}} \\
+    Conditional & -to & Indicates an action that depends on another condition (i.~e. equivalent to our ``would''). \\
+    Conflictive & -tṡak & Acts as an although-clause. \\
+    Analogous & -mes & Indicates the antecedent of an analogy (i.~e. equivalent to ``for the same reason that'') \\
+    & & \hlii{Mevu} \hli{sunuhe}\hliv{tṡak,} \hliii{seḣnara.} \\
+    & & \hlii{rain} \hli{fall-3-}\hliv{\tsc{conflictive},} \hliii{play\bs{\tsc{pl}}-1-\tsc{past}} \\
+    & & \emph{\hliv{Although} \hli{it rained,} \hliii{we played.}} \\
+    Emphatic & -ħraw & Places emphasis on the verb. \\
+    Reciprocal & -ṅe & Indicates that \tsc{abs} and \tsc{erg} (or in \emph{n}-verbs, \tsc{acc} and \tsc{abs}) performed the action on each other. \\
+    Evident & -zu & Indicates an obvious action. Often condescending. \\
+    Antipassive \formal & -pah & Moves \tsc{erg} to \tsc{abs}, and \tsc{abs} (if present) to \tsc{acc}. May be used instead of the zeroeth-person \tsc{abs} in order to avoid rhyming. \\
+\end{longtabu}
+
+\section{Tense}
+
+The tense marker, which comes at the end of a finite verb form, is one of the below:
+
+\begin{itemize}
+    \item \ortho{-∅} present
+    \item \ortho{-ra} past
+    \item \ortho{-ṫa} future
+    \item \ortho{-rus} immediate past
+    \item \ortho{-ṫys} immediate future
+\end{itemize}
+
+\section{Causative}
+
+Verbs can be marked as a causative. As seen in figure \ref{fig:caus1}, this moves one argument to another position: inside the verb.
+
+\begin{figure}[h]
+    \caption{The movement of arguments in a causative. \label{fig:caus1}}
+    \centering
+    \begin{tikzpicture}
+        \node[repeatedAffix] (baseP) {\tsc{abs}};
+        \node[optionalAffix] (baseA) [left=of baseP] {\tsc{erg}};
+        \node[stem] (extC) [left=of baseA] {causer};
+        \node[stem] (causA) [below=of baseA] {\tsc{erg}};
+        \node[optionalAffix] (causP) [below=of baseP] {\tsc{abs}};
+        \node[repeatedAffix] (causD) [right=of causP] {dislocated};
+        \node (label1) [right=of baseP] {Base action + causer};
+        \node (label2) [left=of causA] {Causative};
+        
+        \newcommand{\bendyarrow}[3]{
+            \draw[arrow] ($(#1.south) + (0.2, 0)$) to ($(#1.south) + (0.2, -#3)$) -| ($(#2.north) + (-0.2, 0)$);
+        }
+        
+        \bendyarrow{extC}{causA}{0.15}
+        \bendyarrow{baseA}{causP}{0.15}
+        \bendyarrow{baseP}{causD}{0.15}
+    \end{tikzpicture}
+\end{figure}
+
+(If the base action has no \tsc{erg}, then the causer assumes the \tsc{erg} position and no further action is needed.)
+
+The dislocated patient is incorporated in the verb, before the causative marker \ortho{-ḋu}. It is not necessary to mark the dislocated patient.
+
+\section{Evidentiality}
+
+Evidentiality is optionally marked after the causative marker.
+
+\begin{itemize}
+    \item \ortho{-ħaka} by direct evidence
+    \item \ortho{-ħana} by hearsay
+    \item \ortho{-ħame} inferential
+    \item \ortho{-ħamehe} inferential (self-evident)
+    \item \ortho{-ħala} by hope
+    \item \ortho{-ħale} by imagination
+    \item \ortho{-ħapa} by allegation
+    \item \ortho{-ħase} by desire
+\end{itemize}
+
+\section{Comparative}
+
+\label{sec:comparative}
+
+The comparative marker \ortho{gżo-}, if present on a verb with no \tsc{erg}, will cause the verb to compare the degree of the action between \tsc{erg} and \tsc{abs}. In otherwords, ``X-\tsc{erg} Y \tsc{comp}-Z'' means ``X Zs more than Y'', akin to the \emph{out-} prefix in English. \\
+~\\
+\hlii{Hênu} \hli{kretenelṅas.} \\
+\hlii{dog\bs{\tsc{pl}}} \hli{run\bs{\tsc{pl}}-3\tsc{anm}-\tsc{inclinative}} \\
+\emph{\hlii{Dogs} \hli{tend to run}.} \\
+~\\
+\hlii{Hênus} \hliii{tûku} \hliv{gżo}\hli{kretenelṅas.} \\
+\hlii{dog\bs{\tsc{pl}}-\tsc{erg}} \hliii{cat\bs{\tsc{pl}}} \hliv{\tsc{comp}-}\hli{run\bs{\tsc{pl}}-3\tsc{anm}-\tsc{inclinative}} \\
+\emph{\hlii{Dogs} \hli{tend to run} \hliv{more than} \hliii{cats}.}
+
+\section{Direction}
+
+A verb may have a directional marker before the comparative marker.
+
+\begin{itemize}
+    \item \ortho{sun-} to a lower place
+    \item \ortho{lak-} to a higher place
+    \item \ortho{ren-} inwards
+    \item \ortho{sak-} outwards, away
+    \item \ortho{len-} with oneself
+\end{itemize}
+
+\section{Relation}
+
+A verb may have a relational marker before the directional marker.
+
+\begin{itemize}
+    \item \ortho{nê-} inside (an unspecified place)
+    \item \ortho{kun-} outside (...)
+    \item \ortho{mu-} to the side of (...)
+    \item \ortho{kej-} around (...)
+    \item \ortho{saj-} on top of (...)
+\end{itemize}
+
+Note that relational markers do not act as applicatives.
+
+\section{Pitch accent}
+
+If the pitch accent of the infinitive falls on the natural location, then it will for any conjugated form.
+
+If it falls one syllable before it, then it will fall one syllable before the natural location for any conjugated form, unless the natural location is on the third-to-last syllable, in which case it falls on the third-to-last syllable.
+
+If it falls one syllable after it, then it will fall one syllable after the natural location for any conjugated form, unless the natural location is on the last syllable, in which case it falls on the last syllable.
+
+\section{Notes about formality}
+
+Formal language tends to revere brevity. As a result, when there is an option to either express something morphologically as opposed to periphrastically, it will prefer the former option.
+
+On the other hand, informal language tends to use more periphrastic constructions, and avoid marking direction and relation morphologically. Compare the following examples: \\
+~\\
+\hlii{Nê}\hli{lumoto}\hliii{krej}\hli{ra.} \\
+\hlii{\tsc{rel\textunderscore{}in}-}\hli{read-0-1-}\hliii{\tsc{involuntary}-}\hli{\tsc{past}} \\
+~\\
+\hliii{Kolohevu} \hlii{vasa-nēmá} \hli{lumotora.} \\
+\hliii{unwillingly} \hlii{there-inside-\tsc{loc}} \hli{read-0-1-\tsc{past}} \\
+\emph{\hli{I} \hliii{unwillingly} \hli{read} \hlii{inside.}} \\
+~
+
+Although the two sentences above express the same idea, the first sentence is more formal.
+
+\section{Polarity}
+
+As with nouns, the negative of a verb is expressed with a particle \ortho{kêl} before the verb.
+
+\section{\emph{N}-verbs}
+
+\emph{N}-verbs are a special class of verbs that, instead of taking \tsc{erg} and \tsc{abs} arguments, take \tsc{abs} and \tsc{acc} arguments. In the example below, \ortho{sinek} is an \emph{n}-verb. \\
+~\\
+\hliii{Daj-manema} \hlii{ane} \hliv{ralan} \hli{sinelra.} \\
+\hliii{previous-day-\tsc{loc}} \hlii{\tsc{pr}.3.\tsc{nonelite}} \hliv{sorrow-\tsc{acc}} \hli{feel-3\tsc{anm}-\tsc{past}} \\
+\emph{\hliii{Yesterday,} \hlii{she} \hli{felt} \hliv{sorrow.}}
+
+Other \emph{n}-verbs include \ortho{rumek} (depend, rely on).
+
+Some verbs can be used either as a regular verb or an \emph{n}-verb, but carry different meanings depending on usage:
+
+\begin{longtabu}[c]{|l|X|X|}
+    \caption{Some verbs whose meanings depend on \emph{n}-usage.} \\
+    
+    \hline
+    Verb & \emph{N} & Non-\emph{n} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Verb & \emph{N} & Non-\emph{n} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    panek & see & look at \\
+    takek & hear & listen to \\
+    rakek & touch accidentally & touch intentionally \\
+    mumek & hate because of some intrinsic quality of what is hated & hate for the sake of hating \\
+    ramek & break something that is in the way & break something, seeking out things to be broken \\
+\end{longtabu}
+
+\section{Ditransitive verbs}
+
+Ḋraħýl Rase is a secundative language; in other words, in ditransitive verbs, the recipient is the absolutive argument of the verb. The theme is marked with the instrumental case. \\
+~\\
+\hlii{Zanys} \hliii{Ṅarku} \hlv{zārerul} \hli{vemtelra.} \\
+\hlii{Zany-\tsc{erg}} \hliii{Ṅarku} \hlv{spoon-\tsc{instr}} \hli{give-3\tsc{anm}-\tsc{past}} \\
+\emph{\hlii{Zany} \hli{gave} \hliii{Ṅarku} \hlv{a spoon.}}\footnote{If you're curious, \ortho{Zany} means \emph{robin} and \ortho{Ṅarku} means \emph{seed}.} \\
+~
+
+Note that \wrong{Zanys Ṅarkume zâre vemtera} is grammatically incorrect.
+
+However, other verbs may act in a monotransitive \emph{or} ditransitive manner. Thus, \ortho{Zanys Ṅarku zārerul betlelra} and \ortho{Zanys Ṅarkume zâre betlera} are both correct and mean ``Zany sent Ṅarku a spoon''.
+
+\section{General comparatives and superlatives}
+
+The comparative prefix \ortho{gżo-} (mentioned in section \ref{sec:comparative}) works only if the base sentence has no ergative argument and the subject of comparison is the absolutive argument. Alternatively, if the ergative argument is present and it is the subject of comparison, and there is no accusative argument, the verb can receive the antipassive aspect, demoting the ergative to the absolutive, but this method tends to be unusually formal.
+
+The general approach is used only when an ergative argument is present in the base sentence or the subject of comparison is not the absolutive argument. This approach uses the relationals \ortho{ḣâle} and \ortho{kâ} on the dominant and recessive subjects, respectively. These relationals are in turn declined for the case of the subject of comparison: \\
+~\\
+\hli{Pylus} \hlii{mîny-ḣâle} \hliii{setla-kâ} \hliv{rineḣe.} \\
+\hli{fish\bs{\tsc{pl}}-\tsc{erg}} \hlii{flower\bs{\tsc{pl}}-\tsc{cmpdom}} \hliii{leaf\bs{\tsc{pl}}-\tsc{cmpress}} \hliv{eat\bs{\tsc{pl}}-3-\tsc{gnomic}} \\
+\hli{Fish} \hliv{eat} \hlii{more flowers} \hliii{than leaves.} \\
+~\\
+\hli{Zany-ḣâles} \hlii{Ṅarku-kâz} \hliii{gedu} \hliv{rene.} \\
+\hli{Zany-\tsc{cmpdom}-\tsc{erg}} \hlii{Ṅarku-\tsc{cmpress}-\tsc{erg}} \hliii{meat} \hliv{eat-3} \\
+\hli{Zany} \hliv{eats} \hli{more} \hliii{meat} \hlii{than Ṅarku does.} \\
+
+Further difficulties arise from cases where the subject of comparison is the verb, or even complete clauses. In this case, the dominant verb receives the comparative prefix \ortho{gżo-} and the completive aspect marker \ortho{-tṡek}, while the recessive verb receives the comparative prefix and the diminuitive aspect \ortho{-ki}: \\
+~\\
+\hli{Mako} \hlii{varu-mulama} \hliii{gżopuluheltṡek} \hliv{sydaseẏ} \hlv{gżolymetaki.} \\
+\hli{Mako} \hlii{lake-side-\tsc{loc}} \hliii{\tsc{comp}-catch\_fish-3\tsc{anm}-\tsc{completive}} \hliv{book\bs{\tsc{pl}}} \hlv{\tsc{comp}-read\bs\tsc{pl}-3-3\tsc{sg}-\tsc{dim}} \\
+\hli{Mako} \hliii{fishes} \hlii{beside the lake} \hliii{more} \hlv{than he reads} \hliv{books.}\footnote{\ortho{Mako} means \emph{star}. Oddly enough, it's a masculine name.} \\
+
+In any case, omitting either the dominant or the recessive subject of comparison is ungrammatical.
+
+Superlatives follow a completely different strategy. In most cases, the subject of comparison receives the \ortho{-ḋo} coaspect or aspect: \\
+~\\
+\hli{Zakíl} \hlii{tages} \hliii{ḣraṡoḋo} \hliv{lene.} \\
+\hli{west-\tsc{gen}} \hlii{wind-\tsc{erg}} \hliii{vigour-\tsc{super}} \hliv{have-3} \\
+\hli{The west} \hlii{wind} \hliv{is} \hliii{the strongest.} \\
+~\\
+\hli{Nehetu-tûr} \hlii{Zany} \hliii{nanelḋora.} \\
+\hli{\tsc{masc}-person-out\_of-\tsc{adv}} \hlii{Zany} \hliii{work-3\tsc{anm}-\tsc{super}-\tsc{past}} \\
+\hli{Of the men,} \hlii{Zany} \hliii{worked the most.} \\
+
+As in the second example, the relational \ortho{tuẏ} plus the adverbial case marks the basis of comparison.
+
+Occasionally, multiple subjects of comparison might be marked: \\
+~\\
+\hli{Kaẏ-tûr} \hlii{suẏḋos} \hliii{gireltosoḋo.} \\
+\hli{group-out\_of-\tsc{adv}} \hlii{2\tsc{sg}.\tsc{ne}-\tsc{super}-\tsc{erg}} \hliii{attract-3\tsc{anm}-2\tsc{sg}-\tsc{super}} \\
+\hli{Out of the group,} \hliii{he is attracted} \hlii{to you the most.} \\
+
+This double marking suggests that there are two plausible subjects of comparison.
+
+\section{Dependent clauses}
+
+\subsection{Relative clauses}
+
+A relative clause, or one that modifies a noun, is formed by appending \ortho{\sshiftu-kâl} or \ortho{\sshiftu-kaṡ} to the conjugated verb. Either the relative pronoun strategy (using verbal affixes or the pronoun \ortho{bâ}) or the gap strategy may be used to express the antecedent inside the clause. The relative pronoun strategy is the most common when the antecedent is the \tsc{abs} of the clause or it would be otherwise unclear where it is. The gap strategy is the most common for non-\tsc{abs} antecedents that are clear.
+
+\begin{longtabu}[c]{|l|X|}
+    \caption{Examples of relative clause usage.} \\
+    
+    \hline
+    Role of ante. in RC & Example \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Role of ante. in RC & Example \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \tsc{abs} & \hli{kunem}\hliii{i}\hli{ke}\hliv{kâl} \hlii{sazuħa} \\
+    & \hli{dance-}\hliii{\tsc{relpro}-}\hli{\tsc{prog}-}\hliv{rel} \hlii{monkey} \\
+    & \emph{\hlii{the monkey} \hliv{that} \hli{is dancing}} \\
+    & (\ortho{kunemekekâl sazuħa} is also acceptable) \\
+    \tsc{erg} & \hlv{daj-manema} \hli{hwonara}\hliv{kâl} \hlii{nehatu} \\
+    & \hlv{previous-day-\tsc{loc}} \hli{befriend-1-\tsc{past}-}\hliv{\tsc{rel}} \hlii{\tsc{masc}-human} \\
+    & \emph{\hlii{the man} \hliv{who} \hli{befriended me} \hlv{yesterday}} \\
+    & (\ortho{... hwonatebarakâl nehatu} is also acceptable) \\
+    \tsc{loc} & \hlv{mîny} \hli{flene}\hliv{kâl} \hlii{kinâḣe} \\
+    & \hlv{flower\bs{\tsc{pl}}} \hli{grow\bs{\tsc{pl}}-3-}\hliv{\tsc{rel}} \hlii{hill} \\
+    & \emph{\hlii{the hill} \hliv{where} \hlv{the flowers} \hli{grow}} \\
+    & (\ortho{mîny bāma flenekâl kinâḣe} is also acceptable) \\
+    \tsc{gen} & \hlv{hânu} \hli{teneldū}\hliv{kâl} \hlii{kisehatu} \\
+    & \hlv{dog} \hli{bark-3\tsc{anm}-\tsc{excessive}-}\hliv{\tsc{rel}} \hlii{\tsc{dim}-\tsc{fem}-\tsc{human}} \\
+    & \emph{\hlii{the girl} \hliv{whose} \hlv{dog} \hli{barks too much}} \\
+    & (\ortho{bāli hânu teneldûkâl kisehatu} is also acceptable) \\
+    \tsc{benefactive} & \hliii{bāsane} \hli{nana}\hliv{kâṡ} \hlii{rûma} \\
+    & \hliii{\tsc{rel}-\tsc{benefactive}} \hli{work-1-}\hliv{\tsc{rel.nonrestrictive}} \hlii{\tsc{child}} \\
+    & \emph{\hlii{my child}\hliv{, whom} \hli{I work} \hliii{for}} \\
+    & (\ortho{nanakâṡ rûma} is somewhat acceptable but confusing) \\
+\end{longtabu}
+
+\ortho{\sshiftu-kâl} is used for restrictive clauses, and \ortho{\sshiftu-kâṡ} is used for nonrestrictive clauses: \\
+~\\
+\hlv{hânu} \hli{teneldū}\hliv{kâl} \hlii{kisehatu} \\
+\hlv{dog} \hli{bark-3\tsc{anm}-\tsc{excessive}-}\hliv{\tsc{rel}} \hlii{\tsc{dim}-\tsc{fem}-\tsc{human}} \\
+\emph{\hlii{the girl} \hliv{whose} \hlv{dog} \hli{barks too much}} \\
+~\\
+\hlv{hânu} \hli{teneldū}\hliv{kâṡ} \hlii{kisehatu} \\
+\hlv{dog} \hli{bark-3\tsc{anm}-\tsc{excessive}-}\hliv{\tsc{rel.nonrestrictive}} \hlii{\tsc{dim}-\tsc{fem}-\tsc{human}} \\
+\emph{\hlii{the girl}\hliv{, whose} \hlv{dog} \hli{barks too much}} \\
+~
+
+Furthermore, despite allophony rules, \ortho{\sshiftu-kâṡ} is not pronounced [käː], but rather [käːɬ].
+
+\subsection{Content clauses}
+
+Content clauses are clauses that stand in place of nouns. They are formed by appending \ortho{\sshiftu-kaj} to the conjugated form of a verb. The resulting clause can be declined as a noun, except that it is necessarily singular and its genitive form is \ortho{\sshiftu-kālí}. \\
+~\\
+\hlii{Kejsa} \hli{nînelmo}\hliv{kâz} \hliii{klaṡake.} \\
+\hlii{subject\bs{\tsc{pl}}} \hli{belittle\bs{\tsc{pl}}-3\tsc{anm}-\tsc{habitual}-}\hliv{\tsc{cont}-\tsc{erg}} \hliii{worry-1-\tsc{prog}} \\
+\emph{\hliv{That} \hli{he belittles} \hlii{his subjects} \hliii{is worrying me.}} \\
+or: \emph{\hliii{I'm worried} \hliv{that} \hli{he has a habit of belittling} \hlii{his subordinates.}}
+
+\subsection{Quotatives}
+
+Some verbs accept an argument other than \tsc{abs}, \tsc{erg} or \tsc{acc}. The \emph{quotative} (\tsc{quot}) argument is used to show direct or indirect speech. To create a quotative, the particle \ortho{tes} is used. \\
+~\\
+\hlii{``Ṫak pejson panara''} \hliv{tes} \hli{tûrelra.} \\
+\hlii{``three butterfly\bs{\tsc{pl}}-\tsc{acc} see-1-\tsc{past}''} \hliv{\tsc{quot}} \hli{say-3\tsc{anm}-\tsc{past}} \\
+\emph{\hli{He said,} \hlii{``I saw three butterflies.''}} \\
+~\\
+\hliii{Len tynda peneltara} \hliv{tes} \hli{tûrelra.} \\
+\hliii{four squirrel(\bs{\tsc{pl}}) see\bs{\tsc{pl}}-3\tsc{anm}-3-\tsc{past}} \hliv{\tsc{quot}} \hli{say-3\tsc{anm}-\tsc{past}} \\
+\emph{\hli{She said} \hliv{that} \hliii{she looked at four squirrels.}} \\
+~
+
+Sometimes, it may be useful to pass non-quotative arguments where a quotative is expected (e.~g. \emph{I didn't say anything}). In that case, the quotative relational noun \ortho{tene} (lit. \emph{word}) plus the adverbial case is used: \\
+~\\
+\hlv{Selko-}\hliv{tenér} \hlii{kêl} \hli{tûrara.} \\
+\hlv{anything-}\hliv{\tsc{quot.relation}-\tsc{adv}} \hlii{\tsc{neg}} \hli{say-1-\tsc{past}} \\
+\emph{\hli{I} \hlii{didn't} \hli{say} \hlv{anything.}}\footnote{But note that this could also be expressed as \ortho{Selṡun kêl tûrara}.}
+
+\chapter{Numbers}
+
+\section{Cardinal numbers}
+
+Ḋraħýl Rase uses a base-12 numbering system. The cardinal numbers from 0 -- 12 are given below:
+
+\begin{longtable}[c]{|l|l|}
+    \caption{The cardinal numbers from 0 -- 12.} \\
+    
+    \hline
+    \# & word \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# & word \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    0 & nâ \\
+    1 & sel \\
+    2 & mon \\
+    3 & ṫak \\
+    4 & len \\
+    5 & bê \\
+    6 & fû \\
+    7 & żat \\
+    8 & ko \\
+    9 & rej \\
+    10 & gym \\
+    11 & ħyk \\
+    12 & vôn \\
+\end{longtable}
+
+Words for numbers in the form $x \cdot 12$ for $2 \le x < 12$ are expressed as \ortho{$x$-vôn} -- e.~g. \ortho{monvôn} = 24; \ortho{rejvôn} = 108.
+
+Words for numbers in the form $x \cdot 12 + y$ for $2 \le x < 12$ and $1 \le y < 12$ are expressed as \ortho{$x$-vôn-$y$}, but with a few exceptions:
+
+\begin{itemize}
+    \item Long vowels in $y$ are shortened; e.~g. $17 = 12 + 5$ is \ortho{vônbe}, not \wrong{vônbê}
+    \item \ortho{mon} (2) and \ortho{len} (4) swallow the \ortho{n} of \ortho{vôn}; e.~g. $62 = 5 \cdot 12 + 2$ is \ortho{bêvômon}, not \wrong{bêvônmon}
+    \item \ortho{rej} (9) is shortened to \ortho{re} and swallows the \ortho{n} of \ortho{vôn}; e.~g. $33 = 2 \cdot 12 + 9$ is \ortho{monvôre}, not \wrong{monvônrej}
+    \item \ortho{ko} (8) and \ortho{gym} (10) change the \ortho{n} or \ortho{vôn} to \ortho{ṅ} (though in the standard dialect, this is only an orthographic change); e.~g. $82 = 6 \cdot 12 + 10$ is \ortho{fûvôṅgym}, not \wrong{fûvôngym}
+\end{itemize}
+
+Words for numbers less than $12^6$ are expressed in the form \[a \cdot 12^5 + b \cdot 12^4 + c \cdot 12^3 + d \cdot 12^2 + (x \cdot 12 + y)\]
+where $(x \cdot 12 + y)$ is expressed using the rules above, and the remaining terms are expressed with the words:
+
+\begin{longtable}[c]{|l|l|}
+    \caption{The cardinal powers of 12 up to $12^5$.} \\
+    
+    \hline
+    \# & word \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# & word \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    $12^2$ & sanu \\
+    $12^3$ & pôre \\
+    $12^4$ & rakir \\
+    $12^5$ & fegi \\
+\end{longtable}
+
+Words for numbers that are $12^6$ or greater are split into groups of six digits and use the following words for powers of $12^6$:
+
+\begin{longtable}[c]{|l|l|}
+    \caption{The cardinal powers of $12^6$} \\
+    
+    \hline
+    \# & word \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# & word \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    $12^6$ & ħada \\
+    $12^{12}$ & vaza \\
+    $12^{18}$ & ṫeħada \\
+    $12^{24}$ & linħada \\
+    $12^{30}$ & baħada \\
+    $12^{36}$ & fuħada \\
+    $12^{42}$ & żetħada \\
+    $12^{48}$ & kuħada \\
+    $12^{54}$ & rîħada \\
+    $12^{60}$ & ġymħada \\
+    $12^{66}$ & ḣykħada \\
+    $12^{72}$ & vûnħada \\
+\end{longtable}
+
+\section{Ordinal numbers}
+
+The ordinal numbers for \emph{1st} and \emph{2nd} are the suppletive forms \ortho{troma} and \ortho{iramu}, respectively. Most ordinals after \emph{2nd} are expressed regularly with the suffix \ortho{-ru}.
+
+Ordinals that end with the following roots are formed irregularly:
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Suppletive ordinals} \\
+    
+    \hline
+    final & ordinal form \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    final & ordinal form \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    sanu & sanru \\
+    pôre & pôru \\
+    rakir & rakiru \\
+\end{longtable}
+
+\section{Fractions}
+
+Most fractions of the form $1/n$ are formed by suffixing \ortho{-kul}. The exceptions are listed in the following two tables:
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Suppletive fractional forms} \\
+    
+    \hline
+    \# & word \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# & word \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    $1/2$ & ṡaga \\
+    $1/12$ & bżarit \emph{or} vôṅkul \\
+    $1/144$ & kaslo \\
+    $1/12^3$ & navam
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Suppletive fractional forms \label{table:supff2}} \\
+    
+    \hline
+    ending root & fractional \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    ending root & fractional \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    rakir & rakirlo \\
+    fegi & fegilo \\
+    ħada & ħadalo \\
+    vaza & vazalo \\
+    ṫeħada & ṫeħadalo \\
+\end{longtable}
+
+Notes:
+
+\begin{itemize}
+    \item Fractions of the form $1/(n \cdot 12)$, $1/(n \cdot 144)$ or $1/(n \cdot 12^3)$ (with $n \ne 1$) are formed regularly; e.~g. $1/(3 \cdot 12^3)$ is \ortho{ṫakpôrekul}, not \wrong{ṫaknavam}
+    \item But this does not apply to table \ref{table:supff2}; e.~g. $1/(11 \cdot 12^4)$ is \ortho{ħykrakirlo}, not \wrong{ħykrakirkul}
+    \item The fractional forms of higher powers of $12^6$ are not suppleted; e.~g. $1/(12^{30})$ is \ortho{baħadakul}, not \wrong{baħadalo}
+    \item The pitch accent is shifted to the second-to-last syllable.
+\end{itemize}
+
+Fractions of the form $x/y$, where $x \ne 1$, are written as \emph{$x$ $(1/y)$s}. For example, \ortho{ṫak kovōlinkul} means \emph{$3$ $(1/100)$s}, or $3/100$ (note the pluralisation). Likewise, $2/99$ would be written \ortho{mon kovônṫakkulte}. In the ergative case, for instance, this would be written as \ortho{mon kovônṫekkulzi}.
+
+\section{Distributive numbers}
+
+These are formed by suffixing \ortho{\sshiftp-vin}, and carry a meaning similar to ``each'' or ``at a time''. \\
+~\\
+\hli{Ṫak}\hliv{vin} \hlii{tego} \hliii{linetat} \hlv{zaneṡra.} \\
+\hli{three-}\hliv{\tsc{distributive}} \hlii{box\bs{\tsc{pl}}} \hliii{hold\bs{\tsc{pl}}-3-3.\tsc{du}} \hlv{move-3.\tsc{du}-\tsc{past}} \\
+\emph{\hliii{The two carried} \hli{three} \hlii{boxes} \hliv{each.}} \\
+~\\
+\hli{Kasu-ħajmé} \hlii{sel}\hliv{vin} \hliii{nyvelra.} \\
+\hli{door-through-\tsc{dir}} \hlii{one-}\hliv{\tsc{distributive}} \hliii{leave\bs{\tsc{pl}}-\tsc{past}} \\
+\emph{\hliii{They left} \hli{through the door} \hlii{one} \hliv{at a time.}}
+
+\section{Collective numbers}
+
+These are formed by suffixing \ortho{\sshiftu-kô}, and are equivalent to the English expression ``between them''. \\
+~\\
+\hli{Ṫak}\hliv{kô} \hlii{tego} \hliii{linetat} \hlv{zaneṡra.} \\
+\hli{three-}\hliv{\tsc{collective}} \hlii{box\bs{\tsc{pl}}} \hliii{hold\bs{\tsc{pl}}-3-3.\tsc{du}} \hlv{move-3.\tsc{du}-\tsc{past}} \\
+\emph{\hliii{The two carried} \hli{three} \hlii{boxes} \hliv{between them.}}
+
+\section{Multipliers}
+
+Multipliers tell how many times one amount is relative to another. They are similar to the expression ``$x$ times as much as'' or ``$x$-fold'', and they act as determiners or adverbials. They are formed by appending \ortho{\sstay-fṡal}. \\
+~\\
+\hlii{Kajnes} \hli{vôlen}\hliv{fṡal} \hliii{atúl} \hlv{kajne} \hlvi{keme.} \\
+\hlii{height-\tsc{erg}} \hli{twelve-four-}\hliv{\tsc{multiplier}} \hliii{human-\tsc{gen}} \hlv{height} \hlvi{equal-3} \\
+\emph{\hlii{Its height} \hlvi{is} \hli{sixteen} \hliv{times} \hlv{the height} \hliii{of a human.}} \\
+or: \emph{\hlvi{It is} \hli{sixteen} \hliv{times as} \hlv{tall} \hliii{as a human.}}
+
+\chapter{Conjunctions}
+
+\section{Juxtaposition}
+
+Juxtaposition is used to join two elements with an ``and'': \\
+~\\
+\hlii{Nâkin} \hliii{nâḣen} \hli{panara.} \\
+\hlii{tree-\tsc{acc}} \hliii{mountain-\tsc{acc}} \hli{see-1-\tsc{past}} \\
+\emph{\hli{I saw} \hlii{a tree} \hliv{and} \hliii{a mountain.}} \\
+~\\
+\hli{Kihatu} \hlii{klanel} \hliii{unelra.} \\
+\hli{\tsc{dim}-person} \hlii{be\textunderscore{lost}-3\tsc{anm}} \hliii{cry-3\tsc{anm}-\tsc{past}} \\
+\emph{\hli{The child} \hlii{got lost} \hliv{and} \hliii{cried.}} \\
+~
+
+When two predicates are joined, which of \tsc{erg}, \tsc{abs} or \tsc{acc} occurs first in the first clause becomes the \tsc{abs} in the second clause: \\
+~\\
+\hliv{Hatus} \hlii{hânu} \hli{rakel} \hlv{kunemelra.} \\
+\hliv{human-\tsc{erg}} \hlii{dog} \hli{touch-3\tsc{anm}} \hlv{dance-3\tsc{anm}-\tsc{past}} \\
+\emph{\hliv{The person} \hli{pet} \hlii{the dog} and \hliv{the person} \hlv{danced.}} \\
+~\\
+\hliv{Hânu} \hliii{hatus} \hli{rakel} \hlv{kunemelra.} \\
+\hliv{dog} \hliii{human-\tsc{erg}} \hli{touch-3\tsc{anm}} \hlv{dance-3\tsc{anm}-\tsc{past}} \\
+\emph{\hliii{The person} \hli{pet} \hliv{the dog} and \hliv{the dog} \hlv{danced.}}
+
+\section{\ortho{ka} and \ortho{gy}}
+
+\ortho{ka} (inclusive \emph{or}) and \ortho{gy} (exclusive \emph{or}) are explicit conjunctions that occur between what they join, and follow the same rules as juxtaposition.
+
+When two or more of the three conjunctions occur in the same phrase, all three of these conjunctions have the same precedence level and are evaluated right to left. Explicit grouping is possible using \ortho{re ... zo}.
+
+\begin{table}[ht]
+    \caption{Examples showing evaluation order of conjunctions.}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        ḊR & Translation \\
+        \hline
+        A B C & A and B and C \\
+        A ka B ka C & A or B or C \\
+        A B ka C & A and (B or C) \\
+        A ka B C & A or (B and C) \\
+        A B ka C D & A and (B or (C and D)) \\
+        re A B zo ka C D & (A and B) or (C and D) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{The sequential conjunction \ortho{ruk}}
+
+Unlike simple juxtaposition, \ortho{ruk} implies a sequence: \\
+~\\
+\hli{Kihatu} \hlii{klanel} \hliv{ruk} \hliii{unelra.} \\
+\hli{\tsc{dim}-person} \hlii{be\textunderscore{lost}-3\tsc{anm}} \hliv{and.\tsc{seq}} \hliii{cry-3\tsc{anm}-\tsc{past}} \\
+\emph{\hli{The child} \hlii{got lost} \hliv{and then} \hliii{cried.}}
+
+\chapter{Adverbs}
+
+It is commonly said that there are no adverbs in Ḋraħýl Rase. This is not entirely true, but true adverbs are a closed class. They do not receive any inflection.
+
+\begin{table}[h]
+    \caption{Some adverbs in Ḋraħýl Rase.}
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Adverb & Meaning \\
+        \hline
+        huna & probably \\
+        mamane & forever \\
+        selṡun & at all, ever, suddenly \\
+        rūnaħâr & in a few seconds \\
+        turusti & anymore \\
+        laksun & then, if that is the case \\
+        laṅkaṡaṅka & a long time ago \\
+        naẏ & but, however \\
+        kolohevu & unwillingly \\
+        anasana & often \\
+        \hline
+    \end{tabular}
+\end{table}
+
+It is more common to use the adverbial of a noun: \ortho{munuma} \emph{slowness} $\rightarrow$ \ortho{munumár} \emph{slowly}.
+
+\chapter{Derivational rules}
+
+Derivational rules (\ortho{rilak}; sg. \ortho{relak}; lit. \emph{paths}) are rules that form a related word from a root.
+
+\section{Verb-to-verb rules}
+
+These, as the name suggests, convert a verb into a related verb. These are called \ortho{helahreniw} (sg. \ortho{helahrenew}; lit. \emph{re-tying}) in Ḋraħýl Rase. These are not particularly common, given the rich inflectional morphology of verbs.
+
+\subsection{Reversive}
+
+Example: \ortho{mepek} \emph{learn} \ra{} \ortho{ṡlumepek} \emph{forget} \\
+Example: \ortho{ħelek} \emph{cure} \ra{} \ortho{ṡluħelek} \emph{infect} (``un-cure'') \\
+~
+
+Prefixing \ortho{ṡlu-} will change the meaning of an intransitive or transitive verb to its reverse.
+
+\subsection{Repetitive}
+
+Example: \ortho{mepek} \emph{learn} \ra{} \ortho{helamepek} \emph{relearn} \\
+Example: \ortho{hrenek} \emph{tie} \ra{} \ortho{helahrenek} \emph{retie} \\
+~
+
+Prefixing \ortho{hela-} will change the meaning of an intransitive or transitive verb X to mean ``to X again''.
+
+\section{Verb-to-noun rules}
+
+These convert a verb into a related noun. In Ḋraħýl Rase, they are called \ortho{ṡluhreniw} (sg. \ortho{ṡluhrenew}; lit. \emph{untying}). A common method to learn these constructions is to use the dummy verb \ortho{bżebek} and its derivations to show its role.
+
+\subsection{Agent noun}
+
+These are nouns describing an entity who performs an action. They are distinguished by the role of the agent in the action in question and the animacy of the agent.
+
+\begin{table}[h]
+    \caption{Agent derivations. These can substitute either the \ortho{-ek} infinitive affix or the \ortho{-kaj} content clause affix. The former substitution is shown first, followed by the latter. All of the affixes shift the stress to the second-to-last syllable.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Role \bs{} Animacy & Animate & Inanimate \\
+        \hline
+        \tsc{erg} & -eplū / -kaplū & -etanu / -ketanu \\
+        & panek \emph{look at} & sunuhek \emph{fall, drop} \\
+        & paneplū \emph{guard} & mevu-sunuhetanu \emph{rain machine} \\
+        \hline
+        \tsc{abs} & -oplū / -kuplū & -otanu / -kotanu \\
+        & benek \emph{reside} & ḣralek \emph{burn, cook} \\
+        & benoplū \emph{resident} & ḣralotanu \emph{fuel} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Agent nouns can be compounded. An \tsc{erg}-agent noun can be prepended with an \tsc{abs}-argument, and vice-versa (though, as usual in compounding, only the second noun is declined):
+
+~\\
+\hli{mevu-}\hlii{sunuh}\hliv{etanu} \\
+\hli{rain-}\hlii{fall-}\hliv{\tsc{agent}.\tsc{erg}.\tsc{inanimate}} \\
+\emph{\hli{rain}-\hlii{dropp}-\hliv{er}} or \emph{rain machine} \\
+~\\
+\hli{nŷr-}\hlii{rim}\hliv{oplū} \\
+\hli{land-}\hlii{be\textunderscore{a}\textunderscore{burden}-}\hliv{\tsc{agent}.\tsc{abs}.\tsc{animate}} \\
+\emph{\hliv{someone who} \hlii{is a burden to} \hli{the country}} or \emph{societal waste} \\
+~
+
+Hence, the mnemonics are \ortho{Bżebeplūz bżebo} \emph{A foo-er foos} and \ortho{Bżeboplūz bżebel} \emph{A foo-ee is fooed}.
+
+\subsection{Action noun}
+
+As usual, these are distinguished by role. In other words, there is a distinction between the act of being the \tsc{erg} of a verb and the act of being the \tsc{abs}.
+
+\begin{table}[h]
+    \caption{Action derivations. These are formed by substituting \ortho{-ek} with another affix.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Role & New affix \\
+        \hline
+        \tsc{erg} & \sshiftu-ew \\
+        & tṡalek \emph{fight} \ra{} tṡalew \emph{battle} \\
+        \hline
+        \tsc{abs} & \sshiftp-esa \\
+        & panek \emph{see} \ra{} panesa \emph{appearance} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Note that the \tsc{abs} and \tsc{acc} arguments of \emph{n}-verbs are treated as \tsc{erg} and \tsc{abs} in action nouns.
+
+Hence, the mnemonics are \ortho{Bżebew: bżeboto} \emph{Fooing\textsuperscript{erg}: I foo} and \ortho{Bżebesa: bżeba} \emph{Fooing\textsuperscript{abs}: I am fooed}.
+
+\subsection{Location noun}
+
+These are distinguished between natural and manmade locations.
+
+\begin{table}[h]
+    \caption{Location derivations. These are formed by substituting \ortho{-ek} or \ortho{-kaj} with another affix. All of the affixes shift the stress to the second-to-last syllable.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Location type & Affix \\
+        \hline
+        Natural & -ekolo / -kekolo \\
+        & rumek \emph{hunt} \ra{} rumekolo \emph{hunting grounds} \\
+        \hline
+        Manmade & -elenka / -kalenka \\
+        & renek \emph{eat} \ra{} renelenka \emph{restaurant} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Hence, the mnemonic is \ortho{Bżebelenkama binel bżibelpah} \emph{In the foo-house, they reside and foo}.
+
+\subsection{Temporal noun}
+
+Example: \ortho{mepek} \emph{learn} \ra{} \ortho{mepeṡu} \emph{schooltime}
+
+These describe the time when an action happens. \ortho{-ek} is replaced with \ortho{\sshiftp-eṡu}, and \ortho{-kaj} with \ortho{\sshiftp-kaṡu}.
+
+Hence, the mnemonic is \ortho{Bżebeṡuma vledel bżibelpah} \emph{At foo-time, they wait and foo}.
+
+\subsection{Pattern noun}
+
+Example: \ortho{ḣralek} \emph{cook} \ra{} \ortho{ḣralélaj} \emph{recipe}
+
+These describe a pattern or blueprint for an action. \ortho{-ek} is replaced with \ortho{\sshiftp-élaj}, and \ortho{-kaj} with \ortho{\sshiftp-kélaj}.
+
+Hence, the mnemonic is \ortho{Êz bżebélaj lume bżebo}\footnote{using whatever first-person pronoun is appropriate} \emph{I read the foo-book and foo}.
+
+\subsection{Instrument noun}
+
+Example: \ortho{tanek} \emph{go, walk} \ra{} \ortho{tanive} \emph{a tool for walking} \ra{} \ortho{tanivél vunu} \emph{walking-stick}
+
+These describe an instrument used for an action. \ortho{-ek} is replaced with \ortho{\sshiftp-ive}, and \ortho{-kaj} with \ortho{\sshiftp-kajve}.
+
+Hence, the mnemonic is \ortho{Bżebiverul bżebo} \emph{They foo with the foo-tool}.
+
+\subsection{Derivative noun}
+
+The derivative noun is used to describe a product made from an action. Again, there is a distinction between natural and manmade derivatives:
+
+\begin{table}[ht]
+    \caption{Derivative derivations. These are formed by substituting \ortho{-ek} or \ortho{-kaj} with another affix. All of the affixes shift the stress to the second-to-last syllable.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Derivative type & Affix \\
+        \hline
+        Natural & -eṅej / -keṅej \\
+        & ponek \emph{bite} \ra{} poneṅej \emph{result of biting (e.~g. bite marks)} \\
+        \hline
+        Manmade & -eklane / -keklane \\
+        & ḣralek \emph{cook} \ra{} ḣraleklane \emph{cooked food} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Hence, the mnemonic is \ortho{Bżebo bżebeklane srane} \emph{They foo and make foo-product}.
+
+\subsection{Tendency noun}
+
+Example: \ortho{horek} \emph{laugh} \ra{} \ortho{horura} \emph{tendency to laugh} \ra{} \ortho{horurál atu} \emph{a person who tends to laugh}
+
+These create an noun that means ``tendency to do X'', which in turn is almost always used in the genitive or as the \tsc{abs} of \ortho{lenek} \emph{to have}.
+
+\ortho{-ek} is replaced with \ortho{\sshiftp-ura}, and \ortho{-kaj} with \ortho{\sshiftp-kura}.
+
+Hence, the mnemonic is \ortho{Bżeburál atu bżeboṅas} \emph{A person with the tendency to foo tends to foo}.
+
+\subsection{Craft noun}
+
+Example: \ortho{ġunek} \emph{experiment, torture} \ra{} \ortho{ġunyw} \emph{science}
+
+These create a noun that means ``the art of doing X''. \ortho{-ek} is replaced with \ortho{\sshiftu-yw}, and \ortho{-kaj} with \ortho{\sshiftu-ṅyw}.
+
+Hence, the mnemonic is \ortho{Bżebyw varnekâl etu anasana bżebo} \emph{Those who enjoy the art of fooing often foo}.
+
+\section{Noun-to-noun rules}
+
+These convert a noun into a related noun. In Ḋraħýl Rase, they are called \ortho{lakan-ħej} (sg. \ortho{lakan-ħaj}; lit. \emph{spanning over} or \emph{crossing}).
+
+Due to the number of such rules and their straightforwardness, we express them in a table.
+
+\begin{longtabu}[c]{|l|l|X|}
+    \caption{Noun-to-noun rules.} \\
+    
+    \hline
+    Name & Affix & Description \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Name & Affix & Description \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    Collection & \sshiftu-kaẏ & A collection of the noun. \\
+    & & Ex. \ortho{nâki} \emph{tree} \ra{} \ortho{nākikaẏ} \emph{forest} \\
+    Bounty & \sshiftp-tanu & Full of; supplied with; having much of. \\
+    & & Ex. \ortho{vuẏra} \emph{mold} \ra{} \ortho{vuẏratanu} \emph{moldiness} \\
+    Negative & kê- & Obvious. \\
+    & & Ex. \ortho{denutanu} \emph{finite} \ra{} \ortho{kêdenutanu} \emph{infinite} \\
+    Reversive & ṡlu- & The reverse action. \\
+    & & Ex. \ortho{visko} \emph{squaring} \ra{} \ortho{ṡluvisko} \emph{square root} \\
+    Archetype & \sshift-ko & An entity of the quality. \\
+    & & Ex. \ortho{kensu} \emph{redness} \ra{} \ortho{kensuko} \emph{red thing} \\
+    Natural derivative & \sshiftu-nej & Obvious. \\
+    & & Ex. \ortho{ṅarku} \emph{seed} \ra{} \ortho{ṅarkunej} \emph{young plant} \\
+    Manmade derivative & \sshiftp-plane & Obvious. \\
+    & & Ex. \ortho{nâki} \emph{tree} \ra{} \ortho{nâkiplane} \emph{wood} \\
+    Partial & \sshiftu-mân & A part of something. \\
+    & & Ex. \ortho{nâki} \emph{tree} \ra{} \ortho{nākimân} \emph{branch} \\
+    Friend & \sshiftu-tûn & A friend or proponent of something. \\
+    & & Ex. \ortho{ṡluklanew} \emph{correcting misleading information} \ra{} \ortho{ṡluklanewtûn} \emph{proponent of correcting misleading information} \\
+    Possessor & \sshiftp-kâdu & One who possesses something. \\
+    & & Ex. \ortho{nŷma} \emph{wisdom} \ra{} \ortho{nŷmakâdu} \emph{wise person} \\
+    Container & \sshift-sew & A container for or a typical home of something. \\
+    & & Ex. \ortho{kêṡ} \emph{arrow} \ra{} \ortho{kēṡsew} \emph{quiver} \\
+    & & Ex. \ortho{hawma} \emph{spider} \ra{} \ortho{hawmaséw} \emph{spider web} \\
+    Study & \sshiftp-relu & The study of something. \\
+    & & Ex. \ortho{reka} \emph{number} \ra{} \ortho{rekarelu} \emph{mathematics} \\
+    Craft & \sshiftu-nyw & The art or craft of something. \\
+    & & Ex. \ortho{rakama} \emph{story} \ra{} \ortho{rakamanyw} \emph{literature (field of study)} \\
+    Change & \sshift-ḣa & The act of gaining some quality. \\
+    & & Ex. \ortho{revet} \emph{pale, white} \ra{} \ortho{revetḣa} \emph{lightening} \\
+    Reflexive & ṅe- & A quality pertaining to oneself or each other. \\
+    & & Ex. \ortho{kēkemew} \emph{difference} \ra{} \ortho{ṅekēkemew} \emph{diversity} \\
+    Agent & \sshift-hat & One who does. \\
+    & & Ex. \ortho{rekarelu} \emph{mathematics} \ra{} \ortho{rekareluhat} \emph{mathematician} \\
+\end{longtabu}
+
+In general, \ortho{\sshiftp-relu} suggests a more objective field of study, and \ortho{\sshiftu-nyw} a more subjective one. Interstingly, \emph{science} is translated as \ortho{ġunyw}, which uses a derivation analogous to the latter.
+
+\section{Noun-to-verb rules}
+
+These are called \ortho{hrenílaj} (sg. \ortho{hrenélaj}; lit. \emph{tying recipe}).
+
+\subsection{Becoming}
+
+Example: \ortho{kensu} \emph{red} \ra{} \ortho{kensunek} \emph{redden}
+
+This is a simple suffix \ortho{\sshift-nek} and produces an intransitive verb. If the pitch accent somehow falls on the last syllable with the shift, it instead falls on the second-to-last: \ortho{ħajnek} instead of \wrong{ħajnék}.
+
+\subsection{Measure}
+
+Example: \ortho{kaku} \emph{year} \ra{} \ortho{kakunvek} \emph{be $x$ years old} \\
+Example: \ortho{ṅetra} \emph{unit of distance equivalent to shoulder-to-fingertip distance (\tl 0.75 cm)} \ra{} \ortho{ṅetranvek} \emph{be $x$ ṅitra tall / long} \\
+Example: \ortho{farep} \emph{unit of mass (\tl 1.5 kg)} \ra{} \ortho{faremvek} \emph{weigh $x$ ferep} \\
+A longer example: \\
+~\\
+\hlii{Vômon} \hli{pavra}\hliv{nveto.} \\
+\hlii{twelve-two} \hli{pavra-}\hliv{\tsc{measure}-3-1} \\
+\emph{\hliv{I am} \hlii{fourteen} \hli{pevra tall.}} (1 pavra = $1/6$ ṅetra) \\
+~
+
+The measure rule takes a unit of measure and outputs a transitive verb meaning ``\tsc{erg} measures \tsc{abs} units''. It is formed by:
+
+\begin{itemize}
+    \item Changing the coda to the nasal at the same place of articulation (but \ortho{ħ} and \ortho{h} change to \ortho{ṅ}, and \ortho{ṫ} and \ortho{ḋ} to \ortho{n}). If there is no coda, append an \ortho{n}.
+    \item Appending \ortho{\sshiftp-vek}.
+\end{itemize}
+
+\chapter{Semantics}
+
+This chapter is meant to be a guide on how to use certain words, and may help you translate text to or from Ḋraħýl Rase.
+
+\section{Predicative possession}
+
+Uninterestingly, predicative (alienable) possession is expressed with the verb \ortho{lenek} \emph{have, hold, possess}. (This verb is also used to assign a quality to the noun.) \\
+~\\
+\hli{Bûn} \hlii{êz} \hliv{lene.} \\
+\hli{cup} \hlii{I.\tsc{nonelite}-\tsc{erg}} \hliv{have-3} \\
+\emph{\hlii{I} \hliv{have} \hlii{a cup.}} \\
+~
+
+Inalienable predicative possession uses the relational \ortho{dura} \emph{glue} and the verb \ortho{atek} \emph{exist}. \\
+~\\
+\hli{Mon} \hlii{takit-durár} \hliv{ata.} \\
+\hli{two} \hlii{ear-\tsc{du}-glue-\tsc{adv}} \hliv{exist-1} \\
+\emph{\hliv{I exist} \hlii{with} \hli{two} \hlii{ears.}} \\
+or: \emph{I have two ears.} \\
+~
+
+Predicative \emph{association} (e.~g. \emph{I have a dog}) uses an expression that is translated to \emph{live with}: \\
+~\\
+\hli{Hânunylu} \hliv{bena.} \\
+\hli{dog-\tsc{com}} \hliv{reside-1} \\
+\hliv{I live with} \hli{a dog.} \\
+or: \emph{I have a dog.} \\
+~
+
+\section{``To be''}
+
+The English verb ``to be'' has no direct translation in Ḋraħýl Rase because it has several uses:
+
+\begin{itemize}
+    \item to express identity
+    \item to express membership or subsethood
+    \item to express location
+    \item to express a property
+    \item to express definition    
+    \item to express existence
+\end{itemize}
+
+Each of these meanings is covered by a different verb in Ḋraħýl Rase.
+
+\subsection{Identity}
+
+Identity is expressed with the verb \ortho{kemek} \emph{equal}: \\
+~\\
+\hli{Vaṡâz} \hlii{Tasara} \hliv{keme.} \\
+\hli{Vaṡaẏ-\tsc{erg}} \hlii{Tasara} \hliv{equal-3} \\
+\emph{[The city of] \hli{Vaṡaẏ} \hliv{is} \hlii{Tasara.}}\footnote{Vaṡaẏ and Tasara are the Ḋraħýl Rase and Kavinan names for the same city, respectively.}
+
+\subsection{Membership}
+
+Membership is expressed with the verb \ortho{asek} \emph{include, contain}. Note that the \tsc{erg} argument is always plural and refers to the superset: \\
+~\\
+\hli{Mâra} \hlii{etus} \hliv{asel.} \\
+\hli{Mâra} \hlii{human\bs\tsc{pl}-\tsc{erg}} \hliv{contain-3\tsc{anm}} \\
+\emph{[The set of] \hlii{humans} \hliv{contain}[s] \hli{Mâra.}} \\
+or: \emph{Mâra is a human.} \\
+~\\
+\hli{Ḣrêne} \hlii{nêkis} \hliv{ese.} \\
+\hli{birch\bs\tsc{pl}} \hlii{tree\bs\tsc{pl}-\tsc{erg}} \hliv{contain\bs\tsc{pl}-3} \\
+\emph{\hli{Birches} \hliv{are} \hlii{trees.}} \\
+
+Note that juxtaposition of two nouns declined in the ergative case produce unexpected results: \\
+~\\
+\hli{Hênus} / \hlii{tûkus} \hliii{asel.} \\
+\hli{dog\bs{\tsc{pl}}-\tsc{erg}} \hlii{cat\bs{\tsc{pl}}-\tsc{erg}} \hliii{contain-3\tsc{anm}} \\
+\hliii{It is} \hli{a dog} \emph{or} \hlii{a cat.} (literally \emph{[The set of] dogs and cats contains it.})
+
+In order to produce the intended result, the clause must be repeated: \\
+~\\
+\hli{Hênus} \hlii{asel,} \hliii{tûkus} \hliv{asel.} \\
+\hli{dog\bs{\tsc{pl}}-\tsc{erg}} \hlii{contain-3\tsc{anm}} \hliii{cat\bs{\tsc{pl}}-\tsc{erg}} \hliv{contain-3\tsc{anm}} \\
+\hliv{It is} both \hli{a dog} \emph{and} \hliii{a cat.} \\
+
+Note that \ortho{asek} is also used for the conventional sense of \emph{including} or \emph{containing}: \\
+~\\
+\hli{Tagas} \hlii{laki} \hliii{ase.} \\
+\hli{box-\tsc{erg}} \hlii{salt} \hliii{contain-3} \\
+\hli{The box} \hliii{contains} \hlii{salt.}
+
+\subsection{Location}
+
+Location is expressed with the verb \ortho{benek} \emph{be at, reside, stand, live}: \\
+~\\
+\hli{Suẏlí} \hlii{lenkama} \hliv{bena.} \\
+\hli{\tsc{pr}.2.\tsc{nonelite}-\tsc{gen}} \hlii{house-\tsc{loc}} \hliv{be\textunderscore{}at-1} \\
+\emph{\hliv{I am} \hlii{at} \hli{your} \hlii{house.}}
+
+\subsection{Property}
+
+\ortho{lenek} \emph{have, possess} is used for qualities: \\
+~\\
+\hli{Zekkus} \hlii{revet} \hliv{lene.} \\
+\hli{rabbit-\tsc{erg}} \hlii{white} \hliv{have-3} \\
+\emph{\hli{The rabbit} \hliv{is} \hlii{white.}}
+
+\subsection{Definition}
+
+\ortho{ḣṡenek} \emph{\tsc{erg} is defined as \tsc{abs}} is used: \\
+~\\
+\hli{Pavras} \hlii{fûkul} \hliii{ṅetra} \hliv{ḣṡene.} \\
+\hli{pavra-\tsc{erg}} \hlii{six-\tsc{fraction}} \hliii{ṅetra} \hliv{defined\textunderscore{as}-3} \\
+\emph{\hli{A pavra} \hliv{is} \hlii{one-sixth of} \hliii{a ṅetra.}}
+
+\subsection{Existence}
+
+This uses \ortho{atek} \emph{exist}. \\
+~\\
+\hli{Vanrakajkáne} \hliv{ata.} \\
+\hli{ponder-1-\tsc{content}-\tsc{caus}} \hliv{exist-1} \\
+\emph{\hli{I think; therefore,} \hliv{I am.}}
+
+\section{``Good'' and ``bad''}
+
+There are no direct translations of \emph{good} or \emph{bad} in Ḋraħýl Rase. One must specify \emph{by which metric}.
+
+\chapter{Miscellanea}
+
+This chapter covers often-neglected topics that are too small for their own chapters.
+
+\section{Units of measure}
+
+\subsection{Time}
+
+The following table shows the most common units of time:
+
+\begin{table}[h]
+    \caption{Units of time.}
+    \centering
+    \begin{tabu}{|l|X|X|}
+        \hline
+        Name & Definition & Approximation \\
+        \hline
+        kaku \emph{(= year)} & 365.25 mene, 8 or 9 diku & 1 year \\
+        deku & 44 or 45 mene & \\
+        nusa & 6 mene & \\
+        mane \emph{(= day)} & & 1 day \\
+        nevur & 1/12 mane & 2 hours \\
+        tarnu & 1/72 nevur & 5/3 minutes (100 seconds) \\
+        pṡule & 1/108 tarnu & 0.925 seconds \\
+        \hline
+    \end{tabu}
+\end{table}
+
+The \emph{kaku} starts on the first day of the first \emph{deku} on or after the 12th \emph{mane} before the spring equinox.
+
+\newpage
+\subsubsection{Names of \emph{diku}}
+
+\begin{table}[h]
+    \caption{Names of the \emph{diku}.}
+    \centering
+    \begin{tabu}{|l|l|X|}
+        \hline
+        Name & Length & Origin \\
+        \hline
+        zandek & 44 & \ortho{zany} \emph{robin} \\
+        kazdek & 45 & \ortho{kasla} \emph{lily} \\
+        têdek & 44 & \ortho{têke} \emph{sun} \\
+        mevdek & 45 & \ortho{mevu} \emph{rain} \\
+        sundek & 44 & \ortho{sunuhek} \emph{fall down} \\
+        ṡidek & 45 & \ortho{ṡiki} \emph{dust, powder} \\
+        guldek & 44 & \ortho{guli} \emph{ice} \\
+        mordek & 45 & \ortho{moru} \emph{black} \\
+        ḣraldek & 44 & \ortho{ḣrale} \emph{fire} \\
+        \hline
+    \end{tabu}
+\end{table}
+
+\emph{Mordek} is an intercalary \emph{deku} that appears only in \emph{keku} with nine \emph{diku}.
+
+\subsubsection{Names of the \emph{mene} of the \emph{nusa}}
+
+Starting from the first day of work, these are:
+
+\begin{itemize}
+    \item pakuẏ-mane
+    \item sanlu-mane
+    \item kônre-mane
+    \item grefu-mane
+    \item zekku-mane
+    \item Idisa-mane
+\end{itemize}
+
+\emph{Idisa-mane} is commonly considered a day of rest. The first \emph{mane} of the \emph{kaku} is set such that the last \emph{mane} of the \emph{kaku} is \emph{Idisa-mane}.
+
+\newpage
+\subsection{Length}
+
+The following table shows the most common units of length:
+
+\begin{table}[h]
+    \caption{Units of length.}
+    \centering
+    \begin{tabu}{|l|X|X|}
+        \hline
+        Name & Definition & Approximation \\
+        \hline
+        swana & 2520 ṅitra & 1.89 km \\
+        ṅetra & shoulder-to-fingertip distance & 75.0 cm \\
+        pavra & 1/6 ṅetra & 12.5 cm \\
+        nûko & 1/6 pavra & 2.08 cm \\
+        hjali & 1/15 pavra & 8.33 mm \\
+        \hline
+    \end{tabu}
+\end{table}
+
+\subsection{Mass}
+
+The following table shows the most common units of mass:
+
+\begin{table}[h]
+    \caption{Units of mass.}
+    \centering
+    \begin{tabu}{|l|X|X|}
+        \hline
+        Name & Definition & Approximation \\
+        \hline
+        farep & & 1.56 kg \\
+        vune & 1/24 farep & 65 g \\
+        \hline
+    \end{tabu}
+\end{table}
+
+%\section{Composition}
+
+\chapter{Example Texts}
+
+\section{Varwe (translations of foreign works)}
+
+\subsection{Helakotanesa}
+
+Translation of William Butler Yeats' ``The Second Coming''. \\
+~\\
+\textdhr{kolonekAl hjUlama funelkjUkAl} \\
+\hli{Kolonekâl} \hlii{hjuláma} \hliii{funelkju̇kâl} \\
+\hli{large-\tsc{become}-3-\tsc{rel}} \hlii{vortex-\tsc{loc}} \hliii{rotate-3\tsc{anm}-\tsc{continuative}-\tsc{rel}} \\
+\hliii{Turning and turning} \hlii{in the} \hli{widening} \hlii{gyre} \\
+(A point of subtlety: \ortho{kawsa} \emph{wide} is not used since the vortex is inferred to be expanding in two dimensions.) \\
+~\\
+\textdhr{dAba talgeplUn \tl{}takelGe,} \\
+\hli{Dâba} \hlii{talgeplūn} \hliii{kêl} \hliv{takelġe,} \\
+\hli{falcon} \hlii{take\_care\_of-\tsc{agent}-\tsc{acc}} \hliii{\tsc{neg}} \hliv{hear-3\tsc{anm}-\tsc{deontic\_potential}} \\
+\hli{The falcon} \hliv{can}\hliii{not} \hliv{hear} \hlii{the falconer;} \\
+(\ortho{dâba} can technically refer to any bird of prey.) \\
+~\\
+\textdhr{nYr xise, nure \tl{}hrenetameGe,} \\
+\hli{Nŷr} \hlii{ḣise,} \hliii{nure} \hliv{kêl} \hlv{hrenetameġe,} \\
+\hli{world} \hlii{fall\_apart-3} \hliii{centre} \hliv{\tsc{neg}} \hlv{tie-3-\tsc{reflexive}-\tsc{deontic\_potential}} \\
+\hli{Things} \hlii{fall apart;} \hliii{the centre} \hlv{can}\hliv{not} \hlv{hold;} \\
+~\\
+\textdhr{kasraxevesi nYrHAjme betlema,} \\
+\hli{Kasra-ḣevesi} \hlii{nŷr-ħajmé} \hliii{betlema,} \\
+\hli{leader-hole} \hlii{world-through-\tsc{dir}} \hliii{fly-3-\tsc{inchoative}} \\
+\hli{Mere anarchy} \hliii{is loosed} \hlii{upon the world,} \\
+~\\
+\textdhr{uros nefinekAl lerUna Sluhrene,} \\
+\hli{Uros} \hlii{nefinekâl} \hliii{lerûna} \hliv{ṡluhrene,} \\
+\hli{blood-\tsc{erg}} \hlii{dark-\tsc{become}-3-\tsc{rel}} \hliii{tide} \hliv{\tsc{reversive}-tie-3} \\
+\hli{The blood-}\hlii{dimmed} \hliii{tide} \hliv{is loosed} ... \\
+~\\
+\textdhr{Helikoloma palsul rEku sunemetSek,} \\
+\hli{Ħeli-koloma} \hlii{palsúl} \hliii{rêku} \hliv{sunemetṡek,} \\
+\hli{all-place-\tsc{loc}} \hlii{innocence-\tsc{gen}} \hliii{ceremony} \hliv{drown-3-\tsc{completive}} \\
+\hli{and everywhere} / \hliii{The ceremony} \hlii{of innocence} \hliv{is drowned} \\
+~\\
+\textdhr{mraSaDol etus selSun marda \tl{}leneke,} \\
+\hli{Mraṡaḋól} \hlii{etus} \hliii{selṡun} \hliv{marda} \hlv{kêl} \hlvi{leneke,} \\
+\hli{virtue-\tsc{super}-\tsc{gen}} \hlii{human\bs{\tsc{pl}}-\tsc{erg}} \hliii{at\_all} \hliv{conviction} \hlv{\tsc{neg}} \hlvi{have-3-\tsc{prog}} \\
+\hli{The best} \hlv{lack} \hliii{all} \hliv{conviction,} ... \\
+~\\
+\textdhr{mogoDokEdu ruhas mirel.} \\
+\hli{Mogoḋokêdu} \hlii{ruhas} \hliii{mirel.} \\
+\hli{evil-\tsc{super}-\tsc{person\_with}\bs{\tsc{pl}}} \hlii{passion-\tsc{erg}} \hliii{fill-3} \\
+while \hli{the worst} / \hliii{Are full of} \hlii{passionate intensity.} \\
+~\\
+\textdhr{nUnEr vaneNran penel,} \\
+\hli{Nūnêr} \hlii{vaneṅran} \hliii{penel,} \\
+\hli{death-\tsc{adv}} \hlii{divine\_wisdom-\tsc{acc}} \hliii{see\bs{\tsc{pl}}-3\tsc{anm}} \\
+\hli{Surely} \hlii{some revelation} \hliii{is at hand;} \\
+(lit. \emph{Surely they see some divine wisdom}) \\
+~\\
+\textdhr{nUnEr helakotanesa beneke.} \\
+\hli{Nūnêr} \hlii{Helakotanesa} \hliii{beneke.} \\
+\hli{death-\tsc{adv}} \hlii{\tsc{again}-come-\tsc{act.p}} \hliii{be\_at-3-\tsc{prog}} \\
+\hli{Surely} \hlii{the Second Coming} \hliii{is at hand.} \\
+~\\
+\textdhr{helakotanesa. tUramaNakAjma} \\
+\hli{Helakotanesa!} \hlii{Tûramaṅakajmá} \\
+\hli{\tsc{again}-come-\tsc{act.p}} \hlii{say-1-\tsc{inchoative}-\tsc{exclusive}-\tsc{content}-\tsc{loc}} \\
+\hli{The Second Coming!} \hlii{Hardly are those words out / When} ... \\
+~\\
+\textdhr{nYrHezel rehun pana, Gunata.} \\
+\hli{Nŷr-ħezél} \hlii{rehun} \hliii{pana,} \hliv{ġunata.} \\
+\hli{world-spirit-\tsc{gen}} \hlii{image-\tsc{acc}} \hliii{see-1} \hliv{torture-1-3} \\
+\hlii{a vast image} \hli{out of Spiritus Mundi} / \hliv{troubles} \hliii{my sight.} ... \\
+(This is a fairly liberal translation.) \\
+~\\
+\textdhr{plUnli havatli ruHlape/} \\
+\hli{Plūnli} \hlii{havatlí} \hliii{rúħlape} / \\
+\hli{sand-\tsc{gen}} \hlii{desert-\tsc{gen}} \hliii{wasteland} \\
+\hliii{a waste} \hlii{of desert} \hli{sand;} \\
+(Note the slash used to mark juxtaposition.) \\
+~\\
+\textdhr{girul exu atul mOdu/} \\
+\hli{Girúl} \hlii{eḣu} \hliii{atúl} \hliv{môdu} / \\
+\hli{lion-\tsc{gen}} \hlii{body} \hliii{human-\tsc{gen}} \hliv{head} \\
+A shape with \hli{lion} \hlii{body} and \hliv{head} \hliii{of a man}, \\
+(No slash is used between \ortho{girúl eḣu} and \ortho{atúl môdu} in order to avoid confusion.) \\
+~\\
+\textdhr{tEketUr kEl lurakAl numal panEw} \\
+\hli{Têke-tûr} \hlii{kêl} \hliii{lurakâl} \hliv{numál} \hlv{panew} \\
+\hli{sun-like-\tsc{adv}} \hlii{\tsc{neg}} \hliii{have\_mercy-1-\tsc{rel}} \hliv{empty-\tsc{gen}} \hlv{see-\tsc{act.a}} \\
+\hlv{A gaze} \hliv{blank} \hliii{and piti}\hlii{less} \hli{as the sun,} \\
+~\\
+\textdhr{munumar helde zeneke, kEjma} \\
+\hli{Munumár} \hlii{helde} \hliii{zeneke,} \hliv{kejmá} \\
+\hli{slow-\tsc{adv}} \hlii{leg\bs{\tsc{pl}}} \hliii{move\bs{\tsc{pl}}-3-\tsc{prog}} \hliv{around-\tsc{loc}} \\
+\hliii{Is moving its} \hli{slow} \hlii{thighs,} while \hliv{all about it} \\
+~\\
+\textdhr{fanul havatxjAmerzil nifi bitle} \\
+\hli{Fanúl} \hlii{havat-ḣjamerzíl} \hliii{nifi} \hliv{bitle.} \\
+\hli{anger-\tsc{gen}} \hlii{desert-bird\bs\tsc{pl}-\tsc{gen}} \hliii{shadow\bs\tsc{pl}} \hliv{fly\bs\tsc{pl}-3} \\
+\hliv{Wind} \hliii{shadows} \hlii{of} \hli{indignant} \hlii{desert birds.} \\
+~\\
+\textdhr{nefi helasunuhe nAW hWO} \\
+\hli{Nefi} \hlii{helasunuhe,} \hliii{naẏ} \hliv{hẏo} \\
+\hli{darkness} \hlii{\tsc{again}-descend-3} \hliii{but} \hliv{now} \\
+\hli{The darkness} \hlii{drops again} \hliii{but} \hliv{now} [I know] \\
+~\\
+\textdhr{galul rAjnesal vOmonsanu mene} \\
+\hli{Galúl} \hlii{rajnesál} \hliii{vômonsanu} \hliv{mene} \\
+\hli{stone-\tsc{gen}} \hlii{sleep-\tsc{act.p}-\tsc{gen}} \hliii{12-2-144} \hliv{year\bs\tsc{pl}} \\
+{[That]} \hliii{twenty centuries} \hlii{of} \hli{stony} \hlii{sleep} \\
+~\\
+\textdhr{funes koderifnekera tes tuha,} \\
+\hli{Funes} \hlii{koderifnekera} \hliii{tes} \hliv{tuha,} \\
+\hli{cradle-\tsc{erg}} \hlii{nightmare-\tsc{become}-\tsc{prog}-\tsc{past}} \hliii{\tsc{quot}} \hliv{know-1} \\
+\hlii{Were vexed to nightmare} \hli{by a rocking cradle,} \\
+~\\
+\textdhr{rU hWO surekAl mEl mogol gane} \\
+\hli{Rû} \hlii{hẏo} \hliii{surekâl} \hliv{mêl} \hlv{mogól} \hlvi{gane} \\
+\hli{time} \hlii{now} \hliii{know-3-\tsc{rel}} \hliv{what-\tsc{gen}} \hlv{evil-\tsc{gen}} \hlvi{beast} \\
+\hliv{And what} \hlv{rough} \hlvi{beast,} \hli{its hour} \hliii{come round} \hlii{at last,} \\
+~\\
+\textdhr{nakkelkAjsane \textoverline{bEtlexeme} tanel?} \\
+\hli{Nakkelkajsáne} \hlii{Bêtleḣemé} \hliii{tanel?} \\
+\hli{be\_born-3\tsc{anm}-\tsc{content}-\tsc{benefactive}} \hlii{Betlehem-\tsc{dir}} \hliii{go-3\tsc{anm}} \\
+\hliii{Slouches} \hlii{toward Bethlehem} \hli{to be born?}
+
+\backmatter
+
+\chapter{The Ḋraħýl Rase lexicon}
+
+The lexicon of Ḋraħýl Rase can be found at \url{http://kisu.me/n9Q}. The first page contains four columns:
+
+\begin{enumerate}
+    \item \textsf{Entry} -- the Ḋraħýl Rase term listed.
+    \item \textsf{PoS} -- the part of speech of the corresponding entry:
+    \begin{itemize}
+        \item \textsf{n} -- a noun or pronoun
+        \item \textsf{v} -- a verb
+        \begin{itemize}
+            \item \textsf{vn} -- an \emph{n}-verb
+            \item \textsf{vn?} -- a verb that can be used as either an \emph{n}-verb or a non-\emph{n}-verb. In this case, both usages are clarified in the \textsf{Notes} column.
+            \item \textsf{v2} -- a verb that can be used as either a monotransitive verb or a ditransitive verb
+            \item \textsf{v2x} -- a verb that is always used as a ditransitive
+        \end{itemize}
+        \item \textsf{adv} -- a true adverb
+    \end{itemize}
+    \item \textsf{Gloss} -- the gloss for the corresponding entry.
+    \begin{enumerate}
+        \item \textsf{(A)} -- the ergative argument of the verb.
+        \item \textsf{(P)} -- the absolutive argument of the verb.
+        \item \textsf{(QUOT)} -- the quotative argument of the verb.
+    \end{enumerate}
+    \item \textsf{Notes} -- special grammatical or semantic notes for this term.
+\end{enumerate}
+
+\end{document}

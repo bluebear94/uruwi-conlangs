@@ -1,0 +1,864 @@
+\documentclass{book}
+
+\usepackage[usenames, dvipsnames, table]{xcolor}
+\usepackage{amsmath, amssymb}
+%\usepackage{fontspec}
+\usepackage{mathspec}
+%\usepackage{gb4e}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{readarray}
+\usetikzlibrary{shapes.misc, positioning, calc}
+\usepackage{hyperref}
+
+% Font settings
+
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+\setmainfont[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
+\setmathrm[Path=./fonts/]{GENTIUMPLUS-R.TTF}
+\setmathsf[Path=./fonts/]{VL-PGothic-Regular.ttf}
+
+% Title styles
+
+\newcommand{\hprule}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.3pt}}}
+\titleformat{\chapter}
+[hang]
+{\huge\sffamily}
+{
+    \textcolor{Purple}{\thechapter}
+}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }\textcolor{DarkOrchid}
+}
+[
+    \vspace{0ex}
+    {
+        \color{YellowGreen}
+        \hprule
+    }
+]
+\titleformat{\section}
+[hang]
+{\large\sffamily}
+{\textcolor{OliveGreen}{\thesection}}
+{0.5ex}{
+    \textcolor{Turquoise}{ | }
+}
+\titleformat{\subsection}
+[hang]
+{\sffamily}
+{\textcolor{RawSienna}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }
+}
+
+% Macros
+
+\definecolor{DarkCerulean}{HTML}{099CD6}
+\definecolor{UruwiGreen}{HTML}{107008}
+
+\newcommand{\sstay}{$\pm$}
+\newcommand{\sshift}{$\ge$}
+\newcommand{\sshiftp}{$\vartriangleright$}
+\newcommand{\sshiftu}{$\blacktriangleright$}
+\newcommand{\tl}{\char`~}
+\newcommand{\here}{$\blacklozenge$}
+\newcommand{\ortho}[1]{⟨#1⟩}
+\newcommand{\wrong}[1]{\textcolor{OrangeRed}{*\ortho{#1}}}
+\newcommand{\wrongp}[1]{\textcolor{OrangeRed}{*/#1/}}
+\newcommand{\ul}[1]{\underline{\smash{#1}}}
+\newcommand{\invalid}{\cellcolor{RedOrange!40}}
+\newcommand{\bs}{\textbackslash}
+\newcommand{\tsc}{\textsc}
+\newcommand{\formal}{$\blacklozenge$}
+\newcommand{\informal}{$\triangledown$}
+\newcommand{\ra}{$\rightarrow$}
+
+\newcommand{\hli}[1]{\textcolor{Plum}{#1}}
+\newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
+\newcommand{\hliii}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\hliv}[1]{\textcolor{RubineRed}{#1}}
+\newcommand{\hlv}[1]{\textcolor{Bittersweet}{#1}}
+\newcommand{\hlvi}[1]{\textcolor{PineGreen}{#1}}
+\newcommand{\hlvii}[1]{\textcolor{Violet}{#1}}
+
+% Link styles
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+% TikZ declarations
+
+\tikzset{
+    auto,
+    % bend angle=45,
+    stem/.style={rectangle, draw=Orange, fill=Orange!10, very thick, minimum size=10mm, node distance=3mm, align=center, font=\strut},
+    requiredAffix/.style={stem, draw=ProcessBlue, fill=ProcessBlue!10, thick},
+    optionalAffix/.style={requiredAffix, rounded corners=8pt},
+    repeatedAffix/.style={optionalAffix, draw=LimeGreen, fill=LimeGreen!15},
+    arrow/.style={->, thick},
+    border/.style={dotted, draw=Cerulean}
+}
+
+\title{Varta Avina}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{ForestGreen!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{BlueGreen} \hprule \vspace{1.5ex} \\}
+        {\huge\sffamily \textcolor{PineGreen}{\@title} \\}
+        {\large The \textit{Kavina}n language \\}
+        {\color{BlueGreen} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %tkook@gmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        {Retami-varta hee} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{ForestGreen!15}
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology}
+
+\section{Consonants and vowels}
+
+The Kavina language uses the following phonemes:
+
+\begin{table}[h]
+    \caption{The consonants of Kavinan.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        & Bilabial & Alveolar & Palatal & Velar & Glottal \\
+        \hline
+        Nasal & m & nh /n̥/ n & & & \invalid \\
+        Plosive & p & t & & k & \\
+        Fricative & v /β/ & s & & & h \\
+        Approximant & & & j & & \\
+        Trill & & r & & \invalid & \invalid \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+    \caption{The vowels of Kavina.}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        & Front & Central & Back \\
+        \hline
+        High & i & & u \\
+        Mid & e & & o \\
+        Low & & a & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Phonotactics}
+
+A syllable comprises of:
+
+\begin{itemize}
+    \item an optional consonant,
+    \item a vowel,
+    \item and one of /r s n/,
+\end{itemize}
+
+as long as the first two items are not \wrongp{ti}.
+
+\section{Allophony}
+
+/h/ becomes [x] after a consonant. \\
+/n/ becomes [ŋ] before /h k/.
+
+\chapter{Syntax}
+
+In this chapter, we look at the structure of the whole sentence.
+
+\section{Basic word order}
+
+Kavina uses SVO order. Since it does not have any cases, this word order is strict. None of the items may be omitted.
+
+\section{Modifiers}
+
+Modifiers follow what they modify.
+
+\section{Interjections and vocatives}
+
+They appear at the beginning of the sentence.
+
+\chapter{Nouns}
+
+Nouns are inflected only for number. There are three main noun classes.
+
+\newcommand{\decltab}[4]{
+    \begin{table}[htbp]
+        \centering
+        \caption{Declension of \ortho{#3#1} \emph{#4}}
+        \begin{tabu} to \textwidth {|p{3cm}|p{2cm}|X|}
+            \hline
+            Singular & -#1 & #3#1 \\ \hline
+            Plural & -#2 & #3#2 \\ \hline
+        \end{tabu}
+    \end{table}
+}
+
+\section{1st declension}
+
+First-declension nouns end with \ortho{-a}.
+
+\decltab{a}{o}{vart}{language}
+
+Nouns ending in \ortho{-aa} are treated specially:
+
+\decltab{aa}{oa}{sap}{frog}
+
+\section{2nd declension}
+
+Second-declension nouns end with \ortho{-u}.
+
+\decltab{u}{e}{rin}{door}
+
+\section{3rd declension}
+
+Third-declension nouns can end with any consonant or vowel. Those that end with \ortho{-u} form a special case.
+
+\decltab{a}{ai}{kast}{coin}
+
+\decltab{e}{ei}{toat}{internal organ}
+
+\decltab{i}{ii}{sek}{pebble}
+
+\decltab{o}{oi}{han}{circle}
+
+\decltab{u}{i}{tanev}{maple}
+
+\decltab{n}{ni}{pana}{table}
+
+\section{Nasal mutation}
+
+The nasal mutation on nouns changes its role:
+
+\begin{itemize}
+    \item it converts a noun to an associated adjective (e.~g. \emph{wood} → \emph{wooden})
+    \item as an object of preposition, it changes the meaning of the preposition in question
+    \item it converts a pronoun or a proper noun into a genitive
+\end{itemize}
+
+The initial consonant is changed to the following:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Start & End \\
+        \hline
+        ∅ t s r j n & n \\
+        p v m & m \\
+        k & ∅ \\
+        h nh & nh \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Pronouns}
+
+Personal pronouns are not divided into first, second and third persons as in most languages. Instead, they fall into four categories which exhibit different behaviour depending on whether they occur as the subject or not:
+
+\begin{table}[h]
+    \caption{Pronoun persons and their functions.}
+    \centering
+    \begin{tabu} to \textwidth {|l|l|X|}
+        \hline
+        Person & Role in subject (or bind) & Role in other \\
+        \hline
+        Near & The speaker. & The subject of the sentence. \\
+        Far & The listener. & If the subject is the speaker, then the listener. Otherwise, the speaker. \\
+        Other & A third entity. & An entity that is neither the speaker, the listener or the subject. \\
+        Generic & A generic entity (akin to ``one''). & \invalid \\
+        \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[h]
+    \caption{Personal pronouns.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        & Singular & Plural \\
+        \hline
+        Near & sema & semai \\
+        Far & tarka & tarko \\
+        Other & kana & kanar \\
+        Generic & iuve & iuvei \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Bind pronouns}
+
+When a bind pronoun is placed at the beginning of a sentence (after any interjections or vocatives), the subject is understood to be possessed by the bind pronoun. The bind pronoun also assumes the subject reference from other pronouns in the same sentence.
+
+\begin{table}[h]
+    \caption{Bind pronouns.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        & Singular & Plural \\
+        \hline
+        Near & semaa & semaja \\
+        Far & tarkaa & tarkoa \\
+        Other & kanaa & kanara \\
+        Generic & iuvee & iuveja \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In the following example, notice that \hlv{\ortho{sema}} refers to \hliv{\ortho{tarkaa}}, not \hli{\ortho{sapaa}}.
+
+~ \\
+\hliv{Tarkaa} \hli{sapaa} \hlii{minan} \hliii{an} \hlv{sema.} \\
+\hliv{\tsc{pr}.\tsc{far}.\tsc{bind}} \hli{frog} \hlii{jump-\tsc{sg}.\tsc{past}} \hliii{toward} \hlv{\tsc{pr}.\tsc{near}} \\
+\emph{\hliv{Your} \hli{frog} \hlii{jumped} \hliii{toward} \hlv{you.}}
+
+\section{Adjectives}
+
+Adjectives decline in a similar manner to nouns, although almost all adjectives are of the third declension. They can be inflected in the past tense by prefixing \ortho{ta-}.
+
+\chapter{Verbs}
+
+Verbs are conjugated for the number of the subject, tense and antipassivity. There are three conjugation schemes:
+
+\newcommand{\conjtab}[3]{
+    \begin{table}[htbp]
+        \centering
+        \getargsC{#2}
+        \caption{Conjugation of \ortho{#1\argi} \emph{#3}}
+        \begin{tabu} to \textwidth {|p{3cm}|X|X|}
+            \hline
+            & Nonpast & Past \\
+            \hline
+            Singular & #1\argi & #1\argii \\
+            Plural & #1\argiii & #1\argiv \\
+            \hline
+            Antipassive & & \\
+            \hline
+            Singular & #1\argv & #1\argvi \\
+            Plural & #1\argvii & #1\argviii \\
+            \hline
+        \end{tabu}
+    \end{table}
+}
+
+\newcommand{\conjtabii}[3]{
+    \begin{table}[htbp]
+        \centering
+        \getargsC{#2}
+        \caption{Conjugation of \ortho{#1\argi} \emph{#3}}
+        \begin{tabu} to \textwidth {|p{3cm}|X|X|}
+            \hline
+            & Nonpast & Past \\
+            \hline
+            Singular & #1\argi & #1\argii \\
+            Plural & #1\argiii & #1\argiv \\
+            \hline
+        \end{tabu}
+    \end{table}
+}
+
+\section{1st conjugation}
+
+First-conjugation verbs end in \ortho{-i} and are always transitive.
+
+\conjtab{kahi}{i r a na n rin an nen}{open}
+
+The antipassive forms are used when the direct object is absent in a transitive verb.
+
+\section{2nd conjugation}
+
+Second-conjugation verbs end in \ortho{-mi} and may be either transitive or intransitive.
+
+\conjtab{te}{mi n nu nu min nen nun nunen}{hunt}
+
+\section{3rd conjugation}
+
+Third-conjugation verbs end in \ortho{-ki} and are always intransitive.
+
+\conjtabii{ha}{ki r rja rna}{fly}
+
+\section{Rii}
+
+\ortho{rii} \emph{be} is conjugated irregularly and has no separate antipassive form.
+
+\conjtabii{}{rii iri raa rina}{be}
+
+\section{Other forms of the verb}
+
+\begin{longtabu}[c]{|l|l|X|}
+    \hline
+    Form & Recipe & Description \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Form & Recipe & Description \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    Imperative & tur + \emph{nonpast} & A command. \\
+    Infinitive & to + \emph{nonpast singular} & The noun form of a verb. Can take direct objects or objects of prepositions. Can act as an adjective by mutating the particle to \ortho{no}. If modifying \ortho{saha} \emph{thing}, the phrase means ``an act of doing X'' -- e.~g. \ortho{saha no nakoi} = a killing. \\
+    Passive & ker + \emph{verb} & The verb adopts the same tense and number as the base action. \\
+    Causative & \emph{causer} + ankai + \emph{sentence} & \\
+    Applicative & \emph{verb} + \emph{preposition} & Promotes an object of a preposition to a direct object. If the former OP is mutated, then the verb is mutated instead. If there is already a direct object, it becomes the OP of \ortho{vus}. \\
+    Negative & pe + \emph{verb} + pe & \\
+    Prohibitive & per + \emph{verb} + pe & \\
+\end{longtabu}
+
+\chapter{Prepositions}
+
+Prepositional phrases, like other modifiers, follow what they modify.
+
+Many prepositions change meanings when their objects are nasal-mutated. Typically, the basic form will indicate position, and the nasal-mutated form will indicate direction. Some prepositions experience an irregular mutation.
+
+\begin{longtabu}[c]{|X|X|}
+    \caption{List of prepositions.}
+    \centering
+    
+    \\ \hline
+    \endfirsthead
+    
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    & \ortho{an hano} toward the circle \\
+    \hline
+    \ortho{sivi hano} inside the circle & \ortho{sivi nhano} into the circle \\
+    \ortho{sivi voru} at night & \\
+    \ortho{toa surna} belonging to the person & \ortho{\hliv{tona surna}} (e.~g. give) to the person \\
+    \ortho{ke hano} outside the circle, not belonging to the circle & \ortho{ke nhano} toward the outside of the circle; (e.~g. take) from the circle \\
+    \ortho{hunu hano} on the edge of a circle & \ortho{hunu nhano} along the edge of a circle \\
+    \ortho{peku hano} near the circle & \ortho{peku nhano} approaching the circle \\
+    \ortho{ina hano} far away from the circle & \ortho{ina nhano} away from the circle \\
+    \ortho{kar hanoi} between the circles & \ortho{\hliv{karu nhanoi}} into the space between the circles \\
+    \ortho{sivike hano} off the edge of the circle & \ortho{sivike nhano} through the circle \\
+    \ortho{vus rinu} on the wall (vertical surface) & \ortho{\hliv{vusu ninu}} onto the wall \\
+    \ortho{haka panan} on the table (horizontal surface) & \ortho{haka manan} onto the table \\
+    \ortho{varu hano} above the circle & \ortho{varu nhano} to above the circle \\
+    \ortho{meru nhano} below the circle & \ortho{meru nhano} to below the circle \\
+    & \ortho{varusivike nhano} over the circle \\
+    & \ortho{merusivike nhano} under the circle \\
+    \ortho{jula ransu} with a vine attached & \ortho{jula nansu} with a vine attaching \\
+    \ortho{hanu hano} around the circle (static) & \ortho{hanu nhano} around the circle (dynamic) \\
+    \ortho{ma voru} during the night & \ortho{ma moru} until the night \\
+    & \ortho{masivike moru} through the night, all night \\
+    \ortho{ne hano} by the circle (used in passive constructions) & \\
+    \ortho{irai hano} like the circle & \\
+    \ortho{tennu hano} on behalf of the circle & \\
+    \ortho{ras hano} because of the circle & \\
+    \ortho{paka panan} under the table & \ortho{paka manan} to under the table, not concerning the table \\
+    \ortho{nuo hano} about (topic) the circle & \\
+\end{longtabu}
+
+\chapter{Conjunctions and dependent clauses}
+
+They are different depending on whether non-predicates or predicates are tied.
+
+\begin{table}[h]
+    \caption{Conjunctions.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        & Non-predicates & Predicates \\
+        \hline
+        X and Y & X o Y & X varan Y \\
+        X or Y & X vi Y & X veuro Y \\
+        X xor Y & X vae Y & X rihan Y \\
+        X but not Y & X he nY & X ipe Y \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Clauses use a different set of conjunctions:
+
+\begin{longtabu}[c]{|X|X|}
+    \caption{Clausal ties.}
+    \centering
+    
+    \\ \hline
+    Tie & Definition \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Tie & Definition \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    nerta ... nen ... & ... and ... \\
+    tuusi ... tuusi ... & ... or ... \\
+    nerta ... kan ... & ... but ... \\
+    nerta ... haasa ... & ... but not ... \\
+    siivan ... sivir ... & when ..., ... \\
+    irva ... hevi ... & because ..., ... \\
+    vin ... vin ... & in order to ..., ... \\
+    suu ... suu ... & if ..., then ... \\
+\end{longtabu}
+
+\section{Dependent clauses}
+
+Dependent clauses are done using the infinitive form. That is, relative clauses are made by modifying the antecedent with a nasal-mutated infinitive:
+
+~ \\
+\hli{surna} \hlii{no} \hliii{nakor} \hliv{terne} \\
+\hli{person} \hlii{\tsc{adj}\bs{\tsc{inf}}} \hliii{cut-\tsc{past}} \hliv{leaf-\tsc{pl}} \\
+\hli{the person} \hlii{who} \hliii{cut} \hliv{leaves}
+
+Note that only the subject can be relativised. Hence it is necessary to use the passive or applicative form of a verb:
+
+~ \\
+\hli{ana} \hlii{no} \hliii{ker} \hliv{nai} \hlv{ne} \hlvi{surno} \\
+\hli{water} \hlii{\tsc{adj}\bs{\tsc{inf}}} \hliii{\tsc{pass}} \hliv{drink} \hlv{by} \hlvi{person-\tsc{pl}} \\
+\hli{the water} \hlii{that} \hlvi{the people} \hliv{drink} \\
+~ \\
+\hli{vansa} \hlii{no} \hliii{ker} \hliv{nevei} \hlv{sivi} \hlvi{ne} \hlvii{kana} \\
+\hli{cave} \hlii{\tsc{adj}\bs{tsc{inf}}} \hliii{\tsc{pass}} \hliv{pray} \hlv{inside} \hlvi{by} \hlvii{\tsc{pr}.\tsc{other}} \\
+\hli{the cave} \hlv{in} \hlii{which} \hlvii{he} \hliv{prays}
+
+Content clauses, thus, are infinitives, possibly in the passive or applicative form, or with objects.
+
+\chapter{Numbers}
+
+Kavinan uses a base-14 system with special words for base 7. The following are the words for the first 14 natural numbers:
+
+\begin{longtabu}[c]{|r|r|X|}
+    \caption{First 14 natural numbers.}
+    \centering
+    
+    \\ \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    1 & 1 & kare \\
+    2 & 2 & tarpa \\
+    3 & 3 & hapan \\
+    4 & 4 & pumo \\
+    5 & 5 & jata \\
+    6 & 6 & suro \\
+    7 & 7 & ekin \\
+    8 & 8 & akis \\
+    9 & 9 & sisne \\
+    10 & A & kursu \\
+    11 & B & tortu \\
+    12 & C & juron \\
+    13 & D & mantu \\
+    14 & 10 & sanpa \\
+\end{longtabu}
+
+The following are the multiples of 7 up to $182 = 13 \cdot 14$:
+
+\begin{longtabu}[c]{|r|r|X|}
+    \caption{Multiples of 7.}
+    \centering
+    
+    \\ \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    7 & 7 & ekin \\
+    14 & 10 & sanpa \\
+    21 & 17 & saporna \\
+    28 & 20 & tarpasan \\
+    35 & 27 & hapekin \\
+    42 & 30 & hapasan \\
+    49 & 37 & pumekin \\
+    56 & 40 & pumosan \\
+    63 & 47 & jatekin \\
+    70 & 50 & jatasan \\
+    77 & 57 & surekin \\
+    84 & 60 & surosan \\
+    91 & 67 & surpona \\
+    98 & 70 & juhorna \\
+    105 & 77 & juhorpo \\
+    112 & 80 & akisan \\
+    119 & 87 & tasanekin \\
+    126 & 90 & juhotasan \\
+    133 & 97 & havanekin \\
+    140 & A0 & juhohavan \\
+    147 & A7 & puvanekin \\
+    154 & B0 & juhopuvan \\
+    161 & B7 & jasanekin \\
+    168 & C0 & juhojasan \\
+    175 & C7 & jasanorpo \\
+    182 & D0 & junahesan \\
+\end{longtabu}
+
+Thus, numerals of the form $a \cdot 14 + b$, with $1 \le a \le 12$ and $0 \le b < 14$, are formed as such:
+
+\begin{longtabu}[c]{|r|X|}
+    \caption{Rules for $a \cdot 14 + b$.}
+    \centering
+    
+    \\ \hline
+    $b$ & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    $b$ & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    0 & $(a \cdot 14)$ \\
+    1 & $(a \cdot 14)$ o kare \\
+    2 & $(a \cdot 14)$ o tarpa \\
+    3 & $(a \cdot 14)$ o hapan \\
+    4 & $(a \cdot 14)$ o pumo \\
+    5 & $(a \cdot 14)$ o jata \\
+    6 & $(a \cdot 14 + 7)$ he are \\
+    7 & $(a \cdot 14 + 7)$ \\
+    8 & $(a \cdot 14 + 7)$ o kare \\
+    9 & $(a \cdot 14 + 7)$ o tarpa \\
+    10 & $(a \cdot 14 + 7)$ o hapan \\
+    11 & $(a \cdot 14 + 14)$ he nhapan \\
+    12 & $(a \cdot 14 + 14)$ he narpa \\
+    13 & $(a \cdot 14 + 14)$ he are \\
+\end{longtabu}
+
+The words for $183 \le n \le 196$ are formed irregularly:
+
+\begin{longtabu}[c]{|r|r|X|}
+    \caption{Terms for $183 \le n \le 196$.}
+    \centering
+    
+    \\ \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    183 & D1 & junaha he mantu \\
+    184 & D2 & junahesan o tarpa \\
+    185 & D3 & junaha he nortu \\
+    186 & D4 & junaha he ursu \\
+    187 & D5 & junaha he nisne \\
+    188 & D6 & junaha he nakis \\
+    189 & D7 & junaha he nekin \\
+    190 & D8 & junaha he nuro \\
+    191 & D9 & junaha he nata \\
+    192 & DA & junaha he mumo \\
+    193 & DB & junahesan o tortu \\
+    194 & DC & junaha he narpa \\
+    195 & DD & junaha he are \\
+    196 & 100 & junaha \\
+\end{longtabu}
+
+The multiples of 196, up to $14^3$, are as follows:
+
+\begin{longtabu}[c]{|r|r|X|}
+    \caption{Multiples of 196.}
+    \centering
+    
+    \\ \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    196 & 100 & junaha \\
+    392 & 200 & tarjuu \\
+    588 & 300 & hapaju \\
+    784 & 400 & pumoju \\
+    980 & 500 & jasiju \\
+    1176 & 600 & surjuu \\
+    1372 & 700 & ekinuu \\
+    1568 & 800 & akisiju \\
+    1764 & 900 & sisneju \\
+    1960 & A00 & kursuju \\
+    2156 & B00 & tortaju \\
+    2352 & C00 & juronuu \\
+    2548 & D00 & mantaju \\
+    2744 & 1000 & mahervu \\
+\end{longtabu}
+
+Thus, a number $a \times 196 + b$ is expressed as \ortho{$a \times 196$ o $b$}, with the following exceptions:
+
+\begin{longtabu}[c]{|r|r|X|}
+    \caption{Terms for $14^3 - 14 \le n \le 14^3 - 1$.}
+    \centering
+    
+    \\ \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \# (10) & \# (14) & \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    2730 & DD0 & mahervu he nanpa \\
+    2731 & DD1 & mahervu he mantu \\
+    2732 & DD2 & mahervu he nanpa o juron \\
+    2733 & DD3 & mahervu he nortu \\
+    2734 & DD4 & mahervu he ursu \\
+    2735 & DD5 & mahervu he nisne \\
+    2736 & DD6 & mahervu he nakis \\
+    2737 & DD7 & mahervu he nekin \\
+    2738 & DD8 & mahervu he nuro \\
+    2739 & DD9 & mahervu he nata \\
+    2740 & DDA & mahervu he mumo \\
+    2741 & DDB & mahervu he nanpa o tortu \\
+    2742 & DDC & mahervu he narpa \\
+    2743 & DDD & mahervu he are \\
+\end{longtabu}
+
+\chapter{Names}
+
+Kavinan distinguishes \emph{nominal} and \emph{non-nominal} names. Nominal names include the following:
+
+\begin{itemize}
+    \item native surnames
+    \item some native place names
+    \item names of native holidays
+\end{itemize}
+
+Non-nominal names include the following:
+
+\begin{itemize}
+    \item given names
+    \item all foreign names
+\end{itemize}
+
+The particle \ortho{voo} (or \ortho{moo} with nasal mutation) is often used before names.
+
+\begin{table}[h]
+    \caption{Usage in situations where names are employed.}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Role of name & Native & Non-native \\
+        \hline
+        Vocative & \multicolumn{2}{c|}{As-is} \\
+        \hline
+        Object of \ortho{rii} & As-is & As-is and drop verb \\
+        \hline
+        Object of preposition & As-is & Use \ortho{voo} \\
+        \hline
+        All other cases & \multicolumn{2}{c|}{Use \ortho{voo}} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\end{document}
+

@@ -1,0 +1,1119 @@
+\documentclass{book}
+
+\usepackage[usenames, dvipsnames, table]{xcolor}
+\usepackage{amsmath, amssymb}
+%\usepackage{fontspec}
+\usepackage{mathspec}
+%\usepackage{gb4e}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{hacm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usetikzlibrary{shapes.misc, positioning, calc}
+\usepackage{hyperref}
+
+% Font settings
+
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+\setmainfont[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
+\setmathrm[Path=./fonts/]{GENTIUMPLUS-R.TTF}
+\setmathsf[Path=./fonts/]{VL-PGothic-Regular.ttf}
+
+% Title styles
+
+\newcommand{\hprule}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.3pt}}}
+\titleformat{\chapter}
+[hang]
+{\huge\sffamily}
+{
+    \textcolor{Purple}{\thechapter}
+}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }\textcolor{DarkOrchid}
+}
+[
+    \vspace{0ex}
+    {
+        \color{YellowGreen}
+        \hprule
+    }
+]
+\titleformat{\section}
+[hang]
+{\large\sffamily}
+{\textcolor{OliveGreen}{\thesection}}
+{0.5ex}{
+    \textcolor{Turquoise}{ | }
+}
+\titleformat{\subsection}
+[hang]
+{\sffamily}
+{\textcolor{RawSienna}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }
+}
+\titleformat{\subsubsection}
+[hang]
+{\sffamily}
+{\textcolor{SkyBlue}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ → }
+}
+
+% Macros
+
+\definecolor{DarkCerulean}{HTML}{099CD6}
+\definecolor{UruwiGreen}{HTML}{107008}
+
+\newcommand{\sstay}{$\pm$}
+\newcommand{\sshift}{$\ge$}
+\newcommand{\sshiftp}{$\vartriangleright$}
+\newcommand{\sshiftu}{$\blacktriangleright$}
+\newcommand{\tl}{\char`~}
+\newcommand{\here}{$\blacklozenge$}
+\newcommand{\ortho}[1]{⟨#1⟩}
+\newcommand{\hortho}[1]{⟨\textkardinal{#1}⟩}
+\newcommand{\wrong}[1]{\textcolor{OrangeRed}{*\ortho{#1}}}
+\newcommand{\ul}[1]{\underline{\smash{#1}}}
+\newcommand{\invalid}{\cellcolor{RedOrange!40}}
+\newcommand{\bs}{\textbackslash}
+\newcommand{\tsc}{\textsc}
+\newcommand{\formal}{$\blacklozenge$}
+\newcommand{\informal}{$\triangledown$}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\void}[1]{}
+\renewcommand{\^}{\textsuperscript}
+
+\makeatletter
+\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+\makeatother
+
+\newcommand{\hli}[1]{\textcolor{Plum}{#1}}
+\newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
+\newcommand{\hliii}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\hliv}[1]{\textcolor{RubineRed}{#1}}
+\newcommand{\hlv}[1]{\textcolor{Bittersweet}{#1}}
+\newcommand{\hlvi}[1]{\textcolor{PineGreen}{#1}}
+\newcommand{\hlvii}[1]{\textcolor{MidnightBlue}{#1}}
+\newcommand{\hlviii}[1]{\textcolor{RedOrange}{#1}}
+\newcommand{\hlix}[1]{\textcolor{Sepia}{#1}}
+
+\newif{\ifiamascrubandineedaromanisedversion}
+
+\iamascrubandineedaromanisedversionfalse
+
+\ifiamascrubandineedaromanisedversion
+    \renewcommand{\textkardinal}{\textrm}
+    \renewcommand{\kardinal}{\rmfamily}
+\fi
+
+\newcommand{\lname}{aaaaaaaaaaA}
+
+% Link styles
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+% TikZ declarations
+
+\tikzset{
+    auto,
+    % bend angle=45,
+    stem/.style={rectangle, draw=Orange, fill=Orange!10, very thick, minimum size=10mm, node distance=3mm, align=center, font=\strut},
+    requiredAffix/.style={stem, draw=ProcessBlue, fill=ProcessBlue!10, thick},
+    optionalAffix/.style={requiredAffix, rounded corners=8pt},
+    repeatedAffix/.style={optionalAffix, draw=LimeGreen, fill=LimeGreen!15},
+    arrow/.style={->, thick},
+    border/.style={dotted, draw=Cerulean}
+}
+
+\title{lek-\bs{}tsaro-ma sil lek-ma sil se\^otxe-\bs{}ri\^umako}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{Thistle!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        {\Huge \kardinal \textcolor{Plum}{\@title}\\}
+        %{\large \sffamily \textcolor{Purple}{\@title} \\}
+        {\large \textit{\lname}, the language of \textit{Rỳmako} \\}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        \textkardinal{aaaaaaaaaaaaaaaaa} \\
+        {aaaaaaaaaaaaaaaaa} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{Thistle!15}
+
+\begin{center}
+    \textit{Dedicated to Isoraķatheð.}
+\end{center}
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Phoneme inventory}
+
+\begin{table}[h]
+    \caption{The consonants of \lname.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        & Bilabial & Alveolar & Palatal & Velar & Glottal \\
+        \hline
+        Nasal & m & n & ɲ & ŋ & \invalid \\
+        Plosive & p b & t d & c ɟ & k ɡ & ʔ \\
+        Fricative & f & s & ʃ & x & \\
+        (coarticulated) & θx & fx & & fʃ & \invalid \\
+        Affricate & & ts & tʃ & & \\
+        Lateral fricative & \invalid & ɬ & & & \invalid \\
+        Approximant & & ɹ & j & w & \\
+        Lateral approximant & \invalid & l & & & \invalid \\
+        Trill & & r & & \invalid & \invalid \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+    \caption{The vowels of \lname.}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Spread & Half-rounded & Rounded \\
+        \hline
+        i & y̜  & y \\
+        ɯ & u̜ & u \\
+        ɛ & & œ \\
+        ʌ & & ɔ \\
+        ä & & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In addition to consonants and vowels, \lname{} has rod signals, represented by numbers. Rod A is blue and held by one's dominant hand and B is red and held by one's non-dominant hand.
+
+\begin{enumerate}
+    \item Rod A is raised to one's chest, while B is pointed down.
+    \item Rods A and B are crossed in the front.
+    \item Rod B is raised upwards in front of the nondominant arm, while rod A is lowered.
+    \item Rod A is pointed sideways near one's nondominant arm, while rod B is lowered.
+    \item Rods A and B are extended to the sides.
+    \item Rods A and B are extended, facing forward.
+    \item Rod A is raised forward, while B is pointed to the side.
+    \item Rod B is raised forward, while A is pointed to the side.
+\end{enumerate}
+
+Lowering both rods is interpreted as an absence of a rod signal.
+
+If the use of rods are unavailable, the numerals of the positions may be pronounced.
+
+\section{Hacmisation}
+
+\lname{} uses the hacm script with superscript letters to indicate phonemes not found in Arka. The transcriptions can be found in Tables \ref{table:hcons} and \ref{table:hvows}.
+
+\begin{table}[h]
+    \caption{The consonants of \lname. \label{table:hcons}}
+    \centering
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        & \textrm{Bilabial} & \textrm{Alveolar} & \textrm{Palatal} & \textrm{Velar} & \textrm{Glottal} \\
+        \hline
+        Nasal & m & n & n\^y & n\^g & \invalid \\
+        Plosive & p b & t d & t\^y d\^y & k g & . \\
+        Fricative & f & s & x & h & \\
+        (coarticulated) & s\^h & f\^h & & f\^x & \invalid \\
+        Affricate & & ts & tx & & \\
+        Lateral fricative & \invalid & j & & & \invalid \\
+        Approximant & & r & y & w & \\
+        Lateral approximant & \invalid & l & & & \invalid \\
+        Trill & & c & & \invalid & \invalid \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+    \caption{The vowels of \lname. \label{table:hvows}}
+    \begin{tabular}{|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        \textrm{Spread} & \textrm{Half-rounded} & \textrm{Rounded} \\
+        \hline
+        i & i\^u & i\^o \\
+        u\^i & u & u\^o \\
+        e & & e\^o \\
+        o\^e & & o \\
+        a & & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Rod signs are represented by the hacm digits \hortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Proper words are preceded by a backslash \hortho{\bs{}}.
+
+Vowels that are inferrable from context are sometimes omitted. For example, /ɹɛfan/ (to speak) is written \hortho{refn}, but /ɹɛfin/ (to spread), which is less common, is written \hortho{refin}, with the second vowel. Most of this grammar will leave all vowels written.
+
+\section{Phonotactics}
+
+An onset consists of one of the following:
+
+\begin{itemize}
+    \item any single consonant other than /l/ (the one exception is \hortho{lek} [lɛk],
+    \item any obstruent followed by an approximant other than /l/,
+    \item or any plosive followed by /r/.
+\end{itemize}
+
+A nucleus consists of one vowel.
+
+A coda consists of one of the following:
+
+\begin{itemize}
+    \item nothing,
+    \item a nasal,
+    \item a voiceless plosive (excluding /ʔ/),
+    \item /ɹ/, /s/ or /l/
+\end{itemize}
+
+\section{Vowel harmony}
+
+For the purposes of vowel harmony, vowels are divided into front and back vowels. /a/ is neutral. A root with neither front nor back vowels acts as if it has front vowels.
+
+\chapter{Syntax}
+
+\section{Basic word order}
+
+The basic word order is VSO. Descriptors follow what they modify.
+
+\section{Questions}
+
+Binary questions have the interrogative polarity marker and no change to syntax.
+
+In wh-questions, the wh-word is pulled to the front (i.~e. before the verb). This requires case marking for the wh-word: \\
+~\\
+\textkardinal{\hli{txen} \hlii{refi\^usha} \hliii{ni\^o?}} \\
+\hli{who-\tsc{acc}} \hlii{speak-\tsc{far.past}-\tsc{q}} \hliii{\tsc{pr.far.sg}} \\
+\hli{Whom} \hlii{did} \hliii{you} \hlii{speak to?} \\
+
+This applies only to questions, not interrogative-mood clauses that act as relative clauses: \\
+~\\
+\textkardinal{\hli{refi\^usha} \hlii{ni\^o} \hliii{txel,} \hliv{yat} \hlv{ro.}} \\
+\hli{speak-\tsc{far.past}-\tsc{q}} \hlii{\tsc{pr.far.sg}} \hliii{who,} \hliv{see-\tsc{near.past}} \hlv{\tsc{pr.anaph\_obj.int}} \\
+\hliv{I saw} \hlv{the person} \hliii{whom} \hlii{you} \hli{talked to}.
+
+\section{Multiple clauses}
+
+A sentence might have multiple clauses. Each clause in a sentence follows the basic VSO order, and clauses are separated with commas.
+
+\chapter{Nouns}
+
+Nouns are declined for number, case and definiteness.
+
+\section{Number}
+
+\lname{} has many grammatical numbers:
+
+\begin{table}[h]
+    \centering
+    \caption{The discrete grammatical numbers of \lname.}
+    \label{table:gnumbers}
+    \begin{tabular}{|l|l|}
+        \hline
+        Number & Constraint on $x \in \mathbb{Z}$ \\
+        \hline
+        Integral & none \\
+        Nullary & $x = 0$ \\
+        Singular & $|x| = 1$ \\
+        Dual & $|x| = 2$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{The continuous grammatical numbers of \lname.}
+    \label{table:gnumbersc}
+    \begin{tabular}{|l|l|}
+        \hline
+        Number & Constraint on $x \in \mathbb{R}$ \\
+        \hline
+        Nullary & $x = 0$ \\
+        Subsingular & $|x| < 1$ \\
+        Supersingular & $1 \le |x| < 2$ \\
+        Plural & $|x| \ge 2$ or $x$ is unknown \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Case}
+
+In a clause with both the subject and object directly expressed in that order, both the subject and object are declined in the nominative case (and their roles are inferred through word order). In a clause where only one is present, or where both are expressed in the opposite order, the subject will receive the nominative case and the object will receive the accusative case.
+
+\section{Noun classes}
+
+There are three overarching groups of noun classes.
+
+\subsection{Countable}
+
+Nouns in these classes are declined for a discrete number.
+
+\begin{enumerate}
+    \item Sentient -- such as humans, AIs, deities.
+    \item Animate -- nonsentient animals.
+    \item Inanimate -- anything else.
+\end{enumerate}
+
+\subsection{Measurable}
+
+Nouns in this class are declined for a continuous number.
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Measure -- all measurable nouns, especially units of measurement.
+\end{enumerate}
+
+\subsection{Uncountable}
+
+Nouns in these classes are not declined for number, and require compounding with a countable or measurable noun in order to be quantified.
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item Fluid -- liquids and gases.
+    \item Edible -- edible (to humans) non-fluids.
+    \item Inedible -- inedible (to humans) non-fluids.
+    \item Abstract -- abstract ideas.
+\end{enumerate}
+
+\section{Definiteness}
+
+The definite form of a noun is formed regularly by reduplicating the first syllable (without the coda): \hortho{masas} ``a person'' becomes \hortho{mamasas} ``the person''.
+
+\section{Declension table}
+
+\subsection{Countable classes}
+
+Note that noun declensions respect vowel harmony. For nouns with back vowels, replace the front vowels with the back vowels of the same height and rounding, and vice versa.
+
+\newcommand{\overcol}{& \textrm{Integral} & \textrm{Nullary} & \textrm{Singular} & \textrm{Dual}}
+\begin{longtabu}{|r|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+    \caption{Declensions for countable nouns. \label{table:ndecc}} \\
+    
+    \hline
+    \overcol \\
+    \endfirsthead
+    
+    \hline
+    \overcol \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Sentient: \hortho{masa} ``person''}} \\
+    \hline
+    Nominative & masa & masake & masas & masal \\
+    Accusative & masan & masan\^gke & masanis & masanal \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Sentient: \hortho{s\^ha.en} ``magician''}} \\
+    \hline
+    Nominative & s\^ha.en & s\^ha.ete & s\^ha.es & s\^ha.el \\
+    Accusative & s\^ha.erin & s\^ha.en\^gke & s\^ha.eris & s\^ha.eril \\
+    \hline
+    \multicolumn{5}{|p{\linewidth}|}{(Note that the final consonant is preserved only in the integral nominative form.)} \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Animate: \hortho{mun\^go} ``rabbit''}} \\
+    \hline
+    Nominative & mun\^go & mun\^goko\^e & mun\^gos & mun\^go.u\^i \\
+    Accusative & mun\^gon & mun\^gonto\^e & mun\^gon & mun\^gonu\^i \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Animate: \hortho{si\^ul} ``fox''}} \\
+    \hline
+    Nominative & si\^ul & si\^ute & si\^us & si\^u.i \\
+    Accusative & si\^urin & si\^un\^gke & si\^uris & si\^uri \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Inanimate: \hortho{hacu\^o} ``statue''}} \\
+    \hline
+    Nominative & hacu\^o & hacu\^oko\^e & hacu\^ok & hacu\^os \\
+    Accusative & hacu\^om & hacu\^ompo\^e & hacu\^opo\^e & hacu\^ofu\^i \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Inanimate: \hortho{.imen} ``house''}} \\
+    \hline
+    Nominative & .imen & .imete & .imek & .imes \\
+    Accusative & .imerim & .imerimpe & .imeripe & .imerifi \\
+\end{longtabu}
+
+\subsection{Measurable classes}
+
+\newcommand{\overcolm}{& \textrm{Plural} & \textrm{Nullary} & \textrm{Subingular} & \textrm{Supersingular}}
+\begin{longtabu}{|r|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+    \caption{Declensions for measurable nouns. \label{table:ndecm}} \\
+    
+    \hline
+    \overcolm \\
+    \endfirsthead
+    
+    \hline
+    \overcolm \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hline
+    \multicolumn{5}{|p{\linewidth}|}{\textrm{Measure: \hortho{rumu\^i} ``day\^{continuous}''}} \\
+    \hline
+    Nominative & rumu\^i & rumu\^iru\^o & rumu\^it & rumu\^in \\
+    Accusative & rumu\^in & rumu\^iru\^on & rumu\^into\^e & rumu\^inu\^in \\
+    \hline
+    \multicolumn{5}{|l|}{\textrm{Measure: \hortho{mel} ``volume'' (in expressions such as \hortho{mel-yuso\^e} ``cupful'')}} \\
+    \hline
+    Nominative & mel & meri\^o & merit & merin \\
+    Accusative & merin & meri\^on & merinte & merinin \\
+    \hline
+    \multicolumn{5}{|p{\linewidth}|}{(Note that the final consonant is preserved only in the plural nominative form.)} \\
+\end{longtabu}
+
+\subsection{Uncountable classes}
+
+Notably, uncountable-class noun declensions do not respect vowel harmony.
+
+\newcommand{\overcolu}{& \textrm{Mass}}
+\begin{longtabu}{|r|>{\kardinal}l|}
+    \caption{Declensions for measurable nouns. \label{table:ndecu}} \\
+    
+    \hline
+    \overcolu \\
+    \endfirsthead
+    
+    \hline
+    \overcolu \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Fluid: \hortho{f\^xuru\^o} ``water''}} \\
+    \hline
+    Nominative & f\^uru\^o \\
+    Accusative & f\^uru\^on \\
+    \hline
+    \multicolumn{2}{|l|}{\textrm{Fluid: \hortho{dekem} ``nitrogen''}} \\
+    \hline
+    Nominative & dekem \\
+    Accusative & dekemin \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{(Here, the coda is preserved in the accusative as well.)} \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Edible: \hortho{ter.i\^o} ``beef''}} \\
+    \hline
+    Nominative & ter.i\^o \\
+    Accusative & ter.i\^on \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Edible: \hortho{man} ``rice''}} \\
+    \hline
+    Nominative & man \\
+    Accusative & manin \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Inedible: \hortho{ru\^oto} ``gold''}} \\
+    \hline
+    Nominative & ru\^oto \\
+    Accusative & ru\^otobe \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Inedible: \hortho{kacas} ``stone''}} \\
+    \hline
+    Nominative & kacas \\
+    Accusative & kacaspe \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Abstract: \hortho{f\^hu\^omo} ``empathy''}} \\
+    \hline
+    Nominative & f\^hu\^omo \\
+    Accusative & f\^hu\^omon\^g \\
+    \hline
+    \multicolumn{2}{|p{\linewidth}|}{\textrm{Abstract: \hortho{gis} ``[the number] five''}} \\
+    \hline
+    Nominative & gis \\
+    Accusative & gisin\^g \\
+\end{longtabu}
+
+\section{Pronouns}
+
+Personal pronouns are not divided into first, second and third persons as in most languages. Instead, they fall into four categories which exhibit different behaviour depending on whether they occur as the first or second noun in the clause:
+
+\begin{table}[h]
+    \caption{Pronoun persons and their functions.}
+    \centering
+    \begin{tabu} to \textwidth {|l|l|X|}
+        \hline
+        Person & Role in first position & Role in second position \\
+        \hline
+        Near & The speaker. & The first argument of the sentence. \\
+        Far & The listener. & If the first argument is the speaker, then the listener. Otherwise, the speaker. \\
+        Other & A third entity. & An entity that is neither the speaker, the listener nor the first argument. \\
+        Generic & A generic entity (akin to ``one''). & \invalid \\
+        \hline
+        Anaphoric Subject & \multicolumn{2}{l|}{The subject of the previous clause.} \\
+        Anaphoric Object & \multicolumn{2}{l|}{The object of the previous clause.} \\
+        \hline
+    \end{tabu}
+\end{table}
+
+In wh-questions, the wh-word assumes the second position and the other argument becomes the first.
+
+If a clause has no explicit arguments, the first argument is understood to be the subject.
+
+\begin{table}[h]
+    \caption{Personal pronouns. \hortho{-n} is suffixed for the accusative case.}
+    \centering
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        (continuous) & \textrm{Pl. / Sub. / Sup.} & \textrm{Nullary} & \invalid & \invalid \\
+        (discrete) & \textrm{Integral} & \textrm{Nullary} & \textrm{Singular} & \textrm{Dual} \\
+        \hline
+        Near & ta & keta & me & firi \\
+        Far & po & ko\^epo & nu\^i & bra \\
+        Other & ni & keni & ji\^o & kari \\
+        Anaph. Sub. & ra & kera & .im & n\^giri \\
+        Anaph. Obj. & ro & ko\^ero & .u\^im & n\^gu\^iro \\
+        \hline
+        Generic & \multicolumn{4}{>{\kardinal}c|}{.u\^o} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+(For the observant readers: notice the similarity to Kavinan's system.)
+
+\subsection{Last-clause pronouns}
+
+The anaphoric pronoun \hortho{bes} (accusative: \hortho{besen}) is grammatically an other pronoun, and it refers to the previous clause said. Likewise, \hortho{bepis} (accusative: \hortho{bepin}) refers to the clause before the previous one.
+
+\section{Compounding}
+
+Nouns can be compounded together in a head-initial manner. When that happens, only the leftmost noun is the one to be declined. \\
+~\\
+\textkardinal{\hli{mel-}\hlii{ruso\^e-}\hliii{f\^xuru\^o-}\hliv{gis}} \\
+\hli{volume-}\hlii{cup-}\hliii{water-}\hliv{five} \\
+\hliv{five} \hlii{cup}\hli{fuls} \hliii{of water}
+
+Note that integral pronouns can modify other nouns, in which personal possession is indicated: \\
+~\\
+\textkardinal{\hli{mel-}\hlii{ruso\^e-}\hliii{f\^xuru\^o-}\hliv{gis-}\hlv{ta}} \\
+\hli{volume-}\hlii{cup-}\hliii{water-}\hliv{five}-\hlv{\tsc{pr}.\tsc{near}.\tsc{integral}} \\
+\hlv{(arg1)'s} \hliv{five} \hlii{cup}\hli{fuls} \hliii{of water} \\
+
+Descriptors can also compound on nouns. This compounding is productive in \lname. \\
+~\\
+\textkardinal{\hli{masa-}\hlii{ku\^ota}} \\
+\hli{person-}\hlii{old} \\
+\hlii{old} \hli{people} \\
+(Compare to \textkardinal{masa ku\^ota} ``person old-\tsc{sentient}''.)
+
+\section{Possession}
+
+``X's Y'' is translated as \hortho{\textrm{Y=}ma sil \textrm{X}}. The possessive construction is also used to create appositives.
+
+Observe that possession marks the head, and \hortho{-ma} is a clitic, not an affix, as in the following example: \\
+~\\
+\textkardinal{\hli{mumun\^gos-f\^xuru\^o}\hliv{-ma} \hlii{sil} \hliii{s\^ha.es}} \\
+\hli{\tsc{def}\tl{}rabbit-\tsc{sing}-water}\hliv{=\tsc{gen}} \hlii{\tsc{pos}} \hliii{magician-\tsc{sing}} \\
+\hliii{the magician}\hliv{'s} \hli{water rabbit}
+
+In more casual speech, \hortho{sil} may be dropped.
+
+\chapter{Verbs}
+
+Verbs are conjugated for person of the subject, tense, polarity and tellicity, in two paradigms. Conjugation respects vowel harmony.
+
+\begin{table}[h]
+    \centering
+    \caption{Person-tense conjugations for verbs, using \hortho{makan} ``(S) eats (O)''.}
+    \label{table:conjperstens}
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        & \textrm{Nonpast} & \textrm{Past} \\
+        \hline
+        Near & makan & makat \\
+        Far & makan & maki\^us \\
+        Other & maka & maki\^u \\
+        Anaph. Sub. & make & makel \\
+        Anaph. Obj. & maki.e & maki.el \\
+        Generic & maki\^o & maki\^o \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+    \centering
+    \caption{Person-tense conjugations for verbs, using \hortho{refin} ``(S) spreads (O)''.}
+    \label{table:conjperstensb}
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        & \textrm{Nonpast} & \textrm{Past} \\
+        \hline
+        Near & refin & refit \\
+        Far & refan & refi\^us \\
+        Other & refa & refi\^u \\
+        Anaph. Sub. & refe & refel \\
+        Anaph. Obj. & refi.e & refi.el \\
+        Generic & refi\^u & refi\^u \\
+        \hline
+    \end{tabular}
+\end{table}
+
+to which a suffix is added:
+
+\begin{table}[h]
+    \centering
+    \caption{Polarity-tellicity suffixes for verbs.}
+    \label{table:conjpoltell}
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        & \textrm{Positive} & \textrm{Negative} & \textrm{Interrogative} \\
+        \hline
+        Telic & -∅ & -ke / -ko\^e & -ha \\
+        Atelic & -mi / -mu\^i & -sa & -xi\^u / -xu \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Notes:
+
+\begin{itemize}
+    \item ``Negative atelic'' means something akin to ``unsuccessfully tried to avoid doing X''.
+    \item The interrogative polarity, in addition to marking questions, is used to mark clauses that may or may not be true but are referred to later in the sentence.
+\end{itemize}
+
+Some examples: \\
+~\\
+\textkardinal{\hli{makan} \hlii{jace} \hliii{txoro.}} \\
+\hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower} \\
+\hlii{Fish} \hli{eat} \hliii{flowers.} \\
+~\\
+\textkardinal{\hli{makan} \hlii{jace} \hliii{txoro,} \hliv{makan} \hlv{nyara} \hlvi{ra}.} \\
+\hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower,} \hliv{eat-\tsc{near}.\tsc{nonpast}} \hlv{cat} \hlvi{\tsc{pr}.\tsc{anaph\_sub}} \\
+\hlii{Fish} \hli{eat} \hliii{flowers, and} \hlv{cats} \hliv{eat} \hlvi{fish.} \\
+~\\
+\textkardinal{\hli{makan} \hlii{jace} \hliii{txoro,} \hliv{make} \hlv{ratabe}.} \\
+\hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower,} \hliv{eat-\tsc{anaph\_sub}.\tsc{nonpast}} \hlv{grass-\tsc{acc}} \\
+\hlii{Fish} \hli{eat} \hliii{flowers, and} \hliv{they eat} \hlv{grass.} \\
+(Grass is inedible to humans, but edible to fish.) \\
+~\\
+\textkardinal{\hli{makan}\hliv{ke} \hlii{txoro} \hliii{jace.}} \\
+\hli{eat-\tsc{near}.\tsc{nonpast}-}\hliv{\tsc{neg}} \hlii{flower} \hliii{fish} \\
+\hlii{Flowers} \hliv{don't} \hli{eat} \hliii{fish.} \\
+~\\
+\textkardinal{\hli{pra} \hlii{ji\^o} \hliii{hrihridek,} \hliv{senan} \hlv{ta} \hlvi{bes.}} \\
+\hli{carry-\tsc{other}.\tsc{nonpast}} \hlii{\tsc{pr.other.sg}} \hliii{\tsc{def}\tl{book}-\tsc{sg},} \hliv{worry-\tsc{near}.\tsc{nonpast}} \hlv{\tsc{pr.near.int}} \hlvi{\tsc{pr.last\_clause}} \\
+\hlii{He} \hli{has} \hliii{the book;} \hlvi{that} \hliv{worries} \hlv{me.} \\
+or: \hlvi{That} \hlii{he} \hli{has} \hliii{the book} \hliv{worries} \hlv{me.} \\
+~\\
+\textkardinal{\hli{praha} \hlii{ji\^o} \hliii{hrihridek,} \hliv{senan} \hlv{ta} \hlvi{bes.}} \\
+\hli{carry-\tsc{other}.\tsc{nonpast}-\tsc{interrogative}} \hlii{\tsc{pr.other.sg}} \hliii{\tsc{def}\tl{book}-\tsc{sg},} \hliv{worry-\tsc{near}.\tsc{nonpast}} \hlv{\tsc{pr.near.int}} \hlvi{\tsc{pr.last\_clause}} \\
+\hlii{He} \hli{might have} \hliii{the book;} \hlvi{that} \hliv{worries} \hlv{me.} \\
+or: \hlvi{That} \hlii{he} \hli{might have} \hliii{the book} \hliv{worries} \hlv{me.}
+
+\section{Aspect}
+
+Verbs can also be marked for aspect, either using a rod sign directly on the verb, or a particle with a rod sign, placed anywhere between the verb it modifies and the next verb.
+
+\begin{longtabu} to \linewidth {|l|>{\kardinal}l|X|}
+    \caption{Aspect markers. Those with hyphens are attached to verb. Those without hyphens are placed as separate particles anywhere after the verb. \label{table:aspects}} \\
+    
+    \hline
+    Aspect name & \textrm{Marking} & Meaning \\
+    \endfirsthead
+    
+    \hline
+    Aspect name & \textrm{Marking} & Meaning \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hline
+    Imperfect & -1 & An action that is currently going on. Also used to distinguish static actions as opposed to dynamic (e.~g. \emph{wear} as opposed to \emph{put on}). \\
+    Interrupted & txil1 & An action that was interrupted. \\
+    Perfect & -2 & An action that has already finished. Changes present tense to immediate past. Also used to distinguish dynamic actions as opposed to static (e.~g. \emph{put on} as opposed to \emph{wear}). \\
+    Gnomic & -3 & A general truth or aphorism, or an action done habitually. \\
+    Gnomic dubitative & txil3 & A general truth or aphorism that the speaker considers to be false. \\
+    Deontic necessity & -4 & An action that the speaker insists on happening. \\
+    Epistemic necessity & ku\^im4 & An action that the speaker infers that is happening. \\
+    Deontic potential & -5 & An action that the speaker permits to occur. \\
+    Epistemic potential & ku\^im5 & An action that the speaker infers that might happen. \\
+    Unexpected & -6 & An action that is unexpected (akin to using ``but''). \\
+\end{longtabu}
+
+An example: \\
+~\\
+\textkardinal{\hli{txalkatmi1} \hlii{me} \hliii{ni,} \hliv{xini.el6} \hlv{pun\^gapo\^e-ra.}} \\
+\hli{fight-\tsc{near.past}-\tsc{atelic}-\tsc{imperfect}} \hlii{\tsc{pr.near.sg}} \hliii{\tsc{pr.other.int},} \hliv{shoot-\tsc{anaph\_obj.past}-\tsc{unexpected}} \hlv{knee-\tsc{sg.acc}-\tsc{pr.anaph\_sub.int}} \\
+\hlii{I} \hli{tried to fight} \hliii{them,} \hliv{but they shot} \hlv{my knee.}
+
+\section{Obliques}
+
+\lname{} lacks oblique arguments. Instead, equivalent expressions employ serial verb constructions. For instance, ``he ate soup with a spoon'' would be reduced to ``he held a spoon and ate soup'': \\
+~\\
+\textkardinal{\hli{pri\^u} \hlii{ji\^o} \hliii{fo\^eko\^ek,} \hliv{makel} \hlv{japsin.}} \\
+\hli{\tsc{inst}-\tsc{other.past}} \hlii{\tsc{pr.other.sg}} \hliii{spoon-\tsc{sg}}, \hliv{eat-\tsc{anaph\_sub.past}} \hlv{soup-\tsc{acc}} \\
+\hlii{He} \hli{held} \hliii{a spoon} \hliv{and ate} \hlv{soup.} \\
+or: \hlii{He} \hliv{ate} \hlv{soup} \hli{with} \hliii{a spoon.} \\
+
+Likewise: \\
+~\\
+\textkardinal{\hli{na.a} \hlii{ni} \hliii{susuk-ha.ar,} \hliv{nime} \hlv{hahacu\^opo\^e.}} \\
+\hli{\tsc{temporal}-\tsc{other}} \hlii{\tsc{pr.other.int}} \hliii{\tsc{def}\tl{day}-\tsc{sg}-spring,} \hliv{dance-\tsc{anaph\_sub}} \hlv{\tsc{def}\tl{statue}-\tsc{sg.acc}} \\
+\hlii{They} \hli{will wait until} \hliii{the spring equinox} \hliv{and dance around} \hlv{the statue.} \\
+or: \hlii{They} \hliv{will dance around} \hlv{the statue} \hli{on} \hliii{the spring equinox.} \\
+
+A similar construction can be used for the inversion of obliques: \\
+~\\
+\textkardinal{\hli{pri\^uke} \hlii{ji\^o} \hliii{fo\^eko\^ek,} \hliv{makel6} \hlv{japsin.}} \\
+\hli{\tsc{inst}-\tsc{other.past}-\tsc{neg}} \hlii{\tsc{pr.other.sg}} \hliii{spoon-\tsc{sg}}, \hliv{eat-\tsc{anaph\_sub.past}-\tsc{unexpected}} \hlv{soup-\tsc{acc}} \\
+\hlii{He} \hli{did not hold} \hliii{a spoon,} \hliv{but ate} \hlv{soup.} \\
+or: \hlii{He} \hliv{ate} \hlv{soup} \hli{without} \hliii{a spoon.} \\
+
+\section{Conjunctions}
+
+\label{sec:conjunctions}
+
+Conjunctions such as ``and'' are treated like obliques. For instance, ``and'' is represented by the verb \hortho{fin}, and precedes the clause in which the two are used: \\
+~\\
+\textkardinal{\hli{fi\^u} \hlii{\bs{ri\^use}} \hliii{\bs{tarul},} \hliv{makel} \hlv{ter.i\^on.}} \\
+\hli{and-\tsc{other.past}} \hlii{Ri\^use} \hliii{Tarul,} \hliv{eat-\tsc{anaph\_sub.past}} \hlv{beef-\tsc{acc}} \\
+\hlii{Ri\^use} \hli{and} \hliii{Tarul} \hliv{ate} \hlv{beef.} \\
+
+Sufficiently complex nesting may be unrepresentable using only anaphoric referents. The easiest way to resolve this issue is to use definite nouns in place of anaphoric referents. \\
+~\\
+\textkardinal{\hli{fi\^u} \hlii{\bs{ri\^use}} \hliii{\bs{tarul}}, \hliv{fi\^u} \hlv{ter.i\^o} \hlvi{japsi,} \hlvii{maki\^u} \hlviii{mamasal} \hlix{ra.}} \\
+\hli{and-\tsc{other.past}} \hlii{Ri\^use} \hliii{Tarul,} \hliv{and-\tsc{other.past}} \hlv{beef} \hlvi{soup,} \hlvii{eat-\tsc{other.past}} \hlviii{\tsc{def}\tl{}person-\tsc{du}} \hlix{\tsc{pr.anaph\_sub.cont}} \\
+\hlviii{[They,]} \hlii{Ri\^use} \hli{and} \hliii{Tarul} \hlvii{ate} \hlv{beef} \hliv{and} \hlvi{soup.}
+
+\chapter{Descriptors}
+
+Descriptors act as adjectives or adverbs. They follow what they modify, and are inflected for the noun class or verbal person of their antecedents.
+
+\begin{table}[h]
+    \centering
+    \caption{Descriptor declensions, using the descriptors \hortho{hemta} ``large'' and \hortho{ku\^ota} ``old''.}
+    \label{table:ddecl}
+    \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+        \hline
+        Class or person & \multicolumn{2}{l|}{Declined form} \\
+        \hline
+        Sentient & hemta & ku\^ota \\
+        Animate & hemta & ku\^ota \\
+        Inanimate & hemte & ku\^oto\^e \\
+        Measure & hemtas & ku\^otas \\
+        Fluid & hemtes & ku\^oto\^es \\
+        Edible & hemti & ku\^otu\^i \\
+        Inedible & hemte\^o & ku\^oto \\
+        Abstract & hemti\^u & ku\^otu \\
+        \hline
+        Near & hemtar & ku\^otar \\
+        Far & hemtar & ku\^otar \\
+        Other & hemter & ku\^oter \\
+        Anaph. Sub. & hemtar & ku\^otar \\
+        Anaph. Obj. & hemter & ku\^oter \\
+        Generic & hemti\^or & ku\^otu\^or \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Conversion}
+
+A noun can be converted to a descriptor by appending \hortho{-sa}.
+
+A descriptor can be converted to an abstract noun meaning ``the nature of being \tl'' by replacing the final \hortho{-a} with \hortho{-inel}.
+
+\chapter{Tree mode}
+
+As mentioned in section \ref{sec:conjunctions}, anaphoric referents in a linked-list sentence are sometimes insufficient for expressing even simple sentence structures. While the easiest method of resolving this issue is using definite nouns, \lname{} also provides a mode where sentences are not linked lists of clauses, but rather (binary) trees.
+
+\section{Activation}
+
+Tree mode is enabled automatically when the treeing particle \hortho{n\^ya7} is used, and disabled at the end of a sentence.
+
+\section{Branch-switching}
+
+The aforementioned particle \hortho{n\^ya7} marks the beginning of the right branch of the tree. The right branch is ended by the particle \hortho{n\^ya8}, which causes the next clause to join the left and right branches.
+
+(N.~B. \hortho{n\^ya7} and \hortho{n\^ya8} can occur only between clauses. If the particles are represented by left and right brackets, respectively, then the brackets should match.)
+
+\section{Anaphoric pronouns in joiner clauses}
+
+In clauses that join two branches, anaphoric pronouns require marking whether the antecedent occurs in the left predecessor \hortho{n\^ya7} or the right predecessor \hortho{n\^ya8}. This is done by marking the pronoun with \hortho{-7} or \hortho{-8}.
+
+Likewise, verbs can be modified with \hortho{-7} or \hortho{-8} to indicate which branch the subject came from.
+
+\section{Errors}
+
+The following are ungrammatical:
+
+\begin{itemize}
+    \item Using the particle \hortho{n\^ya8} or the branched anaphoric pronouns when tree mode is disabled
+    \item Using the particle \hortho{n\^ya8} other than to close a corresponding \hortho{n\^ya7}
+    \item Using the unbranched anaphoric pronouns in clauses with two predecessors
+    \item Using the branched anaphoric pronouns in clauses with one predecessor
+    \item Starting a new branch with \hortho{n\^ya7} when the current branch is empty
+\end{itemize}
+
+\section{Example}
+
+The second example in section \ref{sec:conjunctions} can be expressed as follows: \\
+~\\
+\textkardinal{fi\^u \bs{ri\^use} \bs{tarul}, n\^ya7 fi\^u ser.i\^o japsi, n\^ya8 makel7 rin8.} \\
+
+The resulting tree is shown below:
+
+\begin{center}
+\begin{tikzpicture}
+\tikzset{grow'=left}
+\tikzset{every tree node/.style={anchor=base east}}
+\tikzset{execute at begin node=\strut}
+\tikzset{level distance=100pt,sibling distance=10pt}
+%\Tree [.S [.NP LaTeX ] [.VP [.V is ] [.NP fun ] ] ]
+\Tree [
+    .\textkardinal{makel7 rin8}
+    \textkardinal{fi\^u ser.i\^o japsi}
+    \textkardinal{fi\^u \bs{ri\^use} \bs{tarul}}
+]
+\end{tikzpicture}
+\end{center}
+
+\chapter{Numerals}
+
+\lname{} uses a mixed-base system for its numerals. Numerals are abstract nouns.
+
+\section{Single-digit numerals}
+
+Here are the numerals for $n < 17$:
+
+\begin{longtable}[c]{|r|>{\kardinal}r|>{\kardinal}l|}
+    \caption{The cardinal numbers from 0 -- 16.} \\
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    0 & 0 & rum \\
+    1 & 1 & fi\^ul \\
+    2 & 2 & tas \\
+    3 & 3 & d\^ye\^on \\
+    4 & 4 & f\^xar \\
+    5 & 5 & gis \\
+    6 & 6 & mye \\
+    7 & 7 & tsis \\
+    8 & 8 & pu\^on \\
+    9 & 9 & hep \\
+    10 & T & bun\^g \\
+    11 & K & nu\^i \\
+    12 & X & xe\^o \\
+    13 & S & s\^hip \\
+    14 & N & yan \\
+    15 & V & kel \\
+    16 & F & .ar \\
+\end{longtable}
+
+Note that digits above 9 use capital hacm letters.
+
+\section{Numerals up to $19 \cdot 17$}
+
+These are represented by two digits. The multiples of 17 are shown below:
+
+\begin{longtable}[c]{|r|>{\kardinal}r|>{\kardinal}l|}
+    \caption{Multiples of 17, up to $18 \cdot 17$.} \\
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    17 & 10 & jeli\^u \\
+    34 & 20 & mali\^u \\
+    51 & 30 & d\^ye\^oli\^u \\
+    68 & 40 & tamli\^u \\
+    85 & 50 & gisti\^u \\
+    102 & 60 & myeli\^u \\
+    119 & 70 & tsisti\^u \\
+    136 & 80 & pu\^onu \\
+    153 & 90 & heli\^u \\
+    170 & T0 & bun\^gu \\
+    187 & K0 & nu\^ilu \\
+    204 & X0 & xe\^oli\^u \\
+    221 & S0 & s\^hipli\^u \\
+    238 & N0 & yani\^u \\
+    255 & V0 & kelyi\^u \\
+    272 & F0 & .alyi\^u \\
+    289 & M0 & salji\^u \\
+    306 & D0 & hempi\^u \\
+\end{longtable}
+
+Thus $y \cdot 17 + x$ is written \ortho{$x$-$y$}.
+
+\section{Numerals up to $13 \cdot 19 \cdot 17 = 4199$}
+
+These are represented by three digits. The multiples of $19 \cdot 17$ are listed below:
+
+\begin{longtable}[c]{|r|>{\kardinal}r|>{\kardinal}l|}
+    \caption{Multiples of $19 \cdot 17$, up to $12 \cdot 19 \cdot 17$.} \\
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    base 10 & \textrm{base v} & \textrm{word} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    323 & 100 & hasatan \\
+    646 & 200 & tasatan \\
+    969 & 300 & d\^ye\^osetan \\
+    1292 & 400 & f\^xaratan \\
+    1615 & 500 & gisatan \\
+    1938 & 600 & myesatan \\
+    2261 & 700 & tsisatan \\
+    2584 & 800 & pu\^onatan \\
+    2907 & 900 & hefatan \\
+    3230 & T00 & bun\^gatan \\
+    3553 & K00 & nu\^isatan \\
+    3876 & X00 & xe\^osatan \\
+\end{longtable}
+
+Thus $(z \cdot 19 \cdot 17) + (y \cdot 17) + x$ is written \ortho{$z$-$x$-$y$}.
+
+\section{Numerals up to and including $4199 \cdot (4199 + 1) / 2 = 8817900$}
+
+The numeral for 4199 is \hortho{ku.olu\^i}, written as \hortho{1:000}.
+
+Likewise, two \hortho{ku.olu\^i} is written as \hortho{2:000} and pronounced \hortho{ku.olu\^i-tas}, but the second \hortho{ku.olu\^i} is one smaller than the first. In other words, \hortho{2:000} = $4199 + (4199 - 1) = 8397$.
+
+\begin{longtable}[c]{|>{\kardinal}r|r|r|}
+    \caption{``Multiples'' of \hortho{ku.olu\^i}.} \\
+    
+    \hline
+    \textrm{``Multiple''} & Difference from last & Total \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \textrm{``Multiple''} & Difference from last & Total \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    (0) & & 0 \\
+    1:000 & 4199 & 4199 \\
+    2:000 & 4198 & 8397 \\
+    3:000 & 4197 & 12594 \\
+    4:000 & 4196 & 16790 \\
+    5:000 & 4195 & 20985 \\
+    \textrm{...} & & \\
+    XDV:000 & 3 & 8817897 \\
+    XDF:000 & 2 & 8817899 \\
+    1::000:000 & 1 & 8817900 \\
+\end{longtable}
+
+Thus the $n$th ``multiple'' differs from the $(n-1)$th multiple by $(4199 + 1 - n)$ (given $1 \le n \le 4199$), and the sum of the first $n$ ``multiples'' is
+
+\[
+    \sum_{i = 1}^{n} (4200 - n) = \frac{1}{2} \cdot (8399 \cdot n - n^2)
+\]
+
+And likewise, for some given $y$, the largest ``multiple'' of \hortho{ku.olu\^i} not smaller than $y$ has the index
+
+\[
+    n = \left\lfloor \frac{1}{2} \cdot (8399 - \sqrt{70543201 - 8 \cdot y}) \right\rfloor
+\]
+
+In other words, for any numeral \ortho{$x$:$y$}, $x + y$ must be less than 4199.
+
+\end{document}
