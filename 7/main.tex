@@ -12,7 +12,6 @@
 \usepackage{float}
 \usepackage{tikz}
 \usepackage{tikz-qtree}
-\usepackage{hacm}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usetikzlibrary{shapes.misc, positioning, calc}
@@ -91,7 +90,8 @@
 \newcommand{\informal}{$\triangledown$}
 \newcommand{\ra}{$\rightarrow$}
 \newcommand{\void}[1]{}
-\renewcommand{\^}[1]{\textnormal{\textsuperscript{\textkardinal{#1}}}}
+%\renewcommand{\^}[1]{\textnormal{\textsuperscript{\textkardinal{#1}}}}
+\renewcommand{\^}{\textsuperscript}
 \newcommand{\tss}{\textsuperscript}
 
 \makeatletter
@@ -113,8 +113,11 @@
 \iamascrubandineedaromanisedversionfalse
 
 \ifiamascrubandineedaromanisedversion
-    \renewcommand{\textkardinal}{\textnormal}
-    \renewcommand{\kardinal}{\rmfamily}
+    \newcommand{\textkardinal}{\textnormal}
+    \newcommand{\kardinal}{\normal}
+\else
+    \newfontfamily{\kardinal}[Path=./fonts/]{kardinal.ttf}
+    \newcommand{\textkardinal}[1]{{\kardinal #1}}
 \fi
 
 \newcommand{\lname}{aaaaaaaaaaA}
