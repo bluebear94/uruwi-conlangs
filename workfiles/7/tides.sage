@@ -10,8 +10,14 @@ y_m2 = A_m * (1 + A_ma * cos(tau * t / l_m)) * cos(2 * tau * t / l_m - 2 * tau *
 y = y_s2 + y_m2
 yp = diff(y, t)
 
-for i in range(0, limit):
+i = 0
+time = 0
+print(0)
+while i < limit:
   try:
-    print(find_root(yp == 0, n(0.25 * i), n(0.25 * (i + 1))))
+    time2 = find_root(yp == 0, time + 0.000000001, time + 0.25)
+    print(time2)
+    time = time2
+    i += 1
   except:
-    pass
+    time += 0.01

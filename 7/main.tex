@@ -1306,7 +1306,7 @@ Domain II, which contains \emph{Rymako} has a day that is 26.99410 hours long. O
         \hline
         Local (synodic) day & 1.00000 \\
         Sidereal day & 0.99699 \\
-        Tropical year & 301.94714 \\
+        Tropical year ($l_y$) & 301.94714 \\
         Sidereal year & 302.03719 \\
         Synodic month ($l_m$) & 30.80152 \\
         Sidereal month & 27.95032 \\
@@ -1338,7 +1338,21 @@ where:
 
 An exact solution to $dy/dt = 0$ is not known to exist. However, the solutions to this equation can be found numerically. Consult Section \ref{sec:listingtides} for a Sage program to do so.
 
-As the calendar used by \lname{} uses the high and low tides to count time, it is not synchronised even with days.
+As the calendar used by \lname{} uses the high and low tides to count time, it is not synchronised even with days. The basic unit of time in the calendar is the \emph{tidal day} \hortho{rumu\^i} ($l_t$) -- the amount of time between a high tide and the second high tide thereafter, which is, on average, 1.0000014 local synodic days, but can vary considerably. Thus:
+
+\begin{align}
+    l_m / l_t &\approx 30.80148 \\
+    &\approx 4189/136 \\
+    l_y / l_m &\approx 9.80299 \\
+    &\approx 7215/736
+\end{align}
+
+This suggests that:
+
+\begin{enumerate}
+    \item most months will have 31 days, but every 136 months, 27 months will have only 30.
+    \item most years will have 10 months, but every 736 years, 145 years will have only 9.
+\end{enumerate}
 
 \backmatter
 
