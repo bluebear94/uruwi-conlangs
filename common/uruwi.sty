@@ -1,0 +1,195 @@
+% uruwi.sty – Uruwi's house style for condocs
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{uruwi}[2017/09/16]
+
+\RequirePackage[usenames, dvipsnames, table]{xcolor}
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{mathspec}
+\RequirePackage{hyperref}
+\RequirePackage{longtable}
+\RequirePackage{tabu}
+\RequirePackage{titlesec}
+\RequirePackage{float}
+\RequirePackage{tikz}
+\RequirePackage{tikz-qtree}
+\RequirePackage{graphicx}
+\RequirePackage{multirow}
+\RequirePackage{listings}
+\usetikzlibrary{shapes.misc, positioning, calc}
+\RequirePackage{hyperref}
+
+\DeclareOption{shortsuper}{
+	\renewcommand{\^}{\textsuperscript}
+}
+
+\newif{\ifiamascrubandineedaromanisedversion}
+\iamascrubandineedaromanisedversiontrue
+\DeclareOption{hacm}{
+	\iamascrubandineedaromanisedversionfalse
+}
+
+\DeclareOption{dhr}{
+	\newfontfamily{\dhrfont}[Path=./fonts/,Ligatures=Common]{mInymeko.otf}
+	\newcommand{\textdhr}[1]{{\dhrfont #1}}
+}
+
+\ProcessOptions\relax
+
+% Font settings
+
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+\setmainfont[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
+\setmathrm[Path=./fonts/]{GENTIUMPLUS-R.TTF}
+\setmathsf[Path=./fonts/]{VL-PGothic-Regular.ttf}
+
+\ifiamascrubandineedaromanisedversion
+	\newcommand{\textkardinal}{\textnormal}
+	\newcommand{\kardinal}{\normalfont}
+\else
+	\newfontfamily{\kardinal}[Path=./fonts/]{kardinal.ttf}
+	\newcommand{\textkardinal}[1]{{\kardinal #1}}
+\fi
+
+% Title styles
+
+\newcommand{\hprule}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.3pt}}}
+\titleformat{\chapter}
+[hang]
+{\huge\sffamily}
+{
+    \textcolor{Purple}{\thechapter}
+}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }\textcolor{DarkOrchid}
+}
+[
+    \vspace{0ex}
+    {
+        \color{YellowGreen}
+        \hprule
+    }
+]
+\titleformat{\section}
+[hang]
+{\large\sffamily}
+{\textcolor{OliveGreen}{\thesection}}
+{0.5ex}{
+    \textcolor{Turquoise}{ | }
+}
+\titleformat{\subsection}
+[hang]
+{\sffamily}
+{\textcolor{RawSienna}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ | }
+}
+\titleformat{\subsubsection}
+[hang]
+{\sffamily}
+{\textcolor{SkyBlue}{\thesubsection}}
+{0.5ex}{
+    \textcolor{SkyBlue}{ → }
+}
+
+% Macros
+
+\definecolor{DarkCerulean}{HTML}{099CD6}
+\definecolor{UruwiGreen}{HTML}{107008}
+
+\newcommand{\sstay}{$\pm$}
+\newcommand{\sshift}{$\ge$}
+\newcommand{\sshiftp}{$\vartriangleright$}
+\newcommand{\sshiftu}{$\blacktriangleright$}
+\newcommand{\tl}{\char`~}
+\newcommand{\here}{$\blacklozenge$}
+\newcommand{\ortho}[1]{⟨#1⟩}
+\newcommand{\hortho}[1]{⟨\textkardinal{#1}⟩}
+\newcommand{\wrong}[1]{\textcolor{OrangeRed}{*\ortho{#1}}}
+\newcommand{\wrongp}[1]{\textcolor{OrangeRed}{*/#1/}}
+\newcommand{\ul}[1]{\underline{\smash{#1}}}
+\newcommand{\invalid}{\cellcolor{RedOrange!40}}
+\newcommand{\bs}{\textbackslash}
+\newcommand{\tsc}{\textsc}
+\newcommand{\formal}{$\blacklozenge$}
+\newcommand{\informal}{$\triangledown$}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\void}[1]{}
+\newcommand{\tss}{\textsuperscript}
+
+\makeatletter
+\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+\makeatother
+
+\newcommand{\hli}[1]{\textcolor{Plum}{#1}}
+\newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
+\newcommand{\hliii}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\hliv}[1]{\textcolor{RubineRed}{#1}}
+\newcommand{\hlv}[1]{\textcolor{Bittersweet}{#1}}
+\newcommand{\hlvi}[1]{\textcolor{PineGreen}{#1}}
+\newcommand{\hlvii}[1]{\textcolor{MidnightBlue}{#1}}
+\newcommand{\hlviii}[1]{\textcolor{RedOrange}{#1}}
+\newcommand{\hlix}[1]{\textcolor{Sepia}{#1}}
+
+% Link styles
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+% TikZ declarations
+
+\tikzset{
+    auto,
+    % bend angle=45,
+    stem/.style={rectangle, draw=Orange, fill=Orange!10, very thick, minimum size=10mm, node distance=3mm, align=center, font=\strut},
+    requiredAffix/.style={stem, draw=ProcessBlue, fill=ProcessBlue!10, thick},
+    optionalAffix/.style={requiredAffix, rounded corners=8pt},
+    repeatedAffix/.style={optionalAffix, draw=LimeGreen, fill=LimeGreen!15},
+    arrow/.style={->, thick},
+    border/.style={dotted, draw=Cerulean}
+}
+
+% Listing style
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\color{mygray},      % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\endinput
