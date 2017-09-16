@@ -1382,6 +1382,41 @@ The names of months, on the other hand, are determined from their positions rela
     \end{tabular}
 \end{table}
 
+\section{Years}
+
+The lengths of the year follow a 736-year cycle as specified in Figure \ref{fig:years}.
+The code used to generate this table can be found in Section \ref{sec:listingbins}.
+
+\begin{figure}[ht]
+    \caption{Table of year lengths in a cycle. \label{fig:years}}
+    \centering
+    \begin{verbatim}
+    0123456789 |     0123456789 |     0123456789 |     0123456789
+  0 XXXXX9XXXX |  19 XX9XXXX9XX |  38 9XXXX9XXXX |  57 XXX9XXXX9X
+  1 9XXXX9XXXX |  20 XXX9XXXX9X |  39 9XXXX9XXXX |  58 XXX9XXXX9X
+  2 9XXXX9XXXX |  21 XXX9XXXX9X |  40 9XXXXX9XXX |  59 XXX9XXXX9X
+  3 9XXXX9XXXX |  22 XXX9XXXX9X |  41 X9XXXX9XXX |  60 XXXX9XXXX9
+  4 9XXXX9XXXX |  23 XXX9XXXX9X |  42 X9XXXX9XXX |  61 XXXX9XXXX9
+  5 9XXXX9XXXX |  24 XXX9XXXX9X |  43 X9XXXX9XXX |  62 XXXX9XXXX9
+  6 9XXXX9XXXX |  25 XXX9XXXX9X |  44 X9XXXX9XXX |  63 XXXX9XXXX9
+  7 X9XXXX9XXX |  26 XXX9XXXXX9 |  45 X9XXXX9XXX |  64 XXXX9XXXX9
+  8 X9XXXX9XXX |  27 XXXX9XXXX9 |  46 X9XXXX9XXX |  65 XXXX9XXXX9
+  9 X9XXXX9XXX |  28 XXXX9XXXX9 |  47 XX9XXXX9XX |  66 XXXX9XXXXX
+ 10 X9XXXX9XXX |  29 XXXX9XXXX9 |  48 XX9XXXX9XX |  67 9XXXX9XXXX
+ 11 X9XXXX9XXX |  30 XXXX9XXXX9 |  49 XX9XXXX9XX |  68 9XXXX9XXXX
+ 12 X9XXXX9XXX |  31 XXXX9XXXX9 |  50 XX9XXXX9XX |  69 9XXXX9XXXX
+ 13 X9XXXXX9XX |  32 XXXX9XXXX9 |  51 XX9XXXX9XX |  70 9XXXX9XXXX
+ 14 XX9XXXX9XX |  33 XXXXX9XXXX |  52 XX9XXXX9XX |  71 9XXXX9XXXX
+ 15 XX9XXXX9XX |  34 9XXXX9XXXX |  53 XX9XXXXX9X |  72 9XXXX9XXXX
+ 16 XX9XXXX9XX |  35 9XXXX9XXXX |  54 XXX9XXXX9X |  73 9XXXX9    
+ 17 XX9XXXX9XX |  36 9XXXX9XXXX |  55 XXX9XXXX9X | 
+ 18 XX9XXXX9XX |  37 9XXXX9XXXX |  56 XXX9XXXX9X | 
+
+9: 9 months
+X: 10 months
+    \end{verbatim}
+\end{figure}
+
 \backmatter
 
 \chapter{Listings of programs}
@@ -1423,6 +1458,13 @@ The names of months, on the other hand, are determined from their positions rela
 
 \texttt{
     \lstinputlisting[language=Python]{workfiles/7/tides.sage}
+}
+
+\section{workfiles/7/bins.sage}
+\label{sec:listingbins}
+
+\texttt{
+    \lstinputlisting[language=Perl]{workfiles/7/bins.pl6}
 }
 
 \chapter*{Romanisation}
