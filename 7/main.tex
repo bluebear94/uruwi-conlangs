@@ -1328,9 +1328,9 @@ where:
 
 \begin{align*}
     \tau &= 2 \cdot \pi \\
-    A_s &\approx 1.267 \\
+    A_s &\approx 0.675 \\
     A_{sa} &\approx 0.0532 \\
-    A_m &\approx 0.675 \\
+    A_m &\approx 1.267 \\
     A_{ma} &\approx 0.176 \\
     y &= \text{offset of sea level in metres} \\
     t &= \text{time since HAT in local synodic days}
@@ -1338,11 +1338,11 @@ where:
 
 An exact solution to $dy/dt = 0$ is not known to exist. However, the solutions to this equation can be found numerically. Consult Section \ref{sec:listingtides} for a Sage program to do so.
 
-As the calendar used by \lname{} uses the high and low tides to count time, it is not synchronised even with days. The basic unit of time in the calendar is the \emph{tidal day} \hortho{rumu\^i} ($l_t$) -- the amount of time between a high tide and the second high tide thereafter, which is, on average, 1.0000014 local synodic days, but can vary considerably. Thus:
+As the calendar used by \lname{} uses the high and low tides to count time, it is not synchronised even with days. The basic unit of time in the calendar is the \emph{tidal day} \hortho{rumu\^i} ($l_t$) -- the amount of time between a high tide and the second high tide thereafter, which is, on average, 1.03356 local synodic days, but can vary considerably. Thus:
 
 \begin{align}
-    l_m / l_t &\approx 30.80148 \\
-    &\approx 4189/136 \\
+    l_m / l_t &\approx 29.80148 \\
+    &\approx 4053/136 \\
     l_y / l_m &\approx 9.80299 \\
     &\approx 7215/736
 \end{align}
@@ -1350,7 +1350,7 @@ As the calendar used by \lname{} uses the high and low tides to count time, it i
 This suggests that:
 
 \begin{enumerate}
-    \item most months will have 31 days, but every 136 months, 27 months will have only 30.
+    \item most months will have 30 days, but every 136 months, 27 months will have only 29.
     \item most years will have 10 months, but every 736 years, 145 years will have only 9.
 \end{enumerate}
 
