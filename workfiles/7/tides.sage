@@ -26,7 +26,7 @@ time = 0
 print(0)
 while i < limit:
   try:
-    time2 = find_root(yp == 0, time + 0.000000001, time + 0.25)
+    time2 = find_root(yp == 0, time + 0.000000001, time + 0.35)
     print(time2)
     time = time2
     i += 1
