@@ -8,3 +8,5 @@ out/%.pdf: %/main.tex
 	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $<
 	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $<
 
+clean:
+	rm -rf out
