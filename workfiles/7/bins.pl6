@@ -1,6 +1,13 @@
+# CONSTANTS
+
 my \a = 7215;
 my \b = 736;
 my \r = a / b;
+
+# COMPUTATION
+# For each year, take as many months as are needed
+# in order to cycle to the next.
+
 my $c = 0;
 my @k;
 
@@ -10,6 +17,8 @@ for 0 ..^ b -> $i {
 	@k[$i] = $objs;
 	$c += $objs / r;
 }
+
+# DISPLAY
 
 my \cols = 4;
 my $len = @k.elems;
