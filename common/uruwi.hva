@@ -1,0 +1,73 @@
+\usepackage[usenames, dvipsnames, table]{color}
+\usepackage{amsmath, amssymb}
+\usepackage{mathspec}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+% Compat with HeVeA
+
+\newcommand{\pagecolor}{}
+\newcommand{\hprule}{\@hr{\linewidth}{2pt}}
+%\newcommand[1]{\vspace}{\@hr{\linewidth}{#1}}
+\newcommand{\vfill}{}
+\newcommand{\@date}{(unknown)}
+
+% Macros
+
+\definecolor{DarkCerulean}{rgb}{0.04,0.61,0.84}
+\definecolor{UruwiGreen}{rgb}{0.06,0.44,0.03}
+
+\newcommand{\sstay}{$\pm$}
+\newcommand{\sshift}{$\ge$}
+\newcommand{\sshiftp}{$\vartriangleright$}
+\newcommand{\sshiftu}{$\blacktriangleright$}
+\newcommand{\tl}{\char`~}
+\newcommand{\here}{$\blacklozenge$}
+\newcommand{\ortho}[1]{⟨#1⟩}
+\newcommand{\hortho}[1]{⟨\textkardinal{#1}⟩}
+\newcommand{\wrong}[1]{\textcolor{OrangeRed}{*\ortho{#1}}}
+\newcommand{\wrongp}[1]{\textcolor{OrangeRed}{*/#1/}}
+\newcommand{\ul}[1]{\underline{\smash{#1}}}
+\newcommand{\invalid}{\cellcolor{RedOrange!40}}
+\newcommand{\bs}{\textbackslash}
+\newcommand{\tsc}{\textsc}
+\newcommand{\formal}{$\blacklozenge$}
+\newcommand{\informal}{$\triangledown$}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\void}[1]{}
+\newcommand{\tss}{\textsuperscript}
+
+\makeatletter
+\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+\makeatother
+
+\newcommand{\hli}[1]{\textcolor{Plum}{#1}}
+\newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
+\newcommand{\hliii}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\hliv}[1]{\textcolor{RubineRed}{#1}}
+\newcommand{\hlv}[1]{\textcolor{Bittersweet}{#1}}
+\newcommand{\hlvi}[1]{\textcolor{PineGreen}{#1}}
+\newcommand{\hlvii}[1]{\textcolor{MidnightBlue}{#1}}
+\newcommand{\hlviii}[1]{\textcolor{RedOrange}{#1}}
+\newcommand{\hlix}[1]{\textcolor{Sepia}{#1}}
+
+\newcommand{\cellcolor}{}
+
+% Link styles
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+ 
+%\urlstyle{same}

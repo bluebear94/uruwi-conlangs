@@ -1,0 +1,21 @@
+\begin{tocenv}
+\tocitem \@locref{sec2}{\begin{@norefs}\@print{0.1}\quad{}Introduction{}\end{@norefs}}
+\end{tocenv}
+\begin{tocenv}
+\tocitem \@locref{sec3}{\begin{@norefs}\@print{Chapter 1}\quad{}Phonology{}\end{@norefs}}
+\begin{tocenv}
+\tocitem \@locref{sec4}{\begin{@norefs}\@print{1.1}\quad{}Consonants and vowels{}\end{@norefs}}
+\tocitem \@locref{sec5}{\begin{@norefs}\@print{1.2}\quad{}Phonotactics{}\end{@norefs}}
+\tocitem \@locref{sec6}{\begin{@norefs}\@print{1.3}\quad{}Allophony{}\end{@norefs}}
+\end{tocenv}
+\tocitem \@locref{sec7}{\begin{@norefs}\@print{Chapter 2}\quad{}Syntax{}\end{@norefs}}
+\begin{tocenv}
+\tocitem \@locref{sec8}{\begin{@norefs}\@print{2.1}\quad{}Basic word order{}\end{@norefs}}
+\tocitem \@locref{sec9}{\begin{@norefs}\@print{2.2}\quad{}Modifiers{}\end{@norefs}}
+\tocitem \@locref{sec10}{\begin{@norefs}\@print{2.3}\quad{}Interjections and vocatives{}\end{@norefs}}
+\end{tocenv}
+\tocitem \@locref{sec11}{\begin{@norefs}\@print{Chapter 3}\quad{}Nouns{}\end{@norefs}}
+\begin{tocenv}
+\tocitem \@locref{sec12}{\begin{@norefs}\@print{3.1}\quad{}1st declension{}\end{@norefs}}
+\end{tocenv}
+\end{tocenv}

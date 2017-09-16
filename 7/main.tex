@@ -1213,7 +1213,7 @@ This suggests that:
 
 \section{Months}
 
-Months follow a 136-year cycle wherein the $5n + 2$-numbered months (zero-indexed, $n \in \mathbb{N}$) have 29 days and the other months have 30.
+Months follow a 136-month cycle wherein the $5n + 2$-numbered months (zero-indexed, $n \in \mathbb{N}$) have 29 days and the other months have 30.
 
 The names of months, on the other hand, are determined from their positions relative to the first month of the year:
 
@@ -1273,6 +1273,32 @@ The code used to generate this table can be found in Section \ref{sec:listingbin
 X: 10 months
     \end{verbatim}
 \end{figure}
+
+\section{Eras}
+
+Years are grouped further into \emph{eras} \hortho{kaya}, which change on major historical events. The start of a new era resets the month and year cycle. Eras can also start in the middle of a year of the previous era; thus, the start of the year is different for each era.
+
+\begin{longtable}[c]{|>{\kardinal}l|>{\kardinal}l|l|}
+    \caption{Eras of the calendar.} \\
+    
+    \hline
+    \textnormal{Name} & \textnormal{Last date} & Day number \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \textnormal{Name} & \textnormal{Last date} & Day number \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    kaya-ruko\^e & 4 kceram 982 & ? \\
+\end{longtable}
 
 \backmatter
 
