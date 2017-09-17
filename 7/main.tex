@@ -687,6 +687,7 @@ Verbs can also be marked for aspect, either using a rod sign directly on the ver
     Deontic potential & -5 & An action that the speaker permits to occur. \\
     Epistemic potential & ku\^im5 & An action that the speaker infers that might happen. \\
     Unexpected & -6 & An action that is unexpected (akin to using ``but''). \\
+    Comparative & pe6 & Indicates an action of greater intensity than what was described in the previous clause. \\
     Nonexclusive subject & ki1 & Indicates that the subject comprises not only of what is explicitly mentioned, but also other things. \\
     Nonexclusive object & ki3 & Indicates that the object comprises not only of what is explicitly mentioned, but also other things. \\
     Nonexclusive argument & ki4 & Combination of both nonexclusive subject and nonexclusive object. \\ 
@@ -1262,6 +1263,8 @@ This suggests that:
     \item most years will have 10 months, but every 736 years, 145 years will have only 9.
 \end{enumerate}
 
+\newpage
+
 \section{Months}
 
 Months follow a 136-month cycle wherein the $5n + 2$-numbered months (zero-indexed, $n \in \mathbb{N}$) have 29 days and the other months have 30.
@@ -1365,6 +1368,124 @@ Years are grouped further into \emph{eras} \hortho{kaya}, which change on major 
 \end{table}
 
 The first day of \hortho{kaya-nihel} coincides with the founding of the (not yet named).
+
+\section{Subdivisions of the day}
+
+Lek-Tsaro has two systems for subdividing the day.
+
+\subsection{Traditional timekeeping}
+
+The traditional system of timekeeping relies on subdivisions of the solar day. As shown in Figure \ref{fig:tradhours}, the period between sunrise and sunset are divided into six equally-sized parts \hortho{som}, and the night is considered a separate category. This implies that the length of the ``hours'' depends on the seasons.
+
+\begin{figure}[ht]
+    \caption{Hours in traditional timekeeping. \label{fig:tradhours}}
+    \centering
+    \newcommand{\vertical}[1]{\draw (#1) -- +(0,-1cm)}
+    \newcommand{\defbottom}[1]{
+        \coordinate (bot-#1) at ($(0, -1cm) + (top-#1)$);
+    }
+    \definecolor{Night1}{HTML}{240C60}
+    \definecolor{Night2}{HTML}{215799}
+    \definecolor{Sunrise}{HTML}{E88733}
+    \definecolor{Midday}{HTML}{ABF1FC}
+    \begin{tikzpicture}[
+        mybrace/.style={decorate, decoration={brace, amplitude=10pt}, yshift=4pt},
+        mybrace2/.style={decorate, decoration={brace, amplitude=10pt}, yshift=-4pt},
+    ]
+        % Node defs
+        \coordinate (top-left);
+        \coordinate (top-right) at ($(12cm, 0) + (top-left)$);
+        \coordinate (top-sunrise) at ($(2.4cm, 0) + (top-left)$);
+        \coordinate (top-sunset) at ($(9.6cm, 0) + (top-left)$);
+        \coordinate (top-midday1) at ($(5cm, 0) + (top-left)$);
+        \coordinate (top-midday2) at ($(7cm, 0) + (top-left)$);
+        \coordinate (top-hour1) at ($(1.2cm, 0) + (top-sunrise)$);
+        \coordinate (top-hour2) at ($(1.2cm, 0) + (top-hour1)$);
+        \coordinate (top-hour3) at ($(1.2cm, 0) + (top-hour2)$);
+        \coordinate (top-hour4) at ($(1.2cm, 0) + (top-hour3)$);
+        \coordinate (top-hour5) at ($(1.2cm, 0) + (top-hour4)$);
+        \defbottom{left};
+        \defbottom{right};
+        \defbottom{sunrise};
+        \defbottom{sunset};
+        \defbottom{midday1};
+        \defbottom{midday2};
+        \defbottom{hour1};
+        \defbottom{hour2};
+        \defbottom{hour3};
+        \defbottom{hour4};
+        \defbottom{hour5};
+        % Shading
+        \shade[left color=Night1, right color=Night2]
+            (top-left) rectangle (bot-sunrise);
+        \shade[left color=Night2, right color=Night1]
+            (top-sunset) rectangle (bot-right);
+        \shade[left color=Sunrise, right color=Midday]
+            (top-sunrise) rectangle (bot-midday1);
+        \shade[left color=Midday, right color=Midday]
+            (top-midday1) rectangle (bot-midday2);
+        \shade[left color=Midday, right color=Sunrise]
+            (top-midday2) rectangle (bot-sunset);
+        % Border
+        \draw (top-left) rectangle (bot-right);
+        % Vertical lines
+        \vertical{top-sunrise};
+        \vertical{top-hour1};
+        \vertical{top-hour2};
+        \vertical{top-hour3};
+        \vertical{top-hour4};
+        \vertical{top-hour5};
+        \vertical{top-sunset};
+        % Braces
+        \begin{scope}
+            \clip (top-left)+(0, 0.5cm) rectangle (top-right);
+            \draw[mybrace] (top-left)+(-2.4cm, 0) -- (top-sunrise);
+        \end{scope}
+        \begin{scope}
+            \clip (bot-right)+(0, -0.5cm) rectangle (top-left);
+            \draw[mybrace] (bot-right)+(2.4cm, 0) -- (bot-sunset);
+        \end{scope}
+        \draw[mybrace2] (bot-hour1) -- (bot-sunrise);
+        \draw[mybrace] (top-hour1) -- (top-hour2);
+        \draw[mybrace2] (bot-hour3) -- (bot-hour2);
+        \draw[mybrace] (top-hour3) -- (top-hour4);
+        \draw[mybrace2] (bot-hour5) -- (bot-hour4);
+        \draw[mybrace] (top-hour5) -- (top-sunset);
+        % Labels
+        \node[anchor=south west] (text-night1) at ($(0, 12pt) + (top-left)$) {
+            \textkardinal{fikal}
+        };
+        \node[anchor=north east] (text-night2) at ($(0, -12pt) + (bot-right)$) {
+            \textkardinal{fikal}
+        };
+        \node[anchor=north] (text-hour1)
+            at ($(0, -12pt) + (bot-sunrise)!0.5!(bot-hour1)$) {
+            \textkardinal{som-mente}
+        };
+        \node[anchor=south] (text-hour2)
+            at ($(0, 12pt) + (top-hour1)!0.5!(top-hour2)$) {
+            \textkardinal{som-2}
+        };
+        \node[anchor=north] (text-hour3) 
+            at ($(0, -12pt) + (bot-hour2)!0.5!(bot-hour3)$) {
+            \textkardinal{som-3}
+        };
+        \node[anchor=south] (text-hour4)
+            at ($(0, 12pt) + (top-hour3)!0.5!(top-hour4)$) {
+            \textkardinal{som-4}
+        };
+        \node[anchor=north] (text-hour5)
+            at ($(0, -12pt) + (bot-hour4)!0.5!(bot-hour5)$) {
+            \textkardinal{som-5}
+        };
+        \node[anchor=south] (text-hour6)
+            at ($(0, 12pt) + (top-hour5)!0.5!(top-sunset)$) {
+            \textkardinal{som-miri\^uk}
+        };
+    \end{tikzpicture}
+\end{figure}
+
+The traditional timekeeping system is vague -- typically, the most precise interval used is a quarter or eighth of an ``hour''.
 
 \backmatter
 
