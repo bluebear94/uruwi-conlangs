@@ -1452,34 +1452,34 @@ The traditional system of timekeeping relies on subdivisions of the solar day. A
         \draw[mybrace2] (bot-hour5) -- (bot-hour4);
         \draw[mybrace] (top-hour5) -- (top-sunset);
         % Labels
-        \node[anchor=south west] (text-night1) at ($(0, 12pt) + (top-left)$) {
+        \node[anchor=south west, font=\strut] (text-night1) at ($(0, 9pt) + (top-left)$) {
             \textkardinal{fikal}
         };
-        \node[anchor=north east] (text-night2) at ($(0, -12pt) + (bot-right)$) {
+        \node[anchor=north east, font=\strut] (text-night2) at ($(0, -9pt) + (bot-right)$) {
             \textkardinal{fikal}
         };
-        \node[anchor=north] (text-hour1)
-            at ($(0, -12pt) + (bot-sunrise)!0.5!(bot-hour1)$) {
+        \node[anchor=north, font=\strut] (text-hour1)
+            at ($(0, -9pt) + (bot-sunrise)!0.5!(bot-hour1)$) {
             \textkardinal{som-mente}
         };
-        \node[anchor=south] (text-hour2)
-            at ($(0, 12pt) + (top-hour1)!0.5!(top-hour2)$) {
+        \node[anchor=south, font=\strut] (text-hour2)
+            at ($(0, 9pt) + (top-hour1)!0.5!(top-hour2)$) {
             \textkardinal{som-2}
         };
-        \node[anchor=north] (text-hour3) 
-            at ($(0, -12pt) + (bot-hour2)!0.5!(bot-hour3)$) {
+        \node[anchor=north, font=\strut] (text-hour3) 
+            at ($(0, -9pt) + (bot-hour2)!0.5!(bot-hour3)$) {
             \textkardinal{som-3}
         };
-        \node[anchor=south] (text-hour4)
-            at ($(0, 12pt) + (top-hour3)!0.5!(top-hour4)$) {
+        \node[anchor=south, font=\strut] (text-hour4)
+            at ($(0, 9pt) + (top-hour3)!0.5!(top-hour4)$) {
             \textkardinal{som-4}
         };
-        \node[anchor=north] (text-hour5)
-            at ($(0, -12pt) + (bot-hour4)!0.5!(bot-hour5)$) {
+        \node[anchor=north, font=\strut] (text-hour5)
+            at ($(0, -9pt) + (bot-hour4)!0.5!(bot-hour5)$) {
             \textkardinal{som-5}
         };
-        \node[anchor=south] (text-hour6)
-            at ($(0, 12pt) + (top-hour5)!0.5!(top-sunset)$) {
+        \node[anchor=south, font=\strut] (text-hour6)
+            at ($(0, 9pt) + (top-hour5)!0.5!(top-sunset)$) {
             \textkardinal{som-miri\^uk}
         };
     \end{tikzpicture}
