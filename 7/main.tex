@@ -892,7 +892,7 @@ The resulting tree is shown below:
 
 \chapter{Numerals}
 
-\lname{} uses a mixed-base system for its numerals. Numerals are abstract nouns.
+\lname{} uses a mixed-base system for its numerals. Numerals are abstract nouns. A Perl 6 program to convert numerals can be found in Section \ref{sec:listingconv}.
 
 \section{Single-digit numerals}
 
@@ -1061,17 +1061,68 @@ Likewise, two \hortho{ku.olu\^i} is written as \hortho{2:000} and pronounced \ho
 
 Thus the $n$th ``multiple'' differs from the $(n-1)$th multiple by $(4199 + 1 - n)$ (given $1 \le n \le 4199$), and the sum of the first $n$ ``multiples'' is
 
-\[
-    \sum_{i = 1}^{n} (4200 - n) = \frac{1}{2} \cdot (8399 \cdot n - n^2)
-\]
+\begin{align}
+    \label{eq:triangle}
+    y(n) &= \sum_{i = 1}^{n} (4200 - n) \notag \\
+    &= \frac{1}{2} \cdot (8399 \cdot n - n^2)
+\end{align}
 
 And likewise, for some given $y$, the largest ``multiple'' of \hortho{ku.olu\^i} not smaller than $y$ has the index
 
-\[
-    n = \left\lfloor \frac{1}{2} \cdot (8399 - \sqrt{70543201 - 8 \cdot y}) \right\rfloor
-\]
+\begin{equation}
+    \label{eq:untriangle}
+    N(y) = \left\lfloor \frac{1}{2} \cdot \left(8399 - \sqrt{70543201 - 8 \cdot y}\right) \right\rfloor
+\end{equation}
 
-In other words, for any numeral \ortho{$x$:$y$}, $x + y$ must be less than 4199.
+In other words, for any numeral \ortho{$n_1$:$n_2$}, $n_1 + n_2$ must be less than 4199.
+
+\section{Higher numerals}
+
+The \emph{bases} of higher numerals $b_i$ can be derived from the recurrence relation
+
+\begin{equation}
+    b_i = \begin{cases}
+        4199 & \text{if } i = 1 \\
+        \dfrac{b_{i-1} \cdot (b_{i-1} + 1)}{2} & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+Then $b_i$ acts as a new triangular base. Equations \ref{eq:triangle} and \ref{eq:untriangle} can be generalised to the following:
+
+\begin{align}
+    y(n, b_i) &= \sum_{i = 1}^{n} (b_i + 1 - n) \\
+    &= \frac{1}{2} \cdot (n \cdot (2 \cdot b_i + 1 - n)) \\
+    N(y, b_i) &= \left\lfloor \frac{1}{2} \cdot \left(2 \cdot b_i - \sqrt{4 \cdot b_i^2 + 4 \cdot b_i + 1 - 8 \cdot y}\right) \right\rfloor
+\end{align}
+
+It follows that $y(n_1, b_i) + n_2$ is represented as \hortho{$n_1$:$^in_2$} ($i$ colons), and such a numeral must satisfy $n_1 + n_2 < b_i$.
+
+Here are the names of the bases themselves:
+
+\begin{longtable}[c]{|r|>{\kardinal}r|>{\kardinal}l|}
+    \caption{Names of higher bases.} \\
+    
+    \hline
+    Base & \textnormal{base v} & \textnormal{word} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Base & \textnormal{base v} & \textnormal{word} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    $b_1$ & 1:000 & ku.olu\^i \\
+    $b_2$ & 1::000:000 & meri\^ota \\
+    $b_3$ & 1:::000:000::000:000 & t\^alru \\
+    $b_4$ & & deniwa \\
+\end{longtable}
 
 \section{Cardinal and ordinal numerals}
 
@@ -1326,11 +1377,25 @@ The first day of \hortho{kaya-nihel} coincides with the founding of the (not yet
     \lstinputlisting[language=Python]{workfiles/7/tides.sage}
 }
 
-\section{workfiles/7/bins.sage}
+\section{workfiles/7/bins.pl6}
 \label{sec:listingbins}
 
 \texttt{
     \lstinputlisting[language=Perl]{workfiles/7/bins.pl6}
+}
+
+\section{workfiles/7/conno.pl6}
+\label{sec:listingconv}
+
+\texttt{
+    \lstinputlisting[language=Perl]{workfiles/7/conno.pl6}
+}
+
+\section{workfiles/7/count-days.pl6}
+\label{sec:listingdays}
+
+\texttt{
+    \lstinputlisting[language=Perl]{workfiles/7/count-days.pl6}
 }
 
 \chapter*{Romanisation}
