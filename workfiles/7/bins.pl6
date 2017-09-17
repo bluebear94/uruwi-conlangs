@@ -1,8 +1,8 @@
 # CONSTANTS
 
-my \a = 7215;
-my \b = 736;
-my \r = a / b;
+constant \MONTHS_PER_YEAR_CYCLE = 7215;
+constant \YEARS_PER_YEAR_CYCLE = 736;
+constant \AVG_MONTHS_PER_YEAR = MONTHS_PER_YEAR_CYCLE / YEARS_PER_YEAR_CYCLE;
 
 # COMPUTATION
 # For each year, take as many months as are needed
@@ -11,11 +11,11 @@ my \r = a / b;
 my $c = 0;
 my @k;
 
-for 0 ..^ b -> $i {
+for 0 ..^ YEARS_PER_YEAR_CYCLE -> $i {
 	my $need = 1 - ($c - floor($c));
-	my $objs = ceiling($need * r);
+	my $objs = ceiling($need * AVG_MONTHS_PER_YEAR);
 	@k[$i] = $objs;
-	$c += $objs / r;
+	$c += $objs / AVG_MONTHS_PER_YEAR;
 }
 
 # DISPLAY

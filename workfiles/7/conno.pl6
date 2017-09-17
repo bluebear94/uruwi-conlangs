@@ -68,7 +68,7 @@ sub convert-large-fwd-h($n, $i, $pad = False) {
 
 sub convert-large-fwd($n, $pad = False) {
 	my $i = 0;
-	++$i while @powers[$i] < $n;
+	++$i while @powers[$i] <= $n;
 	convert-large-fwd-h($n, $i, $pad);
 }
 

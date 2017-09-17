@@ -1239,6 +1239,8 @@ The names of months, on the other hand, are determined from their positions rela
     \end{tabular}
 \end{table}
 
+Days within a month are indexed from one.
+
 \section{Years}
 
 The lengths of the year follow a 736-year cycle as specified in Figure \ref{fig:years}.
@@ -1276,29 +1278,42 @@ X: 10 months
 
 \section{Eras}
 
-Years are grouped further into \emph{eras} \hortho{kaya}, which change on major historical events. The start of a new era resets the month and year cycle. Eras can also start in the middle of a year of the previous era; thus, the start of the year is different for each era.
+Years are grouped further into \emph{eras} \hortho{kaya}, which change on major historical events. The start of a new era resets the month and year cycle. Eras can also start in the middle of a year of the previous era; thus, the start of the year is different for each era. The \emph{crossover date} of an era is the date of the era that coincides with the first day of the next; in other words, it is the date immediately after the last day of the era.
 
-\begin{longtable}[c]{|>{\kardinal}l|>{\kardinal}l|l|}
-    \caption{Eras of the calendar.} \\
-    
-    \hline
-    \textnormal{Name} & \textnormal{Last date} & Day number \\
-    \hline
-    \endfirsthead
-    
-    \hline
-    \textnormal{Name} & \textnormal{Last date} & Day number \\
-    \hline
-    \endhead
-    
-    \hline
-    \endfoot
-    
-    \hline
-    \endlastfoot
-    
-    kaya-ruko\^e & 4 kceram 982 & ? \\
-\end{longtable}
+\begin{table}[ht]
+    \caption{The months of the year.}
+    \centering
+    \begin{tabular}{|l|l|r|r|}
+        \hline
+        \textnormal{Name} & \textnormal{Crossover date} & Days between & Cumulative \\
+        \hline
+        \begin{tabular}{@{}>{\kardinal}l@{}}
+            kaya-ruko\^e \\
+            kaya-ku\^ota \\
+            kaya-kasnepi\^u \\
+            kaya-nihel \\
+          \end{tabular} &
+          \begin{tabular}{@{}>{\kardinal}l@{}}
+            4 kceram 982 \\
+            12 tsagol 6V6 \\
+            8 xibila 23X \\
+            \textnormal{(to present)} \\
+          \end{tabular} & 
+          \begin{tabular}{@{}r@{}}
+            889726 \\
+            642508 \\
+            207366 \\
+          \end{tabular} &
+          \begin{tabular}{@{}r@{}}
+            889726 \\
+            1532234 \\
+            1739600 \\
+          \end{tabular} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The first day of \hortho{kaya-nihel} coincides with the founding of the (not yet named).
 
 \backmatter
 
