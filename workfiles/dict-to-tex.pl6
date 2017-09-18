@@ -38,6 +38,8 @@ END
 sub MAIN(Str $src, Str $out, Str $opts) {
   my $options = from-json(slurp($opts));
   my $word-fmter = $options<styling> // '\textsf{%s}';
+  my $section-fmter = $options<sectionstyle> //
+    "\\section*\{%s\}\n";
   my $entry-fmter = $options<entryStyle> // DEFAULT_FMTER;
   my @alphabet = @($options<alphabet>);
   my $aregex = /@alphabet/;
@@ -72,7 +74,8 @@ sub MAIN(Str $src, Str $out, Str $opts) {
     if $cur-first < $first {
       my $letter = @alphabet[$first];
       my $texletter = to-tex $letter, $options;
-      $fh.printf("\\section*\{$texletter\}\n\\indent\n\n");
+      $fh.printf($section-fmter, $texletter);
+      $fh.print("\\indent\n\n");
       $cur-first = $first;
     }
     my $texname = to-tex $entry<name>, $options;

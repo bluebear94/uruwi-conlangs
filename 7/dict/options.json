@@ -9,5 +9,6 @@
     "h", "y", "c", "r",
     "z", "j", "w", "l",
     "a", "i", "i^o", "i^u", "o", "o^e", "e", "e^o", "u", "u^i", "u^o"
-  ]
+  ],
+  "sectionstyle": "\\section*{\\textkardinal{%s}}\n"
 }
