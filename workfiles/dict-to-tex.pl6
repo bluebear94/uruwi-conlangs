@@ -37,7 +37,7 @@ END
 
 sub MAIN(Str $src, Str $out, Str $opts) {
   my $options = from-json(slurp($opts));
-  my $word-fmter = $options<styling> // '\textbf{%s}';
+  my $word-fmter = $options<styling> // '\textsf{%s}';
   my $entry-fmter = $options<entryStyle> // DEFAULT_FMTER;
   my @alphabet = @($options<alphabet>);
   my $aregex = /@alphabet/;
@@ -46,10 +46,10 @@ sub MAIN(Str $src, Str $out, Str $opts) {
   my @entries;
   my $cur-entry;
   for $fh.lines {
-    if /"#" \s* (.*)/ {
+    if /^ "#" \s* (.*)/ {
       $cur-entry<name> = ~$0;
       $cur-entry<key> = get-sort-key(~$0, %amap, $aregex);
-    } elsif /":" \s* (.*)/ {
+    } elsif /^ ":" \s* (.*)/ {
       $cur-entry<pos> = ~$0;
     } elsif $_ {
       if $cur-entry<def>:exists {
@@ -62,10 +62,19 @@ sub MAIN(Str $src, Str $out, Str $opts) {
       $cur-entry = Hash();
     }
   }
+  my $cur-first = -1;
   $fh.close;
-  @entries.=sort({compare-lists($^a<key>, $^b<key>)});
+  @entries.=sort: {compare-lists($^a<key>, $^b<key>)};
   $fh = open $out, :w;
+  $fh.printf("\\indent\n");
   for @entries -> $entry {
+    my $first = $entry<key>[0] // -1;
+    if $cur-first < $first {
+      my $letter = @alphabet[$first];
+      my $texletter = to-tex $letter, $options;
+      $fh.printf("\\section*\{$texletter\}\n\\indent\n\n");
+      $cur-first = $first;
+    }
     my $texname = to-tex $entry<name>, $options;
     my $texfmt = sprintf($word-fmter, $texname);
     my $pos = $entry<pos>;
