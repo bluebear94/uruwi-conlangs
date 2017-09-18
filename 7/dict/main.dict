@@ -1,0 +1,625 @@
+# masa
+: nsent
+person
+
+
+# s^ha.en
+: nsent
+magician
+
+
+# mun^go
+: nanim
+rabbit
+
+
+# si^ul
+: nanim
+fox
+
+
+# hacu^o
+: ninanim
+statue
+
+
+# .imen
+: ninanim
+house
+
+
+# rumu^i
+: nmeas
+tidal day
+
+
+# mel
+: nmeas
+volume
+in expressions such as \textkardinal{mel-yuso^e} ``cupful''
+
+# f^xuru^o
+: nfluid
+water
+
+
+# dekem
+: nfluid
+nitrogen
+
+
+# ter.i^o
+: nedib
+beef
+
+
+# man
+: nedib
+rice
+
+
+# ru^oto
+: nined
+gold
+
+
+# kacas
+: nined
+stone
+
+
+# f^hu^omo
+: nabst
+empathy
+
+
+# gis
+: nabst
+five
+
+
+# ruso^e
+: ninanim
+cup
+
+
+# makan
+: v
+(S) eats (O)
+
+
+# jace
+: nanim
+fish
+
+
+# txoro
+: ninanim
+flower
+
+
+# nyara
+: nanim
+cat
+
+
+# rata
+: nined
+grass
+
+
+# rataba
+: ninanim
+blade of grass
+
+
+# lek
+: nabst
+language
+
+
+# lekeba
+: ninanim
+a language
+
+
+# refan
+: v
+(S) speaks to (O), (S) asks (O)
+
+
+# refin
+: v
+(S) spreads (O)
+
+
+# kan
+: v
+(S) is at (O), locational verb
+
+
+# nu^onan
+: v
+(S) kills (O), (O) dies
+
+
+# xinan
+: v
+(S) shoots an arrow to (O)
+
+
+# txalkan
+: v
+(S) fights (O)
+
+
+# pun^ga
+: ninanim
+knee
+
+
+# gyu^onan
+: v
+(S) laughs at (O)
+
+
+# sin
+: v
+(S) is (O)
+
+
+# gitxa
+: desc
+well (not sick)
+
+
+# se^otxe
+: ninanim
+land, country
+
+
+# hemta
+: desc
+large
+
+
+# ku^ota
+: desc
+old
+
+
+# tsapo
+: nabst
+power, magic, motivation
+
+
+# txeka
+: desc
+complete, full, mature
+
+
+# hriden
+: ninanim
+book
+
+
+# japsi
+: nfluid
+soup
+
+
+# fo^eko^e
+: ninanim
+spoon
+
+
+# prin
+: v
+hold, carry, instrumental verb
+
+
+# na.in
+: v
+(S) waits for/until (O), temporal verb, if
+
+
+# sur
+: ninanim
+day, sun
+
+
+# ha.ar
+: nabst
+spring (season)
+
+
+# nimin
+: v
+(S) dances around (O)
+
+
+# senan
+: v
+(S) is worried by (O)
+
+
+# fin
+: v
+(S) joins (O), and
+
+
+# s^harin
+: v
+(S) creates (O)
+
+
+# motan
+: v
+(S) produces (O)
+
+
+# nel
+: nabst
+nature, temperament, disposition
+
+
+# ruko^e
+: nabst
+nighttime
+
+
+# suta
+: desc
+many, again
+
+
+# tcasin
+: v
+(S) answers to (O)
+
+
+# nem
+: desc
+male
+
+
+# fi^ul
+: desc
+female
+
+
+# txel
+: nsent
+who?
+
+
+# tepin
+: v
+(S) buys (O)
+
+
+# se.an
+: v
+(S) knows (O) answers (last clause)
+
+
+# tsiltan
+: v
+(S) wants (O)
+
+
+# patan
+: v
+(S) dislikes, objects to, disapproves of (O)
+
+
+# txo^epa
+: desc
+sufficient, wanted, wished-for
+
+
+# cin
+: v
+(S) allows (O)
+
+
+# f^xe
+: ninanim
+what
+
+
+# yan
+: v
+(S) sees (O), because
+\textkardinal{yan}[O=\textkardinal{sur}] (``see the sun'') = ``wish''
+
+# pere^o
+: nedib
+noodles
+
+
+# teran
+: v
+rain (S = other)
+
+
+# fehin
+: v
+(S) plays with (O)
+
+
+# tagan
+: v
+(S) loses, frees (O); (O) escapes
+
+
+# neban
+: v
+(S) gives something to (O)
+
+
+# tabra
+: desc
+heavy
+
+
+# .u^otulo
+: nabst
+sadness, grief
+
+
+# nerfin
+: v
+(S) hides from (O)
+
+
+# melka
+: desc
+similar
+
+
+# patran
+: v
+(S) sits at (O)
+
+
+# tulka
+: nsent
+coward, knave
+
+
+# sef^xi
+: nabst
+daytime
+
+
+# fu^o
+: ninanim
+event, occurrence
+
+
+# finda
+: desc
+early
+
+
+# s^han
+: v
+(S) goes toward (O)
+
+
+# pcen
+: nanim
+owl
+
+
+# kakan
+: v
+(S) makes a loud noise
+
+
+# jed^yan
+: v
+(S) perceives (O) non-visually
+
+
+# xre^onin
+: v
+(S) hunts for (O)
+
+
+# ruka
+: desc
+late
+
+
+# mepin
+: v
+(S) succeeds at (O), (S) does something to (O)
+
+
+# pu.on
+: nanim
+large animal
+
+
+# mutan
+: v
+(S) recalls (O)
+
+
+# ri^uk
+: ninanim
+star
+
+
+# hirin
+: v
+(S) is named (O)
+
+
+# melkin
+: v
+(S) imitates (O)
+
+
+# kon
+: desc
+whole, entire
+
+
+# dabu
+: nabst
+life, existence
+
+
+# kasnepi^u
+: ninanim
+mirror
+
+
+# txicin
+: v
+(S) falls on (O)
+
+
+# fren^ye
+: ninanim
+coin
+
+
+# sarta
+: ninanim
+ring
+
+
+# pre^ome
+: ninanim
+city
+
+
+# tofok
+: ninanim
+tree
+
+
+# pcatsa
+: nabst
+ground, floor
+
+
+# krat^yu^o
+: nsent
+warrior
+
+
+# kadi^o
+: ninanim
+moon
+
+
+# gwesan
+: v
+(S) founds (O)
+
+
+# mesin
+: v
+(S) raises, takes care of, tends to (O)
+
+
+# bane
+: ninanim
+year
+
+
+# bus
+: nabst
+future, next (time period)
+
+
+# hu^oma
+: desc
+evil, malicious
+
+
+# nelpa
+: nsent
+mind, brain
+
+
+# kwo^ela
+: desc
+potent, powerful
+not in a physical sense
+
+# casan
+: v
+discipline, punish, constrain
+
+
+# mifa
+: nsent
+child (offspring)
+
+
+# kaya
+: ninanim
+era
+
+
+# nihel
+: ninanim
+group, organisation, order
+
+
+# sinin
+: v
+(S) attaches to, loves (O)
+
+
+# som
+: nmeas
+subdivision of the day
+cf Grammar / Calendar / Subdivisions of the day / Traditional timekeeping
+
+# mente
+: nabst
+morning
+
+
+# miri^uk
+: nabst
+evening
+
+
+# kan
+: nmeas
+subdivision of the day
+cf Grammar / Calendar / Subdivisions of the day / Modern timekeeping
+
+# sine
+: nmeas
+subdivision of the day
+cf Grammar / Calendar / Subdivisions of the day / Modern timekeeping
+
+# bacuk
+: nmeas
+subdivision of the day
+cf Grammar / Calendar / Subdivisions of the day / Modern timekeeping
+
+# kika
+: desc
+all, every
+
+
+# re^osa
+: desc
+friendly, kind, considerate, nice
+
+
+# s^he^onin
+: v
+(S) befriends (O)
+
+

@@ -1,0 +1,13 @@
+{
+  "styling": "\\textkardinal{%s}",
+  "newline": "\\quad ",
+  "alphabet": [
+    ".",
+    "t", "t^y", "k", "x", "s", "s^h",
+    "n", "n^g", "n^y", "v", "f", "f^x", "f^h", "m",
+    "d", "d^y", "g", "p", "b",
+    "h", "y", "c", "r",
+    "z", "j", "w", "l",
+    "a", "i", "i^o", "i^u", "o", "o^e", "e", "e^o", "u", "u^i", "u^o"
+  ]
+}
