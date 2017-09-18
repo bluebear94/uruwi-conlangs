@@ -3,9 +3,11 @@ TEXFLAGS=-interaction=nonstopmode
 
 all: out/5.pdf out/6.pdf out/7.pdf
 
-out/7.pdf: 7/dict/dict.tex
-
 out/5.pdf: 5/dict/dict.tex
+
+out/6.pdf: 6/dict/dict.tex
+
+out/7.pdf: 7/dict/dict.tex
 
 %/dict/dict.tex: \
 		%/dict/main.dict \
