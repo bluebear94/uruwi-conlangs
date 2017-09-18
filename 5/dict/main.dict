@@ -172,6 +172,7 @@ with stop aspect, can mean ``stop'' or ``arrive''; with start aspect, can mean `
 # sunuhek
 : v
 fall, descend, drop
+\textsf{mevu \tl{}} rain
 
 
 # mevu
@@ -997,6 +998,7 @@ dust, powder
 # ḣralek
 : v
 burn, cook, heat
+\textsf{kajtos \tl{}} be turned on
 
 
 # hanak
@@ -2507,6 +2509,7 @@ thing
 # rehi
 : adv
 but rather
+\textsf{Nŷr ḣrales kêl nûne, rehi nuvosħraw nûne.} The world does not end in fire, but rather in hair.
 
 
 # kajto
@@ -2613,6 +2616,7 @@ do what?
 : n
 measure
 relation of metric (with \tl{} as a metric)
+\textsf{Tṡalyw-raħél tawla lenekâl atúl fetatosorakamaḋutro.} Make me sing the song of the person skilled at fighting.
 
 # kolman
 : n
@@ -2798,7 +2802,7 @@ plate, one's share of
 # vilpanek
 : vn?
 falsely see
-(see panek for n vs. non-n usage)
+(see \textsf{panek} for n vs. non-n usage)
 
 # talgek
 : v

@@ -96,6 +96,8 @@ ride
 # haa
 : intj
 hey, hi
+\textsf{nuvoi \tl{}} greet
+\textsf{sema pe \tl{} kaan} I didn't say anything; never mind
 
 
 # uneki
@@ -226,11 +228,13 @@ ivy
 # nuvoi
 : v1
 say, speak
+\textsf{\tl{} haa} greet
 
 
 # rakami
 : v2t
 know (a person)
+\textsf{ankai X \tl{} Y} introduce Y to X
 
 
 # hakanernui
@@ -241,11 +245,13 @@ express, write
 # ranai
 : v1
 thank, bless, wish good luck
+\textsf{to \tl} thanks, thank you
 
 
 # vasemi
 : v2i
 apologise
+\textsf{to \tl{}} sorry!
 
 
 # vanru
@@ -271,6 +277,7 @@ hope
 # sarkii
 : v1
 meet (a person)
+\textsf{sema \tl{} tarka} see you soon
 
 
 # heeke
@@ -281,6 +288,7 @@ again, repeated
 # hamii
 : v1
 accept, welcome
+\textsf{to \tl} welcome!
 
 
 # inanasami
