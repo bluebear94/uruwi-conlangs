@@ -106,7 +106,8 @@ Also used as an adjective to mean ``much'', ``many'', ``large'', ``wide'' (2D) o
 # ṡuna
 : n
 time, occurrence
-For brevity, it is not necessary to add the temporal suffix. lykoj-ṡuna = soon (within a short period)
+For brevity, it is not necessary to add the temporal suffix.
+\textsf{lykoj-ṡuna} = soon (within a short period)
 
 # lakanek
 : v
@@ -161,7 +162,7 @@ I
 # moj
 : n
 distance, opposite side, after, beyond
-X-mojme = away from X; moj-mane(ma) = some day
+X-\textsf{mojmé} = away from X; \textsf{moj-mane(ma)} = some day
 
 # tanek
 : v
@@ -381,7 +382,7 @@ run
 # mepek
 : v
 learn, teach (about)
-learn <A> → <A>-kejmá mepek
+learn <A> → <A>-\textsf{kejmá mepek}
 
 # kaẏ
 : n
@@ -511,7 +512,7 @@ forest
 # satanek
 : v
 travel to
-In this case, A travels to B = A-s B satane
+In this case, A travels to B = A-\textsf{s} B \textsf{satane}
 
 # ħaj
 : n
@@ -606,7 +607,7 @@ nest
 # syltek
 : v
 hide, cover
-X hides in Y = Y-s X syltel = Y hides X
+X hides in Y = Y-\textsf{s} X \textsf{syltel} = Y hides X
 
 # mukek
 : v
@@ -2756,6 +2757,7 @@ tire, exhaust
 # taka
 : n
 hole
+\textsf{\tl{}-nēme} \emph{lit. into a hole} to no end, relentlessly
 
 
 # matuṅ
@@ -2781,7 +2783,7 @@ dummy noun
 # tuẏ
 : n
 out of (used in superlative constructions)
-n + tuẏ + adv
+n + \textsf{tuẏ} + adv
 
 # nwenek
 : v
@@ -2850,7 +2852,7 @@ lake
 
 # simek
 : v
-apologise (tr)
+(A) apologises to (P)
 
 
 # hjula
