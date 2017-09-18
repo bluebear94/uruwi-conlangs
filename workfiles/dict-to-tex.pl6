@@ -66,7 +66,9 @@ sub MAIN(Str $src, Str $out, Str $opts) {
   }
   my $cur-first = -1;
   $fh.close;
-  @entries.=sort: {compare-lists($^a<key>, $^b<key>)};
+  @entries.=sort: {
+    compare-lists($^a<key>, $^b<key>) || $a<name> leg $b<name>
+  };
   $fh = open $out, :w;
   $fh.printf("\\indent\n");
   for @entries -> $entry {
