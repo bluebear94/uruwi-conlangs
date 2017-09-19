@@ -1525,6 +1525,94 @@ Of course, having 23 \hortho{kan} per tidal day requires predicting the next two
     \lstinputlisting[language=Perl]{workfiles/7/count-days.pl6}
 }
 
+\chapter{Arithmetic in base $v$}
+
+This chapter describes algorithms for performing arithmetic operations in Lek-Tsaro's number system.
+
+\section{Operations on small numbers}
+
+\subsection{Additions}
+
+If both addends are smaller than 4199, then it is sufficient to use mixed-base addition:
+
+\begin{tabular}
+    {>{\kardinal}r>{\kardinal}r>{\kardinal}r>{\kardinal}r}
+    & & \small{1} & \\
+    & 4 & T & 9 \\
+    & 7 & 3 & N \\
+    \hline
+    & T & N & 6 \\
+\end{tabular}
+
+If the sum involves a fourth digit, then subtract one from the three least significant digits:
+
+\begin{tabular}
+    {>{\kardinal}r>{\kardinal}r>{\kardinal}r>{\kardinal}r}
+    \small{1} & \small{1} & & \\
+    & 2 & 6 & 5 \\
+    & X & F & 3 \\
+    \hline
+    1 & 2 & 4 & \cancel{8} \\
+    & & & 7 \\
+\end{tabular}
+
+\subsection{Subtraction}
+
+If both of the operands are smaller than 4199, then it is sufficient to use mixed-base subtraction.
+
+\begin{tabular}
+    {>{\kardinal}r>{\kardinal}r>{\kardinal}r>{\kardinal}r}
+    & \small{6} & \small{13.} & \\
+    & \cancel{7} & \cancel{3} & N \\
+    & 4 & T & 9 \\
+    \hline
+    & 2 & X & 5
+\end{tabular}
+
+\subsection{Determining parity}
+
+A number less than 4199 is even iff the sum of its digits in base $v$ is even -- that is, either none of its digits are odd, or if exactly two are.
+
+\subsection{Dividing by two}
+
+If a number's base-$v$ representation contains only even digits, then divide each digit by two.
+
+If the representation has two odd digits, then take advantage of the identities
+
+\begin{align*}
+    11_v / 2 &= 9_v \\
+    101_v / 2 &= 99_v \\
+    110_v / 2 &= T0_v
+\end{align*}
+
+This operation is written as \hortho{m}, short for \hortho{myane} ``one half''. Thus, in hacm:
+
+\begin{itemize}
+    \item \textkardinal{m11 = 9}
+    \item \textkardinal{m101 = 99}
+    \item \textkardinal{m110 = T0}
+\end{itemize}
+
+\subsection{Multiplication}
+
+With the previous two operations, it is now possible to use peasant multiplication to multiply small numbers.
+
+\section{Operations on larger numbers}
+
+\subsection{Addition}
+
+For some $i \in \mathbb{N}$, and two numbers number $a = x_a :^i y_a$ and $b = x_b :^i y_b$, we take advantage of the fact that
+
+\begin{align}
+    x_a :^i y_a + x_b :^i y_b &=
+        (x_a + 1) :^i y_a + (x_b - 1) :^i y_b + (x_a - x_b + 1) \\
+    x_a :^i y_a + x_b :^i y_b &=
+        (x_a + x_b) :^i y_a + 0 :^i y_b + x_a \cdot x_b \\
+    &= (x_a + x_b) :^i (y_a + y_b) + x_a \cdot x_b
+\end{align}
+
+%compute the two intermediate sums $\chi = x_a + x_b = x_\chi :^i y_\chi$ and $\psi = y_a + y_b = x_\psi :^i y_\psi$.
+
 \chapter*{Romanisation}
 
 In this text, the romanisation is used only to transcribe names into English. Whenever possible, the hacmisation should be used.
