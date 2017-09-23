@@ -42,7 +42,12 @@
 
 \defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
 
-\setmainfont[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
+\setmainfont[
+    Path=./fonts/,
+    ItalicFont=GENTIUMPLUS-I.TTF,
+    Renderer=Graphite,
+    RawFeature={Uppercase Eng alternates=Capital N with tail}
+]{GENTIUMPLUS-R.TTF}
 \setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
 \setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
 \setmathrm[Path=./fonts/]{GENTIUMPLUS-R.TTF}
