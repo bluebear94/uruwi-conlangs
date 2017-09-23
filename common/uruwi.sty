@@ -40,13 +40,11 @@
 
 % Font settings
 
-\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX,CharacterVariant=43:1}
 
 \setmainfont[
     Path=./fonts/,
-    ItalicFont=GENTIUMPLUS-I.TTF,
-    Renderer=Graphite,
-    RawFeature={Uppercase Eng alternates=Capital N with tail}
+    ItalicFont=GENTIUMPLUS-I.TTF
 ]{GENTIUMPLUS-R.TTF}
 \setmathfont(Digits,Latin,Greek)[Path=./fonts/,ItalicFont=GENTIUMPLUS-I.TTF]{GENTIUMPLUS-R.TTF}
 \setsansfont[Path=./fonts/]{VL-PGothic-Regular.ttf}
@@ -127,9 +125,10 @@
 \newcommand{\void}[1]{}
 \newcommand{\tss}{\textsuperscript}
 
-\makeatletter
-\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
-\makeatother
+%\makeatletter
+%\renewcommand*{\textoverline}[1]{$\overline{\hbox{#1}}\m@th$}
+%\makeatother
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
 
 \newcommand{\hli}[1]{\textcolor{Plum}{#1}}
 \newcommand{\hlii}[1]{\textcolor{UruwiGreen}{#1}}
