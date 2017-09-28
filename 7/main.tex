@@ -506,7 +506,7 @@ In wh-questions, the wh-word assumes the second position and the other argument 
 If a clause has no explicit arguments, the first argument is understood to be the subject.
 
 \begin{table}[h]
-    \caption{Personal pronouns. \hortho{-n}, \hortho{-en} or \hortho{-o\^en} is suffixed for the accusative case.}
+    \caption{Personal pronouns. \hortho{\=/n}, \hortho{\=/en} or \hortho{\=/o\^en} is suffixed for the accusative case.}
     \centering
     \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
         \hline
@@ -555,7 +555,7 @@ Descriptors can also compound on nouns. This compounding is productive in \lname
 
 ``X's Y'' is translated as \hortho{\textnormal{Y=}ma sil \textnormal{X}}. The possessive construction is also used to create appositives.
 
-Observe that possession marks the head, and \hortho{-ma} is a clitic, not an affix, as in the following example: \\
+Observe that possession marks the head, and \hortho{\=/ma} is a clitic, not an affix, as in the following example: \\
 ~\\
 \textkardinal{\hli{mumun\^gos-f\^xuru\^o}\hliv{-ma} \hlii{sil} \hliii{s\^ha.es}} \\
 \hli{\tsc{def}\tl{}rabbit-\tsc{sing}-water}\hliv{=\tsc{gen}} \hlii{\tsc{pos}} \hliii{magician-\tsc{sing}} \\
@@ -748,6 +748,34 @@ Ideas such as ``if'' or ``because'' are also expressed with verbs. For example, 
 
 Note the clausal argument to \hortho{na.in}, since our condition is an entire clause instead of a noun.
 
+\section{Comparatives}
+
+The comparative is a function $\text{cmp}: A \times A \times (A \rightarrow \mathbb{R}) \times (A \times A \rightarrow \{0, 1\}) \rightarrow \{0, 1\}$, where $\text{cmp}(a, b, f, \sqsupset) = f(a) \sqsupset f(b)$.
+
+Consider the following sentences: \\
+~\\
+Fish eat flowers more than cats. \\
+More fish eat flowers than cats. \\
+
+Semantically, they can be translated to:
+
+\begin{gather}
+    \text{cmp}(\text{fish}, \text{cats}, a \mapsto (\text{\# of flowers eaten by } a), >) \\
+    \text{cmp}(\text{fish}, \text{cats}, a \mapsto (\text{\# of } a \text{ that eat flowers}), >)
+\end{gather}
+
+The heart of comparatives in \lname{} is the quadrivalent verb \hortho{doran $a$ $b$ $f$ $\sqsupset$}. Thus: \\
+~\\
+\textkardinal{\hli{maki\^oha} \hlii{txorom-s\^xin,} \hliii{doran} \hliv{jace} \hlv{nyara} \hlvi{ro} \hlvii{net.}} \\
+\hli{eat-\tsc{generic}-\tsc{q}} \hlii{flower-\tsc{acc.int}-how\_many,} \hliii{\tsc{cmp}-\tsc{near}} \hliv{fish} \hlv{cat} \hlvi{\tsc{pr.anaph\_obj.int}} \hlvii{$>$} \\
+\hliv{Fish} \hli{eat} \hlvii{more} \hlii{flowers} \hliii{than} \hlv{cats.} \\
+~\\
+\textkardinal{\hli{maki\^oha} \hlii{.u\^o-s\^xin} \hliii{txoro,} \hliv{doran} \hlv{jace} \hlvi{nyara} \hlvii{ra} \hlviii{net.}} \\
+\hli{eat-\tsc{generic}-\tsc{q}} \hlii{\tsc{pr.generic}-how\_many} \hliii{flower,} \hliv{\tsc{cmp}-\tsc{near}} \hlv{fish} \hlvi{cat} \hlvii{\tsc{pr.anaph\_sub.int}} \hlviii{$>$} \\
+\hlviii{More} \hlv{fish} \hli{eat} \hliii{flowers} \hliv{than} \hlvi{cats.} \\
+
+Note that we place a clause whose argument is the generic pronoun before the comparative clause. From the doran-clause, we refer to the function using the anaphoric pronoun referring to the position of the return value.
+
 \section{Ditransitive-like constructions}
 
 In English, some verbs such as \emph{give} take two objects: the item being given and the recipient of the item. Since clauses in \lname{} can take only one object, translating such verbs requires multiple clauses: \\
@@ -758,7 +786,7 @@ In English, some verbs such as \emph{give} take two objects: the item being give
 
 \section{Transitivisation}
 
-Verbs that are intransitively (i.~e. have no object passed at this time) can be turned into a causative form with the prefix \hortho{gi-}: \\
+Verbs that are intransitively (i.~e. have no object passed at this time) can be turned into a causative form with the prefix \hortho{gi\=/}: \\
 ~\\
 \textkardinal{\hli{txicit} \hlii{frefren\^ye.}} \\
 \hli{fall-\tsc{near.past}} \hlii{\tsc{def}\tl{}coin} \\
@@ -832,9 +860,9 @@ Descriptors act as adjectives or adverbs. They follow what they modify, and are 
 
 \section{Conversion}
 
-A noun can be converted to a descriptor by appending \hortho{-sa}.
+A noun can be converted to a descriptor by appending \hortho{\=/sa}.
 
-A descriptor can be converted to an abstract noun meaning ``the nature of being \tl'' by replacing the final \hortho{-a} with \hortho{-inel}.
+A descriptor can be converted to an abstract noun meaning ``the nature of being \tl'' by replacing the final \hortho{\=/a} with \hortho{\=/inel}.
 
 \chapter{Tree mode}
 
@@ -852,9 +880,9 @@ The aforementioned particle \hortho{n\^ya7} marks the beginning of the right bra
 
 \section{Anaphoric pronouns in joiner clauses}
 
-In clauses that join two branches, anaphoric pronouns require marking whether the antecedent occurs in the left predecessor \hortho{n\^ya7} or the right predecessor \hortho{n\^ya8}. This is done by marking the pronoun with \hortho{-7} or \hortho{-8}.
+In clauses that join two branches, anaphoric pronouns require marking whether the antecedent occurs in the left predecessor \hortho{n\^ya7} or the right predecessor \hortho{n\^ya8}. This is done by marking the pronoun with \hortho{\=/7} or \hortho{\=/8}.
 
-Likewise, verbs can be modified with \hortho{-7} or \hortho{-8} to indicate which branch the subject came from.
+Likewise, verbs can be modified with \hortho{\=/7} or \hortho{\=/8} to indicate which branch the subject came from.
 
 \section{Errors}
 
@@ -1127,7 +1155,7 @@ Here are the names of the bases themselves:
 
 \section{Cardinal and ordinal numerals}
 
-Cardinal numerals compound to their antecedents; ordinal numerals use the possessive \hortho{-ma sil} construction: \\
+Cardinal numerals compound to their antecedents; ordinal numerals use the possessive \hortho{\=/ma sil} construction: \\
 ~\\
 \textkardinal{\hli{mifa-}\hlii{d\^ye\^on}} \\
 \hli{child-}\hlii{three} \\
@@ -1143,7 +1171,7 @@ The following methods are used to derive related terms from existing ones.
 
 \section{Abstraction}
 
-Abstraction is a derivation that takes a non-abstract noun and returns the abstract noun representing the concept of the argument. This formation appends \hortho{-ne} or \hortho{-no\^e} to the noun.
+Abstraction is a derivation that takes a non-abstract noun and returns the abstract noun representing the concept of the argument. This formation appends \hortho{\=/ne} or \hortho{\=/no\^e} to the noun.
 
 Examples:
 
@@ -1152,9 +1180,11 @@ Examples:
     \item \hortho{hoka} \emph{cart} → \hortho{hokano\^e} \emph{transportation}
 \end{itemize}
 
+Note that any double letters collapse into a single.
+
 \section{Dematuration}
 
-Dematuration is a derivation that takes a noun and returns a noun of the same class that represents an immature form of the argument (not necessarily a diminuitive). \hortho{ti-} or \hortho{tu\^i-} are prepended to nouns that begin in \hortho{s} or \hortho{x}, or \hortho{si-} or \hortho{su\^i-} otherwise.
+Dematuration is a derivation that takes a noun and returns a noun of the same class that represents an immature form of the argument (not necessarily a diminuitive). \hortho{ti\=/} or \hortho{tu\^i\=/} are prepended to nouns that begin in \hortho{s} or \hortho{x}, or \hortho{si\=/} or \hortho{su\^i\=/} otherwise.
 
 Examples:
 

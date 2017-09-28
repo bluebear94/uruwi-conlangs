@@ -1,5 +1,5 @@
 TEX=xelatex
-TEXFLAGS=-interaction=nonstopmode
+TEXFLAGS=-interaction=nonstopmode -halt-on-error
 
 all: out/5.pdf out/6.pdf out/7.pdf
 
@@ -20,8 +20,8 @@ out/7.pdf: 7/dict/dict.tex
 
 out/%.pdf: %/main.tex common/uruwi.sty
 	mkdir -p out
-	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $<
-	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $<
+	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $< || (rm $@; false)
+	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $< || (rm $@; false)
 
 clean:
 	rm -rf out
