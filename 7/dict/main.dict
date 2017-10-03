@@ -305,7 +305,7 @@ who?
 
 # tsiltan
 : v
-(S) wants (O)
+(S) wants (O), benefactive
 
 
 # patan
@@ -686,3 +686,108 @@ food
 # deman
 : v
 (S) sleeps
+
+# mirme^o
+: nanim
+tongue
+
+# firin
+: v
+touch
+
+# hasno
+: ninanim
+nose
+
+# mo^erum
+: nanim
+scorpion
+
+# ra.itan
+: v
+(S) is beside (O)
+
+# txaris
+: ninanim
+river
+
+# bisin
+: v
+(S) walks to (O)
+
+# meri^u
+: ninam
+opposite side
+
+# nerita
+: desc
+sudden
+
+# hefan
+: v
+(S) asks for, requests (O)
+
+# tsikin
+: v
+(S) stabs, stings (O)
+
+# megan
+: v
+(S) drowns in (O), (O) fills (S)
+
+# hin
+: v
+(S) claims that (O)
+
+# n^goran
+: v
+(S) thinks, ponders about (O)
+
+# f^xare
+: nabst
+quote, words, speech
+
+# rakan
+: v
+(S) climbs, rises in (O)
+
+# dafo
+: ninanim
+back (body part)
+
+# nexin
+: v
+(S) swims in (O)
+
+# du^oro
+: ninanim
+pathway
+
+# ni^o
+: ninanim
+point
+\textkardinal{ni^o-myane} halfway point
+
+# tu^iro
+: nined
+blood vessels
+
+# vo^ero
+: nfluid
+poison
+
+# fire
+: nabst
+what
+
+# bu^on^gan
+: v
+(S) succumbs to their impulses
+
+# fisin
+: v
+(S) obeys (O)
+
+# xil
+: nabst
+nature, disposition
