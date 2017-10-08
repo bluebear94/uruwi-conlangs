@@ -1,0 +1,324 @@
+\documentclass{book}
+
+\usepackage[shortsuper,hacm,dhr]{common/uruwi}
+
+\newcommand{\lname}{aaaaaaaaaaA}
+
+\title{Uruwi's personal style guide for documents}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{Goldenrod!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{RedOrange} \hprule \vspace{1.5ex} \\}
+        {\Huge \textcolor{BrickRed}{\@title}\\}
+        %{\large \sffamily \textcolor{Purple}{\@title} \\}
+        %{\large \textit{\lname}, the language of \textit{Rymako} \\}
+        {\color{RedOrange} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        %\textkardinal{aaaaaaaaaaaaaaaaa} \\
+        %{aaaaaaaaaaaaaaaaa} \\[5pt]
+        %\emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{Goldenrod!15}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2017-10-07
+\end{verbatim}
+
+(C)opyright 2017 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\chapter{Overview of build process}
+
+To generate grammars and other documents, \XeLaTeX{} is used. Documents depend on the \texttt{common/uruwi.sty} package, which imports dependent packages such as \texttt{xcolor} and \texttt{tabu}, as well as defining in-house macros such as \texttt{\bs{}hli} and \texttt{\bs{}ortho}.
+
+The build process is automated using \texttt{make}, which, in addition to invoking \XeLaTeX{} to build the document, generates \texttt{dict.tex} files from dictionary files.
+
+\section{Lexicon management}
+
+Lexicons are stored in \texttt{.dict} files, which are plain text files with some formatting info. A typical file will have entries like this:
+
+\begin{lstlisting}
+# ramek
+: vn?
+break, shatter, tear, destroy
+n = what was broken was in the way; non-n = what did the breaking sought out things to break
+
+# kekoro
+: n
+most, majority
+
+# malka
+: n
+quiet, calm, sound
+
+# rajnek
+: v
+sleep
+
+# ranu
+: n
+fox
+
+# kretanek
+: v
+run
+
+# mepek
+: v
+learn, teach (about)
+learn <A> → <A>-\textsf{kejm%*á*) mepek}
+\end{lstlisting}
+
+Evidently, each entry is delimited by one or more blank lines. A line starting with an octothorpe gives the entry in the target language. A line beginning with a colon defines the part of speech.
+
+Other lines provide a definition. Some entries require multiple lines; in that case, the subsequent lines will act as usage notes or examples.
+
+The dictionary file is converted to a \LaTeX file with the \texttt{dict-to-tex.pl6} script. This script also takes a JSON file that specifies styling information and the lexicographic ordering. For instance, the dictionary file for Lek-Tsaro uses this \texttt{options.json} file\footnote{I'm showing the Lek-Tsaro options file instead of the one used by Ḋraħýl Rase because the latter uses Unicode characters, which don't display quite properly with \texttt{listings.sty}.}:
+
+\lstinputlisting[language=Octave]{7/dict/options.json}
+
+\section{Historical tools}
+
+Historically:
+
+\begin{itemize}
+  \item Google Docs was used for prototyping language grammars. However, the grammar of Lek-Tsaro was not prototyped in that manner.
+  \item Google Sheets was used for managing lexicons. This was phased out over concerns of using propietary software.
+\end{itemize}
+
+\section{Document styling}
+
+\subsection{Typefaces}
+
+The \texttt{mathspec} package is used for custom fonts in both text- and mathmode. Gentium is used for the normal font, and \textsf{VL PGothic} for the sans-serif font. The monospace font is not set.
+
+When hacm text is needed, the \texttt{uruwi.sty} package is loaded with the \texttt{hacm} option, which sets \texttt{\bs{}kardinal} to the \textkardinal{kardinal} font, modified to include the backslash character (used by Lek-Tsaro). Frequently, superscripts in text are also needed, so \texttt{uruwi.sty} is also loaded with the \texttt{shortsuper} option, which redefines \verb|\^| to the longer \texttt{\bs{textsuperscript}}.
+
+If the \texttt{dhr} option is set, then \texttt{uruwi.sty} will also set \texttt{\bs{dhrfont}} to the \textdhr{mIny/meko} (Mîny / Meko) font, which supports \emph{Nasél Tēkel Piva}. A guide to using this font can be found in table \ref{table:ntpmm}.
+
+\newcommand{\nrpair}[2]{#1 & #2 & #1}
+\begin{table}[h]
+  \caption{Guide to using the \textdhr{mIny/meko} font. \label{table:ntpmm}}
+  \centering
+  \begin{tabular}{|>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l|}
+    \hline
+    \textnormal{NTP} & Rom & \textnormal{Seq} &
+    \textnormal{NTP} & Rom & \textnormal{Seq} &
+    \textnormal{NTP} & Rom & \textnormal{Seq} \\
+    \hline
+    \nrpair{p}{p} &
+    \nrpair{t}{t} &
+    \nrpair{k}{k} \\
+    \nrpair{s}{s} &
+    \nrpair{f}{f} &
+    \nrpair{n}{n} \\
+    \nrpair{m}{m} &
+    \nrpair{x}{ḣ} &
+    \nrpair{H}{ħ} \\
+    \nrpair{h}{h} &
+    \nrpair{r}{r} &
+    \nrpair{S}{ṡ} \\
+    \nrpair{l}{l} &
+    \nrpair{v}{v} &
+    \nrpair{g}{g} \\
+    \nrpair{N}{ṅ} &
+    \nrpair{d}{d} &
+    \nrpair{b}{b} \\
+    \nrpair{Z}{ż} &
+    \nrpair{z}{z} &
+    \nrpair{G}{ġ} \\
+    \nrpair{D}{ḋ} &
+    \nrpair{T}{ṫ} &
+    & & \\
+    \hline
+    \nrpair{A}{â} &
+    \nrpair{E}{ê} &
+    \nrpair{I}{î} \\
+    \nrpair{O}{ô} &
+    \nrpair{U}{û} &
+    \nrpair{Y}{ŷ} \\
+    \hline
+    \nrpair{ta}{ta} &
+    \nrpair{ra}{ra} &
+    \nrpair{pa}{pa} \\
+    \nrpair{te}{te} &
+    \nrpair{re}{re} &
+    \nrpair{pe}{pe} \\
+    \nrpair{ti}{ti} &
+    \nrpair{ri}{ri} &
+    \nrpair{pi}{pi} \\
+    \nrpair{to}{to} &
+    \nrpair{ro}{ro} &
+    \nrpair{po}{po} \\
+    \nrpair{tu}{tu} &
+    \nrpair{ru}{ru} &
+    \nrpair{pu}{pu} \\
+    \nrpair{ty}{ty} &
+    \nrpair{ry}{ry} &
+    \nrpair{py}{py} \\
+    \nrpair{fa}{fa} &
+    \nrpair{fe}{fe} &
+    \nrpair{fi}{fi} \\
+    \nrpair{fo}{fo} &
+    \nrpair{fu}{fu} &
+    \nrpair{fy}{fy} \\
+    \hline
+    \nrpair{Aj}{aj} &
+    \nrpair{Ej}{ej} &
+    & & \\
+    \nrpair{Oj}{oj} &
+    \nrpair{Uj}{uj} &
+    \nrpair{Yj}{yj} \\
+    \nrpair{jA}{ja} &
+    \nrpair{jE}{je} &
+    & & \\
+    \nrpair{jO}{jo} &
+    \nrpair{jU}{ju} &
+    \nrpair{jY}{jy} \\
+    \nrpair{Aw}{aw} &
+    \nrpair{Ew}{ew} &
+    \nrpair{Iw}{iw} \\
+    \nrpair{Ow}{ow} &
+    & & &
+    \nrpair{Yw}{yw} \\
+    \nrpair{wA}{wa} &
+    \nrpair{wE}{we} &
+    \nrpair{wI}{wi} \\
+    \nrpair{wO}{wo} &
+    & & &
+    \nrpair{wY}{wy} \\
+    \nrpair{AW}{aẏ} &
+    \nrpair{EW}{eẏ} &
+    \nrpair{IW}{iẏ} \\
+    \nrpair{OW}{oẏ} &
+    \nrpair{UW}{uẏ} &
+    & & \\
+    \nrpair{WA}{ẏa} &
+    \nrpair{WE}{ẏe} &
+    \nrpair{WI}{ẏi} \\
+    \nrpair{WO}{ẏo} &
+    \nrpair{WU}{ẏu} &
+    & & \\
+    \hline
+    \nrpair{0}{0} &
+    \nrpair{1}{1} &
+    \nrpair{2}{2} \\
+    \nrpair{3}{3} &
+    \nrpair{4}{4} &
+    \nrpair{5}{5} \\
+    \nrpair{6}{6} &
+    \nrpair{7}{7} &
+    \nrpair{8}{8} \\
+    \nrpair{9}{9} &
+    \nrpair{:}{X} &
+    \nrpair{;}{E} \\
+    \hline
+    \nrpair{.}{.} &
+    \nrpair{,}{,} &
+    \nrpair{?}{?} \\
+    / & / & /\footnote{No space!} &
+    \nrpair{\tl{}}{kêl} &
+    \nrpair{[]}{``''} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Pages}
+
+The first page in a document is the title page. For a conlang, this consists of:
+
+\begin{itemize}
+  \item A horizontal rule.
+  \item A phrase akin to ``(language), the language of (place)'' in the target language. If said language has its own script, then this should be written in the script, with a transliteration below it in a smaller, sans-serif font.
+  \item The translation of the above, in italics.
+  \item Another horizontal rule identical to one above.
+  \item The name of the author.
+  \item ``A complete grammar'', first in the native script (if present), then transliterated, then in English.
+  \item The date, at the very bottom.
+\end{itemize}
+
+All of these entries are centred.
+
+For documents other than language grammars, simply include what is relevant to the document.
+
+The title page should be coloured at 25\% of one of the predefined colours in \texttt{xcolor}.
+
+For more information, consult the title pages of other documents.
+
+The second page contains an optional dedication, followed by metadata. The metadata is set in a monospace font with the following fields:
+
+\begin{itemize}
+  \item \texttt{Branch:} This is \texttt{canon} for the main branch, and different for experimental branches of the grammar.
+  \item \texttt{Version:} A version, updated occasionally.
+  \item \texttt{Date:} The date when this version was adopted.
+\end{itemize}
+
+After the metadata is the copyright information.
+
+The second and subsequent pages should be coloured at 15\% of the same shade of colour as the title page (so if the title page is at \texttt{Thistle!25}, the body pages should be at \texttt{Thistle!15}).
+
+\subsection{Colours}
+
+The following guidelines are used for selecting page colours:
+
+\begin{itemize}
+  \item A daughter language should have the same or similar page colour as its parent.
+  \item On the other hand, a language from a completely different family should have a visibly distinct page colour.
+  \item If possible, select a colour that matches the character of the language the document covers.
+  \item Avoid overly dark or light colours.
+  \item Avoid grey or other drab colours.
+  \item Favour cool colours (but don't actively avoid warm ones).
+\end{itemize}
+
+Any coloured content in the title page should blend with the page colour.
+
+However, the chapter and section styles don't need to be changed; in fact, none of the grammars change their styles.
+
+\subsection{Semantic styles}
+
+Strings in the target language inside English text should be wrapped inside an \texttt{\bs{ortho}} (or \texttt{\bs{hortho}} for hacm text), \ortho{ħanaħâle-tuẏrí}.
+
+\subsection{Example sentences}
+
+Example sentences include the (transliterated) sentence, the gloss and the idiomatic translation. The target-language sentence and the gloss are not aligned; rather, each word is coloured in both the first and second lines. The words of the English translation are coloured to roughly match the target-language sentence: \\
+~\\
+\textkardinal{\hli{tsiltanke} \hlii{me} \hliii{sartama} \hliv{sil} \hlv{s\^ha.eke.}} \\
+\hli{want-\tsc{near}-\tsc{neg}} \hlii{\tsc{pr.near.sg}} \hliii{ring=\tsc{gen}} \hliv{\tsc{pos}} \hlv{magician-\tsc{null}} \\
+\hlii{I} \hli{don't want} \hliii{the rings} \hliv{of} \hlv{any magician.} \\
+
+Underscores are preferred over periods in morphemes that take multiple words to describe:
+~\\
+\textkardinal{\hli{maki\^oha} \hlii{.u\^o-s\^hin} \hliii{txoro,} \hliv{doran} \hlv{jace} \hlvi{nyara} \hlvii{ra} \hlviii{net.}} \\
+\hli{eat-\tsc{generic}-\tsc{q}} \hlii{\tsc{pr.generic}-how\_many} \hliii{flower,} \hliv{\tsc{cmp}-\tsc{near}} \hlv{fish} \hlvi{cat} \hlvii{\tsc{pr.anaph\_sub.int}} \hlviii{$>$} \\
+\hlviii{More} \hlv{fish} \hli{eat} \hliii{flowers} \hliv{than} \hlvi{cats.} \\
+
+\end{document}
