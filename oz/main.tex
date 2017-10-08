@@ -102,6 +102,8 @@ Evidently, each entry is delimited by one or more blank lines. A line starting w
 
 Other lines provide a definition. Some entries require multiple lines; in that case, the subsequent lines will act as usage notes or examples.
 
+The dictionary file rarely includes ``grammar words'' and numerals, since these are usually defined in the grammar itself.
+
 The dictionary file is converted to a \LaTeX file with the \texttt{dict-to-tex.pl6} script. This script also takes a JSON file that specifies styling information and the lexicographic ordering. For instance, the dictionary file for Lek-Tsaro uses this \texttt{options.json} file\footnote{I'm showing the Lek-Tsaro options file instead of the one used by Ḋraħýl Rase because the latter uses Unicode characters, which don't display quite properly with \texttt{listings.sty}.}:
 
 \lstinputlisting[language=Octave]{7/dict/options.json}
@@ -126,131 +128,133 @@ When hacm text is needed, the \texttt{uruwi.sty} package is loaded with the \tex
 If the \texttt{dhr} option is set, then \texttt{uruwi.sty} will also set \texttt{\bs{dhrfont}} to the \textdhr{mIny/meko} (Mîny / Meko) font, which supports \emph{Nasél Tēkel Piva}. A guide to using this font can be found in table \ref{table:ntpmm}.
 
 \newcommand{\nrpair}[2]{#1 & #2 & #1}
-\begin{table}[h]
-  \caption{Guide to using the \textdhr{mIny/meko} font. \label{table:ntpmm}}
-  \centering
-  \begin{tabular}{|>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l|}
-    \hline
-    \textnormal{NTP} & Rom & \textnormal{Seq} &
-    \textnormal{NTP} & Rom & \textnormal{Seq} &
-    \textnormal{NTP} & Rom & \textnormal{Seq} \\
-    \hline
-    \nrpair{p}{p} &
-    \nrpair{t}{t} &
-    \nrpair{k}{k} \\
-    \nrpair{s}{s} &
-    \nrpair{f}{f} &
-    \nrpair{n}{n} \\
-    \nrpair{m}{m} &
-    \nrpair{x}{ḣ} &
-    \nrpair{H}{ħ} \\
-    \nrpair{h}{h} &
-    \nrpair{r}{r} &
-    \nrpair{S}{ṡ} \\
-    \nrpair{l}{l} &
-    \nrpair{v}{v} &
-    \nrpair{g}{g} \\
-    \nrpair{N}{ṅ} &
-    \nrpair{d}{d} &
-    \nrpair{b}{b} \\
-    \nrpair{Z}{ż} &
-    \nrpair{z}{z} &
-    \nrpair{G}{ġ} \\
-    \nrpair{D}{ḋ} &
-    \nrpair{T}{ṫ} &
-    & & \\
-    \hline
-    \nrpair{A}{â} &
-    \nrpair{E}{ê} &
-    \nrpair{I}{î} \\
-    \nrpair{O}{ô} &
-    \nrpair{U}{û} &
-    \nrpair{Y}{ŷ} \\
-    \hline
-    \nrpair{ta}{ta} &
-    \nrpair{ra}{ra} &
-    \nrpair{pa}{pa} \\
-    \nrpair{te}{te} &
-    \nrpair{re}{re} &
-    \nrpair{pe}{pe} \\
-    \nrpair{ti}{ti} &
-    \nrpair{ri}{ri} &
-    \nrpair{pi}{pi} \\
-    \nrpair{to}{to} &
-    \nrpair{ro}{ro} &
-    \nrpair{po}{po} \\
-    \nrpair{tu}{tu} &
-    \nrpair{ru}{ru} &
-    \nrpair{pu}{pu} \\
-    \nrpair{ty}{ty} &
-    \nrpair{ry}{ry} &
-    \nrpair{py}{py} \\
-    \nrpair{fa}{fa} &
-    \nrpair{fe}{fe} &
-    \nrpair{fi}{fi} \\
-    \nrpair{fo}{fo} &
-    \nrpair{fu}{fu} &
-    \nrpair{fy}{fy} \\
-    \hline
-    \nrpair{Aj}{aj} &
-    \nrpair{Ej}{ej} &
-    & & \\
-    \nrpair{Oj}{oj} &
-    \nrpair{Uj}{uj} &
-    \nrpair{Yj}{yj} \\
-    \nrpair{jA}{ja} &
-    \nrpair{jE}{je} &
-    & & \\
-    \nrpair{jO}{jo} &
-    \nrpair{jU}{ju} &
-    \nrpair{jY}{jy} \\
-    \nrpair{Aw}{aw} &
-    \nrpair{Ew}{ew} &
-    \nrpair{Iw}{iw} \\
-    \nrpair{Ow}{ow} &
-    & & &
-    \nrpair{Yw}{yw} \\
-    \nrpair{wA}{wa} &
-    \nrpair{wE}{we} &
-    \nrpair{wI}{wi} \\
-    \nrpair{wO}{wo} &
-    & & &
-    \nrpair{wY}{wy} \\
-    \nrpair{AW}{aẏ} &
-    \nrpair{EW}{eẏ} &
-    \nrpair{IW}{iẏ} \\
-    \nrpair{OW}{oẏ} &
-    \nrpair{UW}{uẏ} &
-    & & \\
-    \nrpair{WA}{ẏa} &
-    \nrpair{WE}{ẏe} &
-    \nrpair{WI}{ẏi} \\
-    \nrpair{WO}{ẏo} &
-    \nrpair{WU}{ẏu} &
-    & & \\
-    \hline
-    \nrpair{0}{0} &
-    \nrpair{1}{1} &
-    \nrpair{2}{2} \\
-    \nrpair{3}{3} &
-    \nrpair{4}{4} &
-    \nrpair{5}{5} \\
-    \nrpair{6}{6} &
-    \nrpair{7}{7} &
-    \nrpair{8}{8} \\
-    \nrpair{9}{9} &
-    \nrpair{:}{X} &
-    \nrpair{;}{E} \\
-    \hline
-    \nrpair{.}{.} &
-    \nrpair{,}{,} &
-    \nrpair{?}{?} \\
-    / & / & /\footnote{No space!} &
-    \nrpair{\tl{}}{kêl} &
-    \nrpair{[]}{``''} \\
-    \hline
-  \end{tabular}
-\end{table}
+\begin{savenotes}
+  \begin{table}[htbp]
+    \caption{Guide to using the \textdhr{mIny/meko} font. \label{table:ntpmm}}
+    \centering
+    \begin{tabular}{|>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l||>{\dhrfont}l|l|>{\ttfamily}l|}
+      \hline
+      \textnormal{NTP} & Rom & \textnormal{Seq} &
+      \textnormal{NTP} & Rom & \textnormal{Seq} &
+      \textnormal{NTP} & Rom & \textnormal{Seq} \\
+      \hline
+      \nrpair{p}{p} &
+      \nrpair{t}{t} &
+      \nrpair{k}{k} \\
+      \nrpair{s}{s} &
+      \nrpair{f}{f} &
+      \nrpair{n}{n} \\
+      \nrpair{m}{m} &
+      \nrpair{x}{ḣ} &
+      \nrpair{H}{ħ} \\
+      \nrpair{h}{h} &
+      \nrpair{r}{r} &
+      \nrpair{S}{ṡ} \\
+      \nrpair{l}{l} &
+      \nrpair{v}{v} &
+      \nrpair{g}{g} \\
+      \nrpair{N}{ṅ} &
+      \nrpair{d}{d} &
+      \nrpair{b}{b} \\
+      \nrpair{Z}{ż} &
+      \nrpair{z}{z} &
+      \nrpair{G}{ġ} \\
+      \nrpair{D}{ḋ} &
+      \nrpair{T}{ṫ} &
+      & & \\
+      \hline
+      \nrpair{A}{â} &
+      \nrpair{E}{ê} &
+      \nrpair{I}{î} \\
+      \nrpair{O}{ô} &
+      \nrpair{U}{û} &
+      \nrpair{Y}{ŷ} \\
+      \hline
+      \nrpair{ta}{ta} &
+      \nrpair{ra}{ra} &
+      \nrpair{pa}{pa} \\
+      \nrpair{te}{te} &
+      \nrpair{re}{re} &
+      \nrpair{pe}{pe} \\
+      \nrpair{ti}{ti} &
+      \nrpair{ri}{ri} &
+      \nrpair{pi}{pi} \\
+      \nrpair{to}{to} &
+      \nrpair{ro}{ro} &
+      \nrpair{po}{po} \\
+      \nrpair{tu}{tu} &
+      \nrpair{ru}{ru} &
+      \nrpair{pu}{pu} \\
+      \nrpair{ty}{ty} &
+      \nrpair{ry}{ry} &
+      \nrpair{py}{py} \\
+      \nrpair{fa}{fa} &
+      \nrpair{fe}{fe} &
+      \nrpair{fi}{fi} \\
+      \nrpair{fo}{fo} &
+      \nrpair{fu}{fu} &
+      \nrpair{fy}{fy} \\
+      \hline
+      \nrpair{Aj}{aj} &
+      \nrpair{Ej}{ej} &
+      & & \\
+      \nrpair{Oj}{oj} &
+      \nrpair{Uj}{uj} &
+      \nrpair{Yj}{yj} \\
+      \nrpair{jA}{ja} &
+      \nrpair{jE}{je} &
+      & & \\
+      \nrpair{jO}{jo} &
+      \nrpair{jU}{ju} &
+      \nrpair{jY}{jy} \\
+      \nrpair{Aw}{aw} &
+      \nrpair{Ew}{ew} &
+      \nrpair{Iw}{iw} \\
+      \nrpair{Ow}{ow} &
+      & & &
+      \nrpair{Yw}{yw} \\
+      \nrpair{wA}{wa} &
+      \nrpair{wE}{we} &
+      \nrpair{wI}{wi} \\
+      \nrpair{wO}{wo} &
+      & & &
+      \nrpair{wY}{wy} \\
+      \nrpair{AW}{aẏ} &
+      \nrpair{EW}{eẏ} &
+      \nrpair{IW}{iẏ} \\
+      \nrpair{OW}{oẏ} &
+      \nrpair{UW}{uẏ} &
+      & & \\
+      \nrpair{WA}{ẏa} &
+      \nrpair{WE}{ẏe} &
+      \nrpair{WI}{ẏi} \\
+      \nrpair{WO}{ẏo} &
+      \nrpair{WU}{ẏu} &
+      & & \\
+      \hline
+      \nrpair{0}{0} &
+      \nrpair{1}{1} &
+      \nrpair{2}{2} \\
+      \nrpair{3}{3} &
+      \nrpair{4}{4} &
+      \nrpair{5}{5} \\
+      \nrpair{6}{6} &
+      \nrpair{7}{7} &
+      \nrpair{8}{8} \\
+      \nrpair{9}{9} &
+      \nrpair{:}{X} &
+      \nrpair{;}{E} \\
+      \hline
+      \nrpair{.}{.} &
+      \nrpair{,}{,} &
+      \nrpair{?}{?} \\
+      / & / & /\footnote{No space!} &
+      \nrpair{\tl{}}{kêl} &
+      \nrpair{[]}{``''} \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{savenotes}
 
 \subsection{Pages}
 
@@ -309,7 +313,7 @@ Strings in the target language inside English text should be wrapped inside an \
 
 \subsection{Example sentences}
 
-Example sentences include the (transliterated) sentence, the gloss and the idiomatic translation. The target-language sentence and the gloss are not aligned; rather, each word is coloured in both the first and second lines. The words of the English translation are coloured to roughly match the target-language sentence: \\
+Example sentences include the (transliterated) sentence, the gloss and the idiomatic translation. The target-language sentence and the gloss are not aligned; rather, each word is coloured in both the first and second lines\footnote{This was inspired by Isoraķatheð's practices, although my adaptation is nowhere as extensive as theirs.}. The words of the English translation are coloured to roughly match the target-language sentence: \\
 ~\\
 \textkardinal{\hli{tsiltanke} \hlii{me} \hliii{sartama} \hliv{sil} \hlv{s\^ha.eke.}} \\
 \hli{want-\tsc{near}-\tsc{neg}} \hlii{\tsc{pr.near.sg}} \hliii{ring=\tsc{gen}} \hliv{\tsc{pos}} \hlv{magician-\tsc{null}} \\
@@ -320,5 +324,142 @@ Underscores are preferred over periods in morphemes that take multiple words to 
 \textkardinal{\hli{maki\^oha} \hlii{.u\^o-s\^hin} \hliii{txoro,} \hliv{doran} \hlv{jace} \hlvi{nyara} \hlvii{ra} \hlviii{net.}} \\
 \hli{eat-\tsc{generic}-\tsc{q}} \hlii{\tsc{pr.generic}-how\_many} \hliii{flower,} \hliv{\tsc{cmp}-\tsc{near}} \hlv{fish} \hlvi{cat} \hlvii{\tsc{pr.anaph\_sub.int}} \hlviii{$>$} \\
 \hlviii{More} \hlv{fish} \hli{eat} \hliii{flowers} \hliv{than} \hlvi{cats.} \\
+
+\chapter{Document Structure}
+
+A developed grammar will have the following parts:
+
+\begin{itemize}
+  \item A brief overview of the external and internal histories of the language (especially with more developed conlangs)
+  \item Phonology (phoneme inventory, phonotactics and allophony) and orthography (including script if present)
+  \item An overview of the syntax (basic word orders). This can be explored in detail in later chapters.
+  \item A chapter for each main part of speech and its morphology.
+  \item A chapter listing the morphological derivations of this language.
+  \item Some peripheral topics.
+  \item Example texts, if any.
+  \item The appendix. This is where any source code belongs. Other information may go here at one's discretion.
+  \item The lexicon, generated by \texttt{workfiles/dict-to-tex.pl6}.
+\end{itemize}
+
+\section{Phonology and orthography}
+
+The consonants and vowels (if the language has both) are provided in a table, using IPA. Cells representing impossible articulations are marked \texttt{\bs{invalid}}. Any supplementary methods of producing phonemes are mentioned with the appropriate phonemes.
+
+The orthography may be provided either with the phoneme inventory or in a separate table.
+
+The phonotactics of a language is a necessary part of the phonology and should not be omitted.
+
+A well-developed language will have some degree of allophony that needs to be described. The Ḋraħýl Rase grammar put these rules in a table. Another system is the Uruwian Diachronic Notation (UDN), detailed in Chapter \ref{chapter:udn}.
+
+\chapter{The Uruwian Diachronic Notation}
+\label{chapter:udn}
+
+The Uruwian Diachronic Notation (UDN) is a notation optimised for listing many sound changes.
+
+\section{Rules}
+
+The basic structure of a rule is:
+
+\begin{alignat}{2}
+  \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+\end{alignat}
+
+where
+
+\begin{itemize}
+  \item $\alpha$ is the string to be replaced.
+  \item $\omega$ is the resulting string.
+  \item $\lambda \blacklozenge \rho$ is the \emph{environment} -- if this part is present, then the change will happen only when $\lambda$ is found immediately to the left and $\rho$ immediately to the right of the string to be replaced.
+  \item $\Gamma$ is the \emph{global condition} -- a predicate on the word that is changed. If it is false, then the change does not occur. Defaults to being always true.
+\end{itemize}
+
+Rules are applied from top to bottom.
+
+\begin{table}[h]
+  \caption{Some basic examples.}
+  \centering
+  \begin{tabu} to \linewidth {|l|X|}
+    \hline
+    $\text{ɬ.l} \rightarrow \text{ɬː}$ & Replace [ɬ.l] with [ɬː] \\
+    $\text{n} \rightarrow \text{ŋ} \quad(\blacklozenge \text{ɡ})$ & Replace [n] with [ŋ] before [ɡ] \\
+    $\text{s} \rightarrow \text{ʃ} \quad[\#\sigma = 2]$ & Replace [s] with [ʃ] in words with two syllables \\
+    \hline
+  \end{tabu}
+\end{table}
+
+\section{Capture variables}
+
+Of course, $\alpha$ and $\omega$ need not be fixed strings. One or more characters in $\alpha$ can be a \emph{capture variable}, which can be backreferenced in $\omega$, $\lambda$ or $\rho$. Capture variables consist of a class name followed by a subscript. Usually, a language will use three class names: $C$ for consonant, $V$ for vowel and $\Sigma$ for strings with any number of characters. However, there is nothing limiting a language from using others -- e.~g. $R$ for rod signal. At most one top-level class variable in $\alpha$ can be anonymous.
+
+A class variable may have zero or more qualifiers: $C_1[+fr]$ denotes a fricative. Class variables in $\omega$ might also take qualifiers, in which case this should be interpreted as changing only the traits listed in the qualifiers and leaving the rest the same.
+
+Class variables can be used in $\lambda$ or $\rho$, but those mentioned there but not in $\alpha$ may not be backreferenced in $\omega$.
+
+Class variables may also receive an explicit list, such as $C_1\{\text{b}, \text{d}, \text{ɡ}\}$. In that case, a backreference to such a variable may have the same number of elements that correspond to the elements of the original list. Explicit lists can contain fixed strings \emph{or} further anonymous class variables: $C_1\{\text{b}, [+ve]\}$ refers to a consonant that is either [b] or a velar consonant.
+
+\begin{table}[h]
+  \caption{Some basic examples.}
+  \centering
+  \begin{tabu} to \linewidth {|l|X|}
+    \hline
+    $C_1[+ob,+v] \rightarrow C_1[-v] \quad(C_2[+ob,-v] \blacklozenge)$ & Devoice obstruents following unvoiced obstruents \\
+    $\text{n} \rightarrow \text{ŋ} \quad(\blacklozenge C_1[+ve])$ & Replace [n] with [ŋ] before a velar consonant \\
+    $V_1[+r,-l] \rightarrow V_1[-r]$ & Unround short vowels \\
+    $C_1\{\text{b}, \text{d}, \text{ɡ}\} \rightarrow C_1\{\text{p}, \text{t}, \text{k}\}$ & Change [b d ɡ] to [p t k] \\
+    \hline
+  \end{tabu}
+\end{table}
+
+\begin{table}[h]
+  \caption{List of commonly-used qualifiers.}
+  \centering
+  \begin{tabu} to \linewidth {|l|l|X||l|l|X|}
+    \hline
+    Short & Long & Meaning & Short & Long & Meaning \\
+    \hline
+    $+lb$ & $pa=lb$ & Labial & $+lv$ & $pa=lv$ & Labiovelar \\
+    $+av$ & $pa=av$ & Alveolar & $+pa$ & $pa=pa$ & Postalveolar \\
+    $+rt$ & $pa=rt$ & Retroflex & $+pt$ & $pa=pt$ & Palatal \\
+    $+ve$ & $pa=ve$ & Velar & $+uv$ & $pa=uv$ & Uvular \\
+    $+ph$ & $pa=ph$ & Pharyngeal & $+gl$ & $pa=gl$ & Glottal \\
+    \hline
+    $+pl$ & $ma=pl$ & Plosive & $+fr$ & $ma=fr$ & Fricative \\
+    $+na$ & $ma=na$ & Nasal & $+ap$ & $ma=ap$ & Approximant \\
+    $+la$ & $ma=la$ & Lateral approximant & $+lf$ & $ma=lf$ & Lateral fricative \\
+    $+tr$ & $ma=tr$ & Trill & $+tp$ & $ma=tp$ & Tap \\
+    \hline
+    $+v$ & & Voiced & $-v$ & & Unvoiced \\
+    $+a$ & & Aspirated & $-a$ & & Unaspirated \\
+    \hline
+    $+hi$ & $vh=hi$ & High & $+mh$ & $vh=mh$ & Mid-high \\
+    $+ml$ & $vh=ml$ & Mid-low & $+lo$ & $vh=lo$ & Low \\
+    \hline
+    $+vf$ & $vf=fr$ & Front & $+vc$ & $vf=ce$ & Central \\
+    $+vb$ & $vf=bk$ & Back & & & \\
+    \hline
+    $+r$ & $vr=1$ & Rounded & $-r$ & $vr=0$ & Unrounded \\
+    $+l$ & $l=1$ & Long & $-l$ & $l=0$ & Short \\
+    $+s$ & $s=1$ & Stressed & $-s$ & $s=0$ & Unstressed \\
+    \hline
+  \end{tabu}
+\end{table}
+
+\section{Word boundaries}
+
+Word boundaries are marked by $\square$. This is commonly used to detect word boundaries, but can also be used to replace strings across words.
+
+Take note that any $\Gamma$-variables will refer to the first word covered by $\alpha$. If you want to refer to other words, use an offset: $_{-1}\sigma$ refers to the syllables of the previous word; $_1\sigma$ refers to those of the next.
+
+\begin{table}[h]
+  \caption{Some basic examples.}
+  \centering
+  \begin{tabu} to \linewidth {|l|X|}
+    \hline
+    $C_1[+ob,+v] \rightarrow C_1[-v] \quad(\blacklozenge \square)$ & Devoice final obstruents \\
+    $\text{ə} \rightarrow \text{æn} \quad(\square \blacklozenge \square V_1)$ & Correct English articles \\
+    $\Sigma_1 \text{ɚ} \rightarrow \text{mɔɹ} \square \Sigma_1 \quad[\#\sigma \ge 2 \land \sigma[-1].n \ne \text{i}]$ & Replace ``X-er'' with ``more X'' in long words that don't end with [i] \\
+    \hline
+  \end{tabu}
+\end{table}
 
 \end{document}

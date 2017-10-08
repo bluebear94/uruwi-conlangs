@@ -64,6 +64,9 @@ sub MAIN(Str $src, Str $out, Str $opts) {
       $cur-entry = Hash();
     }
   }
+  if $cur-entry {
+    @entries.push: $cur-entry;
+  }
   my $cur-first = -1;
   $fh.close;
   @entries.=sort: {

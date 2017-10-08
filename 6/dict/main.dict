@@ -513,7 +513,7 @@ place
 
 # suumi
 : v2t
-start
+start, begin
 
 
 # keru
@@ -665,4 +665,6 @@ shoot with a bow
 : n3
 knee
 
-
+# noomi
+: v2
+end
