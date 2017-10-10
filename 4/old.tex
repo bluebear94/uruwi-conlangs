@@ -1,0 +1,1412 @@
+% !TeX spellcheck = en_US
+\documentclass{book}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{longtable}
+
+\newcommand{\qa}[2]{\item \textbf{#1} #2}
+% http://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+\newcommand{\specialcell}[2][l]{%
+	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+\usepackage{expl3}
+\ExplSyntaxOn
+\cs_set_eq:NN \str_case:nnn \str_case:nn
+\cs_set_eq:NN \str_case_x:nnn \str_case_x:nnF
+\ExplSyntaxOff
+
+\usepackage{lingmacros}
+
+%\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+
+\setmainfont{DejaVu Serif}
+%\setmainfont{Times New Roman}
+\setsansfont{VL PGothic}
+
+\title{\textsf{A complete grammar of \\ Necarasso Cryssesa \\ 6 vletmata}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+Welcome to the \emph{new} complete grammar of Necarasso Cryssesa! Note that this is not a full tutorial and assumes that you have the wordlist with you. If you don't have it, then a download link should have been at your reach.
+
+This document replaces the $VE^4ENCS$ you loved (or in my case, loved less); between its release and now, the grammar of Necarasso Cryssesa received major reforms (and perhaps it should be called Cryssesa Necarasso according to the new syntactic rules). It is compiled from the still-relevant parts of $VE^4ENCS$ and the proposed edits in Google Docs, plus more out of thin air (most of Chapter 4, for instance). As a result, you'll probably find the new NCS more terse and beautiful. (Or maybe you're a masochist and preferred the Spanish-like grammar of the former language better. \textsf{公平であるよ。})
+
+And finally, if you want to learn the language, you not only need to study this document but also the wordlist (\texttt{ncsvocab.ods}). The old part of it was recently batch-converted with a Scala program (before I started to dive into the gory details of Perl 6). I'll be really hard on you. \textsf{公平であるよ。}
+
+\section{Too-frequently asked questions}
+
+\begin{enumerate}
+  \qa{Is this language difficult?}{1. If you don't find it that way, then either I or you are doing something very, very wrong.}
+  \qa{Why should I learn this language?}{Maybe you offered to learn it in return for having me learn yours. Or you just want to blend in with the locals.}
+  \qa{Am I welcome to learn even if you didn't ask me to?}{1.}
+  \qa{What does 1 mean?}{Seems as if you'd need to continue.}
+  \qa{Why did you change the grammar?}{Because the old one was too much like that of Spanish, my Spanish teacher was mean, and I became obsessed with Japan.}
+  \qa{Why did you become obsessed with Japan?}{Shooting little girls. And they shoot back too.}
+  \qa{What the \textsf{ファック}?!!}{It's not as bad as it seems.}
+  \qa{Can you still write NCS in kana?}{\textsf{ぺるてねす。}}
+  \qa{This font is ugly!}{Well, I could use only the DejaVu fonts because of IPA, and DejaVu Sans Mono had spacing problems. It's either this or DejaVu Serif.}
+  \qa{No, the one you use to write Japanese!}{It looks like a yukkuri, smells like a yukkuri, and feels like a yukkuri. Take it easy.}
+  \qa{You're too funny!}{This isn't a question, but I'll respond anyway. Deal with it.}
+  \qa{You're going to fill this page with your humor!}{Relax, there is another page. I should really stop, though.}
+  \qa{What's your favorite programming language?}{I have many. TI-Basic (the 83+ version, not the crappy 89 version), Scala, C, and recently I started with Haskell.}
+  \qa{BLAH BLAH BLAH BLARRG Y U NO LUV PYTHON?!!!!!}{Mainly whitespace. Screw you, Haskell, for doing this too when I just wanted to make an \texttt{ed} clone.}
+  \qa{What's your favorite game for shooting little girls?}{\\\textsf{東方妖々夢　～} Perfect Cherry Blossom.}
+  \qa{What's a \emph{pertingent apudessive construct}?}{It describes something (a vertical surface) with something else on it.}
+\end{enumerate}
+
+\section{Changes in the 6th edition}
+
+\begin{itemize}
+	\item Clarify phonotactics
+	\item Use correct linguistic terminology
+	\item Add section on obviate pronouns
+	\item Use proper glosses
+	\item Add section on transitivity
+	\item Clarify combinations of numerical roots
+	\item Add a few new constructs
+	\item Elaborate on causatives and comparatives
+	\item Clarify distinction between erasing and h-forming morphologies
+	\item New section on units of measure
+\end{itemize}
+
+\chapter{Phonology and orthography}
+
+\section{Inventory of phonemes}
+
+\begin{center}
+	\begin{tabular}{|r|l|l|}
+	 \hline
+	 Letter(s) & Phoneme & Note \\ \hline
+	 c & k & never [s] \\
+	 e & e & [ɛː] when long \\
+	 n & n & [ŋ] before a velar \\
+	 v & β & \\
+	 o & o & [ɔː] when long \\
+	 s & s & [ʃ] <š> before /i/, /iː/, or /j/ \\
+	 & & [z] near voiced consonants \\
+	 r & ɹ & cannot precede [j] \\
+	 & & [ɰ] after |ɹV| \\
+	 l & l & never [ɫ] \\
+	 m & m & \\
+	 a & a & \\
+	 f & ɸ & \\
+	 g & ɡ & \\
+	 p & p & \\
+	 t & t & [tʃ] <č> before /i/, /iː/, or /j/ \\
+	 i & iː & always long \\
+	 y & i & always short \\
+	 d & d & pronounced [t] at the end \\
+	 h & x & cannot occur word-initially \\ \hline
+	 ss & θ & cannot occur word-initially \\
+	 & & [ð] near voiced consonants \\
+	 ll & ɬ & cannot occur word-initially \\
+	 j & j & must precede a vowel other than /i/ or /iː/ \\
+	 & & a preceding consonant is palatalized \\
+	 & & treated as |ɹj| in many cases \\ \hline
+	\end{tabular}
+\end{center}
+\subsection{Consonants}
+Parenthesized consonants denote allophones.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		& Bilabial & Dental & Alveolar & Post-alveolar & Palatal & Velar \\ \hline
+		Plosive & p & & t d & & & k \\ \hline
+		Fricative & ɸ β & θ (ð) & s (z) & (ʃ) & & x \\ \hline
+		Affricate & & & & (tʃ) & & \\ \hline
+		Approximant & & & ɹ & & j & (ɰ) \\ \hline
+		Lateral approximant & & & l & & & \\ \hline
+		Lateral fricative & & & ɬ & & & \\ \hline
+		Nasal & m & & n & & & (ŋ) \\ \hline
+	\end{tabular}
+\end{center}
+\subsection{Vowels}
+Tildes denote short-long pairs.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		& Front & Back \\ \hline
+		Closed & i iː & \\ \hline
+		Mid & e$\sim$ɛː & o$\sim$ɔː \\ \hline
+		Open & \multicolumn{2}{c|}{a} \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Vowel length}
+
+<i> is always long (except when the next bullet point applies) and <y> is always short. Other vowels are long if and only if they precede another vowel, <r>, or <ll>, or if they occur at the end of a word. <e> and <o> is pronounced with a more open mouth when long.
+
+\section{Phonotactics}
+
+The basic form for a word is usually $C_0(NC)*N_t$. $C_0$ is a consonant, $N$ is short for $AVA$ ($A$, in turn, is an approximant) and $N_t$ is an ending. The only permitted endings (accounting for palatalization) are -a, -e, -i, -o, -as, -es, -is, -os, -ys, -an, -en, -on, -yn, -ja, -jo, -jas, -jos, -jan, -jon, -ass, -ess, -yss, -erss, -el, -yl, -ad, and -yd.
+
+Note that only certain initial consonant clusters are allowed: /pɹ/, /βɹ/, /βl/, /ɸɹ/, /ɸl/, /tl/, /tɹ/, /dl/, /dɹ/, /sɹ/, /kɹ/, /ɡɹ/, and /ɡl/, plus clusters with the second consonant being /j/. [x͡θ] (<css>) and [kf] (<cv>) are also permitted.
+
+\subsection{Sound changes reflected in orthography}
+
+\begin{itemize}
+  \item /s/, /t/, and /ɹ/ change into [ʃ], [tʃ], and [j] respectively before [i] or [j] (if there is [j] it is removed)
+  \item Initial |ka| and |ko| change into /kja/ and /ke/ respectively (occurrences of \emph{car} [out] is an exception)
+\end{itemize}
+
+\section{Erasing vs. h-forming}
+
+Some inflections and compounds might result in two vowels adjacent to each other. \emph{H-forming} morphologies deal with the problem of two identical adjacent vowels by infixing <h> between them. They do not exhibit special behavior on two different adjacent vowels. \\
+\emph{Unconditional erasing} morphologies merge two adjacent vowels, resulting in only the first vowel remaining. \emph{Conditional erasing} morphologies merge only identical adjacent vowels.
+
+\section{Punctuation}
+
+The period, the question mark, the exclamation mark, and the semicolon are used as usual. Guillemets are used as quotes, and foreign words are marked with an asterisk.
+
+The comma is used to separate a topic from the rest of its sentence.
+
+\section{Name order}
+
+Names are presented surname-first. Surnames are passed from parent to child, within the same gender.
+
+\section{Other notes}
+
+\begin{itemize}
+  \item All unvoiced consonants are aspirated; in other words, \textbf{t} is pronounced as the one in \emph{top} instead of \emph{stop}, even when there is an \textbf{s} next to it.
+  \item There are no diphthongs.
+  \item There is no rule for stress.
+  \item <css> is pronounced [x͡θ].
+\end{itemize}
+
+\section{Rhythm}
+
+Necarasso measures rhythm in \emph{sromo} (singular: \emph{sroma}), which can roughly be translated into \emph{morae}. Consonant clusters are divided between syllables if and only if they cannot occur initially (i.~e.~\emph{fesren} would be divided as \emph{fe-sren} but \emph{enpros} would be divided as \emph{en-pros}). The principal consonant-vowel pair counts as one \emph{sroma} for a short vowel and three-halves for a long vowel; in addition, any "long" consonants (fricatives and non-lateral approximants) not part of the pair count as one-half each.
+
+For example, \emph{esnentryd} (to compress) would be split as \emph{es-nen-tryd} and count as 3.5 \emph{sromo} (1.5, 1.0, 1.0).
+
+\chapter{Word classes}
+
+\section{Overview}
+
+Necarasso Cryssesa is a fusional / agglutinative language. It is verb- and head-final and uses postpositions. The language is almost exclusively dependent-marking. Its inflections are mildly suffix-dominant. Questions are formed using a particle at the beginning.
+
+\section{Basic syntax}
+
+\begin{enumerate}
+  \item The verb or copula (present or implied) comes last in a sentence. The subject usually comes before a direct object, if one exists.
+  \item An adjective, adverb, postpositional phrase, or relative clause precedes what it modifies. (Exception: adjectives part of a language name \emph{follow} the word \emph{necarasso}.)
+  \item A cardinal number follows what it quantifies; the counter word, if present, follows the number.
+  \item An ordinal number, which starts from zero, precedes its antecedent. Negative ordinals (\emph{regrys} before) denote an index from the last item.
+\end{enumerate}
+
+\section{Nouns}
+
+A noun can adopt any ending that does not end with <d>. All nouns are obligatorily declined in three numbers by replacing their endings, as follows:
+
+\begin{center}
+  \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+    \hline
+    \textbf{Singular} & \textbf{Dual} & \textbf{Plural} \\ \hline
+    All with a & -ar & -o \\ \hline
+    -el & -or & -jon \\
+    -e & -ir & -i \\
+    -erss & -yr & -yss \\
+    All others with e & -yr & e to y \\ \hline
+    -o & -yn & -an \\
+    -or & -osor & -el \\
+    All others with o & -or & -el \\ \hline
+    All with i/y & -er & -es \\ \hline
+    \textbf{Drop palatalization?} & \textbf{Yes} & \textbf{No, unless ending rules require dropping} \\ \hline
+  \end{tabular}
+\end{center}
+
+Number is conditionally erasing. As usual, when accounting for palatalization dropping, <č>, <š>, <j> are treated as <*tj>, <*sj>, and <*rj> respectively before <a>, <e>, or <o>, and the former two are treated as <t> and <s> before <i> or <j>.
+
+Nouns are also declined for nominative or oblique case. The nominative case is unmarked, and the oblique is formed by changing the final consonant to <n> (or adding it if the form ends in a vowel) on a noun already inflected for number. Nominative cases are used for the subject of a sentence and with \emph{eas} when referring to possession, as well as in an object of the copula.
+
+\textbf{Examples.}
+
+\begin{center}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Singular} & \textbf{Dual} & \textbf{Plural} & \textbf{Definition} \\ \hline
+    vercesa & vercesar & verceso & grain, fleck \\ \hline
+    nesmeja & nesmerar & nesmejo & star \\ \hline
+    rečyrcar & rečyrcar & rečyrco & flower \\ \hline
+    mortos & mortor & mortel & hand \\ \hline
+    arpelja & arpelar & arpeljo & stream \\ \hline
+    cerel & ceror & cerion & sunset \\ \hline
+    csserys & csserer & csseres & door \\ \hline
+    nerdo & nerdyn & nerdan & base, foundation, floor \\ \hline
+    creten & crečyr & crečyn & wave \\ \hline
+    naria & nariar & nario & chin \\ \hline
+  \end{tabular}
+\end{center}
+
+\section{Personal pronouns}
+
+Personal pronouns have irregular numerical declensions, but cases are accounted in the same method as in other nouns.
+
+\begin{center}
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \emph{I} & ento & eras \emph{we} \\ \hline
+    \textbf{2} & eo \emph{you} & eoro & eos \emph{you} \\ \hline
+    \textbf{3} & os \emph{he, she, it} & oson & oros \emph{they} \\ \hline
+  \end{tabular}
+\end{center}
+
+In addition, when a two different third-person subjects are mentioned in a context, the first to be mentioned now uses \emph{ela} and the second uses \emph{emta}. If more than two are mentioned, then the following additional pronouns are used:
+
+\begin{center}
+	\begin{tabular}{|r|l|}
+		\hline
+		2 & \textbf{enros} \\
+		3 & \textbf{ton} \\
+		4 & \textbf{senca} \\
+		5 & redo \\
+		6 & remja \\
+		7 & relen \\
+		8 & refe \\
+		& \emph{etc.} \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\emph{Ela} and \emph{emta} are uninflected, the other three suppletive obviates are inflected as nouns, and the remainder of the obviate pronouns are inflected as such:
+
+\begin{itemize}
+	\item Nominative: redo, ryrdo, rydo
+	\item Oblique: rendo, ryndo, ryndo
+\end{itemize}
+
+\subsection{Reflexive and reciprocal pronouns}
+
+These are \emph{nemesa} and \emph{cypra}, respectively.
+
+\enumsentence{
+	\shortex{5}
+	{Menssen & nysos & ferna & nemesan & varmeneata.}
+	{mirror & through & child & self.OBL & observe-PST-3SG}
+	{The child looked at himself through the mirror.}
+	}
+
+They can also appear in noun phrases where the possessor is identical to the subject of the sentence.
+
+\enumsentence{
+	\shortex{5}
+	{Emtenva & nemesan & eas & loran & šynčyta.}
+	{yesterday & self.OBL & GEN & hair.OBL & cut-PST-3SG}
+	{Yesterday she cut her (own) hair.}
+	}
+
+\section{Verbs}
+
+Verbs in NCS are inflected for three persons (first, second, and third) and number (singular, dual, and plural). In addition, they inflect for four \emph{moods}:
+
+\begin{itemize}
+  \item \textbf{Indicative} denotes a certain statement (e.~g.~\emph{It snowed yesterday. I gave him the book.}).
+  \item \textbf{Subjunctive} denotes an uncertain statement (e.~g.~\emph{I'm not sure whether it will snow tomorrow. I'll give him the book if he \emph{comes to school}.}).
+  \item \textbf{Imperative} denotes a command, request, need, or desire (e.~g.~\emph{Please give me the book. You want her to help you. It's important to eat every day.}).
+  \item \textbf{Interrogative} denotes a question (e.~g.~\emph{Which book did you receive?}). Unless provided separately, it is inflected identically as the indicative. It should be noted that this mood is rarely used in informal speech, where it is usually replaced with the indicative.
+\end{itemize}
+
+\newpage
+
+Verbs are inflected in five paradigms (\emph{asagi}; sg.~\emph{asage}; literally pattern): \\
+
+\begin{center}
+  \textbf{0 asage.} Ends in \textbf{-ad} but not \textbf{-ead}. \\
+  \textbf{cynrad} - to open \\
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    \textbf{Indicative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{cynra} & ento \textbf{cynran} & eras \textbf{cynress} \\ \hline
+    \textbf{2} & eo \textbf{cynres} & eoro \textbf{cynresen} & eos \textbf{cynrer} \\ \hline
+    \textbf{3} & os \textbf{cynre} & oson \textbf{cynren} & oros \textbf{cynri} \\ \hline
+    \textbf{Subjunctive} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{cynrena} & ento \textbf{cynrenera} & eras \textbf{cynreness} \\ \hline
+    \textbf{2} & eo \textbf{cynrenes} & eoro \textbf{cynreneres} & eos \textbf{cynrener} \\ \hline
+    \textbf{3} & os \textbf{cynrene} & oson \textbf{cynrenere} & oros \textbf{cynreni} \\ \hline
+    \textbf{Imperative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{cynrenta} & ento \textbf{cynrenela} & eras \textbf{cynrentess} \\ \hline
+    \textbf{2} & eo \textbf{cynrentes} & eoro \textbf{cynreneles} & eos \textbf{cynrenter} \\ \hline
+    \textbf{3} & os \textbf{cynrente} & oson \textbf{cynrenele} & oros \textbf{cynrenči} \\ \hline
+  \end{tabular}
+
+  \textbf{1 asage.} Ends in \textbf{-yd} but not \textbf{-ayd}. \\
+  \textbf{yndaryd} - to leave \\
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    \textbf{Indicative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{yndare} & ento \textbf{yndaren} & eras \textbf{yndarass} \\ \hline
+    \textbf{2} & eo \textbf{yndaras} & eoro \textbf{yndaresan} & eos \textbf{yndarar} \\ \hline
+    \textbf{3} & os \textbf{yndara} & oson \textbf{yndaran} & oros \textbf{yndaro} \\ \hline
+    \textbf{Subjunctive} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{yndarese} & ento \textbf{yndaresere} & eras \textbf{yndaresass} \\ \hline
+    \textbf{2} & eo \textbf{yndaresas} & eoro \textbf{yndareseras} & eos \textbf{yndaresar} \\ \hline
+    \textbf{3} & os \textbf{yndaresa} & oson \textbf{yndaresera} & oros \textbf{yndareso} \\ \hline
+    \textbf{Imperative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{yndarepe} & ento \textbf{yndarepele} & eras \textbf{yndaretass} \\ \hline
+    \textbf{2} & eo \textbf{yndaretas} & eoro \textbf{yndareselas} & eos \textbf{yndaretar} \\ \hline
+    \textbf{3} & os \textbf{yndareta} & oson \textbf{yndaresela} & oros \textbf{yndareto} \\ \hline
+  \end{tabular}
+\end{center}
+
+  \pagebreak
+
+  Notice the h-forming behavior in verbs ending in <-ead> or <-ayd>:
+
+\begin{center}
+  \textbf{2 asage.} Ends in \textbf{-ead}. \\
+  \textbf{sendread} - to be in excess \\
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    \textbf{Indicative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{sendrea} & ento \textbf{sendrean} & eras \textbf{sendrehess} \\ \hline
+    \textbf{2} & eo \textbf{sendrehes} & eoro \textbf{sendrehesen} & eos \textbf{sendreher} \\ \hline
+    \textbf{3} & os \textbf{sendrehe} & oson \textbf{sendrehen} & oros \textbf{sendrei} \\ \hline
+    \textbf{Subjunctive} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{sendrehena} & ento \textbf{sendrehenera} & eras \textbf{sendreheness} \\ \hline
+    \textbf{2} & eo \textbf{sendrehenes} & eoro \textbf{sendreheneres} & eos \textbf{sendrehener} \\ \hline
+    \textbf{3} & os \textbf{sendrehene} & oson \textbf{sendrehenere} & oros \textbf{sendreheni} \\ \hline
+    \textbf{Imperative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{sendrehenta} & ento \textbf{sendrehenela} & eras \textbf{sendrehentess} \\ \hline
+    \textbf{2} & eo \textbf{sendrehentes} & eoro \textbf{sendreheneles} & eos \textbf{sendrehenter} \\ \hline
+    \textbf{3} & os \textbf{sendrehente} & oson \textbf{sendrehenele} & oros \textbf{sendrehenči} \\ \hline
+    \textbf{Interrogative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{sendria} & ento \textbf{sendrian} & eras \textbf{sendrehess} \\ \hline
+    \textbf{2} & eo \textbf{sendrehes} & eoro \textbf{sendrehesen} & eos \textbf{sendreher} \\ \hline
+    \textbf{3} & os \textbf{sendrehe} & oson \textbf{sendrehen} & oros \textbf{sendri} \\ \hline
+  \end{tabular}
+
+  \textbf{3 asage.} Ends in \textbf{-ayd}. \\
+  \textbf{ylmayd} - to panic \\
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    \textbf{Indicative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ylmae} & ento \textbf{ylmaen} & eras \textbf{ylmahass} \\ \hline
+    \textbf{2} & eo \textbf{ylmahas} & eoro \textbf{ylmaesan} & eos \textbf{ylmahar} \\ \hline
+    \textbf{3} & os \textbf{ylmaha} & oson \textbf{ylmahan} & oros \textbf{ylmao} \\ \hline
+    \textbf{Subjunctive} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ylmaese} & ento \textbf{ylmaesen} & eras \textbf{ylmaesass} \\ \hline
+    \textbf{2} & eo \textbf{ylmaesas} & eoro \textbf{ylmaesenas} & eos \textbf{ylmaesar} \\ \hline
+    \textbf{3} & os \textbf{ylmaesa} & oson \textbf{ylmaesan} & oros \textbf{ylmaeso} \\ \hline
+    \textbf{Imperative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ylmaepe} & ento \textbf{ylmaepen} & eras \textbf{ylmaetass} \\ \hline
+    \textbf{2} & eo \textbf{ylmaetas} & eoro \textbf{ylmaepenas} & eos \textbf{ylmaetar} \\ \hline
+    \textbf{3} & os \textbf{ylmaeta} & oson \textbf{ylmaetan} & oros \textbf{ylmaeto} \\ \hline
+    \textbf{Interrogative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ylmie} & ento \textbf{ylmien} & eras \textbf{ylmahass} \\ \hline
+    \textbf{2} & eo \textbf{ylmahas} & eoro \textbf{ylmiesan} & eos \textbf{ylmahar} \\ \hline
+    \textbf{3} & os \textbf{ylmaha} & oson \textbf{ylmahan} & oros \textbf{ylmio} \\ \hline
+  \end{tabular}
+
+  \pagebreak
+
+  \textbf{4 asage.} \emph{Essyd} (to exist) only. \\
+  \textbf{essyd} - to exist \\
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    \textbf{Indicative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ve} & ento \textbf{ven} & eras \textbf{veass} \\ \hline
+    \textbf{2} & eo \textbf{ves} & eoro \textbf{vesen} & eos \textbf{vellar} \\ \hline
+    \textbf{3} & os \textbf{vella} & oson \textbf{vellan} & oros \textbf{von} \\ \hline
+    \textbf{Subjunctive} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{vese} & ento \textbf{vesen} & eras \textbf{vehesass} \\ \hline
+    \textbf{2} & eo \textbf{vesas} & eoro \textbf{vesenes} & eos \textbf{vellesar} \\ \hline
+    \textbf{3} & os \textbf{vellesa} & oson \textbf{vellesan} & oros \textbf{veson} \\ \hline
+    \textbf{Imperative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{vepe} & ento \textbf{vepen} & eras \textbf{vehetass} \\ \hline
+    \textbf{2} & eo \textbf{vetas} & eoro \textbf{vepenes} & eos \textbf{velletar} \\ \hline
+    \textbf{3} & os \textbf{velleta} & oson \textbf{velletan} & oros \textbf{veton} \\ \hline
+    \textbf{Interrogative} & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & e \textbf{ce} & ento \textbf{cen} & eras \textbf{ceass} \\ \hline
+    \textbf{2} & eo \textbf{ces} & eoro \textbf{cesen} & eos \textbf{cellar} \\ \hline
+    \textbf{3} & os \textbf{cella} & oson \textbf{cellan} & oros \textbf{gon} \\ \hline
+  \end{tabular}
+\end{center}
+
+Verbs ending with <-čyd> conjugate as if they ended with <-*tyd>. Likewise, those ending with <-šyd> conjugate as if they ended with <-*syd>.
+
+In order to form the negative of a non-imperative form of a verb, the particle \emph{ci} is used. In the imperative form, \emph{c'} is prefixed to verbs beginning with \textbf{e} and \emph{cer} otherwise. \\
+
+\subsection{Tense}
+
+The only tense distinctions are past and nonpast. Tense is regarded as a special construction, rather than a conjugation; in order to form the past infinitive, replace <-ad> with <-ačyd> and <-yd> with <-yčyd>.
+
+\subsection{Serialization}
+
+\label{subsec:serialization}
+
+To form modal and serial expressions (an English example would be \emph{can come} or \emph{come walking}), the infinitive of the verb that would come second in English occurs first, with the final <d> replaced with <v>, and the other verb follows.
+
+\textbf{Example:} can (\emph{pertenad}) come (\emph{vyncyd}) - \emph{vyncyvpertena}
+
+A similar method can be used to join verbs to nouns: \emph{necsad} (to sit) + \emph{esada} (room) become \emph{necsavesada} (sitting room).
+
+\subsection{Voice}
+
+In the present tense, passive voice is formed by replacing <-ad> with <-(h)erad> or <-yd> with <-eryd>. The past passive, which is not a verb but rather an adjective, is formed by replacing <-d> with <-go>.
+
+The passive voice is often used to convert a transitive verb into an intransitive.
+
+\subsection{Rules for determining which mood to use}
+
+These rules may give advice on which mood is to be used.
+
+\begin{enumerate}
+  \item If it is certain that an action is or is not performed, then use the indicative.
+  \item If a question is being asked, then use the interrogative.
+  \item If a command, request, need, or desire is expressed, then use the imperative.
+  \item The hypothesis clause of \textbf{so} (\emph{if}) always uses the subjunctive.
+  \item An emotional reaction to an action that happened (e.~g.~\emph{I feel happy that your parents are inviting me to dinner}) uses the indicative for that action.
+  \item If doubt or other lack of certainty is expressed or implied, then use the subjunctive.
+\end{enumerate}
+
+\subsection{Irregular imperatives}
+
+Some verbs have irregular imperatives in the second-person singular.
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		Infinitive & 2SG imperative \\ \hline
+		marčyd & mares \\
+		cjarešyd & cjares \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Transitivity}
+
+Verbs are often either intransitive or transitive. Some can play both roles depending on whether an object is specified, but verbs cannot take on different valences depending on an active / stative distinction (as in Example \ref{gloss:transitive}, where, unlike in \ref{gloss:intransitive}, the verb must take the direct causative in order to play a role as a transitive verb).
+
+\enumsentence{
+	\shortex{1}
+	{Menea.}
+	{see-1SG}
+	{I see.}
+	}
+\enumsentence{
+	\shortex{2}
+	{Enen & menea.}
+	{tree.OBL & see-1SG}
+	{I see the tree.}
+}
+\enumsentence{
+	\shortex{2}
+	{Genar & nassala.}
+	{snow & melt-3SG}
+	{The snow melts.}
+	}
+\label{gloss:intransitive}
+\enumsentence{
+	\shortex{3}
+	{Senar & arcyn & donassala.}
+	{fire & snow.OBL & DC-melt-3SG}
+	{The fire melts the ice.}
+	}
+\label{gloss:transitive}
+
+\section{Adjectives}
+
+Adjectives are distinct from nouns because they are not declined for case and cannot appear as an object of a postposition; they are also distinct from verbs because they do not inflect for person or tense. In addition, some adjectives do not inflect at all.
+
+Most adjectives are inflected for number in the same style as nouns in order to agree with their heads; however, they do not inflect for case. Some adjectives, such as those corresponding to indefinite pronouns, are uninflected.
+
+\textbf{Examples}
+
+\begin{itemize}
+  \item \textbf{enela} soft
+  \item \textbf{trenso} loose
+  \item \textbf{mesto} sweet
+  \item \textbf{ecssyrvo} sharp, thin
+  \item \textbf{šyno} \emph{(uninflected)} all
+\end{itemize}
+
+\section{Adverbs}
+
+Adverbs are formed from adjectives by replacing the ending with <-amyn>.
+
+\section{Numbers}
+
+\begin{center}
+  \begin{longtable}{|r|r|l|}
+    \hline
+    \textbf{Number (Dec.)} & \textbf{Number (Hex.)} & \textbf{Short} \\ \hline
+    \endhead
+    0 & 0 & ces \\
+    1 & 1 & vyl \\
+    2 & 2 & sen \\
+    3 & 3 & en \\
+    4 & 4 & tar \\
+    5 & 5 & do \\
+    6 & 6 & mja \\
+    7 & 7 & len \\
+    8 & 8 & fe \\
+    9 & 9 & ny (i) \\
+    10 & A & re \\
+    11 & B & pyn \\
+    12 & C & va \\
+    13 & D & as \\
+    14 & E & go \\
+    15 & F & jar \\
+    16 & 10 & srad \\
+    17 & 11 & sradvyl \\
+    18 & 12 & sradsen \\
+    19 & 13 & sraden \\
+    20 & 14 & srantar \\
+    32 & 20 & sensrad \\
+    48 & 30 & ensrad \\
+    64 & 40 & tarsrad \\
+    80 & 50 & dosrad \\
+    96 & 60 & mjasrad \\
+    256 & 100 & flen \\
+    512 & 200 & seflen \\
+    4096 & 1000 & sradflen \\
+    4352 & 1100 & sradvylflen \\
+    8192 & 2000 & sensradflen \\
+    65536 & 1 0000 & dara \\
+    & 10 0000 & sradara \\
+    & 100 0000 & flendara \\
+    & 1000 0000 & sradflendara \\
+    & 1 0000 0000 & seta \\
+    & 1 0000 0000 0000 & yryso \\
+    & 1 0000 0000 0000 0000 & enan \\
+    & $\textmd{10}^{\textmd{14}}$ & gelten \\
+    & $\textmd{10}^{\textmd{18}}$ & sallar \\
+    & $\textmd{10}^{\textmd{1C}}$ & rynar \\
+    & $\textmd{10}^{\textmd{20}}$ & asar \\
+    & $\textmd{10}^{\textmd{40}}$ & vessen \\
+    \hline
+    \hline
+    1/2 & 1/2 & meana (or) \\
+    1/3 & 1/3 & endo \\
+    1/4 & 1/4 & tardo \\
+    1/5 & 1/5 & \textbf{n}odo \\
+    1/6 & 1/6 & mjado \\
+    2/3 & 2/3 & endosen \\
+    3/4 & 3/4 & tardoen \\
+    \hline
+  \end{longtable}
+\end{center}
+
+Numbers are expressed in hexadecimal and are uninflected. Numerical roots are combined with the most significant digit coming first; e. g. 56,239 = 0xDBAF is read \emph{as-srad-pyn-flen-re-srad-jar} $(13(16) + 11)(256) + (10(16) + 15)$, or, without the hyphens, \emph{asradpynflenresradjar}.
+
+A longer example is
+
+\begin{quote}
+	mjasradseflen ensradgo rynar leflen tarsrad- sallar \\
+	dosradvylflen resradny- gelten pynsradfeflen asradmja enan \\
+	flen srantar yryso vasradflen jar seta \\
+	sensradas dara sradreflen fesradlen asar, \\
+	mjasradseflen ensradgo rynar leflen tarsrad- sallar \\
+	dosradvylflen resradny- gelten pynsradfeflen asradmja enan \\
+	flen srantar yryso vasradflen jar seta \\
+	sensradas dara sradreflen fesradlen vessen, \\
+	mjasradseflen ensradgo rynar leflen tarsrad- sallar \\
+	dosradvylflen resradny- gelten pynsradfeflen asradmja enan \\
+	flen srantar yryso vasradflen jar seta \\
+	sensradas dara sradreflen fesradlen asar, \\
+	mjasradseflen ensradgo rynar leflen tarsrad- sallar \\
+	dosradvylflen resradny- gelten pynsradfeflen asradmja enan \\
+	flen srantar yryso vasradflen jar seta \\
+	sensradas dara sradreflen fesradlen \\
+	\emph{(spacing and punctuation for clarity)}
+\end{quote}
+
+which translates to
+
+\begin{verbatim}
+	623E 0740 51A9 B8D6
+	0114 C00F 002D 1A87 (10^60 / 16^96)
+	623E 0740 51A9 B8D6
+	0114 C00F 002D 1A87 (10^40 / 16^64)
+	623E 0740 51A9 B8D6
+	0114 C00F 002D 1A87 (10^20 / 16^32)
+	623E 0740 51A9 B8D6
+	0114 C00F 002D 1A87 (unit.)
+\end{verbatim}
+
+Numbers are always h-forming.
+
+<srad> (16) is changed to <sran> at the end of a word.
+
+To express the number of occurrences (\emph{$n$ times}), <-myn> is appended. This is related to the conversion of adjectives to adverbs.
+
+\enumsentence{
+	\shortex{4}
+	{Domyn & os & en & meneata.}
+	{five-times & 3SG & 1SG.OBL & see-PST-3SG}
+	{He saw me five times.}
+	}
+
+Unlike cardinal numbers, which follow what they modify, ordinals precede them.
+
+To express ordinals as part of a sequence, <-vyn> is appended.
+
+\enumsentence{
+	\shortex{4}
+	{Cesvyn & renšyme & vylvyn & derenentes.}
+	{zero-ORD & think-and & one-ORD & act-IMP-2SG}
+	{Think first, then act.}
+	}
+
+\emph{Ces} and \emph{vyl} (0 and 1, respectively) may also be used to express a \emph{no} or \emph{yes}.
+
+An optional counter word may be suffixed to the number. Counters are also h-forming:
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+	  \hline
+	  Counter & Meaning \\ \hline
+	  -yn & humans \\
+	  -dene & large animals \\
+	  -ši & small (land) animals excluding insects and spiders \\
+	  -tel & fish \\
+	  -cyr & insects and spiders \\
+	  -nen & woody plants (e. g. trees) \\
+	  -mi & other plants (e. g. flowers, grass) \\
+	  -je & fruits \\
+	  -djos & flat objects (e. g. paper, plates) \\
+	  -čei & cylindrical objects \\
+	  -ros & balls or other spherical objects \\
+	  -ven & books \\
+	  -čar & rooms, houses, buildings \\
+	  -čyn & weapons \\
+	  -gen & other small objects \\
+	  -dyn & branches, roots, arms, or legs \\
+	  -sei & ring-like objects \\
+	  -cjon & spherical objects \\ \hline
+	\end{tabular}
+\end{center}
+
+Distributive numbers are formed by reduplicating the unit digit.
+
+\section{Postpositions}
+
+Postpositions follow what they encapsulate. The nominal phrase encapsulated is in the oblique case, unless the phrase in question indicates possession.
+
+\enumsentence{
+	\shortex{3}
+	{ceren & ar & dešyd}
+	{house.OBL & to & go-INF}
+	{to go to a house}
+	}
+
+\begin{itemize}
+  \qa{es}{in, during}
+  \qa{yl}{on (horizontal surface)}
+  \qa{čyl}{on (vertical surface)}
+  \qa{car}{out}
+  \qa{aseni}{above} (also a noun)
+  \qa{desor}{below} (also a noun)
+  \qa{cynsso}{with}
+  \qa{cyrcyn}{without}
+  \qa{ar}{to}
+  \qa{se}{off}
+  \qa{eas}{of, from}
+  \qa{nas}{for, toward, on behalf of, in exchange for}
+  \qa{nysos}{for, through}
+\end{itemize}
+
+\section{The copula}
+
+The only copula has the infinitive form \emph{ryd}, but in the nonpast tense, is conjugated only for mood.
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		Mood & Form \\ \hline
+		Indicative & re \\
+		Subjunctive & ryse \\
+		Imperative & ryte \\
+		Interrogative & ren \\ \hline
+	\end{tabular}
+\end{center}
+
+The copula is optional in the indicative and the interrogative moods.
+
+\section{The null verb}
+
+The null verb, \emph{nyd}, has roughly the same meaning as the Japanese \textsf{する} or the English \emph{to do}. It does not supplete. For example, it can convert a noun into a verb:
+
+\enumsentence{
+	\shortex{4}
+	{Šan & ver & renel & na?}
+	{Q & what.OBL & advice & $\varnothing$-3SG}
+	{What does he/she advise?}
+	}
+
+\section{Indefinite pronouns}
+
+Indefinite pronouns are not inflected, and have the number of what they describe (e.~g. \emph{šynta} (everyone) is plural, not singular as in English).
+
+%\small
+\begin{center}
+  \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    Adjective & Thing & Person & Place & Time & Reason\\ \hline
+    \textbf{vyn} \emph{what NOM} & ven & venor & yvin & ysan & asčyr \\
+    \emph{(what OBL)} & ver & vena & yva & ysa & asčyr \\
+    \textbf{ele} \emph{this} & ela & ela & eši & endyr & enasčyr \\
+    \textbf{emte} \emph{that} & emta & emta & eči & emto & - \\
+    \textbf{šyno} \emph{all} & šypro & šynta & šymer & šyson & - \\
+    \textbf{erte} \emph{some} & erta & erčo & eneši & emoro & enčyr \\
+    \textbf{enmerte} \emph{any} & enmerta & enmerto & enmerši & enmoro & enenčyr \\
+    \textbf{cenmo} \emph{none} & cynmerta & cynmerto & cyneši & cynero & cyntačyr \\
+    \textbf{gete} \emph{other} & geta & geto & geteši & getera & - \\
+    \textbf{defte} \emph{most} & defta & defto & defteri & deftera & - \\
+    \textbf{rese} \emph{little} & resa & reso & reseri & resera & - \\ \hline
+  \end{tabular}
+  \\
+  \begin{tabular}{|l|l|l|l|l|}
+  	\hline
+  	Adjective & Method & Quantity & Action & Order \\ \hline
+  	\textbf{vyn} \emph{what NOM} & ryssa & veness & vynssyd & venan \\
+  	\emph{(what OBL)} & ryssa & veness & vynssyd & venan \\
+  	\textbf{ele} \emph{this} & enossa & vecmyr & eltad & - \\
+  	\textbf{emte} \emph{that} & - & vecta & emtad & - \\
+  	\textbf{šyno} \emph{all} & - & - & šeryd & - \\
+  	\textbf{erte} \emph{some} & enssa & ervecto & erčyd & ernan \\
+  	\textbf{enmerte} \emph{any} & enenssa & enervecto & enmyd & enernan \\
+  	\textbf{cenmo} \emph{none} & - & cynvecto & cynmyd & cynan \\
+  	\textbf{gete} \emph{other} & - & - & getad & - \\
+  	\textbf{defte} \emph{most} & - & - & defad & - \\
+  	\textbf{rese} \emph{little} & - & - & rešyd & - \\ \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Adverbial forms distinct from nominal forms}
+
+%\normalsize
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  & \textbf{vyn} & \textbf{ele} \\
+  & \emph{what} & \emph{this} \\ \hline
+  place & yvor & ydyr \\
+  time & yšyr & endyr \\ \hline
+\end{tabular}
+
+\begin{tabular}{|l|l|}
+  \hline
+  Adjective & Adverbial temporal form \\ \hline
+  \textbf{vyn} & yšyr \\
+  \textbf{ele} & endyr \\
+  \textbf{šyno} & šysono \\
+  \textbf{gete} & geteraso \\
+  \textbf{defte} & defteraso \\
+  \textbf{rese} & reseraso \\ \hline
+\end{tabular}
+\end{center}
+
+\section{Conjunctions}
+
+When negating a phrase joined by conjunction, \emph{cynto} is placed before the phrase\footnote{"But" is expressed the same way as "and" (\emph{ena} can optionally be used to imply that the second idea contradicts the first).}.
+
+\subsection{Nominal and adjectival conjunctions}
+
+Only \emph{X} would be inflected; \emph{Y}'s case would be encoded in the presence or absence of the final <n>.
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+	  \hline
+	  \emph{X} and \emph{Y} & \emph{X} \emph{Y}:ce(n) \\
+	  \emph{X} or \emph{Y} (incl.) & \emph{X} \emph{Y}:te(n) \\
+	  \emph{X} or \emph{Y} (excl.) & \emph{X} \emph{Y}:re(n) \\ \hline
+	\end{tabular}
+\end{center}
+
+Conjoining adverbs involves changing the ending on only the first item.
+
+\subsection{Verbal (predicate) conjunctions}
+
+This set of conjunctions is used when:
+
+\begin{itemize}
+	\item there are two predicates with the same subject
+	\item the second clause of a compound sentence is a command; in this case, the first clauses usually provides the subject explicitly
+\end{itemize}
+
+Third person singular of a <-yd> verb is shown below, but the conjugation of \emph{Y} stays constant, even through different infinitive endings.
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+	  \hline
+	  \emph{X} and \emph{Y} & \emph{X}:yme \emph{Y}:a \\
+	  \emph{X} or \emph{Y} (incl.) & \emph{X}:yge \emph{Y}:a \\
+	  \emph{X} or \emph{Y} (excl.) & \emph{X}:yre \emph{Y}:a \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Clausal conjunctions}
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+	  \hline
+	  \emph{X} and \emph{Y} & ner \emph{X} ner \emph{Y} \\
+	  \emph{X} or \emph{Y} (incl.) & ce \emph{X} ce \emph{Y} \\
+	  \emph{X} or \emph{Y} (excl.) & ce \emph{X} cssar \emph{Y} \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Additive clausal conjunctions}
+
+These conjunctive constructs extend a previous sentence.
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+	  \hline
+	  and \emph{Y} & ša \emph{Y} \\
+	  or \emph{Y} (incl.) & cen \emph{Y} \\
+	  or \emph{Y} (excl.) & cssen \emph{Y} \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{The let-alone pattern}
+
+The equivalent of English's "let alone" is expressed with a compound sentence with its second clause using \emph{cjares}, the suppletive imperative form of \emph{cjaryd} (to let alone). This pattern is not limited to negative actions.
+
+\enumsentence{
+	\shortex{7}
+	{Arcasneše & ceren & yndaryme & ci & cryssesredas & mytrayd & cjares.}
+	{winter-TMP & house.OBL & leave-and & NEG & forest-PROLATIVE & run & let\_alone-IMP}
+	{He/she won't leave the house during the winter, let alone run through the forest.}
+	}
+\enumsentence{
+	\shortex{5}
+	{Mjoran & ervenčyme & yrenyn & nyd & cjares.}
+	{wolf-PL.OBL & approach-and & caress & do-INF & let\_alone-IMP}
+	{He/she not only approaches the wolves but caresses them.}
+}
+
+\section{Questions}
+
+In formal speech, questions are prefixed with \emph{šan}. In questions that provide an option, \emph{geto} (other) precedes the second.
+
+\enumsentence{
+	\shortex{7}
+	{Šan & eran & cynsso & dešyre & geto & ydyr & martas?}
+	{Q & 1PL.OBL & with & go-or & other & here & wait-2SG}
+	{Will you go with us or wait here?}
+}
+
+Informal speech uses \emph{šan} less often; in these cases, whether a sentence is a statement or question must be determined from context. In addition, the indicative mood replaces the interrogative in such settings.
+
+\chapter{Dependent clauses}
+
+\section{Clauses acting as adjectives}
+
+A relative clause; i.~e.~one standing in place of an adjective has the same syntax as a full sentence (only with a hole filled by the antecedent; i.~e.~the gap method). If the antecedent is an object of a postposition other than \emph{es} (inside, at, during), then an interrogative pronoun in the \emph{nominative} case stands as the relative pronoun.
+
+\subsection{Examples}
+
+\enumsentence{
+	\shortex{5}
+	{Cynmerto & \textbf{crysavan} & \textbf{inveči} & metellon & invete.}
+	{no\_one & \textbf{spider-PL} & \textbf{walk-3PL} & path.OBL & walk-3SG}
+	{No one walks in the path \textbf{where the spiders walk}.}
+	}
+\enumsentence{
+	\shortex{7}
+	{\textbf{Venor} & \textbf{nysos} & \textbf{invetato} & marcssi & emte & elssaneše & elcaršyta.}
+	{\textbf{what} & \textbf{through} & \textbf{walk-PST-3PL} & bridge & that & year.TEMP & topple-PAST-3SG}
+	{The bridge \textbf{through which they walked} toppled last year.}
+	}
+
+\section{Clauses acting as adverbs}
+
+Clauses acting as adverbs must have a conjunction at their end.
+
+\subsection{Examples}
+
+\enumsentence{
+	\shortex{5}
+	{\textbf{Nerveman} & \textbf{cenvata} & \textbf{anasčyr} & os & acasaygo.}
+	{\textbf{book.OBL} & \textbf{write-PST-3SG} & \textbf{because} & 3SG & punish-PST.PASS}
+	{He (she?) was punished \textbf{because he wrote the book}.}
+}
+\enumsentence{
+	\shortexnt{4}
+	{\textbf{Nemen} & \textbf{en-je} & \textbf{enfyresas} & \textbf{so}}
+	{\textbf{apple-PL.OBL} & \textbf{three-FRUIT\_COUNTER} & \textbf{buy-SUBJ-2SG} & \textbf{if}}
+
+	\shortex{3}
+	{ele & maryllyn & domyra.}
+	{this & marble.OBL & give-1SG}
+	{I will give you a marble \textbf{if you buy three apples} (for me).}
+}
+
+\section{Clauses acting as nouns}
+
+A nominal clause consists of a full sentence followed by \emph{re}.
+
+\subsection{Examples}
+
+\enumsentence{
+	\shortex{7}
+	{\textbf{Ventrel} & \textbf{yndaryto} & \textbf{re} & myron & releo & meston & menteato.}
+	{\textbf{parent-PL} & \textbf{leave-PST-3PL} & \textbf{NOM\_CL} & after & child-PL & honey.OBL & eat-PST-3PL}
+	{After \textbf{the parents left}, the children ate the honey.}
+}
+
+\chapter{Nominal constructs}
+
+Constructs (\emph{neres}; singular \emph{neri}) are inflectional features that perform roles of grammatical concepts such as case or aspect, and may affect the meaning of the base word, its grammatical function, or both. This chapter includes constructs that can take place of a postpositional phrase\footnote{In the study of Necarasso Cryssesa, nominal constructs differ from cases by \emph{replacing postpositional phrases}.}.
+
+\section{The genitive construct}
+
+This construct replaces a phrase involving \emph{eas} (from) and implying ownership.
+
+\subsection{Genitives of personal pronouns}
+
+\begin{center}
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    & \textbf{SG} & \textbf{DU} & \textbf{PL} \\ \hline
+    \textbf{1} & enas \emph{my} & entas & entras \emph{our} \\ \hline
+    \textbf{2} & evas \emph{your} & evras & eftras \emph{your} \\ \hline
+    \textbf{3} & ores \emph{his, her, its} & oten & oras \emph{their} \\ \hline
+  \end{tabular}
+\end{center}
+
+Genitive pronouns can often be dropped.
+
+\subsubsection{Reflexive and reciprocal genitives}
+
+These are \emph{nemesel} and \emph{cyprasel}, respectively.
+
+\subsubsection{Genitives of obviate pronouns}
+
+The first two obviates, \emph{ela} and \emph{emta}, are \emph{elen} and \emph{emten} in their genitive forms.  The other three suppletive obviates are inflected as nouns (e.~g. \emph{enros} $\rightarrow$ \emph{enresra}).
+
+The remainder are inflected as such:
+
+\begin{itemize}
+	\item Singular: reldo
+	\item Dual: rerdo
+	\item Plural: ryldo
+\end{itemize}
+
+\subsection{Genitives of inanimate nouns}
+
+Genitives are h-forming if the vowel in question is <a> or <o>, and conditionally erasing otherwise.
+
+\begin{center}
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    Old ending & Singular possessor & Dual possessor & Plural possessor \\ \hline
+    -a, -e, -i, -o & -asa & -asar & -asan \\
+    -as, -es, -is, -ys & -asas & -asnas & -asnan \\
+    -an, -en, -yn & -ica & -icen & -irnena \\
+    -ass, -ess, -yss, -erss & -essa & -essno & -essenar \\
+    -el, -yl & -yl & -yl & -yl \\
+    -os, -on & -esra & -esran & -esrena \\
+    -or & -era & -eran & -erena \\
+    -ar, -er, -yr, -ir & -yra & -yrar & -yro \\ \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Genitives of animate nouns (non-honorific)}
+
+Nouns describing living forms, heavenly bodies, emotions, and personal characteristics are animate. -el is appended to nouns ending with -s or -ss, -ryl to those ending with vowels, and -yl to all others.
+
+\subsection{Honorific genitives}
+
+Honorific genitives of animate nouns append -or to -el genitives and -ar to -yl genitives.
+
+\section{The inessive construct}
+
+This construct replaces a phrase involving \emph{es} (inside) in the context of location. It is h-forming if the vowel in question is <a> or <o>, and conditionally erasing otherwise.
+
+\begin{center}
+  \begin{tabular}{|r|l|l|l|}
+    \hline
+    Old ending & Singular ending & Dual ending & Plural ending \\ \hline
+    -a, -e, -i, -o & -ane & -anen & -aner \\
+    -as, -es, -is, -ys & -asne & -asnen & -asner \\
+    -an, -en, -yn & -icen & -icene & -icyn \\
+    -ass, -ess, -yss, -erss & -enso & -ensar & -ensan \\
+    -el, -yl & -yne & -yne & -yne \\
+    -os, -on & -enas & -enan & -eno \\
+    -or & -erane & -eraner & -erani \\
+    -ar, -er, -yr, -ir & -yrnea & -yrnear & -yrneo \\ \hline
+  \end{tabular}
+\end{center}
+
+\section{The superessive construct}
+
+This construct replaces a phrase involving \emph{yl} (on top of). It is formed from the inessive construct by performing one of the following actions:
+
+\begin{enumerate}
+  \item Appending an <l> on a vowel-terminal form (changing the final <i> to <y> and changing <a> to <e> if necessary)
+  \item Replacing a terminal <s> with <lle>
+  \item Replacing a terminal <r> with <le>
+  \item Replacing a terminal <n> with <del>
+\end{enumerate}
+
+\section{The pertingent apudessive construct}
+
+This construct replaces a phrase involving \emph{čyl} (on a vertical surface). It is formed from the supressive construct by performing one of the following actions:
+
+\begin{enumerate}
+  \item Replacing the last <ll> (from <-lle>) with <css>
+  \item Replacing the final <l> with <ss>
+  \item Replacing the last medial <l> with <č>
+\end{enumerate}
+
+\section{The ablative construct}
+
+This construct replaces a phrase involving \emph{eas} (from) in context of location. It is formed from the genitive form by replacing the ending with <-eda>.
+
+\section{The allative construct}
+
+This construct replaces a phrase involving \emph{ar} (to, toward) or \emph{nas} (toward) in context of location. It is formed from the genitive form by prefixing <car->.
+
+\section{The descriptive construct}
+
+This construct replaces a phrase involving \emph{eas} (of) in context of description (composition, pertinence, resemblance). It is formed by removing any terminal vowels and replacing the ending of the nominative with <-esa>, and can be used as an adjective. This construct is conditionally erasing.
+
+By using the adjective $\rightarrow$ adverb conversion, the construct can also play an adverbial role.
+
+\section{The prolative construct}
+
+This construct replaces a phrase involving \emph{nysos} (through) in context of movement. It is formed by appending an <-s> to the ablative construct.
+
+\section{The temporal construct}
+
+This construct replaces a phrase involving \emph{es} (on) in context of time. It is formed by appending <-še> to the inessive construct.
+
+\section{The temporal accusative construct}
+
+This construct replaces a phrase involving \emph{nysos} (for) in context of an interval of time. It is formed by appending <-ten> to the inessive construct.
+
+\section{The instrumental construct}
+
+This construct replaces a phrase involving \emph{cynsso} (with) in context of using an instrument. It is formed by removing the final consonant from the nominative, changing final <i> to <y>, and appending <-cyn>. By negating this construct with \emph{ci}, the meaning changes to "without X".
+
+\section{The comitative construct}
+
+This construct replaces a phrase involving \emph{cynsso} (with) in context of company. It is formed from the instrumental by changing the final <n> to <s>. By negating this construct with \emph{ci}, the meaning changes to "without X".
+
+\section{The benefactive construct}
+
+This construct replaces a phrase involving \emph{nas} (on behalf of). It is formed from the prolative construct by replacing the final <-as> with:
+
+\begin{enumerate}
+  \item <-en> for an animate noun (on behalf of a person, tree, star, etc.) -- this is an h-forming inflection.
+  \item <-as> for an inanimate abstract noun (on behalf of a country, a religion, etc.)
+  \item <-an> for an inanimate concrete noun (on behalf of a rock, the book, etc.)
+\end{enumerate}
+
+\section{The adessive construct}
+
+This construct replaces a phrase involving \emph{ro} (beside) in context of adjacency. It is formed from the inessive construct by:
+
+\begin{enumerate}
+	\item Appending <-r> for vowel-final forms (and changing <i> to <y>)
+	\item Replacing a final <-s> with <-llo>
+	\item Replacing a final <-n> with <-ro>
+\end{enumerate}
+
+\section{The topic construct}
+
+This construct replaces a phrase involving \emph{eas} (about) in context of topic. It is formed from the genitive form by raising the final vowel (<a> to <e> to <y/i> based on the length of the original final vowel; <y/i> to <yr> displacing the existing coda; <o> to <e>).
+
+\section{Prefixes}
+
+There are also various prefixes that can be attached to nouns: \\
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Prefix & Meaning & Behavior \\ \hline
+		c(i)- & negative & n/a \\
+		ar- & augmentative & n/a \\
+		fe- & dubitative ("so-called") & Conditionally erasing \\
+		fy- & pejorative & h-forming \\
+		go- & profanitative ("fucking") & h-forming \\
+		dene- & aggregate & Unconditionally erasing \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\chapter{Miscellaneous constructs}
+
+\section{Constructs on adjectives}
+
+One construct on adjectives, the adverbial construct, has been discussed in Chapter 2.
+
+\subsection{The quality noun}
+
+The quality noun is a noun referring to the quality of having a trait (e.~g.~happiness, depth of one's personality) outside of any measure. It is formed by replacing the ending of an adjective with <-erss>.
+
+\subsection{The measurement noun}
+
+The measurement noun is one referring to something that can be measured (e.~g.~depth of a pool, height of a tree). It is formed by replacing the ending with <en>.
+
+\subsection{Negation}
+
+An adjective is negated by prefixing it with <ci-> (or if it is vowel-initial, <c->). Those starting with <c> receive <cyr->. For example, \emph{esel} (wide) can be negated into \emph{cesel} (narrow).
+
+\subsection{Comparatives and superlatives}
+
+Comparatives are formed by using the adjective or adverb \emph{dedeno} (more); e.~g. \emph{acrynala} = dark; \emph{dedeno acrynala} = darker. Superlatives employ the word \emph{iss} (formerly a definite article) before the comparative, optionally dropping \emph{dedeno}. Similar expressions can be created using \emph{regrys} (less).
+
+\subsubsection{Comparison against other objects}
+
+In order to form the equivalent of \emph{more | less X than Y}, the \emph{than Y} part appears in the beginning as \emph{Y re}; e.~g. \emph{emta re dedeno anassa} = taller than that one.
+
+In order to form the equivalent of \emph{as X as Y}, the \emph{as Y} part appears in the beginning as \emph{Y ress}, with an optional \emph{celsamyn} (equally) before that phrase; e.~g. \emph{(celsamyn) emta ress anassa} = as tall as that one.
+
+\subsection{Noun conversion}
+
+To use an adjective as a noun, the ending is replaced with <-ar>, with the consonant immediately before it becoming <n> if it was a nasal, <l> if it was an approximant, and <s> otherwise; e.~g. \emph{merva} (large) to \emph{mersar} (a large thing).
+
+\newpage
+
+\section{Constructs on verbs}
+
+\label{sec:verbcons}
+
+There are more constructs for verbs, so we shall list them in a table instead.
+
+\begin{center}
+  \begin{longtable}{|l|p{4cm}|p{4cm}|}
+    \hline
+    Name & Description & Formation \\ \hline
+		\endhead
+    \textbf{Nominal} & & \\
+    Inanimate agent & Describes something that performs an action & <-d> to <-llyr> \\
+    Animate agent & Describes someone who performs an action & Append <-yr> \\
+    Animate co-agent & Describes someone who performs an action with someone else & Circumpend <cyn - ys> \\
+    Action & A noun describing an act of doing something & <-ad/-yd> to <-ata> \\
+    Product & The product of an action & <-ad/-yd> to <-ertess> \\
+    Patient & The receiver of an action & <-ad/-yd> to <-er> \\
+    Location & Where the action happens & <-ad/-yd> to <-antos> \\
+    Temporal & The time period during which the action happened & <-ad/-yd> to <-entar> \\ \hline
+    \textbf{Adjectival} & & \\
+    Outgoing ability & Whether one is capable of doing something. & <-ad/-yd> to <-efrys> \\
+    Incoming ability & Whether one is capable of receiving an action. & <-ad/-yd> to <-enyn> \\
+    Tendency & Whether one tends to do something. & <-ad/-yd> to <-enfa> \\ \hline
+    \textbf{Verbal} & & \\
+    Inceptive & Beginning an action & Prefix <es-> \\
+    Terminative & Ending an action & Prefix <car-> \\
+    Direct causative & Causing an action on the direct object by a direct act of the subject (e.~g.~by force). One notable use case is to convert an intransitive verb to a transitive. & Prefix <do-> \\
+    Indirect causative & Causing an action on the direct object by an indirect act of the subject (e.~g.~by speech, or some chain of events). & \specialcell[t]{\emph{nyd} to \emph{teryd} \\ \emph{ryd} to \emph{ceryd} \\ <-d> to <-deryd>} \\
+    Imminent & An action just about to occur & Prefix <sel-> \\
+    Precessive & An action that has just occurred & Prefix <ter-> \\
+    Scattering & e.~g. break $\rightarrow$ shatter & Prefix <ver-> \\
+    \hline
+  \end{longtable}
+\end{center}
+
+\subsection{Examples of causative use}
+
+\enumsentence{
+	\shortex{2}
+	{Cynyn & docaršyta.}
+	{vase.OBL & DIR\_CAUS-fall-PST-3SG}
+	{He (she) dropped the vase.}
+	}
+
+In this example, the prefix <do-> changed the meaning of the verb from \emph{fall} to \emph{drop}.
+
+\enumsentence{
+	\shortex{4}
+	{Ersaden & eferan & nyrsen & ylmyraderyta.}
+	{master & servant.OBL & water.OBL & bring-IND\_CAUS-PST-3SG}
+	{The master had the servant bring water.}
+	}
+
+In this case, there are two direct objects. Since \emph{nyrsen} is closer to the verb, it binds to the concept of bringing, and \emph{eferan} binds to the concept of commanding.
+
+\enumsentence{
+	\shortexnt{3}
+	{Gentrydyr & ersaden & renecyn}
+	{study-ANIM\_ACTOR & master & advice.INSTR}
+
+	\shortex{2}
+	{Renmane & rylssyderyta.}
+	{Renme.INESSIVE & rest-IND\_CAUS-PST-3SG}
+	{The student advised the instructor to take a vacation at Renme.}
+}
+
+As in this example, a secondary verb in English would end up as an instrument of the Necarasso Cryssesa translation. Again, the direct object closer to the verb binds to the action being caused, while the one farther from it binds to the concept of causation.
+
+It is also useful to note that indirect causatives usually involve sentient beings.
+
+%\subsection{Attitude markers}
+
+
+
+\chapter{Compounding}
+
+The previous two chapters discussed the interactions of nouns, verbs, and adjectives with other parts of speech. It is also possible to compound nouns and verbs with themselves or each other.
+
+\section{Noun-noun compounding}
+
+Nouns are simply appended to each other, with the modifying noun first and the head noun second. This attachment is unconditionally erasing.
+
+\subsection{Adjective-noun compounding}
+
+In a similar method, adjectives can be compounded with nouns. This type of compounding is rarely productive outside of names.
+
+\section{Noun-verb agent compounding}
+
+This process is remarkably similar to the English noun-verb-er pattern. See section \ref{sec:verbcons} for details.
+
+\section{Noun-verb action compounding}
+
+As indicated in \ref{sec:verbcons}, the verb ending can be replaced with <-ata> in order to convert it to a noun indicating the action itself. A noun can also be prepended; e. g. \emph{eneršyntata}.
+
+Note that noun-verb compounding falls short of full noun incorporation; nouns cannot be compounded with finite verb forms.
+
+\section{Verb-verb and verb-noun compounding}
+
+As mentioned in subsection \ref{subsec:serialization}, the compound consists of a verb with the <-d> of the infinitive replaced with <-v>, followed by the appropriate verb or noun. This is the most productive compounding rule.
+
+\chapter{Units of measure}
+
+Necarasso Cryssesa uses a different system of measures than other languages.
+
+\section{Time}
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Unit & Definition & Equivalent \\ \hline
+		elsse (year) & 403 \emph{envo} & 408.4 days \\
+		enva (day) & 32 \emph{eneo} & 24.32 hours \\
+		enean & 48 \emph{aedo} & 45.60 minutes \\
+		aedar & 64 \emph{ryrenčyn} & 57.00 seconds \\
+		ryrenten & & 0.8906 seconds \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Length}
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Unit & Definition & SI Equivalent \\ \hline
+		navsa & 16 \emph{elečyn} & 1.90 km \\
+		eleten & 12 \emph{večyn} & 119 m \\
+		veten & 8 \emph{avanto} & 9.92 m \\
+		avanta & 6 \emph{reašyr} & 1.24 m \\
+		reaser & 24 \emph{ceanto} & 20.7 cm \\
+		ceanta & 256 \emph{sanyn} & 8.6 mm \\
+		sanen & & 3.4 µm \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Area}
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		Unit & Definition \\ \hline
+		etaga & 48 \emph{samedyn} \\
+		sameden & 256 \emph{tavernyn} \\
+		tavernen & 1 \emph{avanta} squared \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Volume}
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Unit & Definition & SI Equivalent \\ \hline
+		rytaljon & 12 \emph{geonyn} & 1277 L \\
+		geonen & 12 \emph{myčyno} & 104.6 L \\
+		myčyna & 12 \emph{egyn} & 8.87 L \\
+		& (1 \emph{reaser} cubed) & \\
+		egen & 12 \emph{reseo} & 0.740 L \\
+		resea & 1536 \emph{aenyn} & 61.6 mL \\
+		aenen & & 40.1 µL \\ \hline
+	\end{tabular}
+\end{center}
+
+\section{Mass}
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Unit & Definition & SI Equivalent \\ \hline
+		tegane & 3 \emph{mydo} & 8.87 kg \\
+		myda & 48 \emph{deso} & 2.96 kg \\
+		desar & 30 \emph{agyši} & 61.6 g \\
+		agyse & 256 \emph{dašyn} & 1.28 g \\
+		dasen & 3072 \emph{atreno} & 5.01 mg \\
+		atrenar & & 1.63 µg \\ \hline
+	\end{tabular}
+\end{center}
+
+\chapter{Alternate writing systems}
+
+For an example, the translation of Article I of the Universal Declaration of human rights shall appear in each script mentioned:
+
+\begin{verse}
+    \textbf{
+        Ner šyno navo dremamyn crenaro ner oras narmen daršonce celso. Sertefren censencen domyreryme semesamyn derenavano.
+    } \\
+    \emph{All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.}
+\end{verse}
+
+\section{title}
+
+\newcommand{\rowof}[9]{#1 & #2 & #3 & #4 & \textsf{#5} & \textsf{#6} & \textsf{#7} & \textsf{#8} & \textsf{#9} \\ \hline}
+\newcommand{\rowofa}[7]{#1 & #2 & #3 & #4 & \textsf{#5} & \textsf{#6} & \textsf{#7} \\ \hline}
+
+\begin{tabular}{|c|c|c|c||c|c|c|c|c|}
+    \hline
+    \textbf{\textsf{っ}}  & \textbf{\textsf{゜}} & \textbf{\textsf{゛}} & - & \textbf{a} & \textbf{y/i} & $\mathbf{\varnothing}$ & \textbf{e} & \textbf{o} \\ \hline \hline
+    \rowof{}{}{}{$\varnothing$}{あ}{い}{う}{え}{お}
+    \rowof{}{}{g}{c}{か}{き}{く}{け}{こ}
+    \rowof{}{}{ss}{s}{さ}{し}{す}{せ}{そ}
+    \rowof{}{}{d}{t}{た}{ち}{つ}{て}{と}
+    \rowof{}{}{}{n}{な}{に}{ぬ}{ね}{の}
+    \rowof{h}{p}{v}{f}{は}{ひ}{ふ}{へ}{ほ}
+    \rowof{}{}{}{m}{ま}{み}{む}{め}{も}
+    \rowof{}{}{}{j}{や}{}{ゆ}{*}{よ}
+    \rowof{}{ll}{l}{r}{ら}{り}{る}{れ}{ろ}
+    \rowof{}{}{}{**}{わ}{ゐ}{う}{ゑ}{を}
+\end{tabular}
+
+* - \textsf{「いぇ」 }
+
+** - [ɰ] ("silent" r)
+
+\textsf{「ん」} is <m> before <p>; <n> elsewhere
+
+\textsf{「ー」} means <y> $\rightarrow$ <i>
+
+\begin{tabular}{|c|c|c|c||c|c|c|}
+    \hline
+    \textbf{\textsf{っ}}  & \textbf{\textsf{゜}} & \textbf{\textsf{゛}} & - & \textbf{a} & \textbf{e} & \textbf{o} \\ \hline \hline
+    \rowofa{}{}{gj}{cj}{きゃ}{きぇ}{きょ}
+    \rowofa{}{}{ssj}{š}{しゃ}{しぇ}{しょ}
+    \rowofa{}{}{dj}{č}{ちゃ}{ちぇ}{ちょ}
+    \rowofa{}{}{}{nj}{にゃ}{にぇ}{にょ}
+    \rowofa{hj}{pj}{vj}{fj}{ひゃ}{ひぇ}{ひょ}
+    \rowofa{}{}{}{mj}{みゃ}{みぇ}{みょ}
+    \rowofa{}{llj}{lj}{}{りゃ}{りぇ}{りょ}
+\end{tabular}
+
+Ner šyno navo dremamyn crenaro ner oras narmen daršonce celso. Sertefren censencen domyreryme semesamyn derenavano. \\
+$\rightarrow$ \textsf{
+    ねる　しの　なぼ　づれまみん　くれなろ　ねる　おらす　なるめん \\
+    だるしょんけ　ける゙そ。　せるてふれん　けんせんけん　どみれゐめ \\
+    せめさみん　でれなばの。
+}
+
+\end{document}

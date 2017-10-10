@@ -1,0 +1,613 @@
+\documentclass{book}
+
+\usepackage[shortsuper]{common/uruwi}
+
+\title{Necarasso Cryssesa, Cressja eas Necarasso}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{SkyBlue!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{Aquamarine} \hprule \vspace{1.5ex} \\}
+        {\Huge \sffamily \textcolor{Cerulean}{\@title}\\}
+        %{\large \sffamily \textcolor{RoyalBlue}{\@title} \\}
+        {\large \textit{Necarasso Cryssesa}, the language of \textit{Cressja} \\}
+        {\color{Aquamarine} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        %\textdhr{naxYwtSeksydasAW} \\
+        {Šyno necarasso-renvyllyr} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{SkyBlue!15}
+
+\begin{verbatim}
+Branch: canon
+Version: 6.1
+Date: 2017-10-10
+\end{verbatim}
+
+(C)opyright 2017 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Synopsis}
+
+Necarasso Cryssesa (lit. \emph{forest language}) is a language conceived by Uruwi in 2013. It was intended to have an elvish aesthetic.
+
+The language originally had SVO, head-initial order. VE\^2ENCS (\emph{V}letmata \emph{e}rse \emph{Enefa} \emph{e}as \emph{N}ecarasso \emph{C}ryssesa) added the dual number and made one verb irregular.
+
+VE\^3ENCS changed the methods of forming vowel-terminating duals as well as elaborating on punctuation use.
+
+VE\^4ENCS was the last ``old Necarasso Cryssesa'' and, among other things, completely changed pluralisation, introduced short forms of numerals and created passive forms of verbs.
+
+Due to dissatisfaction with the morphosyntactic similarity to Spanish, \emph{5 (do) vletmata}, published on 26 December 2014, overhauled the language:
+
+\begin{itemize}
+  \item Due to influence from Japanese, the $\{\text{s}, \text{t}\} \rightarrow \{\text{ʃ}, \text{tʃ}\} \quad(\blacklozenge V_1\{\text{i}, \text{iː}, \text{j}\})$ rule was added.
+  \item Word order is now SOV and head-final in most cases.
+  \item Articles and gender were removed.
+  \item Case was added.
+  \item Tense is now reflected in conjugation instead of using an auxiliary verb.
+  \item The short numerals are now the only valid numerals.
+\end{itemize}
+
+\emph{6 (mja) vletmata}, published on 19 February 2016, expanded the changes:
+
+\begin{itemize}
+  \item Phonotactics were clarified.
+  \item Incorrect linguistic terminology was resolved.
+  \item Obviate pronouns were added.
+  \item A section on transitivity was added.
+  \item New constructs (NCS's term for peripheral cases) were added.
+  \item Uses of causatives and comparatives were clarified.
+  \item A distinction between \emph{erasing} and \emph{h-forming} morphologies was made.
+  \item Units of measure were specified.
+\end{itemize}
+
+This document edits \emph{6 vletmata} to meet my new standards for conlang grammars.
+
+\section{Original introduction}
+
+Welcome to the \emph{new} complete grammar of Necarasso Cryssesa! Note that this is not a full tutorial and assumes that you have the wordlist with you. If you don't have it, then a download link should have been at your reach.
+
+This document replaces the $VE^4ENCS$ you loved (or in my case, loved less); between its release and now, the grammar of Necarasso Cryssesa received major reforms (and perhaps it should be called Cryssesa Necarasso according to the new syntactic rules). It is compiled from the still-relevant parts of $VE^4ENCS$ and the proposed edits in Google Docs, plus more out of thin air (most of Chapter 4, for instance). As a result, you'll probably find the new NCS more terse and beautiful. (Or maybe you're a masochist and preferred the Spanish-like grammar of the former language better. \textsf{公平であるよ。})
+
+And finally, if you want to learn the language, you not only need to study this document but also the wordlist (\texttt{ncsvocab.ods}). The old part of it was recently batch-converted with a Scala program (before I started to dive into the gory details of Perl 6). I'll be really hard on you. \textsf{公平であるよ。}
+
+\subsection{Too-frequently asked questions}
+
+\newcommand{\qa}[2]{\item #1 #2}
+
+\begin{enumerate}
+  \qa{Is this language difficult?}{1. If you don't find it that way, then either I or you are doing something very, very wrong.}
+  \qa{Why should I learn this language?}{Maybe you offered to learn it in return for having me learn yours. Or you just want to blend in with the locals.}
+  \qa{Am I welcome to learn even if you didn't ask me to?}{1.}
+  \qa{What does 1 mean?}{Seems as if you'd need to continue.}
+  \qa{Why did you change the grammar?}{Because the old one was too much like that of Spanish, my Spanish teacher was mean, and I became obsessed with Japan.}
+  \qa{Why did you become obsessed with Japan?}{Shooting little girls. And they shoot back too.}
+  \qa{What the \textsf{ファック}?!!}{It's not as bad as it seems.}
+  \qa{Can you still write NCS in kana?}{\textsf{ぺるてねす。}}
+  \qa{This font is ugly!}{Well, I could use only the DejaVu fonts because of IPA, and DejaVu Sans Mono had spacing problems. It's either this or DejaVu Serif.}
+  \qa{No, the one you use to write Japanese!}{It looks like a yukkuri, smells like a yukkuri, and feels like a yukkuri. Take it easy.}
+  \qa{You're too funny!}{This isn't a question, but I'll respond anyway. Deal with it.}
+  \qa{You're going to fill this page with your humor!}{Relax, there is another page. I should really stop, though.}
+  \qa{What's your favorite programming language?}{I have many. TI-Basic (the 83+ version, not the crappy 89 version), Scala, C, and recently I started with Haskell.}
+  \qa{BLAH BLAH BLAH BLARRG Y U NO LUV PYTHON?!!!!!}{Mainly whitespace. Screw you, Haskell, for doing this too when I just wanted to make an \texttt{ed} clone.}
+  \qa{What's your favorite game for shooting little girls?}{\\\textsf{東方妖々夢　～} Perfect Cherry Blossom.}
+  \qa{What's a \emph{pertingent apudessive construct}?}{It describes something (a vertical surface) with something else on it.}
+\end{enumerate}
+
+\subsection{Changes in the 6th edition}
+
+\begin{itemize}
+	\item Clarify phonotactics
+	\item Use correct linguistic terminology
+	\item Add section on obviate pronouns
+	\item Use proper glosses
+	\item Add section on transitivity
+	\item Clarify combinations of numerical roots
+	\item Add a few new constructs
+	\item Elaborate on causatives and comparatives
+	\item Clarify distinction between erasing and h-forming morphologies
+	\item New section on units of measure
+\end{itemize}
+
+\chapter{Phonology and orthography}
+
+Necarasso Cryssesa uses the following phonemes:
+
+\begin{table}[h]
+    \caption{The consonants of Necarasso Cryssesa.}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        & Bilabial & Dental & Alveolar & Post-alveolar & Velar & Dento-velar \\
+        \hline
+        Nasal & m & & n & & & \\
+        Plosive & p b & & t d & (č /tʃ/) & c /k/ g &  \\
+        Fricative & f v /ɸ β/ & ss /θ/ & s & (š /ʃ/) & h /x/ & css /xθ/ \\
+        Lateral fricative & \invalid & ll /ɬ/ & & & & \\
+        Approximant & & & r /ɹ/ & & & \\
+        Lateral approximant & \invalid & & l & & & \\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+    \caption{The vowels of Necarasso Cryssesa.}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Short & Long \\
+        \hline 
+        a & (aː) \\
+        e & (ɛː) \\
+        y /i/ & i /iː/ \\
+        o & (ɔː) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Note that all unvoiced consonants are aspirated and there are no diphthongs.
+
+In addition, any consonant may be palatalised. This is shown with \ortho{j} after the consonant; for instance, \ortho{cj} = /kʲ/. /ɹʲ/ is realised as [j], so it is written as \ortho{j}.
+
+\section{Phonotactics}
+
+The basic form for a word is usually $C_0(NC)*N_t$, where:
+
+\begin{itemize}
+  \item $C$ is a consonant
+  \item $C_0$ is a consonant other than /θ ɬ x/ (but /xθ/ is allowed), or one of /pɹ βɹ βl ɸɹ ɸl tl tɹ dl dɹ dɹ kɹ ɡɹ ɡl kf/ (\ortho{cv} = /kf/)
+  \item $N$ is an approximant, followed by a vowel, then another approximant
+  \item $N_t$ is one of /a e iː o as es iːs os is an en on in ʲa ʲo ʲas ʲos ʲan ʲon aθ eθ iθ eɹθ el il ad id/
+  \item there are no sequences of palatalised consonants followed by /i/ or /iː/.
+\end{itemize}
+
+\section{Allophony}
+
+(* means that this change is reflected in spelling.) \\
+~\\
+* $\{\text{s}, \text{t}\} \rightarrow \{\text{ʃ}, \text{tʃ}\} \quad(\blacklozenge V_1\{\text{i}, \text{iː}\})$ \\
+* $\{\text{sʲ}, \text{tʲ}, \text{rʲ}\} \rightarrow \{\text{ʃ}, \text{tʃ}, \text{j}\}$ \\
+* $\{\text{ka}, \text{ko}\} \rightarrow \{\text{kʲa}, \text{ke}\} \quad(\square \blacklozenge)$ \\
+$\{\text{a}, \text{e}, \text{o}\} \rightarrow \{\text{aː}, \text{ɛː}, \text{ɔː}\} \quad(\blacklozenge \Sigma_1\{V_1, C_1\{\text{ɹ}, \text{ɬ}, \text{ɹʲ}, \text{ɬʲ}\}, \square\})$
+
+\section{Erasing vs. h-forming}
+
+Some inflections and compounds might result in two vowels adjacent to each other. \emph{H-forming} morphologies deal with the problem of two identical adjacent vowels by infixing <h> between them. They do not exhibit special behaviour on two different adjacent vowels. \\
+\emph{Unconditional erasing} morphologies merge two adjacent vowels, resulting in only the first vowel remaining. \emph{Conditional erasing} morphologies merge only identical adjacent vowels.
+
+\section{Punctuation}
+
+The period, the question mark, the exclamation mark and the semicolon are used as usual. Guillemets are used as quotes, and foreign words are marked with an asterisk.
+
+\chapter{Syntax}
+
+Necarasso Cryssesa requires verbs (present or implied) to come before the subject, object or any obliques in a sentence. In addition, the subject usually comes before the direct object, making the word order SOV in most cases.
+
+A descriptor precedes its antecedent, \emph{unless}:
+
+\begin{itemize}
+  \item it is part of a language name and the antecedent is \ortho{necarasso}, or
+  \item it is a cardinal (as opposed to ordinal) numeral
+\end{itemize}
+
+in which case the descriptor follows the antecedent.
+
+Names are presented with the surname first, and the given name second.
+
+\chapter{Nouns}
+
+A noun can adopt any ending that does not end with a \ortho{-d}. All nouns are declined in three numbers, as follows:
+
+\begin{table}[h]
+  \caption{Number inflections in Necarasso Cryssesa.}
+  \centering
+  \begin{tabu}{|X|X|X|}
+    \hline
+    Singular & Dual & Plural \\ \hline
+    All with a & -ar & -o \\ \hline
+    -el & -or & -jon \\
+    -e & -ir & -i \\
+    -erss & -yr & -yss \\
+    All others with e & -yr & e → y \\ \hline
+    -o & -yn & -an \\
+    -or & -osor & -el \\
+    All others with o & -or & -el \\ \hline
+    All with i/y & -er & -es \\ \hline
+   Drop palatalisation? & Yes & No, unless ending rules require dropping \\ \hline
+  \end{tabu}
+\end{table}
+
+Note that dual number applies to any noun that refers to two entities, whether paired or unpaired.
+
+Number declensions are conditionally erasing. For instance, \ortho{ernei} \emph{army} is pluralised to \ortho{ernes}.
+
+Nouns are also declined for nominative or oblique case. The nominative case is unmarked, and the oblique is formed by changing the final consonant to <n> (or adding it if the form ends in a vowel) on a noun already inflected for number. Nominative cases are used for the subject of a sentence and with \emph{eas} when referring to possession, as well as in an object of the copula.
+
+\begin{table}[htb]
+  \caption{Examples of declensions in Necarasso Cryssesa.}
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    Singular & Dual & Plural & Definition \\ \hline
+    vercesa & vercesar & verceso & grain, fleck \\
+    nesmeja & nesmerar & nesmejo & star \\
+    rečyrcar & rečyrcar & rečyrco & flower \\
+    mortos & mortor & mortel & hand \\
+    arpelja & arpelar & arpeljo & stream \\
+    cerel & ceror & cerion & sunset \\
+    csserys & csserer & csseres & door \\
+    nerdo & nerdyn & nerdan & base, foundation, floor \\
+    creten & crečyr & crečyn & wave \\
+    naria & nariar & nario & chin \\ \hline
+  \end{tabular}
+\end{table}
+
+\section{Personal pronouns}
+
+Personal pronouns have irregular numerical declensions, but cases are accounted in the same method as in other nouns.
+
+\begin{table}[h]
+  \caption{Personal pronouns in Necarasso Cryssesa.}
+  \centering
+  \begin{tabu}{|r|X|X|X|}
+    \hline
+    & Singular & Dual & Plural \\ \hline
+    1st & e \emph{I} & ento & eras \emph{we} \\ \hline
+    2nd & eo \emph{you} & eoro & eos \emph{you} \\ \hline
+    3rd & os \emph{he, she, it} & oson & oros \emph{they} \\ \hline
+  \end{tabu}
+\end{table}
+
+In addition, when a two different third-person subjects are mentioned in a context, the first to be mentioned now uses \ortho{ela} and the second uses \ortho{emta}. If more than two are mentioned, then the following additional pronouns are used:
+
+\begin{table}[ht]
+  \caption{Obviate pronouns in Necarasso Cryssesa.}
+  \centering
+	\begin{tabular}{|r|l|}
+		\hline
+		2 & \hliv{enros} \\
+		3 & \hliv{ton} \\
+		4 & \hliv{senca} \\
+		5 & redo \\
+		6 & remja \\
+		7 & relen \\
+		8 & refe \\
+		& \emph{etc.} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\ortho{ela} and \ortho{emta} are uninflected, the other three suppletive obviates are inflected as nouns, and the remainder of the obviate pronouns are inflected as such:
+
+\begin{itemize}
+	\item Nominative: redo, ryrdo, rydo
+	\item Oblique: rendo, ryndo, ryndo
+\end{itemize}
+
+\subsection{Reflexive and reciprocal pronouns}
+
+These are \ortho{nemesa} and \ortho{cypra}, respectively: \\
+~\\
+\hli{Menssen} \hlii{nysos} \hliii{ferna} \hliv{nemesan} \hlv{varmeneata.} \\
+\hli{mirror-\tsc{obl}} \hlii{through} \hliii{child} \hliv{self-\tsc{obl}} \hlv{observe-\tsc{past}-3\tsc{sg}} \\
+\hliii{The child} \hlv{looked at} \hliv{himself} \hlii{through} \hli{the mirror.} \\
+
+They can also appear in noun phrases where the possessor is identical to the subject of the sentence: \\
+~\\
+\hli{Emtenva} \hlii{nemesa} \hliii{eas} \hliv{loran} \hlv{šynčyta.} \\
+\hli{yesterday} \hlii{self} \hliii{\tsc{gen}} \hliv{hair-\tsc{obl}} \hlv{cut-\tsc{past}-3\tsc{sg}} \\
+\hli{Yesterday} \hlv{she cut} \hlii{her own} \hliv{hair.}
+
+\subsection{Compounding}
+
+Nouns can be compounded together, with the modifying noun first and the head noun second. Likewise, adjectives can compound with nouns, but this type of compounding is rarely productive outside of names. Both noun-to-noun and adjective-to-noun compounding are unconditionally erasing.
+
+\chapter{Verbs}
+
+Verbs in Necarasso Cryssesa are inflected for person and number, as well as four \emph{moods}:
+
+
+\begin{itemize}
+  \item \hliv{Indicative} denotes a certain statement (e.~g.~\emph{It snowed yesterday. I gave him the book.}).
+  \item \hliv{Subjunctive} denotes an uncertain statement (e.~g.~\emph{I'm not sure whether it will snow tomorrow. I'll give him the book if he \emph{comes to school}.}).
+  \item \hliv{Imperative} denotes a command, request, need, or desire (e.~g.~\emph{Please give me the book. You want her to help you. It's important to eat every day.}).
+  \item \hliv{Interrogative} denotes a question (e.~g.~\emph{Which book did you receive?}). Unless provided separately, it is inflected identically as the indicative. In informal speech, the indicative is often used instead.
+\end{itemize}
+
+Verbs are inflected in five paradigms (\emph{asagi}; sg.~\emph{asage}; literally pattern): \\
+
+\begin{longtable}[c]{|l|l|l|l|}
+  \caption{Verb conjugations in Necarasso Cryssesa.} \\
+  
+  \hline
+  \endfirsthead
+  
+  \hline
+  \endhead
+  
+  \hline
+  \endfoot
+  
+  \hline
+  \endlastfoot
+  
+  \multicolumn{4}{|c|}{\hliv{0 asage.} Ends in \ortho{-ad} but not \ortho{-ead}.} \\
+  \multicolumn{4}{|c|}{\hortho{cynrad} \emph{open}} \\
+  \hline
+  Indicative & Singular & Dual & Plural \\
+  \hline
+  1 & e cynra & ento cynran & eras cynress \\
+  2 & eo cynres & eoro cynresen & eos cynrer \\
+  3 & os cynre & oson cynren & oros cynri \\
+  \hline
+  Subjunctive & Singular & Dual & Plural \\
+  \hline
+  1 & e cynrena & ento cynrenera & eras cynreness \\
+  2 & eo cynrenes & eoro cynreneres & eos cynrener \\
+  3 & os cynrene & oson cynrenere & oros cynreni \\
+  \hline
+  Imperative & Singular & Dual & Plural \\ 
+  \hline
+  1 & e cynrenta & ento cynrenela & eras cynrentess \\
+  2 & eo cynrentes & eoro cynreneles & eos cynrenter \\
+  3 & os cynrente & oson cynrenele & oros cynrenči \\
+  \hline
+  \multicolumn{4}{|c|}{\hliv{1 asage.} Ends in \ortho{-yd} but not \ortho{-ayd}.} \\
+  \multicolumn{4}{|c|}{\hortho{yndaryd} \emph{leave}} \\
+  \hline
+  Indicative & Singular & Dual & Plural \\
+  \hline
+  1 & e yndare & ento yndaren & eras yndarass \\
+  2 & eo yndaras & eoro yndaresan & eos yndarar \\
+  3 & os yndara & oson yndaran & oros yndaro \\
+  \hline
+  Subjunctive & Singular & Dual & Plural \\
+  \hline
+  1 & e yndarese & ento yndaresere & eras yndaresass \\
+  2 & eo yndaresas & eoro yndareseras & eos yndaresar \\
+  3 & os yndaresa & oson yndaresera & oros yndareso \\
+  \hline
+  Imperative & Singular & Dual & Plural \\
+  \hline
+  1 & e yndarepe & ento yndarepele & eras yndaretass \\
+  2 & eo yndaretas & eoro yndareselas & eos yndaretar \\
+  3 & os yndareta & oson yndaresela & oros yndareto \\
+  \hline
+  \multicolumn{4}{|c|}{\hliv{2 asage.} Ends in \ortho{-ead}.} \\
+  \multicolumn{4}{|c|}{\hortho{sendread} \emph{be in excess}} \\
+  \hline
+  Indicative & Singular & Dual & Plural \\
+  \hline
+  1 & e sendrea & ento sendrean & eras sendrehess \\
+  2 & eo sendrehes & eoro sendrehesen & eos sendreher \\
+  3 & os sendrehe & oson sendrehen & oros sendrei \\
+  \hline
+  Subjunctive & Singular & Dual & Plural \\
+  \hline
+  1 & e sendrehena & ento sendrehenera & eras sendreheness \\
+  2 & eo sendrehenes & eoro sendreheneres & eos sendrehener \\
+  3 & os sendrehene & oson sendrehenere & oros sendreheni \\
+  \hline
+  Imperative & Singular & Dual & Plural \\
+  \hline
+  1 & e sendrehenta & ento sendrehenela & eras sendrehentess \\
+  2 & eo sendrehentes & eoro sendreheneles & eos sendrehenter \\
+  3 & os sendrehente & oson sendrehenele & oros sendrehenči \\
+  \hline
+  Interrogative & Singular & Dual & Plural \\
+  \hline
+  1 & e sendria & ento sendrian & eras sendrehess \\
+  2 & eo sendrehes & eoro sendrehesen & eos sendreher \\
+  3 & os sendrehe & oson sendrehen & oros sendri \\
+  \hline
+  \multicolumn{4}{|c|}{\hliv{3 asage.} Ends in \ortho{-ayd}.} \\
+  \multicolumn{4}{|c|}{\hortho{ylmayd} \emph{panic}} \\
+  \hline
+  Indicative & Singular & Dual & Plural \\
+  \hline
+  1 & e ylmae & ento ylmaen & eras ylmahass \\
+  2 & eo ylmahas & eoro ylmaesan & eos ylmahar \\
+  3 & os ylmaha & oson ylmahan & oros ylmao \\
+  \hline
+  Subjunctive & Singular & Dual & Plural \\
+  \hline
+  1 & e ylmaese & ento ylmaesen & eras elmaesass \\
+  2 & eo ylmaesas & eoro ylmaesenas & eos ylmaesar \\
+  3 & os ylmaesa & oson ylmaesan & oros ylmaeso \\
+  \hline
+  Imperative & Singular & Dual & Plural \\
+  \hline
+  1 & e ylmaepe & ento ylmaepen & eras ylmaetass \\
+  2 & eo ylmaetas & eoro ylmaepenas & eos ylmaetar \\
+  3 & os ylmaeta & oson ylmaetan & oros ylmaeto \\
+  \hline
+  Interrogative & Singular & Dual & Plural \\
+  \hline
+  1 & e ylmie & ento ylmien & eras ylmahass \\
+  2 & eo ylmahas & eoro ylmiesan & eos ylmahar \\
+  3 & os ylmaha & oson ylmahan & oros ylmio \\
+  \hline
+  \multicolumn{4}{|c|}{\hliv{4 asage.} \ortho{essyd} \emph{exist} only.} \\
+  \multicolumn{4}{|c|}{\hortho{essyd} \emph{exist}} \\
+  \hline
+  Indicative & Singular & Dual & Plural \\
+  \hline
+  1 & e ve & ento ven & eras veass \\
+  2 & eo ves & eoro vesen & eos vellar \\
+  3 & os vella & oson vellan & oros von \\
+  \hline
+  Subjunctive & Singular & Dual & Plural \\
+  \hline
+  1 & e vese & ento vesen & eras vehesass \\
+  2 & eo vesas & eoro vesenes & eos vellesar \\
+  3 & os vellesa & oson vellesan & oros veson \\
+  \hline
+  Imperative & Singular & Dual & Plural \\
+  \hline
+  1 & e vepe & ento vepen & eras vehetass \\
+  2 & eo vetas & eoro vepenes & eos velletar \\
+  3 & os velleta & oson velletan & oros veton \\
+  \hline
+  Interrogative & Singular & Dual & Plural \\
+  \hline
+  1 & e ce & ento cen & eras ceass \\
+  2 & eo ces & eoro cesen & eos cellar \\
+  3 & os cella & oson cellan & oros gon \\
+  \hline
+\end{longtable}
+
+\section{Polarity}
+
+In order to form the negative of a non-imperative form of a verb, the particle \ortho{ci} is used. In the imperative form, \ortho{c'-} is prefixed to verbs beginning with \ortho{e-} and \ortho{cer-} otherwise. \\
+
+\section{Tense}
+
+The only tense distinctions are past and nonpast. Tense is regarded as a special construction, rather than a conjugation; in order to form the past infinitive, replace \ortho{-ad} with \ortho{-ačyd} and \ortho{-yd} with \ortho{-yčyd}.
+
+\section{Serialisation}
+
+\label{sec:serialisation}
+
+To form modal and serial expressions (an English example would be \emph{can come} or \emph{come walking}), the infinitive of the verb that would come second in English occurs first, with the final \ortho{d} replaced with \ortho{v}, with the other verb appended: \\
+~\\
+\hli{Vyncyv}\hlii{pertena.} \\
+\hli{come-\tsc{ser}-}\hlii{able\_to-1\tsc{sg}} \\
+\hlii{I can} \hli{come.} \\
+
+In a similar construction, a noun can be glued after a verb to form a compound: \\
+~\\
+\hli{necsav}\hlii{esada} \\
+\hli{sit-\tsc{ser}-}\hlii{room} \\
+\hli{sitting} \hlii{room}
+
+\section{Voice}
+
+In the present tense, passive voice is formed by replacing \ortho{-ad} with \ortho{-erad} (h-forming), and \ortho{-yd} with \ortho{-eryd} (conditionally erasing).
+
+The past passive, which is not a verb but rather an adjective, is formed by replacing \ortho{-d} with \ortho{-go}.
+
+\section{Rules for determining which mood to use}
+
+\begin{enumerate}
+  \item If it is certain that an action is or is not performed, then use the indicative.
+  \item If a question is being asked, then use the interrogative.
+  \item If a command, request, need, or desire is expressed, then use the imperative.
+  \item The hypothesis clause of \ortho{so} \emph{if} always uses the subjunctive.
+  \item An emotional reaction to an action that happened (e.~g.~\emph{I feel happy that your parents are inviting me to dinner}) uses the indicative for that action.
+  \item If doubt or other lack of certainty is expressed or implied, then use the subjunctive.
+\end{enumerate}
+
+\section{Irregular imperatives}
+
+The second-person singular imperative of \ortho{marčyd} \emph{wait} is \ortho{mares} and that of \ortho{cjarečyd} \emph{leave alone} is \ortho{cjares}.
+
+\section{Causatives}
+
+Necarasso distinguishes between:
+
+\begin{itemize}
+  \item direct causation: the action was caused by a direct act of the subject (e.~g. by force)
+  \item indirect causation: the action was caused by an indirect act (e.~g. by speech or some chain of events)
+\end{itemize}
+
+Direct causatives are formed by the prefix \ortho{do-}. Indirect causatives are formed as follows:
+
+\begin{itemize}
+  \item \ortho{nyd} → \ortho{teryd}
+  \item \ortho{ryd} → \ortho{ceryd}
+  \item \ortho{-d} → \ortho{-deryd}
+\end{itemize}
+
+Then the causer assumes the subject position, and the subject of the base action becomes the direct object. If the base action already has a direct object, then it will be the second direct object in the sentence.
+
+Examples: \\
+~\\
+\hli{Cynyn} \hlii{docaršyta.} \\
+\hli{vase-\tsc{obl}} \hlii{\tsc{dc}-fall-\tsc{past}-3\tsc{sg}} \\
+\hlii{He dropped} \hli{the vase.} \\
+~\\
+\hli{ersaden} \hlii{eferan} \hliii{nyrsen} \hliv{ylmyraderyta.} \\
+\hli{master} \hlii{servant-\tsc{obl}} \hliii{water-\tsc{obl}} \hliv{bring-\tsc{ic}-\tsc{past}-3\tsc{sg}} \\
+\hli{The master} \hliv{had} \hlii{the servant} \hliv{bring} \hliii{water.} \\
+~\\
+\hli{Gentrydyr} \hlii{ersaden} \hliii{renecyn} \hliv{renmane} \hlv{rylssyderyta.} \\
+\hli{study-\tsc{anim\_actor}} \hlii{master} \hliii{advice-\tsc{instr}} \hliv{Renme-\tsc{inessive}} \hlv{rest-\tsc{ic}-\tsc{past}-3\tsc{sg}} \\
+\hli{The student} \hliii{advised} \hlii{the instructor} \hlv{to take a vacation} \hliv{at Renme.} \\
+
+Direct causatives are commonly used to convert intransitive verbs to transitive verbs.
+
+\section{Transitivity}
+
+Verbs are often either intransitive or transitive. Some can play both roles depending on whether an object is specified, but verbs cannot take on different valences depending on an active / stative distinction: \\
+~\\
+\hli{Menea.} \\
+\hli{see-1\tsc{sg}} \\
+\hli{I see.} \\
+~\\
+\hli{Enen} \hlii{menea.} \\
+\hli{tree-\tsc{obl}} \hlii{see-1\tsc{sg}} \\
+\hlii{I see} \hli{the tree.} \\
+~\\
+\hli{Genar} \hlii{nassala.} \\
+\hli{snow} \hlii{melt-3\tsc{sg}} \\
+\hli{The snow} \hlii{melts.} \\
+~\\
+\hli{Senar} \hlii{arcyn} \hliii{donassala.} \\
+\hli{fire} \hlii{ice-\tsc{obl}} \hliii{\tsc{dc}-melt-3\tsc{sg}} \\
+\hli{The fire} \hliii{melts} \hlii{the ice.}
+
+\chapter{Adjectives}
+
+Adjectives are distinct from nouns because they are not declined for case and cannot appear as an object of a postposition; they are also distinct from verbs because they do not inflect for person or tense. In addition, some adjectives do not inflect at all.
+
+Most adjectives are inflected for number in the same style as nouns in order to agree with their heads; however, they do not inflect for case. Some adjectives, such as those corresponding to indefinite pronouns, are uninflected.
+
+\begin{table}[h]
+  \caption{Examples of adjectives in Necarasso Cryssesa.}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Adjective & Definition \\
+    \hline
+    enela & soft \\
+    trenso & loose \\
+    mesto & sweet \\
+    ecssyrvo & sharo, thin \\
+    šyno \emph{(uninflected)} & all \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\section{Adverbs}
+
+Adverbs are formed from adjectives by replacing the ending with \ortho{-amyn}.
+
+\end{document}
