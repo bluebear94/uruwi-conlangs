@@ -4849,428 +4849,428 @@ pristine, perfect
 
 
 # nodes
-: 
+: n
 city, metropolis
 
 
 # dernan
-: 
+: n
 pear
 
 
 # lenan
-: 
+: n
 older sibling
 
 
 # ysane
-: 
+: n
 younger sibling
 
 
 # šydel
-: 
+: n
 sparrow
 
 
 # fanen
-: 
+: n
 slit
 
 
 # rehel
-: 
+: n
 maze
 
 
 # nerayd
-: 
-to make sense
+: vi
+make sense
 
 
 # sesereyd
-: 
-to confuse, to manipulate, to disorient
+: vt
+confuse, manipulate, disorient
 
 
 # yvyllyd
 : vt
-to flip, to reverse, to invert
+flip, reverse, invert
 
 
 # tesel
-: 
+: n
 use, function, purpose
 
 
 # nerten
-: 
+: n
 snack
 
 
 # carvjeryd
-: 
-to get lost
+: vi
+get lost
 
 
 # ternayd
-: 
-to be tranced
+: vi
+be tranced
 
 
 # deserayd
-: 
-to distract
+: vt
+distract
 
 
 # vylden
-: 
+: n
 tangent
 
 
 # apramyd
-: 
-to sail
+: vi
+sail
 
 
 # tanar
-: 
+: n
 scratch
 
 
 # eršyn
-: 
+: n
 wound, cut
 
 
 # srenen
-: 
+: adj
 fresh, alive
 
 
 # centan
-: 
+: n
 crime
 
 
 # trančyd
-: 
-to hang, to loom
+: vi
+hang, loom
 
 
 # acase
-: 
+: adj
 fair, just
 
 
 # feren
-: 
+: n
 knife
 
 
 # nydar
-: 
+: n
 flesh, meat
 
 
 # eren
-: 
+: n
 rainbow
 
 
 # daeri
-: 
+: n
 answer
 
 
 # ecyn
-: 
+: n
 liquid
 
 
 # asenane
-: 
+: adj
 right-side-up
 
 
 # per
-: 
+: n
 card
 
 
 # yltecto
-: 
+: adj, adv
 and before
 
 
 # ymyron
-: 
+: adj, adv
 and after
 
 
 # šynmyr
-: 
+: adv
 after all
 
 
 # res
-: 
-morals, behavior
+: n
+morals, behaviour
 
 
 # nemela
-: 
+: n
 history
 
 
 # saren
-: 
+: n
 tool
 
 
 # senemia
-: 
+: n
 oxygen
 
 
 # arcyllyd
 : vi
-to freeze
+freeze
 
 
 # aren
-: 
+: n
 snowflake
 
 
 # cjasan
-: 
+: n
 spoke, point of a star
 
 
 # realmyd
-: 
-to glimmer
+: vi
+glimmer
 
 
 # arcevyn
-: 
+: n
 hail
 
 
 # nase
-: 
+: n
 orb
 
 
 # demead
-: 
-to prefer
+: vt
+prefer
 
 
 # tan
-: 
-~ you know
+: part
+\tl{} you know
 
 
 # relen
-: 
+: adj
 thick (clothing)
 
 
 # negyd
-: 
-to take off
+: vt
+take off
 
 
 # elcrayd
-: 
-to demand
+: vt
+demand
 
 
 # tehen
-: 
+: adj
 foolish
 
 
 # doremyd
-: 
-to request
+: vt
+request
 
 
 # carpel
-: 
+: n
 coat
 
 
 # tename
-: 
+: adj
 fortunate
 
 
 # nemyron
-: 
+: adv
 later
 
 
 # saeryd
-: 
-to introduce oneself
+: vi
+introduce oneself
 
 
 # gevenyd
-: 
+: va
 would
 
 
 # varacrešyd
-: 
-to listen
+: v
+listen (to)
 
 
 # sandyd
-: 
-to subside
+: vi
+subside
 
 
 # esna
-: 
+: n
 inside, interior
 
 
 # naen
-: 
+: n
 insult
 
 
 # sencyr
-: 
+: n
 intense
 
 
 # ysaen
-: 
+: adj
 at least
 
 
 # soroheron
-: 
+: adj
 tired, exhausted
 
 
 # nyrssen
-: 
+: n
 mouse
 
 
 # lelnyd
-: 
+: vi
 go wrong
 
 
 # rasa
-: 
+: n
 salamander
 
 
 # cyvymyrata
-: 
+: n
 delusion, paranoia
 
 
 # meyne
-: 
+: n
 fanfare
 
 
 # endanen
-: 
+: adj, adv
 a little
 
 
 # nerayn
-: 
+: n
 plaza, square
 
 
 # šyemen
-: 
+: n
 musical instrument
 
 
 # tesane
-: 
+: n
 electricity
 
 
 # ynve
-: 
+: n
 step, pace, tempo, impulse
 
 
 # lesar
-: 
+: n
 space
 
 
 # sas
-: 
+: n
 order
 
 
 # ylardead
-: 
-to land
+: vi
+land
 
 
 # našyryl
-: 
-hamony
+: n
+harmony
 
 
 # sajen
-: 
+: n
 project
 
 
 # navase
-: 
+: n
 credit
 
 
 # mederyd
-: 
-to congratulate
+: vt
+congratulate
 
 
 # arcead
-: 
-to stay, to linger
+: vi
+stay, linger
 
 
 # asenvenca
-: 
+: adj
 extra, supernumerary
 
 
 # saede
-: 
+: n
 scroll
 
 
 # lyrena
-: 
+: adj
 bright, major (key)
 
 
 # entan
-: 
+: n
 surprise
 
 
 # myrenyd
-: 
-to deserve
+: vt
+deserve
 
 
 # lerean
