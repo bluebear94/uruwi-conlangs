@@ -1,0 +1,9 @@
+{
+  "styling": "\\textsf{%s}",
+  "newline": "\\quad ",
+  "alphabet": [
+    "c", "e", "n", "v", "o", "s", "š",
+    "r", "l", "m", "a", "f", "g",
+    "p", "t", "č", "i", "j", "y", "d", "h"
+  ]
+}

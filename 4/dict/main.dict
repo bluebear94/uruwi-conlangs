@@ -1,0 +1,6045 @@
+# vystos
+: n
+stone
+
+
+# cynrad
+: vi
+open
+
+
+# yndaryd
+: vi
+leave
+
+
+# vesscyd
+: vi
+close
+
+
+# mylle
+: n
+grass
+
+
+# erfyn
+: n
+wood
+
+
+# acssyma
+: n
+sword
+
+
+# šymessa
+: n
+end
+
+
+# šymessad
+: vi
+end
+
+
+# necarasso
+: n
+language
+
+
+# csserys
+: n
+door
+
+
+# mensse
+: n
+mirror
+
+
+# vena
+: adj
+easy
+
+
+# merva
+: adj
+large
+
+
+# denefo
+: adj
+many, much
+
+
+# dedeno
+: adj
+more
+
+
+# cvyssalyr
+: n
+leaf, page
+
+
+# seren
+: n
+seed
+
+
+# senryd
+: vt
+seed
+
+
+# arcyn
+: n
+ice
+
+
+# enela
+: adj
+soft
+
+
+# lyre
+: n
+light, torch
+
+
+# emasa
+: n
+ladder
+
+
+# senar
+: n
+fire
+
+
+# senad
+: vt
+burn
+
+
+# myrad
+: vt
+take, possess
+
+
+# evyn
+: n
+box, square
+
+
+# nyrses
+: n
+water
+
+
+# domyrad
+: vt
+give
+
+
+# cvyrnyca
+: n
+cloth
+
+
+# acrynala
+: adj
+dark, black
+
+
+# acrynos
+: n
+darkness
+
+
+# yrnessa
+: adj
+white
+
+
+# cenerssa
+: adj
+red
+
+
+# anaresa
+: adj
+green
+
+
+# nasatesa
+: adj
+blue
+
+
+# eoremyca
+: adj
+purple
+
+
+# elecssa
+: adj
+gray
+
+
+# dendryna
+: adj
+yellow
+
+
+# nermeda
+: adj
+orange
+
+
+# eltes
+: n
+river
+
+
+# cryssos
+: n
+forest
+
+
+# verna
+: n
+sand
+
+
+# iplymos
+: n
+mushroom
+
+
+# inepremor
+: n
+clock
+
+
+# roton
+: n
+soup, stew
+
+
+# emcera
+: n
+feather
+
+
+# dešyd
+: vt
+touch, feel
+
+
+# decso
+: n
+tactile sense
+
+
+# crensse
+: n
+shovel, spoon
+
+
+# acymda
+: n
+axe
+
+
+# eressyr
+: n
+pickaxe
+
+
+# lemes
+: n
+head
+
+
+# šylorssa
+: n
+game
+
+
+# šyldryd
+: v
+play
+
+
+# entacsser
+: n
+recursion
+
+
+# cetryd
+: v
+write
+
+
+# cetra
+: n
+writing, text
+
+
+# erea
+: n
+iron
+
+
+# erllas
+: n
+gold
+
+
+# etelos
+: n
+fish
+
+
+# nesmeja
+: n
+star
+
+
+# mjoros
+: n
+wolf
+
+
+# metraspo
+: n
+village
+
+
+# cisso
+: n
+arrow
+
+
+# cissena
+: n
+bow
+
+
+# crysavo
+: n
+spider
+
+
+# nava
+: n
+person
+
+
+# emetros
+: n
+silver
+
+
+# nervema
+: n
+book
+
+
+# aprama
+: n
+boat
+
+
+# seprynyd
+: vi
+decay
+
+
+# cynsso
+: post
+with, using
+
+
+# cyrcyn
+: post
+without
+
+
+# reotad
+: vi
+break, fail
+
+
+# invetad
+: vi
+walk, climb
+
+
+# vorad
+: vi
+fly
+
+
+# nealo
+: n
+wheat
+
+
+# nyralyssyd
+: vi
+die
+
+
+# donyralyssyd
+: vt
+kill
+
+
+# nyralas
+: n
+death
+
+
+# ajos
+: n
+bone
+
+
+# erefado
+: n
+thorn
+
+
+# islja
+: adj
+weak
+
+
+# vesro
+: adj
+strong
+
+
+# mytra
+: adj
+fast, swift
+
+
+# genelo
+: adj
+slow
+
+
+# eas
+: post
+of
+
+
+# remyd
+: vt
+ask
+
+
+# emveryd
+: vt
+poison
+
+
+# emveoro
+: n
+poison
+
+
+# lora
+: n
+hair
+
+
+# menead
+: v
+see
+
+
+# menja
+: n
+vision
+
+
+# menacor
+: n
+eye
+
+
+# pertenad
+: va
+be able to
+
+
+# vyncyd
+: vi
+come
+
+
+# venda
+: n
+circle, loop
+
+
+# cjaršyd
+: vi
+fall
+
+
+# ress
+: post
+like
+
+
+# oscona
+: n
+angle
+
+
+# ceprysos
+: n
+cattle
+
+
+# mercavas
+: n
+pig
+
+
+# gellyr
+: n
+chicken
+
+
+# lysas
+: n
+string
+
+
+# esdeor
+: n
+carrot
+
+
+# gostos
+: n
+machine
+
+
+# gašyda
+: n
+shadow
+
+
+# emeva
+: n
+rain
+
+
+# perselta
+: n
+clothing
+
+
+# tesenor
+: n
+chain
+
+
+# efremyd
+: vt
+command, rule
+
+
+# efreto
+: n
+command
+
+
+# invetoro
+: n
+bird
+
+
+# yngaro
+: n
+diamond, crystal
+
+
+# elsse
+: n
+sun, day, year, east
+
+
+# merseda
+: n
+moon, night, month, west
+
+
+# ynoros
+: n
+branch
+
+
+# ehyrda
+: n
+staff
+
+
+# enma
+: adj*
+any
+
+
+# šyno
+: adj*
+all, entire, complete
+
+
+# cenmo
+: adj*
+none
+
+
+# crenaryd
+: vi
+be born
+
+
+# docrenaryd
+: vt
+give birth
+
+
+# es
+: post
+in, at
+
+
+# sendread
+: vi
+be in excess
+
+
+# aramo
+: n
+excess
+
+
+# reldayd
+: vi
+be missing
+
+
+# ar
+: post
+to
+
+
+# ervella
+: n
+defense
+
+
+# ervead
+: v
+defend
+
+
+# ci
+: adj, adv
+indicates negative
+
+
+# cenvos
+: n
+character, glyph, rune
+
+
+# cenvel
+: n
+writing
+
+
+# cenvad
+: v
+write
+
+
+# emorota
+: adj
+automatic
+
+
+# mavos
+: n
+sulfur
+
+
+# vyrta
+: n
+truth
+
+
+# so
+: advc
+if
+
+
+# arssavocos
+: n
+mathematics
+
+
+# etesenead
+: vt
+emulate
+
+
+# veollerssa
+: n
+wall
+
+
+# enva
+: n
+day (unit of time)
+
+
+# gostoscenvos
+: n
+programming, program
+
+
+# gostoscenvad
+: v
+program
+
+
+# eftoro
+: n
+environment
+
+
+# telsad
+: vt
+use
+
+
+# voro
+: adj
+full
+
+
+# erpetoja
+: n
+level
+
+
+# magras
+: n
+power
+
+
+# cessa
+: n
+lake
+
+
+# ventros
+: n
+parent
+
+
+# šydro
+: adj
+old (person)
+
+
+# ferso
+: adj
+young
+
+
+# grošyn
+: n
+cart
+
+
+# metellor
+: n
+path
+
+
+# trešyd
+: vt
+cook
+
+
+# ceorasa
+: n
+panel, screen, menu
+
+
+# drelles
+: n
+tear
+
+
+# nemesa
+: pn
+self
+
+
+# eneoro
+: n
+world
+
+
+# eradjona
+: n
+high
+
+
+# ercentjonad
+: vt
+name
+
+
+# centjon
+: n
+name
+
+
+# deaneretead
+: vt
+repair
+
+
+# cedyd
+: vt
+modify
+
+
+# estratead
+: vt
+input
+
+
+# metacrovo
+: n
+cactus
+
+
+# sepeoros
+: n
+length, distance
+
+
+# yčyr
+: n
+time
+
+
+# refečyd
+: vt
+find
+
+
+# estetad
+: vi
+explode
+
+
+# estetea
+: n
+explosion
+
+
+# feseryd
+: v
+whisper
+
+
+# orensor
+: n
+weather
+
+
+# mecryd
+: v
+change (into)
+
+
+# enpros
+: adj, pp
+near
+
+
+# ercelos
+: n
+mountain
+
+
+# neredos
+: n
+glass
+
+
+# anor
+: n
+sky
+
+
+# ceptryd
+: vt
+reach
+
+
+# aseni
+: post
+above, over
+
+
+# desor
+: post
+below
+
+
+# trenso
+: adj
+loose
+
+
+# crelpead
+: vt
+tie, bind
+
+
+# nema
+: adj
+old
+
+
+# trespo
+: adj
+new
+
+
+# aspead
+: vt
+erase, delete
+
+
+# arpelja
+: n
+stream
+
+
+# votesa
+: adj
+brown
+
+
+# yrnerssa
+: adj
+light (in color)
+
+
+# relcora
+: n
+wing
+
+
+# mentead
+: vt
+eat
+\textsf{nadamyn mentead} tolerate, accept
+
+
+# tencor
+: n
+food
+
+
+# esar
+: post
+into
+
+
+# esforyd
+: vi
+drown
+
+
+# eftead
+: vt
+forget
+
+
+# ermead
+: vt
+make, craft, create
+
+
+# nas
+: post
+for, in order to, in exchange for, on behalf of
+
+
+# renyl
+: adj*
+only
+
+
+# rylssyd
+: vi
+rest
+
+
+# sero
+: n
+moss
+
+
+# remto
+: n
+library
+
+
+# nerdead
+: vi
+improve
+
+
+# cyrtead
+: vi
+worsen
+
+
+# nade
+: adj
+good
+
+
+# nadenata
+: n
+virtue
+
+
+# cete
+: adj
+bad
+
+
+# cetenata
+: n
+sin
+
+
+# ešyla
+: n
+shelf
+
+
+# nela
+: n
+table
+
+
+# senlead
+: va
+try, attempt, intend
+
+
+# ele
+: adj*
+this
+
+
+# emte
+: adj*
+that
+
+
+# meston
+: n
+honey
+
+
+# mesto
+: adj
+sweet
+
+
+# šynčyd
+: vt
+cut
+
+
+# ešynčyd
+: vt
+dissect, analyze
+
+
+# esmalyd
+: vt
+drink
+
+
+# esmala
+: n
+drink
+
+
+# cypra
+: pn
+each other
+
+
+# atoro
+: post
+until
+
+
+# tormecyn
+: in
+farewell
+
+
+# temtera
+: n
+ruler, monarch
+
+
+# nagtoro
+: adj
+possible
+
+
+# tanca
+: n
+cup
+
+
+# namade
+: adj
+small
+
+
+# cetallyron
+: n
+period of 256 years
+
+
+# venca
+: n
+number
+
+
+# vencead
+: v
+count
+
+
+# nealyd
+: vt
+pass
+
+
+# esada
+: n
+room
+
+
+# ceor
+: post
+beyond
+
+
+# sectryd
+: vt
+store, save, accumulate
+
+
+# setro
+: n
+vault
+
+
+# yvores
+: advc
+wherein (in which)
+
+
+# eneneryd
+: vi
+shake, tremble
+
+
+# narva
+: n
+voice
+
+
+# narvyd
+: v
+sing
+
+
+# cronayd
+: vi
+fill
+
+
+# esasenad
+: vi
+rise
+
+
+# mortos
+: n
+hand
+
+
+# rotrosan
+: n
+cloud
+
+
+# pestrys
+: n
+land, country
+
+
+# šimjos
+: post
+on top of
+
+
+# creten
+: n
+wave
+
+
+# relten
+: n
+mist
+
+
+# nagarad
+: vi
+cover, hide, obscure
+
+
+# gonpae
+: n
+mold
+
+
+# sade
+: n
+score, worth, value
+
+
+# sedad
+: vt
+be worth, achieve
+
+
+# vysčyd
+: vt
+mine
+
+
+# denga
+: n
+fence
+
+
+# venas
+: n
+clay
+
+
+# alead
+: v
+breathe
+
+
+# alja
+: n
+breath
+
+
+# ryselos
+: n
+ball
+
+
+# jalad
+: vt
+lead
+
+
+# letrymos
+: n
+paper
+
+
+# ecressamyd
+: vt
+summon
+
+
+# asfyd
+: vi
+melt
+
+
+# ertcalyd
+: vt
+smell
+
+
+# ercana
+: n
+odor
+
+
+# amoro
+: n
+north
+
+
+# cyparnese
+: n
+south
+
+
+# meftead
+: vt
+hold, carry
+
+
+# tarpead
+: vt
+need, require
+
+
+# dygyl
+: adj
+alone
+
+
+# nartess
+: n
+building
+
+
+# retenad
+: vt
+limit
+
+
+# reten
+: n
+limit
+
+
+# ceress
+: n
+house
+
+
+# telnjon
+: n
+iteration
+
+
+# cvorayd
+: vt
+send
+
+
+# tectryd
+: vt
+inflict
+
+
+# car
+: post
+out
+
+
+# nysos
+: post
+through, by, around
+
+
+# ternesad
+: vt
+fight verbally (i. e. argue)
+
+
+# ansad
+: vt
+fight physically without weapons on a small scale
+
+
+# cyntoršyd
+: vt
+fight physically with melee weapons on a small scale
+
+
+# cysernyd
+: vt
+fight physically with ranged weapons on a small scale
+
+
+# secrynyd
+: vt
+fight physically on a large scale
+
+
+# mervenad
+: vt
+fight through a simulation
+
+
+# vana
+: n
+plant
+
+
+# crecelyd
+: vt
+destroy
+
+
+# regrys
+: adj, adv
+less
+
+
+# ensor
+: adjc
+while
+
+
+# šyncryd
+: vi
+burn
+
+
+# pesčyd
+: v
+flee, avoid
+
+
+# trevyd
+: vt
+collect
+
+
+# tacnad
+: vi
+jump
+
+
+# menerse
+: adj
+dizzy
+
+
+# tandor
+: n
+rope
+
+
+# ecssyrvo
+: adj
+sharp, thin
+
+
+# cytrynyd
+: vt
+hit, strike
+
+
+# anlead
+: vt
+hurt, damage, harm
+
+
+# nedorta
+: adj
+apparent, obvious
+
+
+# matron
+: n
+mode, configuration
+
+
+# escarnecead
+: vt
+translate
+
+
+# enerceljos
+: n
+stick, rod
+
+
+# čyrvessos
+: n
+obsidian
+
+
+# ventoro
+: adj
+correct
+
+
+# orcryd
+: vt
+know, find out
+
+
+# cenegryd
+: vt
+throw, toss
+\textsf{aryn cenegryd} break a rule
+\textsf{tenan cenegryd} be relentless
+
+
+# nassalyd
+: vi
+melt
+
+
+# varmenead
+: v
+observe, look
+
+
+# gerenfyd
+: vt
+place
+
+
+# nacmeryd
+: v
+say, speak, tell
+
+
+# cysfayd
+: vt
+serve
+
+
+# sedyd
+: vt
+add, affix
+
+
+# pelčyd
+: vi
+join, enter
+
+
+# grentoro
+: n
+place, location, address
+
+
+# vetenllyd
+: vi
+survive
+
+
+# vletmyd
+: vt
+revise, edit, change
+
+
+# senprad
+: vt
+ride
+
+
+# yl
+: post
+on, at
+
+
+# ylar
+: post
+onto
+
+
+# ylmayd
+: vi
+panic
+
+
+# tecto
+: post
+before
+
+
+# myron
+: post
+after
+
+
+# nyd
+: v
+dummy verb
+
+
+# mavar
+: post
+in (a language)
+
+
+# avona
+: n
+wind, air, gas
+
+
+# nesmaryd
+: vt
+wish
+
+
+# lanta
+: n
+tower
+
+
+# nemvea
+: n
+sheep
+
+
+# serčyd
+: vt
+think, believe (in)
+
+
+# nenčyd
+: vt
+cost
+
+
+# retenar
+: adj
+excessive
+
+
+# ecssonar
+: n
+boot, shoe
+
+
+# cvylo
+: n
+dye
+
+
+# cvylryd
+: vi
+be dyed
+
+
+# prenčyd
+: vt
+build
+
+
+# envatad
+: vi
+quench, invigorate
+
+
+# moršyd
+: vi
+heal
+
+
+# cjaltaryd
+: vt
+recommend, suggest
+
+
+# narecen
+: n
+picture
+
+
+# pelstryd
+: vt
+repel
+
+
+# gentryd
+: vi
+study
+
+
+# mender
+: n
+number
+
+
+# nepteryd
+: vt
+return
+
+
+# ceorsa
+: n
+function
+
+
+# nasteros
+: n
+parameter
+
+
+# evencos
+: n
+argument
+
+
+# ačyr
+: n
+list
+
+
+# deršyd
+: va
+allow, permit
+
+
+# estemyrad
+: vi
+compile
+
+
+# meceryd
+: vi
+seem
+
+
+# rečyrca
+: n
+flower
+
+
+# grenčyd
+: vt
+draw
+
+
+# nentryd
+: vi
+push, press
+
+
+# arancad
+: vi
+pull
+
+
+# asendar
+: n
+fox
+
+
+# nelferyd
+: va
+insist
+
+
+# arnaryd
+: vt
+try out
+
+
+# esternyd
+: vi
+rise
+
+
+# asalos
+: n
+horse
+
+
+# meva
+: n
+ocean, sea
+
+
+# arnenda
+: n
+music
+
+
+# sarta
+: n
+ring (N), circle, loop, week
+
+
+# vanoso
+: n
+magic
+
+
+# retnead
+: vt
+want, desire
+
+
+# maga-
+: pre
+against
+
+
+# resema
+: n
+bag
+
+
+# esteryd
+: vi
+travel
+
+
+# centaryd
+: vi
+start, begin, commence
+
+
+# centara
+: n
+beginning, source
+
+
+# eteco
+: n
+flag, switch
+
+
+# nerdo
+: n
+base, foundation, floor
+
+
+# asa
+: post
+within
+
+
+# nerlla
+: post
+between, among
+
+
+# endora
+: adj
+small, young
+
+
+# ceclanyd
+: vi
+yell
+
+
+# acrešyd
+: v
+hear
+
+
+# vrenryd
+: vi
+dwell, inhabit
+
+
+# ro
+: post
+beside, the side of
+
+
+# alrayd
+: vt
+run (a program)
+
+
+# asryd
+: va
+cause
+
+
+# eravad
+: vi
+suffer
+
+
+# myvea
+: n
+word, unit
+
+
+# nerana
+: adj
+same
+
+
+# treca
+: n
+plain, field
+
+
+# ensera
+: n
+brick
+
+
+# cyrcarsa
+: n
+asphalt, bitumen
+
+
+# perna
+: n
+mortar, cement, glue
+
+
+# vilon
+: n
+top
+
+
+# denemyd
+: vi
+scatter, disperse
+
+
+# galar
+: n
+friend
+
+
+# ara
+: adj
+great
+
+
+# nalda
+: n
+edge, border, boundary
+
+
+# edan
+: n
+snake
+
+
+# ismyd
+: vt
+contest
+
+
+# esmerčyd
+: vt
+point to
+
+
+# cymtero
+: adj
+important
+
+
+# cesana
+: n
+part
+
+
+# docenvad
+: v
+read
+
+
+# ergelyd
+: vt
+admire
+
+
+# retamyn
+: adjc
+likewise
+
+
+# nerpyd
+: vt, va
+choose, decide, select
+
+
+# rosterčyd
+: vt
+imagine
+
+
+# nasra
+: adj
+deep
+
+
+# asmelryd
+: vi
+dream
+
+
+# larpead
+: va
+cause
+
+
+# srenyd
+: vi
+live
+
+
+# navgonerlla
+: n
+interface
+
+
+# agernyd
+: vi
+bend, twist
+
+
+# tamos
+: n
+fear
+
+
+# refta
+: adj
+real
+
+
+# gar
+: post
+behind
+
+
+# etor
+: post
+in front of
+
+
+# maryd
+: vt
+search, hunt
+
+
+# trentryd
+: vi
+work, labour
+
+
+# nefrylad
+: vi
+function
+
+
+# nama
+: n
+structure
+
+
+# amfad
+: vi
+fold
+
+
+# darnalla
+: adj
+long, wise
+
+
+# tasen
+: adj
+short
+
+
+# anara
+: adj
+kind, agreeable
+
+
+# tranta
+: adj
+sad, melancholy
+
+
+# tranterss
+: n
+pity, lament
+
+
+# vandar
+: n
+summer
+
+
+# esvyncanayd
+: vt
+interfere with
+
+
+# nertanyd
+: vt
+connect, concatenate, add
+
+
+# eorčyd
+: vt
+help
+
+
+# fencyryd
+: vt
+concern, worry
+
+
+# ancanto
+: n
+story
+
+
+# senvea
+: adj
+safe
+
+
+# alera
+: n
+cage
+
+
+# anemta
+: n
+body, corpse
+
+
+# alener
+: n
+lung
+
+
+# nalar
+: n
+deity
+
+
+# neresson
+: n
+spirit, ghost
+
+
+# sranteryd
+: vi
+move
+
+
+# natras
+: n
+skin
+
+
+# tranca
+: n
+crust, surface
+
+
+# ependo
+: n
+sphere
+
+
+# anread
+: vi
+spin, rotate
+
+
+# enlea
+: adj
+far
+
+
+# gantead
+: vt
+cross
+
+
+# enean
+: n
+unit of time = \tl0.76 hours
+
+
+# avanta
+: n
+unit of distance = \tl1.24 meters
+
+
+# manveo
+: n
+information, data, message
+
+
+# varata
+: adj
+flat, boring
+
+
+# tavynca
+: adj
+temporary
+
+
+# apasa
+: n
+pain
+
+
+# enacssyr
+: n
+shard
+
+
+# esnerad
+: vt
+absorb
+
+
+# reltad
+: vt
+show, display
+
+
+# vecna
+: n
+problem, issue
+
+
+# deratead
+: vt
+disturb
+
+
+# ernesla
+: adj
+beautiful, lovely
+
+
+# renatryd
+: vi
+wake up
+
+
+# garayd
+: vi
+retreat, go back
+
+
+# cišynta
+: n
+particle, atom
+
+# nergeryd
+: vt
+assemble, put together
+
+
+# agnara
+: adj
+warm, moderate, temperate
+
+
+# angen
+: n
+love
+
+
+# sertran
+: n
+center, middle, trunk, during
+
+
+# tagrano
+: adj
+complex, complicated, advanced
+
+
+# arcenda
+: adj
+cold
+
+
+# endapres
+: n
+model
+
+
+# vercesa
+: n
+grain, fleck
+
+
+# tarcan
+: adj
+sudden
+
+
+# tacacro
+: adj
+loud
+
+
+# elan
+: n
+line
+
+
+# cenasead
+: vt
+encode
+
+
+# ylyra
+: n
+idea (from yl + lyre)
+
+
+# tagama
+: n
+theory
+
+
+# arcas
+: n
+winter
+
+
+# narnala
+: n
+corner
+
+
+# avanryd
+: vi
+boil, vapourise
+
+
+# antar
+: n
+duration, time, interval
+
+
+# acarnačyd
+: vt
+seek
+
+
+# cjavassyd
+: vt
+separate, tear, rip
+
+
+# evon
+: n
+chasm, mouth, ravine
+
+
+# evantad
+: vt
+taste
+
+
+# dastantad
+: vt
+try out
+
+
+# redešyd
+: vt
+beware of
+
+
+# cravalyd
+: bt
+plan, design
+
+
+# retemyss
+: n
+emerald
+
+
+# anacar
+: n
+trousers, pants
+
+
+# cerenys
+: n
+bucket
+
+
+# lyreprama
+: n
+fireworks
+
+
+# emtar
+: n
+set, group, club
+
+
+# anas
+: n
+leg
+
+
+# tlanto
+: n
+queue
+
+
+# marcssi
+: n
+bridge
+
+
+# elvyna
+: n
+dawn
+
+
+# randaryd
+: vt
+promise
+
+
+# vneteryd
+: vt
+support, approve
+
+
+# enceryd
+: vt
+set, turn on
+
+
+# deneryd
+: vt
+reset, turn off
+
+
+# atrana
+: n
+colour
+
+
+# asena
+: n
+anger, rage
+
+
+# amalčyd
+: v
+hope
+
+
+# amtar
+: adj
+several, few
+
+
+# alarys
+: n
+cat
+
+
+# netarna
+: n
+ramp, stairs, slope
+
+
+# vynssyd
+: v
+do what(?)
+
+
+# marayd
+: v
+speak, etc.
+
+
+# amarda
+: adj
+last
+
+
+# molo
+: n
+nut
+
+
+# morno
+: n
+calculator
+
+
+# melnaryd
+: vi
+study
+
+
+# ysneryd
+: vt
+spread
+
+
+# sornead
+: vt
+realise
+
+
+# teser
+: n
+lightning
+
+
+# cjaramo
+: n
+thunder
+
+
+# anassa
+: adj
+tall
+
+
+# enesor
+: n
+fern
+
+
+# emardor
+: n
+fate, destiny
+
+
+# celmas
+: n
+window
+
+
+# onanas
+: n
+web
+
+
+# nessos
+: n
+hell
+
+
+# terenjon
+: n
+flute
+
+
+# arna
+: n
+leg, root
+
+
+# etros
+: n
+foot
+
+
+# senro
+: adj
+risible
+
+
+# šynryd
+: vi
+laugh
+
+
+# or
+: n
+blood
+
+
+# esnaryd
+: vt
+spill
+
+
+# relea
+: n
+daughter, son (child)
+
+
+# sema
+: n
+sibling
+
+
+# ceres
+: n
+frog
+
+
+# aršynad
+: vt
+know (a person)
+
+
+# melna
+: adj
+excessive
+
+
+# dercon
+: n
+hill, mound, grave
+
+
+# telto
+: n
+cliff
+
+
+# celšyd
+: vt
+equal
+
+
+# širead
+: vt
+show, display
+
+
+# lelčyd
+: v
+(+ GEN) belong
+
+
+# cerel
+: n
+sunset
+
+
+# sefen
+: n
+flag
+
+
+# serfyl
+: n
+autumn
+
+
+# minen
+: n
+chest (body part)
+
+
+# resvel
+: n
+fog
+
+
+# asnar
+: n
+side
+
+
+# ensello
+: adj
+colourful, vibrant
+
+
+# ferešyd
+: vt
+gather
+
+
+# tenoso
+: n
+matter
+
+
+# marsead
+: vi
+condense
+
+
+# šyrllyd
+: vi
+be ill
+
+
+# nendo
+: adj
+in a short time
+
+
+# naria
+: n
+chin
+
+
+# išija
+: n
+grape
+
+
+# semia
+: n
+element
+
+
+# dindar
+: n
+nonsense
+
+
+# mešyno
+: n
+squirrel
+
+
+# enmayd
+: vt
+criticise
+
+
+# ešynta
+: n
+thread
+
+
+# asenaryd
+: vt
+threaten
+
+
+# dyrdayd
+: vt
+exclude, isolate someone
+
+
+# cessenyd
+: vi
+use someone else's name in a conversation with him/her
+
+
+# cssarmead
+: vi
+call oneself by name
+
+
+# nerašiad
+: vi
+lash out
+
+
+# nenderyd
+: vt
+greet
+
+
+# carvorad
+: vi
+escape
+
+
+# sesayd
+: vt
+kill
+
+
+# etleryd
+: vt
+encounter
+
+
+# mesead
+: vt
+please
+
+
+# asnarad
+: vt
+remember
+
+
+# esener
+: n
+condition, circumstance
+
+
+# drema
+: adj
+free
+
+
+# yšynyd
+: vt
+expect, predict
+
+
+# eornyllyd
+: vi
+stand
+\textsf{ventoramyn eornyllyd} belong
+\textsf{elnamyn eornyllyd} be well-disciplined
+
+
+# širno
+: n
+beryl
+
+
+# ismel
+: n
+borax
+
+
+# esnema
+: n
+salt
+
+
+# fyrno
+: n
+metal
+
+
+# dygylardas
+: n
+island
+
+
+# šyrys
+: n
+sound
+
+
+# ecryn
+: n
+spear
+
+
+# čyrnera
+: adj
+brave
+
+
+# edeso
+: n
+quest, mission, campaign
+
+
+# erceor
+: n
+shield
+
+
+# dejon
+: n
+sheaf, bundle
+
+
+# šyren
+: n
+scourge
+
+
+# ycysa
+: n
+tribe
+
+
+# cellyr
+: n
+enemy, foe
+
+
+# ferna
+: n
+child (young person)
+
+
+# sa
+: conj
+therefore
+
+
+# masaryd
+: vi
+grow
+
+
+# yllyryd
+: vt
+show, prove
+
+
+# ceryllead
+: vi
+flourish
+
+
+# vycead
+: vi
+bow, bend over, yield, surrender
+
+
+# etres
+: n
+tribute
+
+
+# esso
+: n
+idiot
+
+
+# crys
+: n
+shit, feces
+
+
+# cssyro
+: n
+valley
+
+
+# jerayd
+: vi
+yawn
+
+
+# ydarys
+: n
+scale, balance
+
+
+# se
+: post
+off
+
+
+# sar
+: post
+off of
+
+
+# cssena
+: post
+along
+
+
+# cssysa
+: n
+border between life and death
+
+
+# dagnon
+: n
+hammer
+
+
+# nyseryd
+: vt
+flank
+
+
+# emna
+: n, post
+left
+
+
+# šypros
+: n, post
+right
+
+
+# ascytryd
+: vt
+feel (an emotion)
+
+
+# se
+: post
+measuring
+
+
+# trešyl
+: n
+park
+
+
+# fesread
+: vt
+thank
+
+
+# persad
+: vt
+invite, offer
+
+
+# elrayd
+: vt
+occupy
+
+
+# samena
+: adj
+strange, weird, unusual
+
+
+# menssad
+: vt
+reflect
+
+
+# lyrnad
+: vi
+shine
+
+
+# nyteryd
+: vi
+wander
+
+
+# enlad
+: vi
+be lost
+
+
+# eneda
+: n
+ash
+
+
+# dono
+: n
+dot
+
+
+# mesena
+: adj
+apparent (as in sight)
+
+
+# jenca
+: adj
+gracious
+
+
+# eanryd
+: vt
+submit
+
+
+# salaen
+: n
+cheek
+
+
+# tala
+: n
+nose
+
+
+# creno
+: n
+ear
+
+
+# clastro
+: n
+back (part of body)
+
+
+# ageler
+: n
+prism
+
+
+# yšymela
+: adj
+backwards, reversed
+
+
+# sertas
+: n
+belief
+
+
+# remso
+: n
+fruit
+
+
+# asel
+: n
+pestle and mortar
+
+
+# etea
+: n
+front
+
+
+# cvetalja
+: n
+error, mistake, flaw
+
+
+# reasan
+: n
+bush
+
+
+# menares
+: n
+dandelion
+
+
+# emana
+: n
+quartz
+
+
+# esana
+: n
+bear
+
+
+# arefa
+: adj
+comfortable
+
+
+# eregro
+: adj
+troubling, unstable
+
+
+# acasayd
+: vt
+balance, punish, compensate, seek revenge
+
+
+# dedešyd
+: vt
+experience, undergo
+
+
+# sae
+: conj
+therefore
+
+
+# vesenad
+: ventoro
+raise, take care of
+
+
+# senema
+: n
+cooking pot
+
+
+# naresa
+: n
+lily
+
+
+# lyracsseryn
+: n
+beacon
+
+
+# mesela
+: n
+effort, force
+
+
+# narmen
+: n
+dignity
+
+
+# darsel
+: n
+right (of action)
+
+
+# censen
+: n
+conscience
+
+
+# derenad
+: vi
+act, behave
+
+
+# eveta
+: n
+system
+
+
+# cymarad
+: vt
+communicate
+
+
+# reltata
+: n
+example
+
+
+# sandead
+: vt
+replace
+
+
+# etor
+: n
+heel
+
+
+# asage
+: n
+pattern
+
+
+# asae
+: adj
+next
+
+
+# necsad
+: vi
+sit
+
+
+# letelo
+: n
+map
+
+
+# ryselad
+: vi
+roll
+
+
+# emteryd
+: vt
+belong to a group of
+
+
+# asaten
+: n
+eclipse
+
+
+# nesmeremtar
+: n
+constellation
+
+
+# etana
+: n
+science
+
+
+# nesmeretana
+: n
+astronomy
+
+
+# adear
+: n
+0.95 minutes or 1/48 enean
+
+
+# lerssen
+: n
+spring
+
+
+# cissenad
+: vt
+to shoot at
+\textsf{envyn cynsso cissenad} to lay a finger on
+
+
+# domesead
+: vt
+displease
+
+
+# asare
+: n
+event
+
+
+# dotaryd
+: vi
+to shout
+
+
+# erte
+: adj
+some
+
+
+# tesaro
+: adj
+happy, upbeat, cheerful
+
+
+# asa
+: n, post
+up, above
+
+
+# desa
+: n, post
+down, below
+
+
+# sargo
+: t
+scorpion
+
+
+# resa
+: n
+bank of a river
+
+
+# ejegyd
+: vt
+poke, pierce, sting, penetrate
+
+
+# gerad
+: vt
+assure
+
+
+# natryd
+: vt
+agree
+
+
+# tenyryd
+: vi
+swim
+
+
+# meamer
+: n
+halfway
+
+
+# orelta
+: n
+vein
+
+
+# sarayd
+: vi
+turn to, change direction
+
+
+# tesa
+: adv
+also
+
+
+# egrayd
+: vi
+resist temptation
+
+
+# cjan
+: n
+poem
+
+
+# arla
+: n
+needle, probe
+
+
+# nedsen
+: n
+clock hand
+
+
+# sersen
+: adj
+intentional
+
+
+# asaryd
+: vt
+measure
+
+
+# seares
+: n
+sentence, utterance
+
+
+# celsevarmenead
+: vt
+compare to
+
+
+# sarten
+: n
+bud
+
+
+# enarden
+: adj
+delicate, charming
+
+
+# saenten
+: adj
+early
+
+
+# ceafer
+: adj
+late
+
+
+# natran
+: n
+complexion
+
+
+# ša
+: adv
+however
+
+
+# saega
+: adj
+blue
+
+
+# gen
+: post
+bound to
+
+
+# etrančyd
+: vi
+cry
+
+
+# ejemyd
+: vi
+align
+
+
+# šylšire
+: n
+rabbit
+
+
+# sete
+: adj
+quiet, calm, gentle
+
+
+# rosamyd
+: vt
+waste
+
+
+# fese
+: n
+achievement in life, trophy, prize
+
+
+# da
+: post
+around
+
+
+# nen
+: n
+a short time
+
+
+# elta
+: n
+salmon
+
+
+# asgar
+: n
+shrub
+
+
+# fentor
+: n
+swamp
+
+
+# nyngen
+: n
+map
+
+
+# tegen
+: n
+shape, form
+
+
+# ceon
+: n
+long time
+
+
+# čyllyryd
+: vi
+run away
+
+
+# varyndaryd
+: vt
+leave behind, abandon
+
+
+# varvysscyd
+: vt
+lock
+
+
+# secen
+: n
+plank, board
+
+
+# ren
+: adv
+also
+
+
+# asarayd
+: vi
+crouch
+
+
+# tempen
+: n
+kingdom
+
+
+# se
+: adv
+(+ SUBJ.V) maybe
+
+
+# cesanyd
+: vt
+share
+
+
+# ačyryllyd
+: vt
+covet
+
+
+# adaen
+: adv
+recently
+
+
+# desryd
+: vt
+lose, shed
+
+
+# aračyd
+: vi
+sleep
+
+
+# sallar
+: adj
+loyal
+
+
+# acasayd
+: vi
+thrive
+
+
+# čar
+: n
+roof
+
+
+# egynryd
+: vt
+cut down a tree
+
+
+# etegyd
+: vt
+configure
+
+
+# teamen
+: n
+frontmost room, introduction
+
+
+# enprenor
+: n
+vicinity
+
+
+# nerei
+: n
+network
+
+
+# sengeryd
+: vt
+copy, duplicate
+
+
+# pyčyva
+: n
+cave
+
+
+# yteno
+: adj
+rare
+
+
+# cemon
+: n
+island
+
+
+# nemyd
+: vt
+explore, discover
+
+
+# ecen
+: adj
+mad, insane
+
+
+# cemes
+: n
+drought
+
+
+# jegas
+: n
+resource
+
+
+# cyrgyn
+: n
+health
+
+
+# vrejan
+: n
+hunger
+
+
+# cenelete
+: n
+scratch paper, buffer (computing)
+
+
+# šyrllyd
+: v
+sound, play music
+
+
+# ejel
+: adj
+smooth
+
+
+# asten
+: adj
+vertical
+
+
+# neryšyr
+: adj
+synchronous
+
+
+# agerčyd
+: vt
+trade
+
+
+# denera
+: n
+oak
+
+
+# celte
+: n
+ore
+
+
+# penan
+: n
+carpet
+
+
+# esnentryd
+: vt
+compress, pack
+
+
+# cengyd
+: vt
+obstruct
+
+
+# reto
+: n
+vine
+
+
+# enidos
+: n
+watermelon
+
+
+# cyron
+: n
+flint
+
+
+# genar
+: n
+snow
+
+
+# marčyd
+: vi
+wait
+
+
+# maryllyn
+: n
+pearl, marble
+
+
+# nelryd
+: vt
+to farm
+
+
+# ycar
+: n
+squid
+
+
+# tecryd
+: vt
+to kill, to slay
+
+
+# erda
+: adj
+normal, default
+
+
+# orena
+: n
+method
+
+
+# desae
+: adj
+previous
+
+
+# cedryd
+: vt
+match, be as good as
+
+
+# vyn
+: adj
+what, which?
+
+
+# enfyryd
+: vt
+buy
+
+
+# esel
+: adj
+wide, general, broad
+
+
+# neri
+: n
+construct (linguistics)
+
+
+# ernei
+: n
+army, legion, troops, formation
+
+
+# nacssel
+: n
+shrine
+
+
+# etarad
+: vi
+pass time
+
+
+# ante
+: adj
+sure, certain, absolute
+
+
+# fernor
+: adj
+pure, clean
+
+
+# vecnyd
+: vi
+cause trouble
+
+
+# vesenad
+: vt
+incite
+
+
+# aesa
+: adv
+directly
+
+
+# carvecnyd
+: vt
+solve a problem
+
+
+# secran
+: adj
+proud, arrogant
+
+
+# vesren
+: n
+specialty, strength
+
+
+# vesrea
+: n
+professional
+
+
+# docvelyd
+: vt
+show mercy, forgive
+
+
+# tenle
+: n
+fin
+
+
+# morčyd
+: vt
+slap
+
+
+# ecra
+: n
+fish scale
+
+
+# čelen
+: n
+neck
+
+
+# gendo
+: n
+lathe
+
+
+# den
+: n
+occurrence, time
+
+
+# evenyd
+: vi
+succeed
+
+
+# nerllyd
+: vt
+toggle
+
+
+# senryd
+: vi
+pray
+
+
+# cearyd
+: vi
+remain
+
+
+# regan
+: n
+graze
+
+
+# dentren
+: n
+beast, animal
+
+
+# mena-
+: pre
+were-
+
+
+# šynmenead
+: vt
+understand
+
+
+# cjeran
+: n
+butterfly
+
+
+# denda
+: adj
+short in height
+
+
+# agren
+: n
+pollen
+
+
+# gernyšyd
+: vt
+surround
+
+
+# sar
+: n
+thing
+
+
+# genad
+: vi
+lie (inanimate)
+
+
+# gentor
+: n
+barrage
+
+
+# gjenter
+: n
+type, kind
+
+
+# csserman
+: n
+weapon
+
+
+# cyras
+: n
+bell, chime
+
+
+# nepšyd
+: vt
+repeat
+
+
+# nernayd
+: vi
+practice
+
+
+# renčyn
+: n
+animal symbol
+
+
+# elnar
+: ad
+straight, orderly
+
+
+# denecyd
+: vi, va
+continue
+
+
+# cssysen
+: n
+steel
+
+
+# mencan
+: n
+fantasy
+
+
+# rencron
+: adj
+clever
+
+
+# ysari
+: n
+clockwise
+
+
+# nagen
+: n
+counterclockwise
+
+
+# cvetad
+: vi
+err, make a mistake
+
+
+# ari
+: n
+rule, law, method
+
+
+# envyl
+: n
+pebble
+
+
+# tosae
+: adj
+ready, prepared
+
+
+# ten
+: adv
+already
+
+
+# cjan
+: n
+turtle, tortoise
+
+
+# mencelsad
+: vt
+resemble
+
+
+# teno
+: n
+rock, boulder, haven, shelter
+
+
+# crenečyd
+: vi
+shatter
+
+
+# carten
+: n
+shell
+
+
+# cene
+: nade
+dish, plate
+
+
+# relayd
+: vi
+lie down (animate)
+
+
+# gasayd
+: vt
+dominate
+
+
+# leran
+: n
+thirst
+
+
+# clenger
+: n
+pile, heap
+
+
+# cyren
+: n
+castle, fortress
+
+
+# derconardas
+: n
+graveyard
+
+
+# tagryd
+: vi
+advance
+
+
+# ceprysos
+: n
+cow
+
+
+# agrayd
+: vt
+feel (physical condition, temperature)
+
+
+# šyryl
+: n
+lifetime
+
+
+# sejen
+: n
+hall, corridor
+
+
+# ersaden
+: n
+master
+
+
+# rentera
+: n
+task, job, duty
+
+
+# relcyd
+: vi
+flap, flutter
+
+
+# elden
+: n
+midnight
+
+
+# gantor
+: adj
+heavy, lazy
+
+
+# gjon
+: n
+burst, flash (uninflected)
+
+
+# sendar
+: n
+candle
+
+
+# darden
+: n
+wax
+
+
+# caryndyd
+: vt
+eject
+
+
+# deryn
+: n
+pulse
+
+
+# nešon
+: n
+supernova
+
+
+# eryd
+: va
+must (assumptive)
+
+
+# erynor
+: n
+plum
+
+
+# cjanden
+: n
+epic work, legend
+
+
+# ecaršyd
+: vi
+collapse
+
+
+# clengyd
+: vi
+accumulate, pile up
+
+
+# ferafere
+: adj
+selfish
+
+
+# gendar
+: n
+debris
+
+
+# šen
+: n
+wheel
+
+
+# šyryd
+: vi
+complain
+
+
+# vanrar
+: n
+closet, garret
+
+
+# egan
+: n
+floor, story, tier (of a building)
+
+
+# myeryd
+: vt
+to be (age)
+
+
+# enacen
+: n
+danger
+
+
+# targayd
+: v
+defeat, win
+
+
+# onren
+: n
+ink
+
+
+# grealyd
+: vt
+quote
+
+
+# sarel
+: n
+curve, squiggle
+
+
+# acrynlyre
+: n
+glow
+
+
+# fende
+: n
+warning
+
+
+# danen
+: adj
+little (vs. much)
+
+
+# yron
+: n
+soul
+
+
+# yšyread
+: vi
+stir (movement)
+
+
+# yšyra
+: adj
+slight
+
+
+# asgera
+: adj
+hot
+
+
+# erfynsetro
+: n
+store
+
+
+# dyryd
+: vi
+occur, happen
+
+
+# eoron
+: n
+insect
+
+
+# ahen
+: n
+beetle, scarab
+
+
+# arellyd
+: vt
+wear down
+
+
+# cretead
+: vi
+slither, spiral
+
+
+# cetemyrad
+: vt
+misperceive
+
+
+# docetemyrad
+: vt
+deceive
+
+
+# rende
+: n
+sign, omen
+
+
+# terno
+: n
+theme
+
+
+# elnar
+: n
+gradient, transition, slope
+
+
+# šyrcel
+: n
+summer solstice
+
+
+# eteava
+: n
+protagonist
+
+
+# sape
+: n
+layer, sheet
+
+
+# esenaryd
+: vt
+endanger, threaten
+
+
+# cssyryd
+: vi
+ring
+
+
+# cerayd
+: vt
+arrange, organise
+
+
+# natrena
+: n
+bark
+
+
+# tarllyd
+: vi
+bark
+
+
+# cermjon
+: n
+dog
+
+
+# mestoseoron
+: n
+bee
+
+
+# trefen
+: n
+baby
+
+
+# evryd
+: vi
+blow
+
+
+# mosta
+: n
+school
+
+
+# sesena
+: n
+daffodil
+
+
+# lenade
+: n
+nod
+
+
+# ger
+: adv
+emphatic particle
+
+
+# cssyrevryd
+: vi
+whistle
+
+
+# veollereltes
+: n
+canal
+
+
+# ren
+: part
+(at beginning of sentence) \tl{} right?
+
+
+# ylmyrad
+: vt
+bring
+
+
+# dečyn
+: adv
+instead
+
+
+# ardes
+: n
+current
+
+
+# reavos
+: n
+bubble
+
+
+# maršyd
+: vt
+charge, power
+
+
+# enjas
+: n
+spring, fountain
+
+
+# sarteltes
+: n
+whirlpool
+
+
+# tearyd
+: v
+stop, pause, halt
+
+
+# aren
+: adj
+each
+
+
+# srante
+: n
+mob, enemy in a game
+
+
+# iss
+: part
+superlative particle
+
+
+# renšyd
+: vi
+think, ponder
+
+
+# šylde
+: adj
+playful
+
+
+# daene
+: adj
+low
+
+
+# ryllen
+: adj
+flowing
+
+
+# yšyšyd
+: vi
+be drained, be emptied, run out
+
+
+# relpayd
+: vt
+pretend to be
+
+
+# arehyn
+: adj
+enjoyable, pleasant
+
+
+# rearen
+: adj
+sacred, holy
+
+
+# relnyd
+: vt
+fulfill, satisfy
+
+
+# tencead
+: vt
+feed
+
+
+# nyrllyd
+: vt
+dissolve, forgive
+
+
+# doegrayd
+: vt
+tempt
+
+
+# reyn
+: n
+well (for water)
+
+
+# fenryd
+: vt
+remind of
+
+
+# nealygo
+: adj
+past
+
+
+# enpramyn
+: adv
+almost
+
+
+# cenen
+: n
+row
+
+
+# renda
+: n
+column
+
+
+# erayn
+: adv
+anyway
+
+
+# vecasare
+: n
+incident
+
+
+# yllento
+: n
+garden
+
+
+# elcan
+: n
+dry
+
+
+# cenmyra
+: n
+illusion
+
+
+# feltryd
+: vt
+seize, conquer, invade
+
+
+# enrallyd
+: vt
+boil down to
+
+
+# vecernyd
+: vt, va
+achieve, manage
+
+
+# ceran
+: n
+key
+
+
+# jenen
+: n
+rest, remainder
+
+
+# nyratreca
+: n
+wasteland
+
+
+# rehenen
+: adj
+profuse
+
+
+# nepsanata
+: n
+ritual, habit
+
+
+# rysa
+: n
+zenith, pole
+
+
+# fenma
+: 
+groven
+
+
+# doefremyd
+: vt
+forbid, prohibit
+
+
+# grelead
+: vt, va
+result in, achieve
+
+
+# leačyd
+: vt
+advise
+
+
+# deread
+: vt
+negotiate
+
+
+# oron
+: interj
+onomatopoeia for rubbing
+
+
+# agror
+: n
+slave
+
+
+# gosagron
+: n
+robot
+
+
+# vjan
+: n
+direction
+
+
+# vjeran
+: n
+magnet
+
+
+# sencys
+: n
+firearm, gun
+
+
+# enšyn
+: adj
+erratic
+
+
+# enras
+: n
+hole, cave, tunnel
+
+
+# šyntel
+: n
+experiment
+
+
+# šyrlead
+: vi, vt
+shine, radiate
+
+
+# gernyd
+: vt
+trigger, stimulate
+
+
+# saerayd
+: vt
+emit, release
+
+
+# esmervylyd
+: v
+amplify, enlarge, expand, increase
+
+
+# šento
+: n
+acid
+
+
+# malen
+: n
+core, center, nucleus
+
+
+# cretan
+: n
+spiral, helix
+
+
+# venrelčyd
+: vt
+inherit
+
+
+# neren
+: n
+curse
+
+
+# cidene
+: adj
+pristine, perfect
+
+
+# nodes
+: 
+city, metropolis
+
+
+# dernan
+: 
+pear
+
+
+# lenan
+: 
+older sibling
+
+
+# ysane
+: 
+younger sibling
+
+
+# šydel
+: 
+sparrow
+
+
+# fanen
+: 
+slit
+
+
+# rehel
+: 
+maze
+
+
+# nerayd
+: 
+to make sense
+
+
+# sesereyd
+: 
+to confuse, to manipulate, to disorient
+
+
+# yvyllyd
+: vt
+to flip, to reverse, to invert
+
+
+# tesel
+: 
+use, function, purpose
+
+
+# nerten
+: 
+snack
+
+
+# carvjeryd
+: 
+to get lost
+
+
+# ternayd
+: 
+to be tranced
+
+
+# deserayd
+: 
+to distract
+
+
+# vylden
+: 
+tangent
+
+
+# apramyd
+: 
+to sail
+
+
+# tanar
+: 
+scratch
+
+
+# eršyn
+: 
+wound, cut
+
+
+# srenen
+: 
+fresh, alive
+
+
+# centan
+: 
+crime
+
+
+# trančyd
+: 
+to hang, to loom
+
+
+# acase
+: 
+fair, just
+
+
+# feren
+: 
+knife
+
+
+# nydar
+: 
+flesh, meat
+
+
+# eren
+: 
+rainbow
+
+
+# daeri
+: 
+answer
+
+
+# ecyn
+: 
+liquid
+
+
+# asenane
+: 
+right-side-up
+
+
+# per
+: 
+card
+
+
+# yltecto
+: 
+and before
+
+
+# ymyron
+: 
+and after
+
+
+# šynmyr
+: 
+after all
+
+
+# res
+: 
+morals, behavior
+
+
+# nemela
+: 
+history
+
+
+# saren
+: 
+tool
+
+
+# senemia
+: 
+oxygen
+
+
+# arcyllyd
+: vi
+to freeze
+
+
+# aren
+: 
+snowflake
+
+
+# cjasan
+: 
+spoke, point of a star
+
+
+# realmyd
+: 
+to glimmer
+
+
+# arcevyn
+: 
+hail
+
+
+# nase
+: 
+orb
+
+
+# demead
+: 
+to prefer
+
+
+# tan
+: 
+~ you know
+
+
+# relen
+: 
+thick (clothing)
+
+
+# negyd
+: 
+to take off
+
+
+# elcrayd
+: 
+to demand
+
+
+# tehen
+: 
+foolish
+
+
+# doremyd
+: 
+to request
+
+
+# carpel
+: 
+coat
+
+
+# tename
+: 
+fortunate
+
+
+# nemyron
+: 
+later
+
+
+# saeryd
+: 
+to introduce oneself
+
+
+# gevenyd
+: 
+would
+
+
+# varacrešyd
+: 
+to listen
+
+
+# sandyd
+: 
+to subside
+
+
+# esna
+: 
+inside, interior
+
+
+# naen
+: 
+insult
+
+
+# sencyr
+: 
+intense
+
+
+# ysaen
+: 
+at least
+
+
+# soroheron
+: 
+tired, exhausted
+
+
+# nyrssen
+: 
+mouse
+
+
+# lelnyd
+: 
+go wrong
+
+
+# rasa
+: 
+salamander
+
+
+# cyvymyrata
+: 
+delusion, paranoia
+
+
+# meyne
+: 
+fanfare
+
+
+# endanen
+: 
+a little
+
+
+# nerayn
+: 
+plaza, square
+
+
+# šyemen
+: 
+musical instrument
+
+
+# tesane
+: 
+electricity
+
+
+# ynve
+: 
+step, pace, tempo, impulse
+
+
+# lesar
+: 
+space
+
+
+# sas
+: 
+order
+
+
+# ylardead
+: 
+to land
+
+
+# našyryl
+: 
+hamony
+
+
+# sajen
+: 
+project
+
+
+# navase
+: 
+credit
+
+
+# mederyd
+: 
+to congratulate
+
+
+# arcead
+: 
+to stay, to linger
+
+
+# asenvenca
+: 
+extra, supernumerary
+
+
+# saede
+: 
+scroll
+
+
+# lyrena
+: 
+bright, major (key)
+
+
+# entan
+: 
+surprise
+
+
+# myrenyd
+: 
+to deserve
+
+
+# lerean
+: 
+probable
+
+
+# esman
+: 
+finger
+
+
+# emyn
+: 
+meaning
+
+
+# vyror
+: 
+proof, evidence
+
+
+# centel
+: 
+morning
+
+
+# efera
+: 
+minion, servant
+
+
+# mjarel
+: 
+tail
+
+
+# nelryd
+: 
+to chase, to pursue
+
+
+# yngarosaega
+: 
+cyan
+
+
+# cretegen
+: 
+sinusoid
+
+
+# enden
+: 
+present
+
+
+# maero
+: 
+future
+
+
+# esnentryd
+: 
+to impress, to print
+
+
+# norae
+: 
+brush
+
+
+# relčyd
+: 
+to amass
+
+
+# asendešyd
+: 
+to ascend
+
+
+# nelta
+: 
+seal, stamp
+
+
+# tonrayd
+: 
+to dance
+
+
+# nenryd
+: 
+to sprout
+
+
+# enear
+: 
+special
+
+
+# senma
+: 
+~ of the time
+
+
+# yjan
+: 
+howl
+
+
+# elynčyd
+: 
+to lurk
+
+
+# pensa
+: 
+bottom
+
+
+# reančyd
+: 
+to turn around, to cancel
+
+
+# varenyd
+: 
+to simulate
+
+
+# nelta
+: 
+preview, demonstration
+
+
+# cyšyn
+: 
+random
+
+
+# telcen
+: 
+builtin, preset
+
+
+# mentecto
+: 
+earlier
+
+
+# entar
+: 
+material
+
+
+# entrayd
+: 
+to be away
+
+
+# anyd
+: 
+should
+
+
+# cerssel
+: 
+new moon
+
+
+# recen
+: 
+crescent moon
+
+
+# meame
+: 
+half moon
+
+
+# orose
+: 
+gibbous moon
+
+
+# nenta
+: 
+full moon
+
+
+# dagar
+: 
+stench, smell, odor
+
+
+# nedan
+: 
+brook
+
+
+# gesan
+: 
+back, rear
+
+
+# enyn
+: 
+humble
+
+
+# sema
+: 
+will, motivation
+
+
+# mon
+: 
+mind
+
+
+# cymarayd
+: 
+to lie (untruth)
+
+
+# saro
+: 
+rhythm
+
+
+# enman
+: 
+different
+
+
+# serllyd
+: 
+to scout
+
+
+# teroe
+: 
+heart
+
+
+# enatar
+: 
+pair, twin
+
+
+# seyn
+: 
+monkey
+
+
+# ansan
+: 
+trick, stunt
+
+
+# cenrea
+: 
+the country
+
+
+# nenrayd
+: 
+to visit
+
+
+# sarynde
+: 
+mouth of a river
+
+
+# eryn
+: 
+light, sparse
+
+
+# enmon
+: 
+rainstorm, downpour, long period of rain
+
+
+# emene
+: 
+radius
+
+
+# yrenyn
+: 
+stroke, caress
+
+
+# gaele
+: 
+friendly
+
+
+# ceavon
+: 
+face
+
+
+# cjaner
+: 
+spool
+
+
+# renel
+: 
+advice
+(countable)
+
+# ne
+: 
+quotative
+
+
+# narage
+: 
+marvel, wonder
+
+
+# enja
+: 
+oil
+
+
+# tenen
+: 
+drop
+
+
+# nalčyd
+: 
+to seal off
+
+
+# relmas
+: 
+litter, group of newborn animals
+
+
+# atan
+: 
+rate
+
+
+# menda
+: 
+constructed language
+
+
+# navage
+: 
+character
+
+
+# sene
+: 
+evening
+
+
+# cernyl
+: 
+ridiculous
+
+
+# nemor
+: 
+sibling of a parent
+
+
+# enread
+: 
+to sell
+
+
+# enrantos
+: 
+market
+
+
+# tana
+: 
+sir, madam
+
+
+# nadryd
+: 
+to obey, to heed
+
+
+# peltryd
+: 
+to wear clothing
+
+
+# etas
+: 
+extreme, very, peak
+
+
+# elcaršyd
+: 
+to break down, to topple
+
+
+# nanmeryd
+: 
+to praise
+
+
+# nagešyd
+: 
+to be bored
+
+
+# njantos
+: 
+chair
+
+
+# enpyd
+: 
+to be about to
+
+
+# toren
+: 
+advance, attack
+
+
+# relsan
+: 
+mysterious
+
+
+# nyrmo
+: 
+home, original
+
+
+# nepsa
+: 
+again
+
+
+# myera
+: 
+age
+
+
+# nedo
+: post
+despite
+
+
+# nera
+: n
+stomach, belly
+
+
+# tentar
+: n
+business, enterprise
+
+
+# renan
+: n
+affair
+
+
+# lenread
+: vi
+to have care / caution
+
+
+# jen
+: n
+case, event
+
+
+# tano
+: n
+bird
+
+
+# -gen
+: sf
+study of
+
+
+# cengen
+: n
+etymology
+
+
+# nelgen
+: n
+linguistics
+
+
+# denma
+: n
+record, account
+
+
+# fes
+: adj
+so-called
+
+
+# cynyn
+: n
+vase, jar, vessel
+
+
+# armatos
+: n
+birch
+
+
+# cjarečyd
+: vt
+to let alone
+
+
+# mytrayd
+: vi
+to run
+
+
+# ervenčyd
+: vt
+to approach
+
+
+# monan
+: n
+doctor
+
+
+# rešyd
+: vt
+to doubt
+
+
+# denryd
+: vt
+to drive, to force, to nail down
+
+
+# šel
+: post
+according to
+
+
+# nelčyd
+: vi
+to be the topic, to be regarded
+
+
+# njardor
+: n/pr
+lowly person, ARCH non-pure-blood
+
+
+# eome
+: n
+liver
+
+
+# naman
+: n
+burden, responsibility
+
+
+# asano
+: adj
+up to
+
+
+# tarmas
+: n
+violence
+
+
+# magana
+: post
+against
+
+
+# relsad
+: vt
+to focus on
+
+
+# cerelčyd
+: vt
+to coexist with, to be in accordance to
+
+
+# nelšyd
+: vt
+to go to, to attend
+
+
+# traryd
+: vi
+to gather oneselves, to meet
+
+
+# nenda
+: adj
+golden color
+
+
+# trace
+: adj
+gloomy, dreary
+
+
+# reter
+: adj
+quaint, curious, eccentric
+
+
+# tlatryd
+: vt
+knock, rap
+
+
+# cyvanor
+: adj
+nothing more
+
+
+# cssyšyd
+: vt
+to go around, to surround
+
+
+# njon
+: n
+interest
+
+
+# sena
+: n
+mountain pass
+
+
+# arato
+: n
+camp, base
+
+
+# anasar
+: n
+orchid
+
+
+# načyd
+: vi
+to intrude, to be in the way
+
+
+# cetapa
+: adj
+creepy, unnerving
+
+
+# ter
+: n
+esteem, respect
+
+
+# rellyd
+: vt
+to accompany
+
+
+# etermon
+: adj
+hostile, belligerent
+
+
+# sape
+: n
+dice
+
+
+# sapeta
+: n
+luck, fortune
+
+
+# genas
+: adj
+dirty, filthy, impure
+
+
+# sečyr
+: n
+reason, cause
+
+
+# nemasna
+: n
+nostalgia
+
+
+# šyncyr
+: adj
+eternal
+
+
+# nente
+: n
+capital city
+
+
+# cjararo
+: adj
+dark red
+
+
+# ran
+: n
+honor
+
+
+# gerešyd
+: vt
+to oppose, to rival
+
+
+# njonen
+: adj
+interesting
+
+
+# nerama
+: v
+to feel, to have a premonition
+
+
+# treryd
+: vi
+to whisper, to rustle
+
+
+# renryd
+: vi
+to hold back, to reserve
+
+
+# maraven
+: n
+medicine
+
+
+# renvyd
+: vt
+describe
+
+
