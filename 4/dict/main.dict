@@ -3309,8 +3309,8 @@ spring
 
 # cissenad
 : vt
-to shoot at
-\textsf{envyn cynsso cissenad} to lay a finger on
+shoot at
+\textsf{envyn cynsso cissenad} lay a finger on
 
 
 # domesead
@@ -3325,7 +3325,7 @@ event
 
 # dotaryd
 : vi
-to shout
+shout
 
 
 # erte
@@ -3790,7 +3790,7 @@ pearl, marble
 
 # nelryd
 : vt
-to farm
+farm
 
 
 # ycar
@@ -3800,7 +3800,7 @@ squid
 
 # tecryd
 : vt
-to kill, to slay
+kill, slay
 
 
 # erda
@@ -4300,7 +4300,7 @@ floor, story, tier (of a building)
 
 # myeryd
 : vt
-to be (age)
+be (age)
 
 
 # enacen
@@ -5274,457 +5274,457 @@ deserve
 
 
 # lerean
-: 
+: adj
 probable
 
 
 # esman
-: 
+: n
 finger
 
 
 # emyn
-: 
+: n
 meaning
 
 
 # vyror
-: 
+: n
 proof, evidence
 
 
 # centel
-: 
+: n
 morning
 
 
 # efera
-: 
+: n
 minion, servant
 
 
 # mjarel
-: 
+: n
 tail
 
 
 # nelryd
-: 
-to chase, to pursue
+: vt
+chase, pursue
 
 
 # yngarosaega
-: 
+: adj
 cyan
 
 
 # cretegen
-: 
+: n
 sinusoid
 
 
 # enden
-: 
+: n
 present
 
 
 # maero
-: 
+: n
 future
 
 
 # esnentryd
-: 
-to impress, to print
+: vt
+impress, print
 
 
 # norae
-: 
+: n
 brush
 
 
 # relčyd
-: 
-to amass
+: vt
+amass
 
 
 # asendešyd
-: 
-to ascend
+: vi
+ascend
 
 
 # nelta
-: 
+: n
 seal, stamp
 
 
 # tonrayd
-: 
-to dance
+: vi
+dance
 
 
 # nenryd
-: 
-to sprout
+: vi
+sprout
 
 
 # enear
-: 
+: adj
 special
 
 
 # senma
-: 
-~ of the time
+: post
+\tl of the time
 
 
 # yjan
-: 
+: n
 howl
 
 
 # elynčyd
-: 
-to lurk
+: vi
+lurk
 
 
 # pensa
-: 
+: n
 bottom
 
 
 # reančyd
-: 
-to turn around, to cancel
+: v
+turn around, cancel
 
 
 # varenyd
-: 
-to simulate
+: vt
+simulate
 
 
 # nelta
-: 
+: n
 preview, demonstration
 
 
 # cyšyn
-: 
+: adj
 random
 
 
 # telcen
-: 
+: adj
 builtin, preset
 
 
 # mentecto
-: 
+: adv
 earlier
 
 
 # entar
-: 
+: n
 material
 
 
 # entrayd
-: 
-to be away
+: vi
+be away
 
 
 # anyd
-: 
+: va
 should
 
 
 # cerssel
-: 
+: n
 new moon
 
 
 # recen
-: 
+: n
 crescent moon
 
 
 # meame
-: 
+: n
 half moon
 
 
 # orose
-: 
+: n
 gibbous moon
 
 
 # nenta
-: 
+: n
 full moon
 
 
 # dagar
-: 
-stench, smell, odor
+: n
+stench, smell, odour
 
 
 # nedan
-: 
+: n
 brook
 
 
 # gesan
-: 
+: n
 back, rear
 
 
 # enyn
-: 
+: adj
 humble
 
 
 # sema
-: 
+: n
 will, motivation
 
 
 # mon
-: 
+: n
 mind
 
 
 # cymarayd
-: 
-to lie (untruth)
+: vi
+lie (untruth)
 
 
 # saro
-: 
+: n
 rhythm
 
 
 # enman
-: 
+: adj
 different
 
 
 # serllyd
-: 
-to scout
+: vt
+scout
 
 
 # teroe
-: 
+: n
 heart
 
 
 # enatar
-: 
+: n
 pair, twin
 
 
 # seyn
-: 
+: n
 monkey
 
 
 # ansan
-: 
+: n
 trick, stunt
 
 
 # cenrea
-: 
+: n
 the country
 
 
 # nenrayd
-: 
-to visit
+: vt
+visit
 
 
 # sarynde
-: 
+: n
 mouth of a river
 
 
 # eryn
-: 
+: adj
 light, sparse
 
 
 # enmon
-: 
+: n
 rainstorm, downpour, long period of rain
 
 
 # emene
-: 
+: n
 radius
 
 
 # yrenyn
-: 
+: n
 stroke, caress
 
 
 # gaele
-: 
+: adj
 friendly
 
 
 # ceavon
-: 
+: n
 face
 
 
 # cjaner
-: 
+: n
 spool
 
 
 # renel
-: 
+: n
 advice
-(countable)
+countable
 
 # ne
-: 
+: part
 quotative
 
 
 # narage
-: 
+: n
 marvel, wonder
 
 
 # enja
-: 
+: n
 oil
 
 
 # tenen
-: 
-drop
+: n
+drop (of a liquid)
 
 
 # nalčyd
-: 
-to seal off
+: vt
+seal off
 
 
 # relmas
-: 
+: n
 litter, group of newborn animals
 
 
 # atan
-: 
+: n
 rate
 
 
 # menda
-: 
+: n
 constructed language
 
 
 # navage
-: 
-character
+: n
+character (person)
 
 
 # sene
-: 
+: n
 evening
 
 
 # cernyl
-: 
+: adj
 ridiculous
 
 
 # nemor
-: 
+: n
 sibling of a parent
 
 
 # enread
-: 
-to sell
+: vt
+sell
 
 
 # enrantos
-: 
+: n
 market
 
 
 # tana
-: 
+: n
 sir, madam
 
 
 # nadryd
-: 
-to obey, to heed
+: vt
+obey, heed
 
 
 # peltryd
-: 
-to wear clothing
+: vt
+wear clothing
 
 
 # etas
-: 
+: n
 extreme, very, peak
 
 
 # elcaršyd
-: 
-to break down, to topple
+: v
+break down, topple
 
 
 # nanmeryd
-: 
-to praise
+: vt
+praise
 
 
 # nagešyd
-: 
-to be bored
+: vi
+be bored
 
 
 # njantos
-: 
+: n
 chair
 
 
 # enpyd
-: 
-to be about to
+: va
+be about to
 
 
 # toren
-: 
+: n
 advance, attack
 
 
 # relsan
-: 
+: adj
 mysterious
 
 
 # nyrmo
-: 
+: n
 home, original
 
 
 # nepsa
-: 
+: adv
 again
 
 
 # myera
-: 
+: n
 age
 
 
@@ -5750,7 +5750,7 @@ affair
 
 # lenread
 : vi
-to have care / caution
+have care / caution
 
 
 # jen
@@ -5800,17 +5800,17 @@ birch
 
 # cjarečyd
 : vt
-to let alone
+let alone
 
 
 # mytrayd
 : vi
-to run
+run
 
 
 # ervenčyd
 : vt
-to approach
+approach
 
 
 # monan
@@ -5820,12 +5820,12 @@ doctor
 
 # rešyd
 : vt
-to doubt
+doubt
 
 
 # denryd
 : vt
-to drive, to force, to nail down
+drive, force, nail down
 
 
 # šel
@@ -5835,7 +5835,7 @@ according to
 
 # nelčyd
 : vi
-to be the topic, to be regarded
+be the topic, be regarded
 
 
 # njardor
@@ -5870,22 +5870,22 @@ against
 
 # relsad
 : vt
-to focus on
+focus on
 
 
 # cerelčyd
 : vt
-to coexist with, to be in accordance to
+coexist with, be in accordance to
 
 
 # nelšyd
 : vt
-to go to, to attend
+go to, attend
 
 
 # traryd
 : vi
-to gather oneselves, to meet
+gather oneselves, meet
 
 
 # nenda
@@ -5915,7 +5915,7 @@ nothing more
 
 # cssyšyd
 : vt
-to go around, to surround
+go around, surround
 
 
 # njon
@@ -5940,7 +5940,7 @@ orchid
 
 # načyd
 : vi
-to intrude, to be in the way
+intrude, be in the way
 
 
 # cetapa
@@ -5955,7 +5955,7 @@ esteem, respect
 
 # rellyd
 : vt
-to accompany
+accompany
 
 
 # etermon
@@ -6010,7 +6010,7 @@ honor
 
 # gerešyd
 : vt
-to oppose, to rival
+oppose, rival
 
 
 # njonen
@@ -6020,17 +6020,17 @@ interesting
 
 # nerama
 : v
-to feel, to have a premonition
+feel, have a premonition
 
 
 # treryd
 : vi
-to whisper, to rustle
+whisper, rustle
 
 
 # renryd
 : vi
-to hold back, to reserve
+hold back, reserve
 
 
 # maraven
