@@ -32,7 +32,7 @@
         % {By}\\[5pt] {\Large \sc {Me}}
         \vfill
         % ----------------------------------------------------------------
-        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %\includegraphics[width=0.19\linewidth]{example-image-a}\\[5pt]
         %{blah}\\[5pt]
         %{blahblah}\\[5pt]
         %{blahblah}\\
@@ -226,7 +226,7 @@ The following allophonic rules are listed:
 \begin{table}[ht]
     \caption{Legend for table \ref{table:allo}. \label{table:alegend}}
     \centering
-    \begin{tabu} to \textwidth {lX}
+    \begin{tabu} to \linewidth {lX}
         \hline
         Symbol & Meaning \\
         \hline
@@ -292,7 +292,7 @@ Some affixes might cause a stress to shift. Such affixes are marked with one of 
 \begin{table}[ht]
     \caption{Symbols used to show pitch accent shifting. \label{table:shift}}
     \centering
-    \begin{tabu} to \textwidth {lX}
+    \begin{tabu} to \linewidth {lX}
         \hline
         Symbol & Meaning \\
         \hline
@@ -430,9 +430,9 @@ As seen in the example below, names receive an overline. (The colours are solely
 \begin{table}[h]
     \caption{An example with names.}
     \centering
-    \begin{tabu}{|X|X|}
+    \begin{tabu} to \linewidth {|X|X|}
         \hline
-        Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. "Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?" tes vanretara.
+        Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. "Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?" tes vanretara. \strut
         &
         \textdhr{
             malnelkAjkane xAlemulama Danomulama luneksi \hli{\textoverline{alis}} ruselmara. sel ka mon Sunama Danos lumekAl sydasAW panetaki sydasAWma rihu ka tUrI \tl etera. [rihu ka tUrI \tl etekAl sydasAWma \tl lumetSalu] tes vanretara.
@@ -717,7 +717,7 @@ Pronouns are separated by person and class (see table \ref{table:classes}). The 
 \begin{table}[h]
     \caption{The pronoun classes of Ḋraħýl Rase. \label{table:classes}}
     \centering
-    \begin{tabu} to \textwidth {|l|X|}
+    \begin{tabu} to \linewidth {|l|X|}
         \hline
         Class & Things that fall under this class \\
         \hline
@@ -904,7 +904,7 @@ A verb in Ḋraħýl Rase can also receive zero or more aspect affixes. These co
 
 Note that Ḋraħýl Rase's \emph{aspects} range beyond the traditional sense of ``aspect''; it also covers mood, modality, degree, tellicity and volition.
 
-\begin{longtabu} to \linewidth {|l|l|X|}
+\begin{longtabu} to \linewidth {|l|l|Y|}
     \caption{Aspect markers for Ḋraħýl Rase verbs.} \\
     
     \hline
@@ -1119,7 +1119,7 @@ Other \emph{n}-verbs include \ortho{rumek} (depend, rely on).
 
 Some verbs can be used either as a regular verb or an \emph{n}-verb, but carry different meanings depending on usage:
 
-\begin{longtabu}[c]{|l|X|X|}
+\begin{longtabu} to \linewidth {|l|Y|Y|}
     \caption{Some verbs whose meanings depend on \emph{n}-usage.} \\
     
     \hline
@@ -1206,7 +1206,7 @@ This double marking suggests that there are two plausible subjects of comparison
 
 A relative clause, or one that modifies a noun, is formed by appending \ortho{\sshiftu-kâl} or \ortho{\sshiftu-kaṡ} to the conjugated verb. Either the relative pronoun strategy (using verbal affixes or the pronoun \ortho{bâ}) or the gap strategy may be used to express the antecedent inside the clause. The relative pronoun strategy is the most common when the antecedent is the \tsc{abs} of the clause or it would be otherwise unclear where it is. The gap strategy is the most common for non-\tsc{abs} antecedents that are clear.
 
-\begin{longtabu}[c]{|l|X|}
+\begin{longtabu} to \linewidth {|l|Y|}
     \caption{Examples of relative clause usage.} \\
     
     \hline
@@ -1794,7 +1794,7 @@ These convert a noun into a related noun. In Ḋraħýl Rase, they are called \o
 
 Due to the number of such rules and their straightforwardness, we express them in a table.
 
-\begin{longtabu}[c]{|l|l|X|}
+\begin{longtabu} to \textwidth {|l|l|Y|}
     \caption{Noun-to-noun rules.} \\
     
     \hline
@@ -2011,7 +2011,7 @@ The following table shows the most common units of time:
 \begin{table}[h]
     \caption{Units of time.}
     \centering
-    \begin{tabu}{|l|X|X|}
+    \begin{tabu} to \linewidth {|l|X|X|}
         \hline
         Name & Definition & Approximation \\
         \hline
@@ -2034,7 +2034,7 @@ The \emph{kaku} starts on the first day of the first \emph{deku} on or after the
 \begin{table}[h]
     \caption{Names of the \emph{diku}.}
     \centering
-    \begin{tabu}{|l|l|X|}
+    \begin{tabu} to \linewidth {|l|l|X|}
         \hline
         Name & Length & Origin \\
         \hline
@@ -2076,7 +2076,7 @@ The following table shows the most common units of length:
 \begin{table}[h]
     \caption{Units of length.}
     \centering
-    \begin{tabu}{|l|X|X|}
+    \begin{tabu} to \linewidth {|l|X|X|}
         \hline
         Name & Definition & Approximation \\
         \hline
@@ -2096,7 +2096,7 @@ The following table shows the most common units of mass:
 \begin{table}[h]
     \caption{Units of mass.}
     \centering
-    \begin{tabu}{|l|X|X|}
+    \begin{tabu} to \linewidth {|l|X|X|}
         \hline
         Name & Definition & Approximation \\
         \hline
