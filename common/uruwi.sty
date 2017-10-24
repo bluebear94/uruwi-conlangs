@@ -43,6 +43,11 @@
 	\newcommand{\textdhr}[1]{{\dhrfont #1}}
 }
 
+\DeclareOption{ltfont}{
+	\newfontfamily{\ltfont}[Path=./fonts/,Ligatures=Common]{ltfont.otf}
+	\newcommand{\textlt}[1]{{\ltfont #1}}
+}
+
 \ProcessOptions\relax
 
 % Font settings
