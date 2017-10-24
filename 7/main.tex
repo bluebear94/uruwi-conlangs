@@ -209,6 +209,138 @@ See table \ref{table:stress} for examples.
 
 For the purposes of vowel harmony, vowels are divided into front and back vowels. /a/ is neutral. A root with neither front nor back vowels acts as if it has front vowels.
 
+\section{The script of \lname}
+
+\lname{} also uses its own script, inspired by one of Uruwi's old childhood cyphers.
+
+The consonants within a word are divided into pairs (plus one single consonant at the end if applicable). Thus, \hortho{pun\^gapo\^e-ra} would have \hortho{pn\^g pr}. These pairs then get a glyph that combines the glyphs for their constituent consonants.
+
+\newcommand{\icp}[2]{\Large \textlt{#1} \normalsize \textkardinal{#2}}
+\begin{table}[ht]
+    \caption{Single consonants in the script.}
+    \centering
+    \begin{tabular}{lllll}
+        \icp{P}{p} & \icp{T}{t} & \icp{K}{k} & \icp{S}{s} & \icp{F}{f} \\
+        \icp{N}{n} & \icp{M}{m} & \icp{H}{h} & \icp{Z}{s\^h} & \icp{Y}{y} \\
+        \icp{C}{c} & \icp{X}{x/j} & \icp{L}{l} & \icp{W}{w} & \icp{G}{g} \\
+        \icp{Q}{n\^g} & \icp{D}{d} & \icp{B}{b} & \icp{A}{f\^x} & \icp{I}{f\^h} \\
+        \icp{E}{d\^y} & \icp{U}{t\^y} & \icp{R}{r} & \icp{O}{n\^y} & \icp{V}{.} \\
+    \end{tabular}
+\end{table}
+
+\newcommand{\iicrh}[1]{
+    #1 &
+    #1P & #1T & #1K & #1S & #1F &
+    #1N & #1M & #1H & #1Z & #1Y &
+    #1C & #1X & #1L \\
+}
+\newcommand{\iicr}[1]{\iicrh{\Large\ltfont{#1}}}
+\begin{table}[ht]
+    \caption{Consonant pairs in the script. \label{tab:conspairsa}}
+    \centering
+    \begin{tabular}{l|lllllllllllll}
+        \iicr{} \hline
+        \iicr{P} \iicr{T} \iicr{K} \iicr{S} \iicr{F}
+        \iicr{N} \iicr{M} \iicr{H} \iicr{Z} \iicr{Y}
+        \iicr{C} \iicr{X} \iicr{L} \iicr{W} \iicr{G}
+        \iicr{Q} \iicr{D} \iicr{B} \iicr{A} \iicr{I}
+        \iicr{E} \iicr{U} \iicr{R} \iicr{O} \iicr{V}
+    \end{tabular}
+\end{table}
+\renewcommand{\iicrh}[1]{
+    #1 &
+    #1W & #1G &
+    #1Q & #1D & #1B & #1A & #1I &
+    #1E & #1U & #1R & #1O & #1V \\
+}
+\begin{table}[ht]
+    \caption{Consonant pairs in the script. \label{tab:conspairsb}}
+    \centering
+    \begin{tabular}{l|llllllllllll}
+        \iicr{} \hline
+        \iicr{P} \iicr{T} \iicr{K} \iicr{S} \iicr{F}
+        \iicr{N} \iicr{M} \iicr{H} \iicr{Z} \iicr{Y}
+        \iicr{C} \iicr{X} \iicr{L} \iicr{W} \iicr{G}
+        \iicr{Q} \iicr{D} \iicr{B} \iicr{A} \iicr{I}
+        \iicr{E} \iicr{U} \iicr{R} \iicr{O} \iicr{V}
+    \end{tabular}
+\end{table}
+
+The full table of consonant pairs can be found at tables \ref{tab:conspairsa} and \ref{tab:conspairsb}. There are some general rules:
+
+\newcommand{\glypheq}[4]{
+    \large \textlt{#1} \normalsize \textkardinal{#2} +
+    \large \textlt{#3} \normalsize \textkardinal{#4} $\rightarrow$
+    \large \textlt{#1#3} \normalsize \textkardinal{#2#4}}
+\newcommand{\ltortho}[1]{\ortho{\large\textlt{#1}\normalsize}}
+\newcommand{\gshow}[2]{
+    \ltortho{#1} \hortho{#2}
+}
+\begin{itemize}
+    \item Double consonants get their single-consonant glyphs with a ring below.
+    \item \textkardinal{p}-coloured glyphs bear the characteristic middle bar of \gshow{P}{p}: \glypheq{P}{p}{L}{l}.
+    \item \textkardinal{k}-coloured glyphs rest under the characteristic arrow of \gshow{K}{k}: \glypheq{K}{k}{T}{t}.
+    \item \textkardinal{t}-coloured glyphs rest under the characteristic hilt of \gshow{T}{t}: \glypheq{T}{t}{C}{c}.
+    \item \textkardinal{s}-coloured glyphs bear the characteristic bar-and-circle of \gshow{S}{s}: \glypheq{S}{s}{B}{b}.
+    \item \textkardinal{f}-coloured glyphs bear the characteristic double-swash of \gshow{F}{f}: \glypheq{F}{f}{Q}{n\^g}.
+    \item \textkardinal{m}-coloured glyphs bear the characteristic brook of \gshow{M}{m}: \glypheq{M}{m}{P}{p}.
+    \item \textkardinal{s\^h}-coloured glyphs bear the characteristic arc of \gshow{Z}{s\^h}: \glypheq{Z}{s\^h}{M}{m}.
+    \item \textkardinal{y}-coloured glyphs rest under the characteristic triangle of \gshow{Y}{y}: \glypheq{Y}{y}{G}{g}.
+    \item \textkardinal{c}-coloured glyphs rest under the characteristic overring of \gshow{C}{c}: \glypheq{C}{c}{A}{f\^x}.
+    \item \textkardinal{x}-coloured glyphs rest to the left of the characteristic vertical line of \gshow{X}{x}: \glypheq{X}{x}{E}{d\^y}.
+    \item \textkardinal{w}-coloured glyphs are superimposed with a copy rotated either $\pi$ or, in the case of a few glyphs, $\pi/2$: \glypheq{W}{w}{K}{k}; \glypheq{W}{w}{H}{h}.
+    \item \textkardinal{d}-coloured glyphs are superimposed with \gshow{D}{d}: \glypheq{D}{d}{U}{t\^y}. In some cases, the cross might be rotated $\pi/4$: \glypheq{D}{d}{N}{n}.
+    \item \textkardinal{b}-coloured glyphs rest inside the characteristic room of \gshow{B}{b}: \glypheq{B}{b}{R}{r}.
+    \item \textkardinal{f\^x}-coloured glyphs rest under the characteristic flare of \gshow{A}{f\^x}: \glypheq{A}{f\^x}{V}{.}.
+    \item \textkardinal{d\^y}-coloured glyphs rest under the characteristic P-shape of \gshow{E}{d\^y}: \glypheq{E}{d\^y}{Z}{s\^h}.
+    \item \textkardinal{r}-coloured glyphs rest to the left of the characteristic flare of \gshow{R}{r}: \glypheq{R}{r}{O}{n\^y}.
+    \item \textkardinal{n\^y}-coloured glyphs bear the characteristic inner circle of \gshow{O}{n\^y}: \glypheq{O}{n\^y}{I}{f\^h}.
+\end{itemize}
+
+Thus in our case, we would have \ltortho{PQPR}. The next step is to add vowels. In our case, they would be paired as \hortho{u-a o\^e-a}. Note that it is possible for a pair to not have both vowels. The diacritics for the vowels are quite irregular, and they are shown in table \ref{tab:vowpairs}.
+
+\newcommand{\vowrh}[2]{
+    \textkardinal{#1} &
+    #2 & #2a &
+    #2i & #2y & #2z & #2e & #2f &
+    #2m & #2u & #2w & #2v & #2o \\
+}
+\newcommand{\vowr}[2]{\vowrh{#1}{\Large\ltfont{~#2}}}
+\begin{table}[ht]
+    \caption{Vowel pairs in the script. \label{tab:vowpairs}}
+    \centering
+    \begin{tabular}{l|llllllllllll}
+        & ∅ & \textkardinal{a} &
+        \textkardinal{i} & \textkardinal{i\^u} & \textkardinal{i\^o} & \textkardinal{e} & \textkardinal{e\^o} & 
+        \textkardinal{u\^i} & \textkardinal{u} & \textkardinal{u\^o} & \textkardinal{o\^e} & \textkardinal{o} \\ \hline
+        \vowr{\textnormal{∅}}{}
+        \vowr{a}{a}
+        \vowr{i}{i}
+        \vowr{i\^u}{y}
+        \vowr{i\^o}{z}
+        \vowr{e}{e}
+        \vowr{e\^o}{f}
+        \vowr{u\^i}{m}
+        \vowr{u}{u}
+        \vowr{u\^o}{w}
+        \vowr{o\^e}{v}
+        \vowr{o}{o}
+    \end{tabular}
+\end{table}
+
+Thus, after adding vowels we get \ltortho{PQuaPRva}.
+
+\begin{table}[ht]
+    \caption{Miscellaneous symbols.}
+    \centering
+    \begin{tabular}{llllllll}
+        \icp{1}{1} & \icp{2}{2} & \icp{3}{3} & \icp{4}{4} & \icp{5}{5} & \icp{6}{6} & \icp{7}{7} & \icp{8}{8} \\
+        \multicolumn{8}{l}{\Large\ltfont . . \normalsize\normalfont period (circumfix)} \\
+        \multicolumn{8}{l}{\Large\ltfont , \normalsize\normalfont comma} \\
+        \multicolumn{8}{l}{\Large\ltfont \bs{} \normalsize\normalfont name mark (equiv.~to \hortho{\bs})} \\
+    \end{tabular}
+\end{table}
+
 \chapter{Syntax}
 
 \section{Basic word order}
