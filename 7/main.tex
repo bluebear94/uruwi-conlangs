@@ -217,7 +217,7 @@ The consonants within a word are divided into pairs (plus one single consonant a
 
 \newcommand{\icp}[2]{\Large \textlt{#1} \normalsize \textkardinal{#2}}
 \begin{table}[ht]
-    \caption{Single consonants in the script.}
+    \caption{Single consonants in the script. \label{tab:ltcons}}
     \centering
     \begin{tabular}{lllll}
         \icp{P}{p} & \icp{T}{t} & \icp{K}{k} & \icp{S}{s} & \icp{F}{f} \\
@@ -295,6 +295,9 @@ The full table of consonant pairs can be found at tables \ref{tab:conspairsa} an
     \item \textkardinal{d\^y}-coloured glyphs rest under the characteristic P-shape of \gshow{E}{d\^y}: \glypheq{E}{d\^y}{Z}{s\^h}.
     \item \textkardinal{r}-coloured glyphs rest to the left of the characteristic flare of \gshow{R}{r}: \glypheq{R}{r}{O}{n\^y}.
     \item \textkardinal{n\^y}-coloured glyphs bear the characteristic inner circle of \gshow{O}{n\^y}: \glypheq{O}{n\^y}{I}{f\^h}.
+    \item If all else has failed, the two consonants are superimposed. The default order is the same as the ordering used in table \ref{tab:ltcons}.
+    \item In coloured-consonant pairs, the colourant is assumed to occur first unless the order is switched by an order reversal mark.
+    \item A negative-sloping mark below a glyph means that the order of consonants is switched.
 \end{itemize}
 
 Thus in our case, we would have \ltortho{PQPR}. The next step is to add vowels. In our case, they would be paired as \hortho{u-a o\^e-a}. Note that it is possible for a pair to not have both vowels. The diacritics for the vowels are quite irregular, and they are shown in table \ref{tab:vowpairs}.
