@@ -1363,7 +1363,7 @@ Verb-to-noun conversions involve an operation called \emph{inversion}; this oper
 
 \begin{itemize}
     \item front vowels $\leftrightarrow$ back vowels
-    \item voiceless plosives $\leftrightarrow$ voiced plosives
+    \item voiceless plosives $\leftrightarrow$ voiced plosives (in any position other than in a coda)
     \item \textkardinal{f} $\leftrightarrow$ \textkardinal{s\^h}
     \item \textkardinal{s} $\leftrightarrow$ \textkardinal{f\^h} (in any position other than in a coda)
     \item \textkardinal{h} $\leftrightarrow$ \textkardinal{f\^x}
@@ -1783,6 +1783,80 @@ The traditional timekeeping system is vague -- typically, the most precise inter
 The need for precise schedules necessitated another standard for subdividing the day. The modern system is based on the tidal day, rather than the solar day. In theory, each tidal day is divided into 23 equal parts \hortho{kan}, each of which is divided into 80 equal parts \hortho{sine}, which are each divided into 40 equal parts \hortho{bacuk}.
 
 Of course, having 23 \hortho{kan} per tidal day requires predicting the next two high tides. For that reason, each day's \hortho{kan} are based on the length of the \emph{previous} tidal day, such that each day might have more or less than 23 \hortho{kan}.
+
+\chapter{Miscellanea}
+
+\section{Colour}
+
+\lname{} has eleven non-derived colour terms:
+
+\begin{tikzpicture}[x=1.25mm,y=1mm]
+    \definecolor{leftcolour}{hsb}{0,1,1}
+    \definecolor{rightcolour}{hsb}{1,1,1}
+    \foreach \pos in {0,...,99} {
+        \colorlet{current}[rgb]{rightcolour!\pos!leftcolour}
+        \pgfmathparse{\pos+1}
+        \colorlet{next}[rgb]{rightcolour!\pgfmathresult!leftcolour}
+        \shade[
+               left color=current,
+               right color=next]
+           (\pos,0) rectangle +(1,10mm);
+    }
+    \newcommand{\clabela}[3]{
+        \draw (#1, 10mm) -- +(0, #3);
+        \pgfmathparse{10 + #3}
+        \node[anchor=south, font=\strut] (temp) at (#1, \pgfmathresult) {
+            #2
+        };
+    }
+    \newcommand{\clabelb}[3]{
+        \draw (#1, 0mm) -- +(0, -#3);
+        \node[anchor=north, font=\strut] (temp) at (#1, -#3) {
+            #2
+        };
+    }
+    \clabela{5}{Red-orange}{10}
+    \clabelb{20}{Yellow-green}{10}
+    \clabela{33}{Green}{10}
+    \clabelb{43}{Aquamarine}{10}
+    \clabela{47}{Turquoise}{10}
+    \clabelb{51}{Cyan}{6}
+    \clabela{53}{Sky-blue}{6}
+    \clabelb{57}{Azure}{10}
+    \clabela{66}{Blue}{10}
+    \clabelb{79}{Violet}{10}
+    \shade[left color=Gray, right color=Gray]
+        (25, -18) rectangle (35, -28);
+    \node[anchor=west, font=\strut] (grey) at (35, -23) {
+        Grey
+    };
+\end{tikzpicture}
+
+Note that ``grey'' refers generically to a loss of chroma. There is no distinction between a decrease in saturation and a decrease in value.
+
+\lname{} works with colour \emph{transitions}, not static colours. See table \ref{tab:colourtrans}.
+
+\begin{table}[ht]
+    \caption{Colour transitions in \lname. Each row represents a different starting colour; each column represents a different ending colour. \label{tab:colourtrans}}
+    \centering
+    \begin{tabular}{
+            l|
+            >{\kardinal}l>{\kardinal}l>{\kardinal}l
+            >{\kardinal}l>{\kardinal}l>{\kardinal}l
+            >{\kardinal}l>{\kardinal}l>{\kardinal}l
+            >{\kardinal}l>{\kardinal}l}
+        & \textnormal{RO} & \textnormal{YG} & \textnormal{Gn} &
+        \textnormal{Aq} & \textnormal{Tu} & \textnormal{Cy} &
+        \textnormal{SB} & \textnormal{Az} & \textnormal{Bl} &
+        \textnormal{Vi} & \textnormal{Gy} \\
+        \hline
+        RO & has & mek & d\^yen & fal & s\^hir & pul & be\^ot & mal & f\^xo\^ep & ten\^g & mi \\
+        YG & wik & ru\^om & xop & di\^ul & n\^gi\^os & tek & n\^yar & f\^het & tse\^on\^y & yep & pu\^o \\
+        Gn & .u\^ik & t\^yul & jek & cum & go\^et & nu\^il & bon\^y & xe\^ot\^y & si\^ul & s\^hu\^os & ko \\
+    \end{tabular}
+\end{table}
+
+These are abstract nouns.
 
 \appendix
 

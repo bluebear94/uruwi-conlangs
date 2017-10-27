@@ -25,6 +25,7 @@
 \RequirePackage[UKenglish]{isodate}
 \RequirePackage{etoolbox}
 \RequirePackage{xstring}
+\RequirePackage{expl3}
 \RequirePackage{hyperref}
 \RequirePackage[shortcuts]{extdash}
 
@@ -215,5 +216,11 @@
 \tabucolumn Y
 
 \cleanlookdateon
+
+\ExplSyntaxOn
+\cs_new_protected:Npn \Evaluate #1 {
+    \int_eval:n { #1 }
+}
+\ExplSyntaxOff
 
 \endinput
