@@ -127,8 +127,7 @@ grammar was developed. This update added considerable changes to the language:
 \begin{table}[h]
     \caption{The consonants of Ḋraħýl Rase.}
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|}
-        \hline
+    \begin{tabular}{l|llllll}
         & Bilabial / & & & & & \\
         & Labiodental & Alveolar & Retroflex & Velar & Pharyngeal & Glottal \\
         \hline
@@ -138,14 +137,12 @@ grammar was developed. This update added considerable changes to the language:
         Lateral Fricative & \invalid & ṡ /ɬ/ ż /ɮ/ & & & \invalid & \invalid \\
         Approximant & & r /ɹ/ & & & & \\
         Lateral Approximant & \invalid & l & & & \invalid & \invalid \\
-        \hline
     \end{tabular}
 \end{table}
 \begin{table}[h]
 \centering
     \caption{The vowels of Ḋraħýl Rase.}
-    \begin{tabular}{|l|l|l|}
-        \hline
+    \begin{tabular}{lll}
         Short & Long & Semivowel \\
         \hline 
         \rowcolor{SpringGreen!50} a & â /äː/ & \\
@@ -155,7 +152,6 @@ grammar was developed. This update added considerable changes to the language:
         \rowcolor{Thistle!50} o /ʌ \tl{} ɤ/ & ô /oː/ & \\
         \rowcolor{Thistle!50} u /ɯ \tl{} ɨ/ & û /uː/ & w \\
         \rowcolor{Thistle!50} y /i/ & ŷ /yː/ & ẏ /ɥ/ \\
-        \hline
     \end{tabular}
 \end{table}
 
@@ -191,23 +187,19 @@ A syllable is allowed to consist of:
 
 The following allophonic rules are listed:
 
-\begin{longtable}[c]{|l|l|l|}
+\begin{longtable}[c]{lll}
     \caption{The allophonic rules of Ḋraħýl Rase. See table \ref{table:alegend} for the legend. \label{table:allo}} \\
     
-    \hline
     Input & Output & Context \\
     \hline
     \endfirsthead
     
-    \hline
     Input & Output & Context \\
     \hline
     \endhead
     
-    \hline
     \endfoot
     
-    \hline
     \endlastfoot
     
     \hli{Ob1}\ortho{+v} & \hli{Ob1}\ortho{\=/v} & \hlii{Ob2}\ortho{\=/v} \here \\
@@ -267,8 +259,7 @@ See table \ref{table:stress} for examples.
 \begin{table}[ht]
     \caption{Examples of stress locations. \label{table:stress}}
     \centering
-    \begin{tabular}{|l|l|}
-        \hline
+    \begin{tabular}{ll}
         & Location of stress \\
         Orthography & (\# from last) \\
         \hline
@@ -283,7 +274,6 @@ See table \ref{table:stress} for examples.
         ṅekēkemew & 1 \\
         panâ-kaẏ & 1 \\
         renekju̇kâl & 1 \\
-        \hline
     \end{tabular}
 \end{table}
 
@@ -320,17 +310,16 @@ These vowels redirect as such:
 \begin{table}[H]
     \caption{Vowel raising rules.}
     \centering
-    \begin{tabular}{|l|l|}
-        \hline
+    \begin{tabular}{ll}
         Old & New \\
         \hline
         \rowcolor{SpringGreen!50} a & e \\
         \rowcolor{SpringGreen!50} e & i \\
         \rowcolor{SpringGreen!50} i & i \\
+        \hline
         \rowcolor{Thistle!50} o & u \\
         \rowcolor{Thistle!50} u & y \\
         \rowcolor{Thistle!50} y & y \\
-        \hline
     \end{tabular}
 \end{table}
 
@@ -356,45 +345,49 @@ Sometimes, appending two strings together will result in edge cases. Suppose we 
 
 Ḋraħýl Rase is written in \emph{Nesál Tēkel Piva} (\emph{lit.} New Sun Glyphs), a native script that uses dedicated glyphs for consonants and long vowels, plus diacritics for short vowels. It does not mark pitch accent.
 
-\begin{table}[h]
-    \caption{Consonants in NTP.}
-    \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|}
-        \hline
-        p \textdhr{p} & t \textdhr{t} & k \textdhr{k} & s \textdhr{s} & f \textdhr{f} & n \textdhr{n} & m \textdhr{m} \\
-        \hline
-        ḣ \textdhr{x} & ħ \textdhr{H} & h \textdhr{h} & r \textdhr{r} & ṡ \textdhr{S} & l \textdhr{l} & v \textdhr{v} \\
-        \hline
-        g \textdhr{g} & ṅ \textdhr{N} & d \textdhr{d} & b \textdhr{b} & ż \textdhr{Z} & z \textdhr{z} & ġ \textdhr{G} \\
-        \hline
-        ḋ \textdhr{D} & ṫ \textdhr{T} & & & & & \\
-        \hline
-    \end{tabular}
-\end{table}
+\begin{longtabu}{>{\dhrfont}llX|>{\dhrfont}llX}
+    \caption{Consonant and long vowels in NTP.} \\
+    \textnormal{NTP} & Rom & Name &
+    \textnormal{NTP} & Rom & Name \\
+    \hline
+    \endfirsthead
+    
+    \textnormal{NTP} & Rom & Name &
+    \textnormal{NTP} & Rom & Name \\
+    \hline
+    \endhead
+    
+    \endfoot
+    
+    \endlastfoot
 
-\begin{table}[h]
-    \caption{Long vowels in NTP.}
-    \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
-        \hline
-        â \textdhr{A} & ê \textdhr{E} & î \textdhr{I} & ô \textdhr{O} & û \textdhr{U} & ŷ \textdhr{Y} \\
-        \hline
-    \end{tabular}
-\end{table}
+    p & p & mon-pama-vunu & N & ṅ & ġenu-hjula \\
+    t & t & meṡa-pama-vunu & d & d & meḋro \\
+    k & k & kolo-pama-vunu & b & b & heke \\
+    s & s & lakan-pama-kêṡ & Z & ż & vane-nâḣe \\
+    f & f & lakan-nimur-kêṡ & z & z & kêṡ-dunew \\
+    n & n & sunuh-pama-kêṡ & G & ġ & hrênu \\
+    m & m & sunuh-nimur-kêṡ & D & ḋ & kekên \\
+    x & ḣ & pelu-pulu & T & ṫ & kasu \\
+    H & ħ & genu-pulu & & & \\
+    h & h & runa & A & â & â \\
+    r & r & matuk & E & ê & ê \\
+    S & ṡ & pelu-halde & I & î & î \\
+    l & l & genu-halde & O & ô & ô \\
+    v & v & mako & U & û & û \\
+    g & g & pelu-hjula & Y & ŷ & ŷ \\
+\end{longtabu}
 
 The short vowels \ortho{a e i} are expressed with their own diacritics. \ortho{o u y} use the same main diacritics as \ortho{a e i}, respectively, but add a \emph{kisyltew} (backing mark). \ortho{\textdhr{f r g G D T}} receive the main diacritic below the consonant glyph (and the \emph{kisyltew} above). Other consonants and all long vowels receive the main diacritic above (and the \emph{kisyltew} below).
 
 \begin{table}[h]
     \caption{Short vowels in NTP.}
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|}
-        \hline
+    \begin{tabular}{l|llllll}
         ∅ & a & e & i & o & u & y \\
         \hline
         t \textdhr{t} & ta \textdhr{ta} & te \textdhr{te} & ti \textdhr{ti} & to \textdhr{to} & tu \textdhr{tu} & ty \textdhr{ty} \\
-        \hline
         g \textdhr{g} & ga \textdhr{ga} & ge \textdhr{ge} & gi \textdhr{gi} & go \textdhr{go} & gu \textdhr{gu} & gy \textdhr{gy} \\
-        \hline
     \end{tabular}
 \end{table}
 
@@ -407,21 +400,17 @@ Diphthongs with the semivowel occuring second are written with the glyph for the
 \begin{table}[h]
     \caption{Miscellaneous symbols.}
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
-        \hline
+    \begin{tabular}{llllll}
         0 \textdhr{0} & 1 \textdhr{1} & 2 \textdhr{2} & 3 \textdhr{3} & 4 \textdhr{4} & 5 \textdhr{5} \\
         6 \textdhr{6} & 7 \textdhr{7} & 8 \textdhr{8} & 9 \textdhr{9} & 10 \textdhr{:} & 11 \textdhr{;} \\
         \hline
-        \multicolumn{2}{|l|}{full stop \textdhr{.}} &
-        \multicolumn{2}{l|}{comma \textdhr{,}} &
-        \multicolumn{2}{l|}{question mark \textdhr{?}} \\
-        \hline
-        \multicolumn{4}{|l|}{quotation marks \textdhr{[]}} &
-        \multicolumn{2}{l|}{kêl (\tsc{neg}) \textdhr{\tl}} \\
-        \hline
-        \multicolumn{6}{|l|}{interpunct \textdhr{/}} \\
-        \multicolumn{6}{|l|}{(sometimes used to mark an ``and'')} \\
-        \hline
+        \multicolumn{2}{l}{full stop \textdhr{.}} &
+        \multicolumn{2}{l}{comma \textdhr{,}} &
+        \multicolumn{2}{l}{question mark \textdhr{?}} \\
+        \multicolumn{4}{l}{quotation marks \textdhr{[]}} &
+        \multicolumn{2}{l}{kêl (\tsc{neg}) \textdhr{\tl}} \\
+        \multicolumn{6}{l}{interpunct \textdhr{/}} \\
+        \multicolumn{6}{l}{(sometimes used to mark an ``and'')} \\
     \end{tabular}
 \end{table}
 
@@ -430,14 +419,13 @@ As seen in the example below, names receive an overline. (The colours are solely
 \begin{table}[h]
     \caption{An example with names.}
     \centering
-    \begin{tabu} to \linewidth {|X|X|}
-        \hline
+    \begin{tabu} to \linewidth {XX}
         Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. "Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?" tes vanretara. \strut
         &
         \textdhr{
             malnelkAjkane xAlemulama Danomulama luneksi \hli{\textoverline{alis}} ruselmara. sel ka mon Sunama Danos lumekAl sydasAW panetaki sydasAWma rihu ka tUrI \tl etera. [rihu ka tUrI \tl etekAl sydasAWma \tl lumetSalu] tes vanretara.
         }
-        \\ \hline
+        \\
     \end{tabu}
 \end{table}
 
