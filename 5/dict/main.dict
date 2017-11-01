@@ -287,8 +287,7 @@ grow
 
 # krenu
 : n
-earliness, speed, sudden
-fast early
+earliness, speed, sudden, fast, early
 
 # kotanek
 : v
@@ -1323,7 +1322,7 @@ befriend
 
 # berek
 : v
-(A) scares (P)
+(A) scares (P), (P) fears (A)
 
 
 # heṅġu
@@ -1598,7 +1597,7 @@ skin, hide
 
 # kluha
 : n
-backside
+backside, behind
 
 
 # reftu
@@ -2560,7 +2559,7 @@ store, stash, save
 
 # turek
 : v
-light (a candle or light switch), turn on
+light (a candle or light switch), turn on, open (a door or window)
 
 
 # ṅevlek
@@ -3110,7 +3109,7 @@ line of sight, what is being seen, view
 follow (physically)
 
 # pusek
-: v
+: vn
 (P) lies on, against (O)
 
 # sihe
@@ -3168,3 +3167,59 @@ be a past event, (euphemism) die
 # kaḣan
 : adv
 already
+
+# ṫaba
+: n
+candle
+
+# hîz
+: interj
+well, maybe
+
+# mejsa
+: n
+train
+
+# vaħek
+: v
+wash, clean
+
+# rajnelenka
+: n
+bed
+
+# ṅatek
+: vn
+feel (physical sense)
+
+# neżek
+: v
+(A) wears (P)
+
+# simâż
+: n
+sleeping clothes
+
+# vimek
+: v
+blink
+
+# nevek
+: v
+(A) agrees to (P)
+
+# lenkani
+: n
+family member
+
+# ḣrakki
+: n
+flame
+
+# fṡelkek
+: v
+gather, collect, precipitate (out of a solution)
+
+# helaneżek
+: v
+(A) changes clothes to (P)
