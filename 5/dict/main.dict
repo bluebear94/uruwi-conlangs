@@ -80,7 +80,7 @@ sun
 
 # vane
 : n
-light
+light, bright, certain
 
 
 # seġek
@@ -832,7 +832,7 @@ box
 
 # ṡâg
 : n
-orange
+orange (fruit)
 
 
 # żuna
@@ -847,7 +847,7 @@ sea
 
 # sune
 : n
-water
+water, wet
 
 
 # laki
@@ -998,7 +998,7 @@ dust, powder
 # ḣralek
 : v
 burn, cook, heat
-\textsf{kajtos (ḣralek))} be turned on
+\textsf{kajtos (ḣralek)} be turned on (stove)
 
 
 # hanak
@@ -1588,7 +1588,7 @@ front
 
 # hise
 : n
-dot, patch, point, drop
+dot, patch, point, drop, place in the sky
 
 
 # tamu
@@ -1833,7 +1833,8 @@ star
 
 # betanek
 : v
-(P) escapes from (A)
+(P) escapes from (A), (P) breaks off from (A)
+\textsf{nakmas (betanek)} come home from military service
 
 
 # mumek
@@ -3066,4 +3067,104 @@ terrorist
 
 # ḋalfo
 : n
-ash
+ash, grey
+
+# nakma
+: n
+military service
+
+# lenkasaj
+: n
+roof
+
+# ṡinvże
+: n
+lily
+
+# mevuhâ
+: n
+umbrella
+
+# mîne
+: n
+everyday clothes
+
+# syltelensaj
+: n
+hanging roof
+
+# iremelenka
+: n
+store
+
+# ġenupulu
+: adv
+back and forth, left and right, up and down
+
+# pân
+: n
+line of sight, what is being seen, view
+
+# vepek
+: v
+follow (physically)
+
+# pusek
+: v
+(P) lies on, against (O)
+
+# sihe
+: n
+back (part of body), neck
+
+# haldakan
+: n
+lap
+
+# aṡtanu
+: n
+bag, backpack
+
+# tape
+: n
+dry
+
+# malek
+: n
+take out (something from a container)
+
+# mona
+: n
+small piece of food, crumb
+
+# seṡek
+: v
+whisper (used like \textsf{tûrek})
+
+# sevy
+: n
+home, one's own house
+
+# pew
+: n
+rest, remainder
+
+# voza
+: n
+mud
+
+# pṡaldżek
+: v
+(P) shakes, trembles
+
+# têk-sunuh
+: n
+midnight
+
+# marek
+: v
+be a past event, (euphemism) die
+
+# kaḣan
+: adv
+already
