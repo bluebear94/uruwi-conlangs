@@ -882,7 +882,7 @@ sail
 
 # hâ
 : n
-cloth
+cloth, marker
 
 
 # mojru
@@ -917,7 +917,7 @@ above
 
 # sunuh
 : n
-below
+below, ledge (of a window)
 
 
 # galu
@@ -977,7 +977,7 @@ brick
 
 # syda
 : n
-paper
+(piece of) paper
 
 
 # sydasaẏ
@@ -1368,7 +1368,7 @@ tool
 
 # nawko
 : n
-mouth
+mouth, beak
 
 
 # rû
@@ -1884,8 +1884,7 @@ left
 
 # puzanek
 : v
-pull, be pulled, invite
-
+pull, be pulled, invite (to A = \textsf{A-kane})
 
 # ruha
 : n
@@ -2104,7 +2103,7 @@ call oneself, assign to oneself
 
 # dotek
 : vn
-(P) asks (QUOT) to (ACC)
+(P) asks (O) to (QUOT)
 
 
 # laksun
@@ -3369,3 +3368,71 @@ thin, faint
 # bżamek
 : v
 stir, mix
+
+# hravu
+: n
+crab or other crustacean
+
+# laṡna
+: n
+ripple
+
+# merḣen
+: n
+crow, raven
+
+# pṡejda
+: n
+letter
+
+# rêzkut
+: n
+picnic, gathering for food
+
+# zarza
+: n
+important, significant
+
+# ḋusurew
+: n
+notice, announcement
+
+# fisnek
+: v
+attend (an event)
+
+# kemvek
+: v
+leave bhind
+
+# momatṡek
+: v
+exhale
+
+# varhek
+: v
+(A) pretends, imagines (P)
+
+# kavrek
+: v
+spill
+
+# nezek
+: v
+(P) fails, (A) prevents (P)
+
+# nât
+: adv
+but still
+
+# ganḋa
+: n
+vice, sin
+
+# pista
+: n
+platform
+
+# mjure
+: n
+straw (material)
