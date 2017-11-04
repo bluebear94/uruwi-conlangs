@@ -171,7 +171,7 @@ with stop aspect, can mean ``stop'' or ``arrive''; with start aspect, can mean `
 
 # sunuhek
 : v
-fall, descend, drop
+fall, descend, drop, pass up (an opportunity)
 \textsf{mevu (sunuhek)} rain
 
 
@@ -326,7 +326,7 @@ palace
 
 # klanek
 : v
-be lost, abandon
+be lost, abandon, wander
 \textsf{maṡew klanek} (A) falls short of breath
 
 
@@ -687,7 +687,7 @@ queue
 
 # madanek
 : v
-enter
+(A) enters (P)
 
 
 # kelenka
@@ -1648,7 +1648,7 @@ hit, strike, beat, happen
 
 # halde
 : n
-leg, foot
+leg, foot, ankle
 
 
 # redek
@@ -1849,7 +1849,7 @@ live (vs die)
 
 # suneka
 : n
-well
+well (in good condition)
 
 
 # fṡube
@@ -3352,7 +3352,7 @@ smooth, fine, refined
 # davil
 : n
 hatchling
-(magic) initiate, novice
+(magic) initiate, novice, beginner
 
 # nyw
 : n
@@ -3400,7 +3400,7 @@ notice, announcement
 
 # fisnek
 : v
-attend (an event)
+attend, participate in (an event)
 
 # kemvek
 : v
@@ -3541,3 +3541,59 @@ chaos
 # venêḣ
 : n
 handwriting type
+
+# ḋevek
+: v
+(P) suffices for (A)
+
+# gîk
+: n
+experience
+
+# iḣrin
+: n
+autumn
+
+# nuheħli
+: n
+almost all
+
+# kerek
+: n
+(maths) multiply
+
+# ker
+: conj
+(maths) times
+
+# melfe
+: n
+adversary, opponent, foe
+
+# zarnek
+: v
+move while lying down
+
+# mojpánek
+: v
+(A) regrets (P)
+
+# rustanek
+: v
+wander (without necessarily being lost)
+
+# misi
+: adv
+still, yet
+
+# tiḣnek
+: v
+crush
+
+# guliḋirhe
+: n
+icicle
+
+# runpir
+: n
+willow tree
