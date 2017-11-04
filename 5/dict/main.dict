@@ -1833,7 +1833,7 @@ star
 
 # betanek
 : v
-(P) escapes from (A), (P) breaks off from (A)
+(P) escapes from (A), (P) breaks off from (A), (P) violates (A)
 \textsf{nakmas (betanek)} come home from military service
 
 
@@ -3428,7 +3428,7 @@ but still
 
 # ganḋa
 : n
-vice, sin
+vice, sin, offence, transgression, transgressor
 
 # pista
 : n
@@ -3597,3 +3597,15 @@ icicle
 # runpir
 : n
 willow tree
+
+# syltesa
+: n
+secrecy, secret
+
+# kiṅko
+: n
+shrub, bush
+
+# puṅzek
+: v
+crawl
