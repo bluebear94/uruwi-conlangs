@@ -377,7 +377,7 @@ fox
 
 # kretanek
 : v
-run
+run, be launched (rockets or fireworks)
 
 
 # mepek
@@ -1689,6 +1689,7 @@ at all, ever, suddenly
 # tuẏ
 : n
 resemblance, like
+Adverbial form is \textsf{tuẏrí}.
 
 
 # hurek
@@ -2534,7 +2535,7 @@ forehead
 
 # kagi
 : n
-foolish, stupid
+foolish, stupid, low-quality, makeshift
 
 
 # najva
@@ -2787,8 +2788,8 @@ dummy noun
 
 # tuẏ
 : n
-out of (used in superlative constructions)
-n + \textsf{tuẏ} + adv
+out of (used in superlative constructions: noun + \textsf{tûr})
+Adverbial form is \textsf{tûr}.
 
 # nwenek
 : v
@@ -3609,3 +3610,43 @@ shrub, bush
 # puṅzek
 : v
 crawl
+
+# teṅge
+: n
+noise
+
+# hisla
+: n
+steady, gradual
+
+# dakna
+: n
+chest
+
+# hevlek
+: v
+suffocate, strangle
+
+# maḣal
+: interj
+thank goodness!, exclamation of relief
+
+# nagat
+: n
+hard, rough (in texture)
+
+# ḣrale-mjeny
+: n
+fireworks
+
+# astan
+: n
+how many?
+
+# kṡuva
+: n
+lavendar
+
+# turnek
+: v
+expand, stretch
