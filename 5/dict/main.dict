@@ -2414,7 +2414,7 @@ butterfly
 
 # ḣevesi
 : n
-`all hole, bore
+small hole, bore
 
 
 # varnek
@@ -2605,7 +2605,7 @@ axe
 
 # vyḋek
 : v
-sever, cut away, execute
+sever, cut away, execute, detach
 \textsf{vanél kelirul majsi vyḋek} be disappointed
 
 
@@ -3244,7 +3244,7 @@ elder tree
 
 # sjasek
 : v
-(A) catches, arrests, grabs (P), (P) is stuck in (A)
+(A) catches, arrests, grabs (P), (P) is stuck in (A), (A) stuns (P)
 
 # lepṡek
 : v
@@ -3365,7 +3365,7 @@ records, history
 
 # prasa
 : n
-thin, faint
+thin, faint, sparse
 
 # bżamek
 : v
@@ -3650,3 +3650,43 @@ lavendar
 # turnek
 : v
 expand, stretch
+
+# ifnek
+: v
+scatter
+
+# nabżek
+: v
+poke, stab
+
+# neṡke
+: n
+dirt, soil, earth
+
+# nûneheḣu
+: n
+corpse
+
+# neṡkenek
+: v
+bury
+
+# naska
+: n
+slope (quantity), derivative
+
+# sevrek
+: v
+increase
+
+# kisel
+: n
+alder tree
+
+# ḣralḣâle
+: n
+volcano
+
+# rûsa
+: n
+wound
