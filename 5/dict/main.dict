@@ -577,7 +577,7 @@ trick, stunt
 
 # vunu
 : n
-stick, rod
+stick, rod, frame
 
 
 # raskek
@@ -1264,6 +1264,7 @@ tea
 # ṡuẏṅek
 : n
 drink, suck, drain
+It is possible to ``drink'' [from] a container.
 
 
 # gejlek
@@ -3417,7 +3418,7 @@ exhale
 
 # kavrek
 : v
-spill
+spill, pour (a liquid)
 
 # nezek
 : v
@@ -3690,3 +3691,67 @@ volcano
 # rûsa
 : n
 wound
+
+# drîko
+: n
+sweat
+
+# fjaspo
+: n
+tunic, shirt
+
+# glata
+: n
+coat, jacket
+
+# katja
+: n
+trousers
+
+# hânek
+: v
+cut, carve
+
+# laskû
+: n
+fountain, spring
+
+# ṡinek
+: v
+scream
+
+# kremek
+: v
+tear, tatter
+
+# fyno
+: n
+friendly, warm (temperature)
+
+# hâtaga
+: n
+closet, dressing room
+
+# ġonrek
+: v
+(P) converges into (A)
+
+# sikla
+: n
+phial
+
+# variko
+: n
+perception, conciousness
+
+# plasko
+: n
+rubble
+
+# ṅakla
+: n
+nose
+
+# fes
+: conj
+minus
