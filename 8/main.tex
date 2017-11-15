@@ -281,25 +281,107 @@ In general, if $C$ is of class $y$, then the processed form of $C$ will be of cl
 
 \emph{Number mutability} describes how likely the quantity of a concrete is to change. Note that a concrete can only take either a time mutability or a space mutability, not both.
 
+\begin{longtabu} to \linewidth{llY}
+  \caption{List of number mutabilities.} \\
+  
+  Symbol & Name & Description \\
+  \hline
+  \endfirsthead
+  
+  Symbol & Name & Description \\
+  \hline
+  \endhead
+  
+  \endfoot
+  
+  \endlastfoot
+
+  $\Omega$ & Multiversal time-constant & The quantity cannot change \hliv{\emph{under any circumstances}}. \\
+  $\Psi$ & Universal time-constant & The quantity does not change within the current universe, but might be different in other universes. \\
+  $\Chi$ & Lifetime-constant & The quantity is unlikely to change to a significant degree within one's lifetime. \\
+  $\Zeta$ & Lifetime-enumerable & The quantity is likely to change one or more times during one's lifetime, but such a change would be a significant life event. \\
+  $\Xi$ & Continually mutable & The quantity is likely to change within a short time span (usually within seconds or minutes, but can be up to about a month). \\
+  $\Phi$ & Continuously mutable & The quantity is continuously changing across time. \\
+  $\vec{\Omega}$ & Multiversal space-constant & The quantity is currently the same across all universes. \\
+  $\vec{\Psi}$ & Universal space-constant & The quantity is currently the same within the current universe, but might be different in other universes. \\
+  $\vec{\Chi}$ & Domain space-constant & The quantity is unlikely to be different within the current domain. \\
+  $\vec{\Xi}$ & Continually space-mutable & The quantity is likely to change across a short span of space (usually a few metres, but can exceed hundreds of kilometres). \\
+  $\vec{\Phi}$ & Continuously space-mutable & The quantity is continuously changing across space. \\
+  $\Sigma$ & Situational & (in programming) The quantity might depend on the implementation. \\
+\end{longtabu}
+
 \begin{table}[h]
-  \caption{List of number mutabilities.}
+  \caption{List of number mutability affixes.}
   \centering
-  \begin{tabu} to \linewidth{llY}
-    Symbol & Name & Description \\
-    \hline
-    $\Omega$ & Multiversal time-constant & The quantity cannot change \hliv{\emph{under any circumstances}}. \\
-    $\Psi$ & Universal time-constant & The quantity does not change within the current universe, but might be different in other universes. \\
-    $\Chi$ & Lifetime-constant & The quantity is unlikely to change to a significant degree within one's lifetime. \\
-    $\Zeta$ & Lifetime-enumerable & The quantity is likely to change one or more times during one's lifetime, but such a change would be a significant life event. \\
-    $\Xi$ & Continually mutable & The quantity is likely to change within a short time span (usually within seconds or minutes, but can be up to about a month). \\
-    $\Phi$ & Continuously mutable & The quantity is continuously changing across time. \\
-    $\vec{\Omega}$ & Multiversal space-constant & The quantity is currently the same across all universes. \\
-    $\vec{\Psi}$ & Universal space-constant & The quantity is currently the same within the current universe, but might be different in other universes. \\
-    $\vec{\Chi}$ & Domain space-constant & The quantity is unlikely to be different within the current domain. \\
-    $\vec{\Xi}$ & Continually space-mutable & The quantity is likely to change across a short span of space (usually a few metres, but can exceed hundreds of kilometres). \\
-    $\vec{\Phi}$ & Continuously space-mutable & The quantity is continuously changing across space. \\
-    $\Sigma$ & Situational & (in programming) The quantity might depend on the implementation. \\
-  \end{tabu}
+  \begin{tabular}{l||l}
+    \begin{tabular}{r>{\kardinal}l}
+      S\# & \textnormal{Affix 1} \\
+      \hline
+      1 & ->n\^g: \\
+      2 & ->s: \\
+      3 & ->l: \\
+      4 & ->b: \\
+      5 & ->n: \\
+      0 & ->h: \\
+    \end{tabular}
+    &
+    \begin{tabular}{l>{\kardinal}l}
+      Sym & \textnormal{Affix 2} \\
+      \hline
+      $\Omega$ & lbm \\
+      $\Psi$ & ldn\^g \\
+      $\Chi$ & bds \\
+      $\Zeta$ & xty \\
+      $\Xi$ & mym \\
+      $\Phi$ & djk \\
+      $\vec{\Omega}$ & lmy \\
+      $\vec{\Psi}$ & lhm \\
+      $\vec{\Chi}$ & bhx \\
+      $\vec{\Xi}$ & mxy \\
+      $\vec{\Phi}$ & dtc \\
+      $\Sigma$ & xn\^gw \\
+    \end{tabular}
+  \end{tabular}
 \end{table}
+
+When a concrete acts as a verb, it inherits the number mutability of its first argument.
+
+If the mutability equals that of the previous concrete mentioned in the same sentence, then both the class affix and the mutability affix can be omitted.
+
+\section{A simple example}
+
+Take the sentence \emph{Fish eat flowers}, which would be treed into \hliii{Eat}(\hliii{Fish}, \hliii{Flower}).
+
+The roots we need are:
+
+\begin{itemize}
+  \item \hortho{\hliii{bwg}} \emph{c2} (0) eats (1)
+  \item \hortho{\hliii{gnkt}} \emph{c2} fish
+  \item \hortho{\hliii{djn}} \emph{c1} flower
+\end{itemize}
+
+The number of fish that exist change whenever a fish is born or dies. This is quasi-continuous, but technically continual. We can choose either option but we will use $\Xi$ in this example. We use the same mutability for flowers.
+
+Fronting the topic, we get: \\
+~\\
+\textkardinal{\hli{\bs{}gnk/smym} \hlii{bw\bs{}cmym} \hliii{dj/kmym}} \\
+\textkardinal{\hli{gnkt->s:mym} \hlii{bwg->s:mym} \hliii{djn->n\^g:mym}} \\
+\hli{fish-2-$\Xi$} \hlii{eat-2-$\Xi$} \hliii{flower-1-$\Xi$} \\
+\hli{Fish} \hlii{eat} \hliii{flowers.} \\
+
+However, we can omit the affixes on all but the first word, leaving: \\
+~\\
+\textkardinal{\hli{\bs{}gnk/smym} \hlii{bwg} \hliii{djn}} \\
+\textkardinal{\hli{gnkt->s:mym} \hlii{bwg} \hliii{djn}} \\
+\hli{fish-2-$\Xi$} \hlii{eat} \hliii{flower} \\
+\hli{Fish} \hlii{eat} \hliii{flowers.} \\
+
+\appendix
+
+\chapter{Dictionary}
+
+\begin{multicols}{2}
+    \input{8/dict/dict.tex}
+\end{multicols}
 
 \end{document}
