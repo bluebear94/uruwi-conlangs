@@ -138,4 +138,168 @@ The following changes are made:
 
 Thus, for instance, /ħswlmŋ/ would be resolved to [ħswpŋ], which could, for instance, be pronounced [asupã].
 
+\section{The biting affix}
+
+A frequent type of affix encountered in \lname{} is the \emph{biting affix}, which has the syntax \hortho{->\hliv{$\delta$}:\hliii{$\omega$}}. To apply this affix onto a word \hli{$\alpha$}:
+
+\begin{itemize}
+  \item Take the last $\text{length}(\hliv{\delta})$ phonemes of $\hli{\alpha}$, and xor them with $\hliv{\delta}$ itself using the indices of the phonemes.
+  \item In addition, switch the airflow at the start of the altered phonemes.
+  \item Then append $\hliii{\omega}$.
+  \item Resolve any phonotactic violations.
+\end{itemize}
+
+For instance, if we wanted to use \hortho{->\hliv{y}:\hliii{tn}} on \hortho{\hli{mdl}}, then we would:
+
+\begin{itemize}
+  \item Take the last letter of \hortho{\hli{mdl}}, namely \hortho{\hli{-l}} $(9)$, and xor it with \hortho{\hliv{-y}} $(5)$. $9 \veebar 5 = 12$ so we now have \hortho{\hli{-c}}.
+  \item Append \hortho{\hliii{-tn}}. We now have \hortho{md>ctn}.
+\end{itemize}
+
+\chapter{The statement space}
+
+\section{Conceptualisation}
+
+\synopsis{\lname{} makes a distinction not between nouns and verbs, but rather between \hliii{concretes} and \hliv{abstracts}.}
+
+\begin{table}[h]
+  \caption{Distinction between concretes and abstracts.}
+  \centering
+  \begin{tabu} to \textwidth {YY}
+    \hliii{Concretes} & \hliv{Abstracts} \\
+    \hline
+    Describe concrete objects and actions & Describe abstract concepts, processes and relations \\
+    Inflected for gender and number mutability & Not inflected \\
+    Mutual order in parameter list is usually significant & Mutual order in parameter list is insignificant \\
+  \end{tabu}
+\end{table}
+
+Thus, if $\hliii{C_1, C_2, \ldots, C_n}$ are concretes, $\hliv{A_1, A_2, \ldots, A_n}$ are abstracts, and $X$ is either a concrete or an abstract, then
+
+\begin{equation}
+  X(\hliv{A_1, \ldots, A_n}, \hliii{C_1, \ldots, C_n})
+\end{equation}
+
+means that $X$ has the properties $\hliv{A_1, \ldots, A_n}$ and involves $\hliii{C_1, \ldots, C_n}$.
+
+For instance, take the sentence \emph{The sun shines.} This can be translated to \hliv{Source}(\hliii{Sun}, \hliii{Light}). In this case, \hliv{Source} is an abstract, and \hliii{Sun} and \hliii{Light} are concretes. Literally, the translation says that \hlii{the sun and light are involved in sourcing}, or \hlii{the sun is a source of light.}
+
+As a more complex example, \emph{On a Sunny morning after the [summer] solstice we started for the mountains} can be translated as:
+
+\begin{alltt}
+\normalfont
+\hliv{Time}(
+  \hliii{Morning}(\hliii{Weather}(\hliii{Sun}), \hliv{After}(\hliii{Summer\_Solstice})),
+  \hliii{Walk}(\hliii{We}, \hliv{Destination}(\hliii{Mountain}), \hliv{Start}))
+\end{alltt}
+
+\section{Application}
+
+The top level of the statement tree is treated differently from the lower levels. The syntax of the top level is
+
+\begin{align}
+  \text{Topic } \text{Operator } \text{Arguments} \ldots &\equiv \text{Operator}(\text{Topic}, \text{Arguments})
+  \label{eqn:firstsyntax} \\
+  \hliii{\text{Topic }} \text{Operator } \text{Args}_1 \ \hli{\triangle}\  \text{Args}_2 \ldots
+    &\equiv \text{Operator}(\text{Args}_1, \hliii{\text{Topic}}, \text{Args}_2)
+  \label{eqn:secondsyntax} \\
+  \text{Operator } \text{Arguments} \ldots &\equiv \text{Operator}(\text{Arguments})
+  \label{eqn:thirdsyntax}
+\end{align}
+
+Note that in (\ref{eqn:firstsyntax}) and (\ref{eqn:thirdsyntax}), all of the components of the syntax can be concretes or abstracts. In (\ref{eqn:secondsyntax}), $\text{Topic}$ must be a concrete, but all other arguments may be concretes or abstracts.
+
+The lower levels use the following syntax:
+
+\begin{align}
+  X\hlii{\ulcorner}\  \text{Arguments } \ldots\  \hlii{\lrcorner} &\equiv X(\text{Arguments})
+\end{align}
+
+Inside the topic, the following is used instead:
+
+\begin{align}
+  \hlii{\llcorner}\  \text{Arguments } \ldots\  X\hlii{\urcorner} &\equiv X(\text{Arguments})
+\end{align}
+
+Finally, here are the morphemes that \lname{} assigns to the special symbols:
+
+\begin{table}[h]
+  \caption{Names of syntactic markers in \lname.}
+  \centering
+  \begin{tabular}{l>{\kardinal}l}
+    $\triangle$ & sj \\
+    $\ulcorner$ & ->y:tn \\
+    $\lrcorner$ & b \\
+    $\llcorner$ & g \\
+    $\urcorner$ & ->c:bh \\
+  \end{tabular}
+\end{table}
+
+\section{Concrete inflections}
+
+\subsection{Season class}
+
+\synopsis{There are five classes open to new concretes, as well as a closed class of season-neutral words.}
+
+In general, if $C$ is of class $y$, then the processed form of $C$ will be of class $y + 1$ (or 1 if $y = 5$).
+
+\begin{longtabu} to \linewidth {rrrlY}
+  \caption{Classes in \lname.} \\
+  
+  & \multicolumn{2}{c}{(° from VE)} & & \\
+  \# & Start & End & Name & Archetypes \\
+  \hline
+  \endfirsthead
+  
+  & \multicolumn{2}{c}{(° from VE)} & & \\
+  \# & Start & End & Name & Archetypes \\
+  \hline
+  \endhead
+  
+  \endfoot
+  
+  \endlastfoot
+  
+  1 & 24 & 96 & Late Spring / Early Summer &
+  decorative flora such as flowers, honey, bees
+  \\
+  2 & 96 & 168 & Late Summer / Early Autumn &
+  raw plant-based crops, milk, trees, grass, hot things, rain, most aquatic creatures and insects
+  \\
+  3 & 168 & 240 & Mid Autumn / Early Winter &
+  processed plant-based food, wood
+  \\
+  4 & 240 & 312 & Mid Winter &
+  (meat of) wild animals, frozen or cold things, metals
+  \\
+  5 & 312 & 24 & Late Winter / Early Spring &
+  decorative flora such as flowers, arachnids
+  \\
+\end{longtabu}
+
+\subsection{Number mutability}
+
+\emph{Number mutability} describes how likely the quantity of a concrete is to change. Note that a concrete can only take either a time mutability or a space mutability, not both.
+
+\begin{table}[h]
+  \caption{List of number mutabilities.}
+  \centering
+  \begin{tabu} to \linewidth{llY}
+    Symbol & Name & Description \\
+    \hline
+    $\Omega$ & Multiversal time-constant & The quantity cannot change \hliv{\emph{under any circumstances}}. \\
+    $\Psi$ & Universal time-constant & The quantity does not change within the current universe, but might be different in other universes. \\
+    $\Chi$ & Lifetime-constant & The quantity is unlikely to change to a significant degree within one's lifetime. \\
+    $\Zeta$ & Lifetime-enumerable & The quantity is likely to change one or more times during one's lifetime, but such a change would be a significant life event. \\
+    $\Xi$ & Continually mutable & The quantity is likely to change within a short time span (usually within seconds or minutes, but can be up to about a month). \\
+    $\Phi$ & Continuously mutable & The quantity is continuously changing across time. \\
+    $\vec{\Omega}$ & Multiversal space-constant & The quantity is currently the same across all universes. \\
+    $\vec{\Psi}$ & Universal space-constant & The quantity is currently the same within the current universe, but might be different in other universes. \\
+    $\vec{\Chi}$ & Domain space-constant & The quantity is unlikely to be different within the current domain. \\
+    $\vec{\Xi}$ & Continually space-mutable & The quantity is likely to change across a short span of space (usually a few metres, but can exceed hundreds of kilometres). \\
+    $\vec{\Phi}$ & Continuously space-mutable & The quantity is continuously changing across space. \\
+    $\Sigma$ & Situational & (in programming) The quantity might depend on the implementation. \\
+  \end{tabu}
+\end{table}
+
 \end{document}
