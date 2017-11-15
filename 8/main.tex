@@ -1,0 +1,141 @@
+\documentclass{book}
+
+\usepackage[shortsuper,hacm]{common/uruwi}
+
+\newcommand{\lname}{aaaaaaaaaaA}
+
+\title{???}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{GreenYellow!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        {\Huge \kardinal \textcolor{Plum}{\@title}\\}
+        %{\large \kardinal \textcolor{Purple}{\@title} \\}
+        {\large \textit{\lname}, the language of \textit{somewhere} \\}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        \textkardinal{aaaaaaaaaaaaaaaaa} \\
+        {aaaaaaaaaaaaaaaaa} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{GreenYellow!15}
+
+\begin{center}
+    \textit{Dedicated to Mareck.}
+\end{center}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2017-11-12 (28 ruj fav)
+\end{verbatim}
+
+(C)opyright 2017 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Phoneme inventory}
+
+\synopsis{Consonants are in free variation with vowels.}
+
+In \lname{}, each consonant is interchangeable with a corresponding vowel. Consonants may also have an ingressive pronuniation.
+
+\begin{table}[h]
+  \caption{Phonemes of \lname.}
+  \centering
+  \begin{tabular}{r>{\kardinal}llll}
+    & & \multicolumn{2}{c}{Consonant} & \\
+    \# & \textnormal{Hacm} & (Egre) & (Ingr) & Vowel \\
+    \hline
+    0 & t & tʼ & ǃ & e˥ \\
+    1 & n\^g & ŋ & ɠ & ã \\
+    2 & b & p & p & y \\
+    3 & m & m & ɓ & ũ \\
+    4 & s & s & s & ɨ \\
+    5 & y & j & j & i \\
+    6 & x & tɬʼ & ǁ & ʌ˥ \\
+    7 & w & w & w & u \\
+    8 & g & k & k & o \\
+    9 & l & l & l & ɯ \\
+    10 & k & kʼ & ǂ & o˥ \\
+    11 & n & n & n & e˥ \\
+    12 & c & r & ɹ & ḛ \\
+    13 & d & t & t & e \\
+    14 & h & ħ & h & a \\
+    15 & j & ɬ & ɬ & ʌ \\
+   \end{tabular}
+\end{table}
+
+When pronounced ingressively, the tones of vowels are inverted. That is, [ʌ˥↑] becomes [ʌ˩↓].
+
+\section{Airflow}
+
+\synopsis{Change of airflow direction has a morphosyntactic basis.}
+
+There are two types of airflow: \emph{ingressive} and \emph{egressive}. The direction of airflow is reversed:
+
+\begin{itemize}
+  \item at the beginning of a modifier
+  \item at certain affixes
+  \item in the middle of certain roots
+\end{itemize}
+
+On a proper noun, as well as on encountering a nasal vowel, the direction is switched to egressive and remains so until it is changed by one of the above methods.
+
+In hacm, switching the direction of airflow is marked by \hortho{/} (to ingressive) and \hortho{\bs} (to egressive). In dictionaries, a switch in airflow direction (without regard to the final state) is marked using \hortho{>}.
+
+\section{Phonotactics}
+
+The only phonotactic restriction is that two identical instances of a phoneme may not occur consecutively. If this rule is violated by affixation, then the violation is resolved by:
+
+\begin{itemize}
+  \item replacing the earlier instance with an instance of its predecessor (e.~g. /w/ (7) $\rightarrow$ /tɬʼ/ (6), wrapping when necessary), and
+  \item replacing the later instance with an instance of its successor (e.~g. /w/ (7) $\rightarrow$ /k/ (8), wrapping when necessary).
+\end{itemize}
+
+\section{Allophony}
+
+The following changes are made:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \text{lm} &\rightarrow \text{p} &\quad \\
+  \text{nl} &\rightarrow \text{r} &\quad \\
+  \text{ɬ} &\rightarrow \text{tʼ} &\quad(\blacklozenge \lnot \{\square, \text{tʼ}, \text{kʼ}\})
+\end{alignat*}
+
+(Here, the symbols for the egressive versions of the consonants are used, but these rules apply during ingressive airflow as well.)
+
+Thus, for instance, /ħswlmŋ/ would be resolved to [ħswpŋ], which could, for instance, be pronounced [asupã].
+
+\end{document}
