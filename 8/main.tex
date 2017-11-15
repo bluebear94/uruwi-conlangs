@@ -221,6 +221,8 @@ Inside the topic, the following is used instead:
   \hlii{\llcorner}\  \text{Arguments } \ldots\  X\hlii{\urcorner} &\equiv X(\text{Arguments})
 \end{align}
 
+At the end of the sentence, any number of $\lrcorner$s can be omitted.
+
 Finally, here are the morphemes that \lname{} assigns to the special symbols:
 
 \begin{table}[h]
@@ -375,6 +377,27 @@ However, we can omit the affixes on all but the first word, leaving: \\
 \textkardinal{\hli{gnkt->s:mym} \hlii{bwg} \hliii{djn}} \\
 \hli{fish-2-$\Xi$} \hlii{eat} \hliii{flower} \\
 \hli{Fish} \hlii{eat} \hliii{flowers.} \\
+
+Now take the earlier sentence \emph{On a Sunny morning after the [summer] solstice we started for the mountains}, whose tree representation is:
+
+\begin{alltt}
+  \normalfont
+  \hliv{Time}(
+    \hliii{Morning}(\hliii{Weather}(\hliii{Sun}), \hliv{After}(\hliii{Summer\_Solstice})),
+    \hliii{Walk}(\hliii{We}, \hliv{Destination}(\hliii{Mountain}), \hliv{Start}))
+\end{alltt}
+
+\hliii{Morning}(\hliii{Weather}(\hliii{Sun}), \hliv{After}(\hliii{Summer\_Solstice})) (in topic position) can be translated as: \\
+~\\
+\textkardinal{\hli{\bs{}g} \hlii{g} \hliii{tw/lbds} \hliv{mgs\bs{}n\^gdj/xbh} \hlv{g} \hlvi{kbg\bs{}kbds} \hlvii{s/dbh} \hlviii{gl\bs{}n\^gmh}} \\
+\textkardinal{\hli{g} \hlii{g} \hliii{tgl->n\^g:bds} \hliv{mgsj->h:djk->c:bh} \hlv{g} \hlvi{kbld->s:bds} \hlvii{sn\^g->c:bh} \hlviii{glh->c:bh}} \\
+\hli{$\llcorner$} \hlii{$\llcorner$} \hliii{sun-1-$\vec{\Chi}$} \hliv{weather-0-$\Phi$-$\urcorner$} \hlv{$\llcorner$} \hlvi{summer\_solstice-2-$\vec{\Chi}$} \hlvii{after-$\urcorner$} \hlviii{morning($\vec{\Chi}$)-$\urcorner$} \\
+
+The rest of the sentence is thus: \\
+~\\
+\textkardinal{\hli{sgm} \hlii{sd/bmy\bs{}xtn} \hliii{kld} \hliv{nj/n\^gn} \hlv{ct\bs{}gmxy} \hlvi{b} \hlvii{mxk}} \\
+\textkardinal{\hli{sgm} \hlii{sdm->n\^g:mym->y:tn} \hliii{kld} \hliv{ny->y:tn} \hlv{ctm->n:mxy} \hlvi{b} \hlvii{mxk}} \\
+\hli{time} \hlii{walk-1-$\Xi$-$\ulcorner$} \hliii{speaker($\Xi$)} \hliv{destination-$\ulcorner$} \hlv{mountain-5-$\vec{\Xi}$} \hlvi{$\lrcorner$} \hlvii{start}
 
 \appendix
 
