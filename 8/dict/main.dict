@@ -8,6 +8,7 @@ fish
 
 # bwg
 : c2
+food
 (0) eats (1)
 
 # djn
@@ -37,7 +38,8 @@ morning
 # sgm
 : a
 time
-after (0), (1)
+when (0), (1)
+(modifying) (*) happened at the time (0)
 
 # kld
 : c0
@@ -50,7 +52,8 @@ walk
 # ny
 : a
 destination
-to (0)
+(0) intends to go to (1)
+(modifying) to (0)
 
 # ctm
 : c5
@@ -59,3 +62,27 @@ mountain
 # mxk
 : a
 start
+(modifying) inceptive, inchoative
+
+# dsg
+: a
+association, relationship
+(0) is related to (1) [by (2)], (0) is (1)'s (2) (by association)
+(modifying) (0)'s (*) (associated)
+
+# hgb
+: a
+property, belongings
+(1) is the owner of (0)
+(modifying) (0)'s (*) (owned)
+
+# mkl
+: a
+loan
+(1) is borrowing (0) [from (2)]
+(modifying) (0)'s (*) (borrowed)
+
+# gdh
+: a
+absence
+it is not true that (0)

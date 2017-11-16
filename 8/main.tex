@@ -415,9 +415,9 @@ The rest of the sentence is thus: \\
   \end{tabu}
 \end{table}
 
-\subsection{Descriptors}
+\subsection{Descriptors} \label{subsec:descriptors}
 
-Semantically, descriptors act like expression trees that are covered by their antecedents. For instance, if \hliii{Weather} was modified by a descriptor acting like \hliii{Sun}, then the resulting tree would be \hliii{Weather}(\hliii{Sun}).
+Semantically, \hlv{descriptors} act like expression trees that are covered by their antecedents. For instance, if \hliii{Weather} was modified by a descriptor acting like \hliii{Sun}, then the resulting tree would be \hliii{Weather}(\hliii{Sun}).
 
 Descriptors can modify only proper expression trees below the top level and not other descriptors.
 
@@ -454,11 +454,115 @@ Thus the previous example can also be translated as: \\
 ~\\
 \textkardinal{\hli{sgm} \hlii{sd/bmy\bs{}xtn} \hliii{ny} \hliv{/kld} \hlv{\bs{ckm}} \hlvi{/mxk}} \\
 \textkardinal{\hli{sgm} \hlii{sdm->n\^g:mym->y:tn} \hliii{ny} \hliv{>kld} \hlv{>ckm} \hlvi{>mxk}} \\
-\hli{time} \hlii{walk-1-$\Xi$-$\ulcorner$} \hliii{destination} \hliv{D-speaker} \hlv{D-mountain} \hlvi{D-start}
+\hli{time} \hlii{walk-1-$\Xi$-$\ulcorner$} \hliii{destination} \hliv{D-speaker} \hlv{D-mountain} \hlvi{D-start} \\
+
+Other descriptors are possible:
+
+\begin{table}[h]
+  \caption{Other descriptors.}
+  \centering
+  \begin{tabu}to \linewidth {>{\kardinal}llY}
+    \textnormal{Prefix} & Input & Output \\
+    \hline
+    >t' & \hliii{$C$} &
+    \hliv{Inalienable\_Possession}(\hliii{$C$}) \\
+    >td' & \hliii{$C$} &
+    \hliv{Association}(\hliii{$C$}) \\
+    >gb' & \hliii{$C$} &
+    \hliv{Property}(\hliii{$C$}) \\
+    >kl' & \hliii{$C$} &
+    \hliv{Borrow}(\hliii{$C$}) \\
+  \end{tabu}
+\end{table}
+
+\subsection{Quantifiers}
+
+\hlvi{Quantifiers} narrow their antecedents, and include words such as \emph{all} or \emph{some}:
+
+\begin{align}
+  \text{All $X$s are $Y$s} &\equiv X \subseteq Y \\
+  \text{Some $X$s are $Y$s} &\equiv (X \cap Y) \neq \emptyset \\
+  \text{No $X$s are $Y$s} &\equiv (X \cap Y) = \emptyset
+\end{align}
+
+The following are some quantifiers in \lname:
+
+\begin{table}[h]
+  \caption{Conservative quantifiers.}
+  \centering
+  \begin{tabu}to \linewidth {>{\kardinal}llY}
+    \textnormal{Quantifier ($Q$)} & Translation & Meaning of \emph{$Q$ $X$es are $Y$} ($Q(X, Y)$) \\
+    \hline
+    khy & All & $X \subseteq Y$ \\
+    yn\^gk & Not all & $X \not\subseteq Y$ \\
+    dyg & Some & $(X \cap Y) \neq \emptyset$ \\
+    bkw & None & $(X \cap Y) = \emptyset$ \\
+    myw & Most & $|X \cap Y| \ge |X - Y|$ \\
+    gkh & At least two & $|X \cap Y| \ge 2$ \\
+    wng & One & $|X \cap Y| = 1$ \\
+    mnn\^g & Half of & $| |X \cap Y| - |X - Y| | \le 1$ \\
+    bxl & A finite number of & $|X \cap Y| < \aleph_0$ \\
+    jsh & A countable number of & $|X \cap Y| \le \aleph_0$ \\
+    dlx & An infinite number of & $|X \cap Y| \ge \aleph_0$ \\
+    tnn\^g & An uncountable number of & $|X \cap Y| > \aleph_0$ \\
+  \end{tabu}
+\end{table}
+
+All of the above quantifiers are \emph{conservative} -- in other words, $Q(X, Y) \iff Q(X, X \cap Y)$. \lname{} has determiners where this is not the case:
+
+\begin{table}[ht]
+  \caption{Nonconservative quantifiers.}
+  \centering
+  \begin{tabu}to \linewidth {>{\kardinal}lY}
+    \textnormal{Quantifier ($Q$)} & Meaning of \emph{$Q$ $X$es are $Y$} ($Q(X, Y)$) \\
+    \hline
+    wgbk & $Y \subseteq X$ \\
+    ydwg & $Y \not\subseteq X$ \\
+    glsh & $|X| = |Y|$ \\
+    psdc & $|X| < |Y|$ \\
+    jsmx & $|X \cap Y| \ge |Y - X|$ \\
+  \end{tabu}
+\end{table}
+
+Unlike descriptors, quantifiers are not subject to the separation rule. In fact, \emph{\hliv{they must immediately follow what they quantify, even if doing so means that a descriptor must be delayed.}} This means that the algorithm in subsection \ref{subsec:descriptors} must be modified to read as such:
+
+\begin{itemize}
+  \item If the next word is a quantifier, print that word.
+  \item Otherwise, if there are no eligible outstanding descriptors, then print the next non-descriptor word.
+  \item Otherwise, print the one whose antecedent falls the earliest and remove it from the list of outstanding descriptors.
+\end{itemize}
 
 \appendix
 
 \chapter{Dictionary}
+
+An entry looks like this:
+
+\textkardinal{mkl} \textit{a}
+\quad loan \quad (1) is borrowing (0) [from (2)] \quad (modifying) (0)'s (*) (borrowed)
+
+From left to right:
+
+\begin{enumerate}
+    \item The entry -- the \lname{} term listed.
+    \item The part of speech of the corresponding entry:
+    \begin{itemize}
+        \item \textit{c} -- a concrete
+        \begin{itemize}
+            \item \textit{c1} -- \textit{c5} -- of one of five season classes
+            \item \textit{c0} -- season-neutral concrete
+        \end{itemize}
+        \item \textit{a} -- an abstract
+    \end{itemize}
+    \item The definition -- the gloss for the corresponding entry.
+    \begin{enumerate}
+        \item (0) -- the first argument when used as a stem in an expression tree
+        \item (1) -- the second argument, and so on
+        \item (*) -- parent (antecedent) of expression tree
+    \end{enumerate}
+    \item If applicable, any special grammatical or semantic notes for this term.
+    \item Optionally, examples of usage.
+\end{enumerate}
 
 \begin{multicols}{2}
     \input{8/dict/dict.tex}
