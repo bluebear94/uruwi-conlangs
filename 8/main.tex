@@ -298,7 +298,7 @@ In general, if $C$ is of class $y$, then the processed form of $C$ will be of cl
   
   \endlastfoot
 
-  $\Omega$ & Multiversal time-constant & The quantity cannot change \hliv{\emph{under any circumstances}}. \\
+  $\Omega$ & Multiversal time-constant & The quantity cannot change \hliv{\emph{under any circumstances}}, or quantity is meaningless or irrelevant in this context. \\
   $\Psi$ & Universal time-constant & The quantity does not change within the current universe, but might be different in other universes. \\
   $\Chi$ & Lifetime-constant & The quantity is unlikely to change to a significant degree within one's lifetime. \\
   $\Zeta$ & Lifetime-enumerable & The quantity is likely to change one or more times during one's lifetime, but such a change would be a significant life event. \\
@@ -398,6 +398,63 @@ The rest of the sentence is thus: \\
 \textkardinal{\hli{sgm} \hlii{sd/bmy\bs{}xtn} \hliii{kld} \hliv{nj/n\^gn} \hlv{ct\bs{}gmxy} \hlvi{b} \hlvii{mxk}} \\
 \textkardinal{\hli{sgm} \hlii{sdm->n\^g:mym->y:tn} \hliii{kld} \hliv{ny->y:tn} \hlv{ctm->n:mxy} \hlvi{b} \hlvii{mxk}} \\
 \hli{time} \hlii{walk-1-$\Xi$-$\ulcorner$} \hliii{speaker($\Xi$)} \hliv{destination-$\ulcorner$} \hlv{mountain-5-$\vec{\Xi}$} \hlvi{$\lrcorner$} \hlvii{start}
+
+\section{Modifiers}
+
+\synopsis{Modifiers can be divided into two categories: \hlv{descriptors} and \hlvi{quantifiers}.}
+
+\begin{table}[ht]
+  \caption{Distinction between descriptors and quantifiers.}
+  \centering
+  \begin{tabu} to \textwidth {YY}
+    \hlv{Descriptors} & \hlvi{Quantifiers} \\
+    \hline
+    General category & Modifiers such as ``every'', ``some'' and ``most'' that signify a relationship \\
+    Open class (derived from concretes and abstracts) & Closed class \\
+    Follow the separation rule & Do not follow the separation rule
+  \end{tabu}
+\end{table}
+
+\subsection{Descriptors}
+
+Semantically, descriptors act like expression trees that are covered by their antecedents. For instance, if \hliii{Weather} was modified by a descriptor acting like \hliii{Sun}, then the resulting tree would be \hliii{Weather}(\hliii{Sun}).
+
+Descriptors can modify only proper expression trees below the top level and not other descriptors.
+
+Descriptors follow the separation rule, which states that:
+
+\begin{itemize}
+  \item A descriptor must fall somewhere after what it modifies.
+  \item A descriptor may not be adjacent to what it modifies, or to any other descriptor modifying the same antecedent.
+  \item A descriptor must fall as early as possible under the above two rules.
+  \item Given \hli{$D_1$} and \hlii{$D_2$} which can both occupy a certain position, \hli{$D_1$} is prioritised before \hlii{$D_2$} if the antecedent of \hli{$D_1$} falls before that of \hlii{$D_2$}.
+\end{itemize}
+
+This yields the following algorithm for getting the next word:
+
+\begin{itemize}
+  \item If there are no eligible outstanding descriptors, then print the next non-descriptor word.
+  \item If there are any eligible outstanding descriptors, then print the one whose antecedent falls the earliest and remove it from the list of outstanding descriptors.
+\end{itemize}
+
+The archetypal form of the descriptor is a straight derivation from an abstract or a concrete whose expression tree is the same word. This avoids the \hlii{$\ulcorner\lrcorner$}-overhead that usually applies. In this form, the direction of airflow is switched at the beginning of the descriptor:
+
+\begin{center}
+  \hortho{\hliii{glh}} \hliii{Morning} → \hortho{\hlv{>glh}} \hlv{D(\hliii{Morning})} \\
+  \hortho{\hliv{sgm}} \hliv{Time} → \hortho{\hlv{>sgm}} \hlv{D(\hliv{Time})}
+\end{center}
+
+Note that descriptors are not inflected, even if they come from concretes.
+
+Thus the previous example can also be translated as: \\
+~\\
+\textkardinal{\hli{\bs{}g} \hlii{mgs/n\^gdjk} \hliii{sn\^g} \hliv{\bs{tgl}} \hlv{/kbld} \hlvi{gl\bs{}n\^gmh}} \\
+\textkardinal{\hli{g} \hlii{mgsj->h:djk} \hliii{sn\^g} \hliv{>tgl} \hlv{>kbld} \hlvi{glh->c:bh}} \\
+\hli{$\llcorner$} \hlii{weather-0-$\Phi$} \hliii{after} \hliv{D-sun} \hlv{D-summer\_solstice} \hlvi{morning-$\urcorner$}  \\
+~\\
+\textkardinal{\hli{sgm} \hlii{sd/bmy\bs{}xtn} \hliii{ny} \hliv{/kld} \hlv{\bs{ckm}} \hlvi{/mxk}} \\
+\textkardinal{\hli{sgm} \hlii{sdm->n\^g:mym->y:tn} \hliii{ny} \hliv{>kld} \hlv{>ckm} \hlvi{>mxk}} \\
+\hli{time} \hlii{walk-1-$\Xi$-$\ulcorner$} \hliii{destination} \hliv{D-speaker} \hlv{D-mountain} \hlvi{D-start}
 
 \appendix
 
