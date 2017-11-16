@@ -51,6 +51,11 @@
 	\newcommand{\textlt}[1]{{\ltfont #1}}
 }
 
+\DeclareOption{variko}{
+    \newfontfamily{\variko}[Path=./fonts/]{l8.otf}
+    \newcommand{\textvariko}[1]{{\variko #1}}
+}
+
 \ProcessOptions\relax
 
 % Font settings

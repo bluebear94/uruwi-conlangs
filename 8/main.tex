@@ -1,6 +1,6 @@
 \documentclass{book}
 
-\usepackage[shortsuper,hacm]{common/uruwi}
+\usepackage[shortsuper,hacm,variko]{common/uruwi}
 
 \newcommand{\lname}{aaaaaaaaaaA}
 
@@ -203,7 +203,7 @@ The top level of the statement tree is treated differently from the lower levels
   \hliii{\text{Topic }} \text{Operator } \text{Args}_1 \ \hli{\triangle}\  \text{Args}_2 \ldots
     &\equiv \text{Operator}(\text{Args}_1, \hliii{\text{Topic}}, \text{Args}_2)
   \label{eqn:secondsyntax} \\
-  \text{Operator } \text{Arguments} \ldots &\equiv \text{Operator}(\text{Arguments})
+  \hli{\blacktriangleright} \text{ Operator } \text{Arguments} \ldots &\equiv \text{Operator}(\text{Arguments})
   \label{eqn:thirdsyntax}
 \end{align}
 
@@ -230,6 +230,7 @@ Finally, here are the morphemes that \lname{} assigns to the special symbols:
   \centering
   \begin{tabular}{l>{\kardinal}l}
     $\triangle$ & sj \\
+    $\blacktriangleright$ & h \\
     $\ulcorner$ & ->y:tn \\
     $\lrcorner$ & b \\
     $\llcorner$ & g \\
@@ -531,6 +532,88 @@ Unlike descriptors, quantifiers are not subject to the separation rule. In fact,
   \item Otherwise, if there are no eligible outstanding descriptors, then print the next non-descriptor word.
   \item Otherwise, print the one whose antecedent falls the earliest and remove it from the list of outstanding descriptors.
 \end{itemize}
+
+\section{Pro-forms}
+
+\synopsis{Pro-forms are words that replace a statement tree, and there are multiple kinds.}
+
+\subsection{Pro-forms of the zeroeth kind}
+
+Strictly speaking, these are not a separate class of words, but rather a set of classless concretes:
+
+\begin{itemize}
+  \item \hortho{kld} the speaker or writer
+  \item \hortho{mcs} the listener or reader
+\end{itemize}
+
+Usually, these would mean \emph{I} and \emph{you}, respectively, but that does not always have to be the case.
+
+\subsection{Pro-forms of the first kind}
+
+A previously mentioned concrete may, instead of receiving the usual class / mutability suffix, be referred by its first two segments plus the suffix \hortho{\hlviii{-d}}: \hortho{\hliii{gnkt}} → \hortho{\hliii{gn}\hlviii{d}}. These pro-forms can be descriptored as with an ordinary concrete.
+
+\subsection{Pro-forms of the second kind}
+
+This category is the most general of pro-concretes. Pro-forms of the second kind combine:
+
+\begin{enumerate}
+  \item \hlvii{A backref number}: how many words deep? 0 means the previous concrete said by the same speaker, 1 the concrete before that and so on.
+  \item \hlix{A relation}: describes the relation to the item referred to.
+\end{enumerate}
+
+\chapter{Numerals}
+\label{chapter:numerals}
+
+\synopsis{\lname{} supports a variety of bases, and even mixed bases as with Lek-Tsaro numerals up to 4199. However, nonrectangular number systems are unsupported.}
+
+The basic digits are as follow:
+
+\begin{table}[ht]
+  \caption{Basic digits.}
+  \centering
+  \begin{tabular}{>{\variko}rr>{\kardinal}l|>{\variko}rr>{\kardinal}l}
+    \textnormal{\#} & \# & \textnormal{Word} &
+    \textnormal{\#} & \# & \textnormal{Word} \\
+    \hline
+    0 & 0 & dm & G & 16 & js \\
+    1 & 1 & jt & H & 17 & cs \\
+    2 & 2 & jn\^g & I & 18 & jn \\
+    3 & 3 & jy & J & 19 & cn \\
+    4 & 4 & jb & K & 20 & ck \\
+    5 & 5 & cx & L & 21 & cn\^g \\
+    6 & 6 & jx & M & 22 & dl \\
+    7 & 7 & cw & N & 23 & dy \\
+    8 & 8 & jm & O & 24 & jg \\
+    9 & 9 & jk & P & 25 & ch \\
+    A & 10 & cg & Q & 26 & dh \\
+    B & 11 & dg & R & 27 & jh \\
+    C & 12 & jw & S & 28 & dn \\
+    D & 13 & dw & T & 29 & dh \\
+    E & 14 & cl & U & 30 & cb \\
+    F & 15 & ct & V & 31 & dt \\
+  \end{tabular}
+\end{table}
+
+Note that if a segment starts the name of any digit, it cannot end the name of any digit, and vice versa, allowing for chaining without triggering phonotactic violations.
+
+Thus a numeral is parsed as such:
+
+\begin{itemize}
+  \item Set $r := 1, n := 0, c := 1$.
+  \item For each two-segment chunk, let $a$ be the digit represented by the segments. Then:
+  \begin{itemize}
+    \item If airflow is opposite of starting airflow, then:
+    \begin{itemize}
+      \item If this is the first chunk, then reject.
+      \item Otherwise, set $r := a$.
+    \end{itemize}
+    \item Otherwise, if $r = 1$ and this is not the first chunk, reject.
+    \item Otherwise, set $c := r \cdot c$ then $n := n + a \cdot c$.
+  \end{itemize}
+  \item Return $n$.
+\end{itemize}
+
+For instance, \hortho{\bs{}cx/js\bs{}jyjw} represents $C35_{16} = 3125_{10}$. This number can also be written \hortho{\bs{}dm/ch\bs{}dmcx}.
 
 \appendix
 

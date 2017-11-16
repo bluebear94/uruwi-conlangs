@@ -43,7 +43,11 @@ when (0), (1)
 
 # kld
 : c0
-the speaker, I
+the speaker or writer, I
+
+# mcs
+: c0
+the listener or reader, you
 
 # sdm
 : c1
@@ -86,3 +90,8 @@ loan
 : a
 absence
 it is not true that (0)
+
+# nd
+: a
+sight
+(0) sees (1)
