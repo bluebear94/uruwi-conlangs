@@ -60,11 +60,17 @@ sub MAIN(Str $src, Str $out, Str $opts) {
         $cur-entry<def> = $_;
       }
     } elsif $cur-entry {
+      if not $cur-entry<name>:exists {
+        die "Attempted to push entry without name";
+      }
       @entries.push: $cur-entry;
       $cur-entry = Hash();
     }
   }
   if $cur-entry {
+    if not $cur-entry<name>:exists {
+      die "Attempted to push entry without name";
+    }
     @entries.push: $cur-entry;
   }
   my $cur-first = -1;

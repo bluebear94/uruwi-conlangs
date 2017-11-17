@@ -2,6 +2,7 @@
   "styling": "\\textkardinal{%s}",
   "newline": "\\quad ",
   "alphabet": [
+    "(",
     "t", "n^g", "b", "m",
     "s", "y", "x", "w",
     "g", "l", "k", "n",

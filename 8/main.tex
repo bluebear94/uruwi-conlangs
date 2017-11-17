@@ -473,6 +473,8 @@ Other descriptors are possible:
     \hliv{Property}(\hliii{$C$}) \\
     >kl' & \hliii{$C$} &
     \hliv{Borrow}(\hliii{$C$}) \\
+    >sh' & \hliii{$C$} &
+    \hliv{Destination}(\hliii{$C$}) \\
   \end{tabu}
 \end{table}
 
@@ -601,6 +603,33 @@ The exact definition of a ``temporal abstract'' varies from person to person, bu
 
 Because pro-forms of the third kind are so short, they are seldom used with biting affixes attached. If biting affixes are needed, the abstract is almost always spelt in full.
 
+\section{Seasonal cycles}
+
+Some words are part of a quintuplet $(X_1, X_2, X_3, X_4, X_5)$ such that their meanings are rotated depending on the current season. They can represent concrete or abstract words, or even a mix of both.
+
+\begin{table}[h]
+  \caption{Seasonal cycling visualised for $(X_1, X_2, X_3, X_4, X_5)$ meaning $(m_1, m_2, m_3, m_4, m_5)$ in season 1.}
+  \centering
+  \begin{tabular}{r|lllll}
+    Season & $X_1$ & $X_2$ & $X_3$ & $X_4$ & $X_5$ \\
+    \hline
+    1 & $m_1$ & $m_2$ & $m_3$ & $m_4$ & $m_5$ \\
+    2 & $m_2$ & $m_3$ & $m_4$ & $m_5$ & $m_1$ \\
+    3 & $m_3$ & $m_4$ & $m_5$ & $m_1$ & $m_2$ \\
+    4 & $m_4$ & $m_5$ & $m_1$ & $m_2$ & $m_3$ \\
+    5 & $m_5$ & $m_1$ & $m_2$ & $m_3$ & $m_4$ \\
+  \end{tabular}
+\end{table}
+
+Perhaps the most well-known quintuplet is \hortho{(tsg, djs, mdn\^g, hky, wlc)} which, in season 1, correspond to the five seasons in order. Thus, to refer to the second season, one would say:
+
+\begin{itemize}
+  \item \hortho{djs} during the first season
+  \item \hortho{hky} during the fourth season
+\end{itemize}
+
+A cycled concrete with its meaning currently $m_i$ of some quintuplet of meanings $(m_1, \cdots, m_5)$ will have a class of $i$.
+
 \chapter{Numerals}
 \label{chapter:numerals}
 
@@ -654,6 +683,8 @@ Thus a numeral is parsed as such:
 \end{itemize}
 
 For instance, \hortho{\bs{}cx/js\bs{}jyjw} represents $C35_{16} = 3125_{10}$. This number can also be written \hortho{\bs{}dm/ch\bs{}dmcx}.
+
+Gramatically, cardinal numerals are considered quantifiers. Ordinal numerals look the same, but are considered descriptors.
 
 \appendix
 
