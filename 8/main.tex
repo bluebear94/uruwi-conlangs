@@ -488,10 +488,10 @@ Other descriptors are possible:
   \text{No $X$s are $Y$s} &\equiv (X \cap Y) = \emptyset
 \end{align}
 
-The following are some quantifiers in \lname:
+Table \ref{table:quantc} lists the \emph{conservative} quantifiers of \lname. These quantifiers satisfy $Q(X, Y) \iff Q(X, X \cap Y)$. Quantifiers where this is not the case are listed in table \ref{table:quantnc}.
 
 \begin{table}[h]
-  \caption{Conservative quantifiers.}
+  \caption{Conservative quantifiers.} \label{table:quantc}
   \centering
   \begin{tabu}to \linewidth {>{\kardinal}llY}
     \textnormal{Quantifier ($Q$)} & Translation & Meaning of \emph{$Q$ $X$es are $Y$} ($Q(X, Y)$) \\
@@ -508,13 +508,13 @@ The following are some quantifiers in \lname:
     jsh & A countable number of & $|X \cap Y| \le \aleph_0$ \\
     dlx & An infinite number of & $|X \cap Y| \ge \aleph_0$ \\
     tnn\^g & An uncountable number of & $|X \cap Y| > \aleph_0$ \\
+    lsl & Almost all & $|X - Y| < \aleph_0 \land |Y| \ge \aleph_0$ \\
+    & & $|X - Y| \le \aleph_0 \land |Y| > \aleph_0$ \\
   \end{tabu}
 \end{table}
 
-All of the above quantifiers are \emph{conservative} -- in other words, $Q(X, Y) \iff Q(X, X \cap Y)$. \lname{} has determiners where this is not the case:
-
 \begin{table}[ht]
-  \caption{Nonconservative quantifiers.}
+  \caption{Nonconservative quantifiers.} \label{table:quantnc}
   \centering
   \begin{tabu}to \linewidth {>{\kardinal}lY}
     \textnormal{Quantifier ($Q$)} & Meaning of \emph{$Q$ $X$es are $Y$} ($Q(X, Y)$) \\
@@ -630,6 +630,44 @@ Perhaps the most well-known quintuplet is \hortho{(tsg, djs, mdn\^g, hky, wlc)} 
 
 A cycled concrete with its meaning currently $m_i$ of some quintuplet of meanings $(m_1, \cdots, m_5)$ will have a class of $i$.
 
+\section{Questions}
+
+In \lname{}, questions are asked by placing an interrogative marker where the answer is desired and starting the sentence with the corresponding interrogative particle:
+
+\begin{table}[h]
+  \caption{Interrogative words in \lname.}
+  \centering
+  \begin{tabular}{>{\kardinal}l>{\kardinal}ll}
+    \textnormal{Particle} & \textnormal{Marker} & Definition \\
+    \hline
+    hcs & csh & what, who \\
+    twb & wbt & when, where \\
+    jln & lnj & why, how \\
+    gyn & yng & how many, how much \\
+    xhd & hdx & to what extent \\
+  \end{tabular}
+\end{table}
+
+This replaces the top-level $\blacktriangleright$, so there is no topic-fronting.
+
+Note that interrogative markers are grammatically abstracts, even when a concrete answer is desired.
+
+Responses are usually given using the particle followed by the answer: \\
+~\\
+\textkardinal{\hli{\bs{}hcs} \hlii{bw/clbm} \hliii{csh} \hliv{md\bs{}tmym}} \\
+\textkardinal{\hli{hcs} \hlii{bwg->s:lbm} \hliii{csh} \hliv{mdl->l:mym}} \\
+\hli{\tsc{p}-what} \hlii{eat-2-$\Omega$} \hliii{\tsc{q}-what} \hliv{bread-3-$\Xi$} \\
+\hliii{Who} \hlii{ate} \hliv{the bread?} \\
+~\\
+\textkardinal{\hli{\bs{}hcs} \hlii{kl/mlbm}} \\
+\textkardinal{\hli{hcs} \hlii{kld->h:lbm}} \\
+\hli{\tsc{p}-what} \hlii{speaker-0-$\Omega$} \\
+\hlii{Me.} \\
+
+However, \hortho{jln-lnj} questions are usually answered with full sentences.
+
+\hortho{xhd} and \hortho{hdx} are special -- they request a number, usually between 0 and 1, inclusive\footnote{A value less than 0 or greater than 1 can be interpreted as an emphatic answer.}, that states to what degree the hypothesis is true. In that sense, they can be used to ask polar questions.
+
 \chapter{Numerals}
 \label{chapter:numerals}
 
@@ -674,7 +712,7 @@ Thus a numeral is parsed as such:
     \item If airflow is opposite of starting airflow, then:
     \begin{itemize}
       \item If this is the first chunk, then reject.
-      \item Otherwise, set $r := a$.
+      \item Otherwise, set $r := 32$ if $a = 0$, else $r := a$.
     \end{itemize}
     \item Otherwise, if $r = 1$ and this is not the first chunk, reject.
     \item Otherwise, set $c := r \cdot c$ then $n := n + a \cdot c$.
@@ -682,11 +720,40 @@ Thus a numeral is parsed as such:
   \item Return $n$.
 \end{itemize}
 
-For instance, \hortho{\bs{}cx/js\bs{}jyjw} represents $C35_{16} = 3125_{10}$. This number can also be written \hortho{\bs{}dm/ch\bs{}dmcx}.
+For instance, \hortho{\bs{}cx/js\bs{}jyjw} represents $C35_{16} = 3125_{10}$. This number can also be written: \\
+~\\
+\textkardinal{\hli{\bs{}dm}\hliv{/ch}\hlvii{\bs{}dmcx}} \\
+\textvariko{\hlvii{50}\hliv{\textsubscript{P}}\hli{0}} \\
+\hlvii{50}\hliv{\textsubscript{P}}\hli{0} \\
+
+Note that the numeral is spelled out in little-endian order, but displayed using figures in big-endian.
 
 An instance of \hortho{cm} followed by a digit $d$ is equivalent to a series of $d$ zeroes, so the same number can be written \hortho{\bs{}dm/cx\bs{}cmjbjt}.
 
 Gramatically, cardinal numerals are considered quantifiers. Ordinal numerals look the same, but are considered descriptors and bear an airflow switch at their beginning.
+
+\section{Fractional numerals}
+
+Fractional parts of a numeral are set off after the integral part (if present), separated by a fractional point \hortho{\textvariko{,}}, read \hortho{ds}. Then the fractional part is parsed as follows:
+
+\begin{itemize}
+  \item Set $r := 1, n := 0, c := 1$.
+  \item For each two-segment chunk, let $a$ be the digit represented by the segments. Then:
+  \begin{itemize}
+    \item If airflow is opposite of starting airflow, then set $r := 32$ if $a = 0$, else $r := a$.
+    \item Otherwise, if $r = 1$, reject.
+    \item Otherwise, set $c := r \cdot c$ then $n := n + a / c$.
+  \end{itemize}
+  \item Return $n$.
+\end{itemize}
+
+For instance, $2 \cdot \pi$ can be approximated as $6.487ED5_{16}$, which is read: \\
+~\\
+\textkardinal{\hli{\bs{}jx}\hliv{ds}\hliii{/js}\hlii{\bs{}jbjmcwcldwcx}} \\
+\textvariko{\hli{6}\hliv{,}\hliii{\textsubscript{G}}\hlii{487ED5}} \\
+\hli{6}\hliv{.}\hliii{\textsubscript{G}}\hlii{487ED5} \\
+
+In both the spelled-out version and the version using the figures, the digits after the decimal point are in big-endian order.
 
 \appendix
 
