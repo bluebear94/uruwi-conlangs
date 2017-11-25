@@ -14,6 +14,7 @@
 \RequirePackage{fixltx2e}
 \RequirePackage{float}
 \RequirePackage{changepage}
+\RequirePackage{array, caption}
 \RequirePackage{tikz}
 \RequirePackage{tikz-qtree}
 \usetikzlibrary{shapes.misc, positioning, calc, decorations.pathreplacing}
@@ -234,5 +235,38 @@
     \int_eval:n { #1 }
 }
 \ExplSyntaxOff
+
+\newlength\oriarrayrulewidth  
+\newcount\orilowpenalty
+\newcommand\nobreakmidrule{%
+ \noalign{\global\oriarrayrulewidth\arrayrulewidth\relax%
+          \global\orilowpenalty\@lowpenalty\relax%
+          \global\@lowpenalty=\numexpr-10000\relax}%
+ \hline%
+ \noalign{\global\@lowpenalty=\orilowpenalty\relax}}
+
+\long\def\widesplit#1#2{%
+\cleardoublepage
+\let\row\rowa
+\noindent\begin{minipage}{\textwidth}\centering
+\captionof{table}{#1}%
+#2\end{minipage}%
+\clearpage
+\let\row\rowb
+\noindent\begin{minipage}{\textwidth}\centering
+\captionof*{table}{#1 (continued)}%
+#2\end{minipage}%
+\cleardoublepage
+\let\row\rowc
+\noindent\begin{minipage}{\textwidth}\centering
+\captionof*{table}{#1 (continued)}%
+#2\end{minipage}%
+\clearpage
+\let\row\rowd
+\noindent\begin{minipage}{\textwidth}\centering
+\captionof*{table}{#1 (continued)}%
+#2\end{minipage}%
+\clearpage
+}
 
 \endinput
