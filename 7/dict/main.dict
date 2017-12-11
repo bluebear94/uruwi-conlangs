@@ -848,3 +848,11 @@ stand, get up
 # potan
 : v
 (S) chases away (O), (O) flees from (S)
+
+# .ucu.i
+: nabst
+perception, detection
+
+# .i^uci^u.in
+: v
+(S) perceives, detects, finds (O)
