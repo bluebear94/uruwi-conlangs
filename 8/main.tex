@@ -1,6 +1,8 @@
 \documentclass{book}
 
 \usepackage[shortsuper,hacm,variko]{common/uruwi}
+\usepackage{hyphenat}
+\hyphenation{co-ör-di-na-ting}
 
 \newcommand{\lname}{aaaaaaaaaaA}
 
@@ -96,7 +98,7 @@ In \lname{}, each consonant is interchangeable with a corresponding vowel. Conso
    \end{tabular}
 \end{table}
 
-When pronounced ingressively, the tones of vowels are inverted. That is, [ʌ˥↑] becomes [ʌ˩↓].
+When pronounced ingressively, the tones of vowels are inverted. That is, [ʌ˥↑] becomes [ʌ˩↓]. Nasal vowels also gain a characteristic hissing sound from air entering through the nose.
 
 \section{Airflow}
 
@@ -688,7 +690,7 @@ The morpheme \hortho{m} \emph{=} joins the two nodes around it and returns a sin
 Subordinate clauses are conceptually questions embedded as nodes. These are content clauses by default, but combined with appositives, they can act as relative clauses. In subordinate clauses, the airflow direction is changed immediately before the question word and the clause is closed with the particle \hortho{b} (if there is anything afterward): \\
 ~\\
 \textkardinal{\hli{\bs{}kl/smym} \hlii{sdm} \hliii{mhcw} \hliv{\bs{}twb} \hlv{nd} \hlvi{kld} \hlvii{cb/cmym} \hlviii{kh} \hlix{h} \hlx{\bs{}wbt}} \\
-\textkardinal{\hli{kld->h:mym} \hlii{sdm} \hliii{mhcw} \hliv{>twb} \hlv{nd} \hlvi{kld} \hlvii{cbd->n\^g:mym}} \hlviii{kh} \hlix{h} \hlx{>wbt} \\
+\textkardinal{\hli{kld->h:mym} \hlii{sdm} \hliii{mhcw} \hliv{>twb} \hlv{nd} \hlvi{kld} \hlvii{cbd->n\^g:mym} \hlviii{kh} \hlix{h} \hlx{>wbt}} \\
 \hli{speaker-0-$\Xi$} \hlii{walk} \hliii{again} \hliv{\tsc{sub}-where} \hlv{see} \hlvi{speaker} \hlvii{rdkbe\textsubscript{5}-1-$\Xi$} \hlviii{existence} \hlix{\tsc{dummy}} \hlx{\tsc{desc}-\tsc{q}-where} \\
 ~\\
 \emph{We went back to the place where we saw the roses. (said in second season)} \\
@@ -795,6 +797,47 @@ In both the spelled-out version and the version using the figures, the digits af
 In signage, single-digit integers are not displayed alone due to possible confusion with digits in other writing systems. Instead, a filler ``$.0$'' is added, so, for instance, \hortho{\textvariko{3}} is displayed as \hortho{\textvariko{3,\textsubscript{G}0}}. This happens even in contexts in which fractional numbers do not make sense.
 
 If other languages are used on a sign alongside \lname{} (i.~e. seldom within Nŋln), then these languages receive similar treatment.
+
+\chapter{Word formation}
+
+\section{Compounding}
+
+\synopsis{Compounding in \lname{} is done by interleaving the segments between the base words.}
+
+\lname{} distinguishes between \hli{\emph{coördinating}} and \hlii{\emph{subordinating}} compounds. \hli{Coördinating} compounds place both of their constituents at the same level -- for instance, in \emph{\hlv{flint} and \hlv{steel}}, \hlv{\emph{flint}} and \hlv{\emph{steel}} are represented equally. \hlii{Subordinating} compounds place one of their constituents as a dependent of the other -- an \emph{\hliv{elder}\hliii{berry}} is a type of \hliii{berry}, not a type of \hliv{elder}. Quite naturally, \hlii{subordinating} compounds are more common than \hli{coördinating} compounds.
+
+A list of words is said to be \emph{trivially interleavable} if one of the following holds:
+
+\newcommand{\tieq}{\hlvi{(eq)}}
+\newcommand{\tiaug}{\hlvii{(aug)}}
+\newcommand{\tidim}{\hlviii{(dim)}}
+
+\begin{itemize}
+  \item All words have an equal number of segments \tieq{}.
+  \item All words but one have an equal number of segments, and the one remaining has one more segment than the others \tiaug{}.
+  \item All words but one have an equal number of segments, and the one remaining has one fewer segment than the others \tidim{}.
+\end{itemize}
+
+If a list of words $S$ is not trivially interleavable, then the following steps are taken:
+
+\begin{itemize}
+  \item Initialise $S'$ to $S$.
+  \item While $S'$ is not trivially interleavable:
+  \begin{itemize}
+    \item Find the shortest word in $S'$ and its index $i$.
+    \item Append a copy of $S[i]$ to $S'[i]$.
+  \end{itemize}
+\end{itemize}
+
+Obviously an \tieq-interleavable list of words can be interleaved in that order, so \hortho{\hli{glh}, \hlii{djn}, \hliii{tgl}} can be interleaved into \hortho{\hli{g}\hlii{d}\hliii{t}\hli{l}\hlii{j}\hliii{g}\hli{h}\hlii{n}\hliii{l}}.
+
+In an \tiaug-interleavable list of words, the longest word must be interleaved first, as to have its last segment end the compound. In order to disambiguate the order of the consitutents, if the longest word is not also the first, then its index is prefixed: \hortho{\hli{sdm}, \hlii{glh}, \hliii{glcm}} makes \hortho{\hliv{jn\^g}\hliii{g}\hli{s}\hlii{g}\hliii{l}\hli{d}\hlii{l}\hliii{c}\hli{m}\hlii{h}\hliii{m}}.
+
+Similarly, in a \tidim-interleavable list, the shortest word must be interleaved last. If the shortest word is not also the last, then its index \emph{from the end} is prefixed: \hortho{\hli{mhcw}, \hlii{mhg} \hliii{bnmb}} makes \hortho{\hliv{jt}\hli{m}\hliii{b}\hlii{m}\hli{h}\hliii{n}\hlii{h}\hli{c}\hliii{m}\hlii{g}\hli{w}\hliii{b}}.
+
+\subsection{Coördinating compounds}
+
+It is natural that coördinating compounds can involve any number of constituents
 
 \appendix
 

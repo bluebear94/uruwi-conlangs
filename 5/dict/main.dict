@@ -3237,7 +3237,7 @@ magician, wizard
 
 # bemek
 : v
-turn off (a light), close (a door or window)
+turn off (a light), close (a door or window, or eyes)
 
 # hifene
 : n
@@ -3530,7 +3530,8 @@ cloak, cape
 
 # kêdek
 : v
-surround
+(A) surrounds (P)
+(P) suffers from (A) (disease)
 
 # ṡlarek
 : vn
@@ -3799,3 +3800,7 @@ summer
 # nafe
 : n
 fate, destiny
+
+# têgunure
+: n
+osteoporosis
