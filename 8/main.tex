@@ -729,6 +729,63 @@ Subordinate clauses are conceptually questions embedded as nodes. These are cont
 ~\\
 \emph{Many little girls with wreaths of flowers on their heads danced around the bonfire.}
 
+\section{Connectors}
+
+\synopsis{\hlix{Connectors} are free-floating particles that establish relationships between sentences.}
+
+\hlix{Connectors} are special particles that can be placed anywhere in the sentence \emph{\hliv{(other than at the beginning)}} and exist independently from the rest of the sentence. In other words:
+
+\begin{itemize}
+  \item A connector alone cannot separate a descriptor from its antecedent.
+  \item A connector can separate a quantifier from its antecedent, as long as no non-connectors separate the two.
+\end{itemize}
+
+Connectors \hli{$a$} and \hlii{$b$} are part of the same \emph{set} \hliii{$S$} iff all of the following conditions hold:
+
+\begin{itemize}
+  \item \hli{$a$} and \hlii{$b$} are identical (and are of the same parity)
+  \item they belong to sentences \hlv{$\alpha$} and \hlvi{$\beta$}, respectively (NB: it is possible that $\hlv{\alpha} = \hlvi{\beta}$)
+  \item if \hli{$a$} is the \hlvii{$i$}th word of \hlv{$\alpha$}, then \hlii{$b$} is the \hlvii{$i$}th word of \hlvi{$\beta$}
+  \item there are no sentences between \hlv{$\alpha$} and \hlvi{$\beta$} whose \hlvii{$i$}th word is a connector different from \hli{$a$} and \hlii{$b$} (or is of different parity)
+\end{itemize}
+
+For the purposes of positioning connectors, two consecutive instances of \hortho{b} $\lrcorner$ within the same sentence is treated as one word.
+
+Note that ``belonging to the same connector set'' is an equivalence relation.
+
+\begin{table}[ht]
+  \caption{Connectors.}
+  \centering
+  \begin{tabu} to \linewidth {ll>{\kardinal}lY}
+    Name & Arity & \textnormal{\lname} & Explanation \\
+    \hline
+    Sequential & $n$ & yst & A sequence of events. An event $\alpha$ is said to happen before $\beta$ if the sentence describing $\alpha$ is uttered before that describing $\beta$. \\
+    Parallel & $n$ & yjks & Two or more events happening simultaneously. \\
+    Analogous & 2 & yhd & ``For the same reason $\alpha$ is true, $\beta$ is also true.'' Also used as an ``and'' without stating any order. \\
+    Subversive & $n$ & ylw & ``$\theta_1$ but $\theta_2$ but $\theta_3$ but etc.'' \\
+    Augmentative & $n$ & ygb & Later statements apply to a greater extent than earlier statements. \\
+  \end{tabu}
+\end{table}
+
+Sentences of a connector set are joined by the relation of the connector used therein: \\
+~\\
+\textkardinal{\hli{\bs{}gnk/smym} \hlii{bwg} \hliii{yst} \hliv{djn.}} \\
+\textkardinal{\hli{gnkt->s:mym} \hlii{bwg} \hliii{yst} \hliv{djn}} \\
+\hli{fish-2-$\Xi$} \hlii{eat} \hliii{\tsc{sequential}} \hliv{flower} \\
+\hli{The fish} \hlii{ate} \hliv{the flower.} \\
+~\\
+\textkardinal{\hli{\bs{}kcm/glbm} \hlii{mlbst} \hliii{yst} \hliv{klsk} \hlv{\bs{}mwk.}} \\
+\textkardinal{\hli{kcml->n\^g:lbm} \hlii{mlbst} \hliii{yst} \hliv{klsk} \hlv{>mwk}} \\
+\hli{young\_person-1-$\Omega$} \hlii{dance} \hliii{\tsc{sequential}} \hliv{surroundings} \hlv{\tsc{desc}-tree} \\
+\hliii{Then} \hli{the child} \hlii{danced} \hliv{around} \hlv{the tree.} \\
+~\\
+\textkardinal{\hli{\bs{}kcd} \hlii{bwg} \hliii{yst} \hliv{gnd.}} \\
+\textkardinal{\hli{kcd} \hlii{bwg} \hliii{yst} \hliv{gnd}} \\
+\hli{young\_person\#\tsc{pf1}} \hlii{eat} \hliii{\tsc{sequential}} \hliv{fish\_\tsc{pf1}} \\
+\hliii{Then} \hli{the child} \hlii{ate} \hliv{the fish.} \\
+
+The polarity of a connector can be flipped by flipping the least significant bit of the rightmost segment.
+
 \chapter{Numerals}
 \label{chapter:numerals}
 
