@@ -1,0 +1,11 @@
+{
+  "styling": "\\textsf{%s}",
+  "newline": "\\quad ",
+  "alphabet": [
+    "a", "á", "b", "c", "d", "e", "é",
+    "f", "g" ,"h", "i", "í", "k", "m",
+    "n", "ñ", "o", "ó", "p", "r", "s",
+    "t", "u", "ú", "y"
+  ],
+  "sectionstyle": "\\section*{\\textsf{%s}}\n"
+}

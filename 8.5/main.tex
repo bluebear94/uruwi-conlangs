@@ -1,0 +1,755 @@
+\documentclass{book}
+  
+\usepackage{common/uruwi}
+
+\newcommand{\lname}{aaaaaaaaaaA}
+
+\title{???}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{YellowOrange!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        %{\color{Orchid} \hprule \vspace{1.5ex} \\}
+        {\Huge \sffamily \textcolor{Firebrick2}{\@title}\\}
+        %{\large \kardinal \textcolor{Purple}{\@title} \\}
+        {\large \textit{\lname}, the language of \textit{somewhere} \\}
+        {\color{OrangeRed} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        %\textkardinal{aaaaaaaaaaaaaaaaa} \\
+        {aaaaaaaaaaaaaaaaa} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{YellowOrange!15}
+
+\begin{center}
+    \textit{Dedicated to ostracod.}
+\end{center}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2017-11-24 (28 ruj nen)
+\end{verbatim}
+
+(C)opyright 2017 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Phonemes}
+
+\lname{} has the following consonants:
+
+\begin{table}[h]
+  \caption{The consonants of \lname.}
+  \centering
+  \begin{tabular}{l|llllll}
+      & Bilabial / & & & & & \\
+      & Labiodental & Alveolar & Post-alveolar & Palatal & Velar & Glottal \\
+      \hline
+      Nasal & m & n & & ɲ & & \invalid \\
+      Plosive & p p͈ b & t t͈ d & & & k k͈ ɡ & \\
+      Fricative & f & s & tʃ t͈ʃ & & & h  \\
+      Trill & & r & & & \invalid & \invalid \\
+      Tap & & ɾ & & & \invalid & \invalid \\
+      Approximant & & & & j & & \\
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+  \centering
+  \caption{The vowels of \lname.}
+  \begin{tabular}{ll}
+      Stressed & Unstressed \\
+      \hline
+      i & ɪ \\
+      e & ə \\
+      ɑ & æ \\
+      o & ɔ \\
+      u & ʊ \\
+  \end{tabular}
+\end{table}
+
+\section{Phonotactics}
+
+A syllable is allowed to consist of:
+
+\begin{itemize}
+    \item an onset, from one of:
+    \begin{itemize}
+        \item nothing at all
+        \item a single consonant
+        \item a non-tense plosive plus /ɾ/
+        \item a plosive, fricative or nasal plus /j/
+    \end{itemize}
+    \item a vowel
+    \item a coda, from one of /m n s ɾ/
+\end{itemize}
+
+\section{Allophony}
+
+The following changes are made:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \text{h} &\rightarrow \text{x} &\quad(\blacklozenge \{\text{o}, \text{u}\}) \\
+  \text{m} &\rightarrow \text{ɱ} &\quad(\blacklozenge \text{f}) \\
+  \text{n} &\rightarrow \text{ŋ} &\quad(\blacklozenge C[+ve]) \\
+  C_1[+v, +pl] &\rightarrow C_1[+fr] &\quad(V_1 \blacklozenge V_2) \\
+  \{\text{i}, \text{e}, \text{ɑ}, \text{o}, \text{u}\}[-s]
+  &\rightarrow \{\text{ɪ}, \text{ə}, \text{æ}, \text{ɔ}, \text{ʊ}\} &\quad \\
+\end{alignat*}
+
+\section{Orthography}
+
+The language does not have a written form but we shall use the following romanisation:
+
+\begin{table}[H]
+  \caption{The consonants of \lname.}
+  \centering
+  \begin{tabular}{l|llllll}
+      & Bilabial / & & & & & \\
+      & Labiodental & Alveolar & Post-alveolar & Palatal & Velar & Glottal \\
+      \hline
+      Nasal & m & n & & ñ & & \invalid \\
+      Plosive & p pp b & t tt d & & & k kk g & \\
+      Fricative & f & s & ch cch & & & h  \\
+      Trill & & rr & & & \invalid & \invalid \\
+      Tap & & r & & & \invalid & \invalid \\
+      Approximant & & & & y & & \\
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{The vowels of \lname.}
+  \begin{tabular}{l|ll}
+      Rom & Stressed & Unstressed \\
+      \hline
+      i & i & ɪ \\
+      e & e & ə \\
+      a & ɑ & æ \\
+      o & o & ɔ \\
+      u & u & ʊ \\
+  \end{tabular}
+\end{table}
+
+\ortho{r} represents /r/ at the start of a word but /ɾ/ elsewhere.
+
+If the stress does not fall on the second-to-last syllable, then an acute accent appears on the stressed vowel.
+
+\chapter{Syntax}
+
+In this chapter, we look at the structure of the whole sentence.
+
+\section{Basic word order}
+
+\lname{} uses SVO order, although this is somewhat flexible due to verbal morphology.
+
+\section{Modifiers}
+
+Modifiers (adjectives and adverbs) follow what they modify.
+
+\section{Questions}
+
+In questions, the word order becomes VSO. If the primary verb is not auxiliary, then it requires support from the dummy auxiliary \ortho{kkir}.
+
+\chapter{Honourifics}
+
+\lname{} uses the following speech levels:
+
+\begin{itemize}
+  \item plain: used with unfamiliar or socially distant people, or when communicating to a general audience, or when mentioning a nonsentient entity.
+  \item subservient: used toward superiors (incl. familial relationships ascending one or more generations).
+  \item dominating: used toward inferiors (incl. familial relationships descending one or more generations).
+  \item intimate: used between socially close people of similar status.
+\end{itemize}
+
+Note that there is a distinction between speaker-listener (SL) and speaker-target (ST) speech levels:
+
+\begin{itemize}
+  \item SL uses the speech level corresponding to the relationship between the speaker and the listener, and is used with first- and second-person pronouns, as well as verbs whose subjects are first- or second-person.
+  \item ST uses the speech level corresponding to the relationship between the speaker and another entity (the \emph{topic}), and is used with third-person pronouns, as well as verbs whose subjects are third-person.
+\end{itemize}
+
+\chapter{Nouns}
+
+Nouns fall into one of two genders and are marked for definiteness.
+
+\section{Gender}
+
+\lname{} has two genders: \emph{feminine} and \emph{masculine}.
+
+Nouns tend to be feminine if they end in one of the following:
+
+\begin{itemize}
+  \item \ortho{-a}
+  \item \ortho{-in}
+  \item \ortho{-er}
+  \item \ortho{-ir}
+\end{itemize}
+
+Nouns tend to be masculine if the end in one of the following:
+
+\begin{itemize}
+  \item \ortho{-o}
+  \item \ortho{-u}
+  \item \ortho{-as}
+  \item \ortho{-os}
+  \item \ortho{-us}
+  \item \ortho{-ur}
+\end{itemize}
+
+These are only tendencies -- for instance, \ortho{mora} is masculine and \ortho{kas} is feminine.
+
+A group of objects of both the feminine and masculine genders is regarded as feminine.
+
+\section{Definiteness}
+
+There are three degrees of definiteness in \lname:
+
+\begin{itemize}
+  \item Indefinite: the referent is not identifiable.
+  \item Definite: the referent is identifiable. Unlike in English, names fall under this category.
+  \item Generic: refers to the idea of something, rather than the entity itself, or a general statement: \\
+  ~\\
+  \hli{Te} \hlii{mepúr} \hliii{suma} \hliv{kkara.} \\
+  \hli{\tsc{def.fem}} \hlii{fish} \hliii{eat-\tsc{3.pres.imp.ind}} \hliv{flower} \\
+  \hli{The} \hlii{fish} \hliii{eats} \hliv{flowers.} \\
+  ~\\
+  \hli{Che} \hlii{mepúr} \hliii{suma} \hliv{kkara.} \\
+  \hli{\tsc{gen.fem}} \hlii{fish} \hliii{eat-\tsc{3.pres.imp.ind}} \hliv{flower} \\
+  \hlii{Fish} \hliii{eat} \hliv{flowers.}
+\end{itemize}
+
+\section{Articles}
+
+There are definite and generic articles of each gender; indefinite noun phrases receive no article. Before a vowel, articles become clitics.
+
+\begin{table}[h]
+  \caption{Articles in \lname.}
+  \centering
+  \begin{tabular}{l|ll}
+    & Feminine & Masculine \\
+    \hline
+    Definite & te (t') & tu (t') \\
+    Generic & che (ch') & ho (h') \\
+  \end{tabular}
+\end{table}
+
+Note that articles occur before the entire noun phrase, not the noun itself.
+
+\section{Pronouns}
+
+\subsection{Personal pronouns}
+
+Personal pronouns are separated not only by gender, but also by speech style.
+
+\begin{longtable}[c]{r|ll|ll|ll}
+  \caption{Personal pronouns.} \\
+
+  & \multicolumn{2}{c|}{Plain / Dom} & \multicolumn{2}{c|}{Subservient} & \multicolumn{2}{c}{Intimate}\\
+  P & fem & masc & fem & masc & fem & masc \\
+  \hline
+  \endfirsthead
+
+  & \multicolumn{2}{c|}{Plain / Dom} & \multicolumn{2}{c|}{Subservient} & \multicolumn{2}{c}{Intimate}\\
+  P & fem & masc & fem & masc & fem & masc \\
+  \hline
+  \endhead
+  
+  \endfoot
+  
+  \endlastfoot
+  
+  \multicolumn{7}{c}{Nominative} \\
+  \hline
+  1 & na & nu & han & dan & \multicolumn{2}{c}{bi} \\
+  2 & \multicolumn{2}{c|}{te} & \invalid & \invalid & isi & isu \\
+  3 & sa & so & sa & so & cha & chu \\
+  \hline
+  \multicolumn{7}{c}{Genitive} \\
+  \hline
+  1 & nas & nus & hanis & danis & \multicolumn{2}{c}{bis} \\
+  2 & \multicolumn{2}{c|}{tes} & \invalid & \invalid & iris & irus \\
+  3 & sam & som & sam & som & cham & chum \\
+  \hline
+  \multicolumn{7}{c}{Accusative} \\
+  \hline
+  1 & \multicolumn{2}{c|}{ke (k')} & \multicolumn{2}{c|}{pe (p')} & \multicolumn{2}{c}{mi (m')} \\
+  2 & \multicolumn{2}{c|}{ti (tt')} & \multicolumn{2}{c|}{si (s')} & isi & isu \\
+  3 & \multicolumn{4}{c|}{si (s')} & \multicolumn{2}{c}{chi (cch')} \\
+  \hline
+  \multicolumn{7}{c}{Dative} \\
+  \hline
+  1 & \multicolumn{2}{c|}{ko} & \multicolumn{2}{c|}{pu} & \multicolumn{2}{c}{be} \\
+  2 & \multicolumn{2}{c|}{tir} & \multicolumn{2}{c|}{ser} & isir & isur \\
+  3 & \multicolumn{4}{c|}{ser} & \multicolumn{2}{c}{cher} \\
+\end{longtable}
+
+Second-person nominative and genitive pronouns are not used in the subservient speech style, but rather the listener's title.
+
+The dative and accusative pronouns fall right before the verb, in that order. If the verb starts with a vowel, then the clitic (in parentheses, if applicable) is used in place of the usual accusative pronoun. The dative pronoun \emph{must be used} if there is an indirect object, even if it is stated explicitly somewhere else in the sentence.
+
+Again, genitive pronouns occur before the entire noun phrase, not the noun itself.
+
+\subsection{Correlatives}
+
+Determiners always precede their antecedents, and they are categorised into indefinite and definite quantifiers.
+
+\begin{table}[ht]
+  \caption{Determiners.}
+  \centering
+  \begin{tabular}{l|l}
+    Indefinite & Definite \\
+    \hline
+    mipe \emph{any, some, either} & teba / tebu \emph{this} \\
+    sita / situ \emph{many} & treba / trebu \emph{that} \\
+    ttyen \emph{no, none} & hekka \emph{all, every} \\
+    kike \emph{few, little} & \\
+    fine \emph{what} & \\
+  \end{tabular}
+\end{table}
+
+\ortho{kade} \emph{another, other} can be either indefinite or definite.
+
+A noun phrase modified by a definite quantifier must receive a definite article as well: \ortho{hekka te mepúr} \emph{every fish}. Similarly, correlatives inherit the definiteness of their parent determiners and likewise receive appropriate articles.
+
+Correlatives are shown in table \ref{table:indefinite}.
+
+\footnotesize
+\newgeometry{margin=1cm}
+%\begin{landscape}
+  \begin{longtabu} to \textwidth {l|lllllllll}
+    \caption{Indefinite pronouns.} \label{table:indefinite} \\
+
+    %& interrogative & proximal & distal & existential & universal & negatory & alternative & & \\
+    & what & this & that & some, any & all & none & other & much, many & few, little \\
+    \hline
+    \endfirsthead
+
+    %& interrogative & proximal & distal & existential & universal & negatory & alternative & & \\
+    & what & this & that & some, any & all & none & other & much, many & few, little \\
+    \hline
+    \endhead
+    
+    \endfoot
+    
+    \endlastfoot
+
+    \rowfont{\rmfamily} determiner & fine & teba/u & treba/u & mipe & hekka & ttyen & kade & sita/u & kike \\
+    \rowfont{\itshape} & what, which & this & that & some, any & all & no & another & much, many & few, little \\
+    \hline
+    \rowfont{\rmfamily} pronoun (nonhuman) & fin & kun & fon & miba & heya & ttyan & kadin & sitan & \invalid \\
+    \rowfont{\itshape} & what & this one & that one & something, anything & everything & nothing & something else & many things & \invalid \\
+    \rowfont{\rmfamily} pronoun (human) & inas & kesti & sesti & mimba & ginda & ttiña & kanda & siten & \invalid \\
+    \rowfont{\itshape} & who & this person & that person & someone, anyone & everyone & no one & someone else & many people & \invalid \\
+    \rowfont{\rmfamily} pronoun (out of N) & kres & imta & imtra & mimpa & hemka & ttyem & kambu & \invalid & \invalid \\
+    \rowfont{\itshape} & which & this one & that one & some, whichever & all, each & none & other, another & \invalid & \invalid \\
+    \hline
+    \rowfont{\rmfamily} location & ribe & egas & artá & chas & resím & ttunu & akada & nesin & kirpo \\
+    \rowfont{\itshape} & where & here & there & somewhere & everywhere & nowhere & elsewhere & in many places & in few places \\
+    \rowfont{\rmfamily} time & borre & cchen & yan & depe & resim & mettu & akeda & nemis & kikiri \\
+    \rowfont{\itshape} & when & now & then & anytime & always & never & another time & often & seldom \\
+    \rowfont{\rmfamily} reason & nine & kkere & \invalid & mirba & \invalid & mettu & \invalid & \invalid & kiraba \\
+    \rowfont{\itshape} & why & this reason & \invalid & some reason & \invalid & no reason & \invalid & \invalid & few reasons \\
+  \end{longtabu}
+%\end{landscape}
+\restoregeometry
+\normalsize
+
+\chapter{Verbs}
+
+Verbs in \lname{} are conjugated according to:
+
+\begin{itemize}
+  \item Person of the subject (1st, 2nd, 3rd)
+  \item Tense (past, present, future)
+  \item Aspect (imperfect, perfect)
+  \item Mood (indicative, subjunctive)
+\end{itemize}
+
+\begin{longtable}[c]{r|llll}
+  \caption{Verb conjugations for verbs whose infinitives end in \ortho{-is}.} \\
+  
+  P & II & IP & SI & SP \\
+  \endfirsthead
+
+  P & II & IP & SI & SP \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \hline
+  \multicolumn{5}{c}{Present} \\
+  \nobreakmidrule
+  1 & -e & -es & -eda & -esta \\
+  2 & -u & -us & -utta & -usta \\
+  3 & -a & -an & -asa & -asta \\
+  \hline
+  \multicolumn{5}{c}{Past} \\
+  \nobreakmidrule
+  1 & -i & -is & -ita & -ista \\
+  2 & -uka & -uska & -ukka & -uska \\
+  3 & -o & -os & -ona & -onsa \\
+  \hline
+  \multicolumn{5}{c}{Future} \\
+  \nobreakmidrule
+  1 & -ore & -ose & -orda & -ordas \\
+  2 & -oru & -oso & -ortta & -ostra \\
+  3 & -ora & -osa & -orna & -onsa \\
+\end{longtable}
+
+\begin{longtable}[c]{r|llll}
+  \caption{Verb conjugations for verbs whose infinitives end in \ortho{-ir}.} \\
+  
+  P & II & IP & SI & SP \\
+  \endfirsthead
+
+  P & II & IP & SI & SP \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \hline
+  \multicolumn{5}{c}{Present} \\
+  \nobreakmidrule
+  1 & -e & -er & -eda & -erta \\
+  2 & -u & -ur & -utta & -urta \\
+  3 & -a & -an & -asa & -arsa \\
+  \hline
+  \multicolumn{5}{c}{Past} \\
+  \nobreakmidrule
+  1 & -i & -ir & -ita & -itra \\
+  2 & -uka & -urka & -ukka & -ukra \\
+  3 & -o & -or & -ona & -orna \\
+  \hline
+  \multicolumn{5}{c}{Future} \\
+  \nobreakmidrule
+  1 & -ose & -ore & -osta & -ostar \\
+  2 & -osu & -oro & -ostra & -otra \\
+  3 & -osa & -ora & -onsa & -orna \\
+\end{longtable}
+
+\begin{longtable}[c]{r|llll}
+  \caption{Verb conjugations for \ortho{fir} \emph{be\textsuperscript{1}}.} \\
+  
+  P & II & IP & SI & SP \\
+  \endfirsthead
+
+  P & II & IP & SI & SP \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \hline
+  \multicolumn{5}{c}{Present} \\
+  \nobreakmidrule
+  1 & fie & fyer & kkeda & kkerta \\
+  2 & fyu & fyur & kkutta & kkurta \\
+  3 & fia & fian & kkasa & kkarsa \\
+  \hline
+  \multicolumn{5}{c}{Past} \\
+  \nobreakmidrule
+  1 & ñi & ñir & ñita & ñitra \\
+  2 & fuka & furka & fokka & fukra \\
+  3 & fio & for & fona & forna \\
+  \hline
+  \multicolumn{5}{c}{Future} \\
+  \nobreakmidrule
+  1 & fes & ferus & kkosta & kkostar \\
+  2 & fuas & furus & kkostra & kkotra \\
+  3 & fas & farus & kkonsa & kkorna \\
+\end{longtable}
+
+\begin{longtable}[c]{r|llll}
+  \caption{Verb conjugations for \ortho{abis} \emph{be\textsuperscript{2}}.} \\
+  
+  P & II & IP & SI & SP \\
+  \endfirsthead
+
+  P & II & IP & SI & SP \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \hline
+  \multicolumn{5}{c}{Present} \\
+  \nobreakmidrule
+  1 & ppe & abes & ppeda & abesta \\
+  2 & ppu & abus & pputta & abusta \\
+  3 & ppa & aban & pasa & pasta \\
+  \hline
+  \multicolumn{5}{c}{Past} \\
+  \nobreakmidrule
+  1 & abi & gis & abita & abista \\
+  2 & abuka & guska & ppukka & abuska \\
+  3 & abo & abos & pona & ponsa \\
+  \hline
+  \multicolumn{5}{c}{Future} \\
+  \nobreakmidrule
+  1 & gore & guse & morda & abordas \\
+  2 & goru & guso & mortta & abostra \\
+  3 & gora & gusa & porna & ponsa \\
+\end{longtable}
+
+\begin{longtable}[c]{r|llll}
+  \caption{Verb conjugations for \ortho{nis} \emph{be able to}.} \\
+  
+  P & II & IP & SI & SP \\
+  \endfirsthead
+
+  P & II & IP & SI & SP \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+  
+  \hline
+  \multicolumn{5}{c}{Present} \\
+  \nobreakmidrule
+  1 & nie & ner & neda & nerta \\
+  2 & niu & nur & nutta & nurta \\
+  3 & nia & nan & nasa & narsa \\
+  \hline
+  \multicolumn{5}{c}{Past} \\
+  \nobreakmidrule
+  1 & nio & nir & nita & nitra \\
+  2 & nuka & nurka & nukka & nukra \\
+  3 & nio & nor & noda & norna \\
+  \hline
+  \multicolumn{5}{c}{Future} \\
+  \nobreakmidrule
+  1 & nose & nore & nosta & nostar \\
+  2 & nosu & noro & nostra & notra \\
+  3 & nosa & nora & nonsa & norna \\
+\end{longtable}
+
+\section{Imperatives and volitionals}
+
+\begin{longtable}[c]{l|llll}
+  \caption{Imperative and volitional forms for verbs.} \\
+  
+  & Plain & Intimate & Dominating & Subservient \\
+  \endfirsthead
+
+  & Plain & Intimate & Dominating & Subservient \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \hline
+  \multicolumn{5}{c}{Regular form} \\
+  \nobreakmidrule
+  Imp-I & fo (2PresSI) & -o & -o & respe fo (2PresSI) \\
+  Imp-P & fo (2PresSP) & -os & -os & respe fo (2PresSP) \\
+  Vol-I & fo (1FutSI) & -ono & -ano & respore fo (1FutSI) \\
+  Vol-P & fo (1FutSP) & -onos & -anos & respore fo (1FutSP) \\
+  \hline
+  \multicolumn{5}{c}{\ortho{fir} \emph{be\textsuperscript{1}}} \\
+  \nobreakmidrule
+  Imp-I & fo kkutta & fyo & fio & respe fo kkutta \\
+  Imp-P & fo kkurta & fyos & fios & respe fo kkurta \\
+  Vol-I & fo kkosta & fyon & fian & respore fo kkosta \\
+  Vol-P & fo kkostar & fyonos & fias & respore fo kkostar \\
+  \hline
+  \multicolumn{5}{c}{\ortho{abir} \emph{be\textsuperscript{2}}} \\
+  \nobreakmidrule
+  Imp-I & fo pputta & ppo & ppo & respe fo pputta \\
+  Imp-P & fo abusta & ppos & ppos & respe fo abusta \\
+  Vol-I & fo mortta & ppon & ppan & respore fo mortta \\
+  Vol-P & fo abordas & ppos & ppas & respore fo abordas \\
+  \hline
+  \multicolumn{5}{c}{\ortho{nir} \emph{be able to}} \\
+  \nobreakmidrule
+  Imp-I & fo nutta & nio & nio & respe fo nutta \\
+  Imp-P & fo nurta & nos & nos & respe fo nurta \\
+  Vol-I & fo nosta & yono & nano & respore fo nosta \\
+  Vol-P & fo nostar & yonos & nanos & respore fo nostar \\
+\end{longtable}
+
+\section{Present and past participles}
+
+\begin{table}[h]
+  \caption{Present and past participles.}
+  \centering
+  \begin{tabular}{r|ll}
+    Verb & Present & Past \\
+    \hline
+    Ending with \ortho{-is} & -inde & -isti \\
+    Ending with \ortho{-ir} & -irne & -irri \\
+    \ortho{fir} & kkade & fi \\
+    \ortho{abir} & aben & abri \\
+  \end{tabular}
+\end{table}
+
+\ortho{abir} can be combined with the present participle to form the present progressive, and with the past participle to form the passive form.
+
+\section{Honourifics}
+
+Some verbs have multiple forms depending on the speech level used.
+
+\section{Auxiliary verbs}
+
+Auxiliary verbs are conjugated and placed before the main verb, which is put in the infinitive form: \\
+~\\
+\hli{Mida} \hlii{kkibis.} \\
+\hli{want-3.\tsc{pres.ind.imp}} \hlii{eat-\tsc{inf}} \\
+\hli{They want to} \hlii{eat.} \\
+
+Some auxiliary verbs require prepositions, or adopt a different meaning when a preposition is used.
+
+\section{Negation}
+
+Only auxiliary verbs can be negated directly: \\
+~\\
+\hli{Ttya} \hlii{nie} \hliii{kapir.} \\
+\hli{\tsc{neg}} \hlii{be\_able\_to-1.\tsc{pres.ind.imp}} \hliii{come-\tsc{inf}} \\
+\hlii{I can}\hli{'t} \hliii{come.} \\
+
+Other verbs require the dummy auxiliary \ortho{kkir}: \\
+~\\
+\hli{Ttya} \hlii{kkor} \hliii{kapir.} \\
+\hli{\tsc{neg}} \hlii{do-3.\tsc{past.ind.perf}} \hliii{come-\tsc{inf}} \\
+\hlii{He didn}\hli{'t} \hliii{come.}
+
+\chapter{Adjectives}
+
+Adjectives usually follow the nouns they modify, but may occasionally precede their antecedents for emphasis or such. They are declined for gender.
+
+\section{One-form adjectives}
+
+One-form adjectives are not inflected at all, and are more likely to precede their antecedents than two-form adjectives.
+
+\section{Two-form adjectives}
+
+Two-form adjectives are inflected for gender.
+
+\begin{table}[h]
+  \caption{Declension of two-form adjectives.}
+  \centering
+  \begin{tabular}{ll}
+    Fem & Masc \\
+    \hline
+    -a & -u \\
+    -is & -as \\
+    -ir & -ur \\
+    -er & -ur \\
+    -in & -o \\
+  \end{tabular}
+\end{table}
+
+\section{Adverbs}
+
+Adverbs are formed from the feminine forms of adjectives by appending \ortho{-ta}.
+
+\section{Numerals}
+
+\lname{} has a restricted numeral system:
+
+\begin{itemize}
+  \item \ortho{men} \emph{one}
+  \item \ortho{fua} \emph{two}
+  \item \ortho{bitta} \emph{three}
+\end{itemize}
+
+\chapter{Prepositions}
+
+The most common prepositions in \lname{} are:
+
+\begin{table}[ht]
+  \caption{Prepositions.}
+  \centering
+  \begin{tabu} to \linewidth {l|Y}
+    Preposition & Translation \\
+    \hline
+    us & of, from, originating from \\
+    usta & since \\
+    fe & to, toward, until \\
+    ten & at, in, inside \\
+    hata & with (both comitative and instrumental) \\
+  \end{tabu}
+\end{table}
+
+\appendix
+
+\chapter{Dictionary}
+
+An entry looks like this:
+
+\textsf{magis} \textit{vt}
+\quad (S) throws (O)
+
+From left to right:
+
+\begin{enumerate}
+    \item The entry -- the \lname{} term listed.
+    \item The part of speech of the corresponding entry:
+    \begin{itemize}
+      \item \textit{nf} -- a feminine noun
+      \item \textit{nm} -- a masculine noun
+      \item \textit{vt} -- a transitive verb
+      \item \textit{vi} -- an intransitive verb
+      \item \textit{va} -- an ambitransitive verb
+      \item \textit{vh} -- an auxiliary verb
+      \item \textit{a1} -- a one-form adjective
+      \item \textit{a2} -- a two-form adjective (feminine form listed)
+    \end{itemize}
+    \item The definition -- the gloss for the corresponding entry.
+    \begin{enumerate}
+        \item (S) -- the subject
+        \item (O) -- the direct object
+        \item (I) -- the indirect object
+    \end{enumerate}
+    \item If applicable, any special grammatical or semantic notes for this term.
+    \item Optionally, examples of usage.
+\end{enumerate}
+
+\begin{multicols}{2}
+    \input{8.5/dict/dict.tex}
+\end{multicols}
+
+\end{document}
