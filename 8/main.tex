@@ -606,6 +606,14 @@ The exact definition of a ``temporal abstract'' varies from person to person, bu
 
 Because pro-forms of the third kind are so short, they are seldom used with biting affixes attached. If biting affixes are needed, the abstract is almost always spelt in full.
 
+\subsection{Pro-forms of the fourth kind}
+
+The phrase \hortho{hwxk ygw} is an abstract that refers to a sentence previously said by the listener, and it is usually used alone. It can also modify a sentence that disambiguates what was referred to.
+
+This phrase is commonly used either to show agreement or attach a connector to a sentence that previously did not admit any.
+
+Note that this pro-form is composed of two words. A descriptor or connector can fall between the individual words of the phrase.
+
 \section{Seasonal cycles}
 
 Some words are part of a quintuplet $(X_1, X_2, X_3, X_4, X_5)$ such that their meanings are rotated depending on the current season. They can represent concrete or abstract words, or even a mix of both.
@@ -764,6 +772,7 @@ Note that ``belonging to the same connector set'' is an equivalence relation.
     Analogous & 2 & yhd & ``For the same reason $\alpha$ is true, $\beta$ is also true.'' Also used as an ``and'' without stating any order. \\
     Subversive & $n$ & ylw & ``$\theta_1$ but $\theta_2$ but $\theta_3$ but etc.'' \\
     Augmentative & $n$ & ygb & Later statements apply to a greater extent than earlier statements. \\
+    Explanatory & $n$ & ylj & ``$\theta_1$ causes $\theta_2$ causes $\theta_3$ etc.'' \\
   \end{tabu}
 \end{table}
 
@@ -858,7 +867,7 @@ Fractional parts of a numeral are set off after the integral part (if present), 
   \item Set $r := 1, n := 0, c := 1$.
   \item For each two-segment chunk, let $a$ be the digit represented by the segments. Then:
   \begin{itemize}
-    \item If airflow is opposite of starting airflow, then set $r := 32$ if $a = 0$, else $r := a$.
+    \item If airflow is opposite of starting airflow, then set $r := 32$ if $a = 0$, else $r := a$. Then set $c := r$.
     \item Otherwise, if $r = 1$, reject.
     \item Otherwise, set $c := r \cdot c$ then $n := n + a / c$.
   \end{itemize}
