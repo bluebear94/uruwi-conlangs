@@ -148,7 +148,7 @@ As using IPA is quite wieldly, we shall use the following hacmisation, with supe
       (coärticulated) & f\^h v\^h & s\^h z\^h & & f\^x v\^j & & \invalid \\
       (whistled) & \invalid & \invalid & s\^w z\^w & & \invalid & \invalid \\
       Affricate & & & t\^s & t\^x & & \\
-      Lateral fricative & \invalid & & x\^l z\^l & & & \invalid \\
+      Lateral fricative & \invalid & & x\^l j\^l & & & \invalid \\
       Approximant & & & r & y & w & \\
       Lateral approximant & \invalid & & l & & & \invalid \\
       Tap & & & c & & \invalid & \invalid \\
@@ -181,7 +181,7 @@ As opposed to Lek-Tsaro, which uses syllables, \lname{} uses \emph{phonoruns}. T
   \begin{tabu} to \linewidth {l|>{\kardinal}X}
       Category & \textnormal{Phonemes} \\
       \hline
-      Full-open & a e i o u r v z\^v z z\^w j g\^j z\^l y w 5 6 \\
+      Full-open & a e i o u r v z\^v z z\^w j g\^j j\^l y w 5 6 \\
       Half-open & q r l m n n\^y n\^g s\^l 7 \\
       Neutral & s s\^w x v\^h z\^h v\^j 1 2 \\
       Half-closed & f x k\^x c 8 \\
@@ -474,6 +474,42 @@ If a clause has no explicit arguments, the first argument is understood to be th
   \end{tabular}
 \end{table}
 
+\subsection{Last-clause pronouns}
+
+The anaphoric pronoun \hortho{bes} (accusative: \hortho{bezen}) is grammatically an other pronoun, and it refers to the previous clause said. Likewise, \hortho{bpeis} (accusative: \hortho{bpein}) refers to the clause before the previous one.
+
+\section{Compounding}
+
+Nouns can be compounded together in a head-initial manner. When that happens, only the leftmost noun is the one to be declined. \\
+~\\
+\textkardinal{\hli{mel-}\hlii{rqso-}\hliii{f\^xqru-}\hliv{gis}} \\
+\hli{volume-}\hlii{cup-}\hliii{water-}\hliv{five} \\
+\hliv{five} \hlii{cup}\hli{fuls} \hliii{of water}
+
+Note that pronouns can modify other nouns, in which personal possession is indicated: \\
+~\\
+\textkardinal{\hli{mel-}\hlii{rqso-}\hliii{f\^xqru-}\hliv{gis-}\hlv{ta}} \\
+\hli{volume-}\hlii{cup-}\hliii{water-}\hliv{five}-\hlv{\tsc{pr}.\tsc{near}.\tsc{nondual}} \\
+\hlv{(arg1)'s} \hliv{five} \hlii{cup}\hli{fuls} \hliii{of water} \\
+
+Descriptors can also compound on nouns. Unlike in Lek-Tsaro, this is the only way to have descriptors modify nouns. \\
+~\\
+\textkardinal{\hli{maza-}\hlii{ktua}} \\
+\textkardinal{\hli{maza-}\hlii{kuta}} \\
+\hli{person-}\hlii{old} \\
+\hlii{old} \hli{people}
+
+\section{Possession}
+
+``X's Y'' is translated as \hortho{\textnormal{Y=}ma \textnormal{X}} (plus phonorun reduction). The possessive construction is also used to create appositives. (Note the head-marking!)
+
+Observe that possession marks the head, and \hortho{\=/ma} is a clitic, not an affix, as in the following example: \\
+~\\
+\textkardinal{\hli{mqmqn\^go-f\^xqru}\hliv{-ma} \hlii{s\^h.aen}} \\
+\textkardinal{\hli{mqmqn\^go-f\^xqru}\hliv{-ma} \hlii{s\^ha.en}} \\
+\hli{\tsc{def}\tl{}rabbit-water}\hliv{=\tsc{gen}} \hlii{magician} \\
+\hlii{the magician}\hliv{'s} \hli{water rabbit}
+
 \appendix
 
 \chapter*{Romanisation}
@@ -487,7 +523,7 @@ In this text, the romanisation is used only to transcribe names into English. Wh
       & Bilabial & Dental & Alveolar & Palatal & Velar & Glottal \\
       \hline
       Nasal & m & & n & ñ & ŋ & \invalid \\
-      Plosive & p b & & t d & ť ď & k g & ' \\
+      Plosive & p b & & t d & ť ď & k g & . \\
       Fricative & f v & þ ð & s z & š ž & h ħ & \\
       (coärticulated) & fh vħ & þh ðħ & & fš vž & & \invalid \\
       (whistled) & \invalid & \invalid & ŝ ẑ & & \invalid & \invalid \\
@@ -511,10 +547,16 @@ In this text, the romanisation is used only to transcribe names into English. Wh
     \end{tabular}
 \end{table}
 
-The digraphs \ortho{fh vħ þh ðħ fš vž ts tš} correspond to coärticulated consonants and affricates. A hyphen can be used if this is not desired.
+The digraphs \ortho{fh vħ þh ðħ fš vž ts tš} correspond to coärticulated consonants and affricates. An apostrophe can be placed between the two letters if this is not desired.
 
 Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Proper words are preceded by a backslash \ortho{\bs{}}.
 
 \ortho{ŋ} should be capitalised as \ortho{Ŋ} only if one can depend on the majuscule glyph appearing like an N with a hook. Otherwise, it should be spelled \ortho{Ng}.
+
+\chapter{Dictionary}
+
+\begin{multicols}{2}
+    \input{7_1/dict/dict.tex}
+\end{multicols}
 
 \end{document}

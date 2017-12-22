@@ -11,6 +11,8 @@ out/6.pdf: 6/dict/dict.tex
 
 out/7.pdf: 7/dict/dict.tex
 
+out/7_1.pdf: 7_1/dict/dict.tex
+
 out/8.pdf: 8/dict/dict.tex
 
 out/8.5.pdf: 8.5/dict/dict.tex

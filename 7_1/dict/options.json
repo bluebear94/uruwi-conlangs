@@ -1,0 +1,14 @@
+{
+  "styling": "\\textkardinal{%s}",
+  "newline": "\\quad ",
+  "alphabet": [
+    ".",
+    "t", "t^x", "t^s", "t^y", "k", "k^x", "x", "x^l", "s", "s^f", "s^h", "s^w",
+    "n", "n^g", "n^y", "v", "v^h", "v^j", "f", "f^x", "f^h", "m",
+    "d", "d^y", "g", "g^j", "p", "b",
+    "y", "c", "r",
+    "z", "z^v", "z^h", "z^w", "j", "j^l", "w", "l",
+    "a", "i", "i^o", "i^u", "o", "o^e", "e", "e^o", "u", "u^i", "u^o"
+  ],
+  "sectionstyle": "\\section*{\\textkardinal{%s}}\n"
+}
