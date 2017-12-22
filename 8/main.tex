@@ -894,7 +894,7 @@ Fractional parts of a numeral are set off after the integral part (if present), 
   \item Set $r := 1, n := 0, c := 1$.
   \item For each two-segment chunk, let $a$ be the digit represented by the segments. Then:
   \begin{itemize}
-    \item If airflow is opposite of starting airflow, then set $r := 32$ if $a = 0$, else $r := a$. Then set $c := r$.
+    \item If airflow is opposite of starting airflow, then set $r := 32$ if $a = 0$, else $r := a$.
     \item Otherwise, if $r = 1$, reject.
     \item Otherwise, set $c := r \cdot c$ then $n := n + a / c$.
   \end{itemize}
