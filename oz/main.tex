@@ -415,7 +415,7 @@ where
 \begin{itemize}
   \item $\alpha$ is the string to be replaced.
   \item $\omega$ is the resulting string.
-  \item $\lambda \blacklozenge \rho$ is the \emph{environment} -- if this part is present, then the change will happen only when $\lambda$ is found immediately to the left and $\rho$ immediately to the right of the string to be replaced.
+  \item $\lambda \blacklozenge \rho$ is the \emph{environment} -- if this part is present, then the change will happen only when $\lambda$ is found immediately to the left and $\rho$ immediately to the right of the string to be replaced. If there is an $\lnot$ before the parentheses, then the change occurs when this is \emph{not} true.
   \item $\Gamma$ is the \emph{global condition} -- a predicate on the word that is changed. If it is false, then the change does not occur. Defaults to being always true.
 \end{itemize}
 

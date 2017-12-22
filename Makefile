@@ -1,7 +1,7 @@
 TEX=xelatex
 TEXFLAGS=-interaction=nonstopmode -halt-on-error
 
-all: out/5.pdf out/6.pdf out/7.pdf out/oz.pdf out/4.pdf out/8.pdf out/8.5.pdf
+all: out/5.pdf out/6.pdf out/7.pdf out/oz.pdf out/4.pdf out/8.pdf out/8.5.pdf out/7_1.pdf
 
 out/4.pdf: 4/dict/dict.tex
 
