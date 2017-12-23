@@ -2,7 +2,7 @@
 : nsent
 person
 
-# s^ha.en
+# s^fa.en
 : nsent
 magician
 
@@ -49,3 +49,55 @@ potable water
 # rqso
 : nnonsent
 cup
+
+# x^lace
+: nnonsent
+fish
+
+# t^xozo
+: nnonsent
+flower
+
+# nyaza
+: nnonsent
+cat
+
+# rata
+: nined
+grass
+
+# mak-
+: v1
+(S) eats (O)
+
+# nun-
+: v2
+(S) kills (O), (O) dies
+
+# rev-
+: v3
+(S) spreads (O)
+
+# pr-
+: v3
+hold, carry, instrumental verb
+
+# k^xriden
+: nnonsent
+book
+
+# sen-
+: v1
+(S) is worried by (O)
+
+# t^xalk-
+: v1
+(S) fights (O)
+
+# xin-
+: v1
+(S) shoots an arrow to (O)
+
+# pqn^ga
+: ndnonsent(b)
+knee

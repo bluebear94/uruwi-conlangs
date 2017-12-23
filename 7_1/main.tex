@@ -78,7 +78,7 @@ Date: 2017-12-22 (29 dia len)
   \{\text{y̜}, \text{u̜}\} &\rightarrow \text{ʉ̜} \\
   V_1[+r] &\rightarrow \text{w}V_1[-r] \\
   \text{k} &\rightarrow \text{c} &\quad (\blacklozenge \text{i}) \\
-  \text{t} &\rightarrow \text{tʃ} &\quad (\blacklozenge \{\text{i}, \text{ɛ}\}) \\
+  \text{t} &\rightarrow \text{tʃ} &\quad (\blacklozenge \text{i}) \\
   \text{r} &\rightarrow \text{ɾ} \\
 \end{alignat*}
 
@@ -115,7 +115,7 @@ Thus \lname{} has the following phoneme inventory:
     \end{tabular}
 \end{table}
 
-In addition to consonants and vowels, \lname{} has rod signals, represented by numbers. Rod A is blue and held by one's dominant hand and B is red and held by one's non-dominant hand.
+In addition to consonants and vowels, \lname{} has rod signals, represented by numbers. Rod A is blue and held by one's dominant hand and B is red and held by one's non-dominant hand. Rod signals can occur only at the end of words.
 
 \begin{enumerate}
     \item Rod A is raised to one's chest, while B is pointed down.
@@ -183,7 +183,7 @@ As opposed to Lek-Tsaro, which uses syllables, \lname{} uses \emph{phonoruns}. T
       \hline
       Full-open & a e i o u r v z\^v z z\^w j g\^j j\^l y w 5 6 \\
       Half-open & q r l m n n\^y n\^g s\^l 7 \\
-      Neutral & s s\^w x v\^h z\^h v\^j 1 2 \\
+      Neutral & s s\^w x x\^l v\^h z\^h v\^j 1 2 \\
       Half-closed & f x k\^x c 8 \\
       Full-closed & s\^f f\^h s\^h f\^x p b t d t\^y d\^y k g t\^s t\^x . 3 4 \\
   \end{tabu}
@@ -199,7 +199,7 @@ These are converted into \emph{actual categories} as follows:
   \item Neutral phonemes that occur word-initially are closed.
 \end{itemize}
 
-A \emph{phonorun}, then, is a maximal sequence of phonemes that are either all open or all closed within a word. For instance, take \hortho{s\^h.aen < *s\^ha.en}:
+A \emph{phonorun}, then, is a maximal sequence of phonemes that are either all open or all closed within a word. For instance, take \hortho{s\^f.aen < *s\^ha.en}:
 
 \begin{center}
   \begin{tikzpicture}
@@ -210,7 +210,7 @@ A \emph{phonorun}, then, is a maximal sequence of phonemes that are either all o
   %\Tree [.S [.NP LaTeX ] [.VP [.V is ] [.NP fun ] ] ]
   \Tree [
       .$\omega$
-      [.$\rho_c$ [.$fc$ \textkardinal{s\^h} ] [.$fc$ \textkardinal{.} ] ]
+      [.$\rho_c$ [.$fc$ \textkardinal{s\^f} ] [.$fc$ \textkardinal{.} ] ]
       [.$\rho_o$ [.$o$ \textkardinal{a} ] [.$fo$ \textkardinal{e} ] [.$ho$ \textkardinal{n} ] ]
   ]
   \end{tikzpicture}
@@ -230,11 +230,11 @@ Note that two phonemes in the word were metathesised when it was derived from Le
   X_1[dc] X_2[do] X_3[dc] &\rightarrow X_2 X_1 X_3 &\quad\text{for ever} \\
 \end{alignat*}
 
-where $R$ means a rod signal and $op$ stands for \emph{openness} (full-open = $2$, neutral = $0$, full-closed = $-2$). $do$ is short for $op > 0$, and $dc$ is short for $op < 0$. 
+where $R$ means a rod signal, $X$ represents a spoken phoneme and $op$ stands for \emph{openness} (full-open = $2$, neutral = $0$, full-closed = $-2$). $do$ is short for $op > 0$, and $dc$ is short for $op < 0$. 
 
 All of the rules above move from right to left and do not occur across compound boundaries. The last two rules are executed alternately in a loop until the number of phonoruns is reduced to an acceptable number or both rules converge to a fixed point. This process will hereafter be called \emph{phonorun reduction}.
 
-In the example above, \hortho{*s\^ha.en} had $4 > \lceil 5 / 2 \rceil$ phonoruns, so the third rule was applied. This changed the word into \hortho{s\^h.aen}, which has $2 \le \lceil 5 / 2 \rceil$ phonoruns.
+In the example above, \hortho{*s\^fa.en} had $4 > \lceil 5 / 2 \rceil$ phonoruns, so the third rule was applied. This changed the word into \hortho{s\^f.aen}, which has $2 \le \lceil 5 / 2 \rceil$ phonoruns.
 
 The dictionary lists forms of roots \emph{before} the phonorun reduction happens, because affixes can radically affect which phonemes are switched.
 
@@ -250,9 +250,9 @@ If by some odd chance a word has both front and back vowels, then the rightmost 
 
 The basic word order is VSO. Descriptors follow what they modify.
 
-However, unlike Lek-Tsaro, \lname{} has oblique arguments. As these were historically formed from a preclause, all obliques precede V. Likewise, any arguments with conjunctions also precede V.
+However, unlike Lek-Tsaro, \lname{} has oblique arguments. As these were historically formed from a preclause, all obliques precede V. Likewise, any arguments with conjunctions also precede V. Such arguments that were formed from a clause will be called \emph{historically clausal arguments} (HCAs).
 
-Usually, oblique arguments are prepared by prepositions and fall before what they modify, but if an oblique argument is a conjunctional phrase or governs another oblique argument, it uses a postposition instead and precedes its antecedent.
+Usually, oblique arguments are prepared by prepositions and fall before what they modify, but if an oblique argument is a conjunctional phrase or governs an HCA, it uses a postposition instead and precedes its antecedent.
 
 \section{Questions}
 
@@ -318,7 +318,7 @@ The definite form of a noun is formed regularly by reduplicating the first sylla
 
 Here, the inflected forms of words are shown both before and after phonorun reduction to illustrate the pattern. The declension patterns for each class is shown, both for roots ending with consonants and those ending with vowels.
 
-Note that noun declensions for countable and measurable respect vowel harmony. For nouns with back vowels, replace the front vowels with the back vowels of the same height and rounding, and vice versa. (Noun declensions for uncountable classes do not respect vowel harmony.)
+Note that noun declensions for countable respect vowel harmony. For nouns with back vowels, replace the front vowels with the back vowels of the same height and rounding, and vice versa. (Noun declensions for measurable and uncountable classes do not respect vowel harmony.)
 
 \subsection{Countable classes}
 
@@ -347,10 +347,10 @@ Note that noun declensions for countable and measurable respect vowel harmony. F
     Nominative & maza (maza) & maza\hliii{l} (mazal) \\
     Accusative & maza\hliii{n} (mazan) & maza\hliii{nal} (mazanal) \\
     \hline
-    \multicolumn{3}{|l|}{\textnormal{Sentient: \hortho{*s\^ha.en} ``magician''}} \\
+    \multicolumn{3}{|l|}{\textnormal{Sentient: \hortho{*s\^fa.en} ``magician''}} \\
     \hline
-    Nominative & s\^ha.e\hliii{n} (s\^h.aen) & s\^ha.e\hliii{l} (s\^h.ael) \\
-    Accusative & s\^ha.e\hliii{rin} (s\^ha.erin) & s\^ha.e\hliii{ril} (s\^ha.eril) \\
+    Nominative & s\^fa.e\hliii{n} (s\^f.aen) & s\^fa.e\hliii{l} (s\^f.ael) \\
+    Accusative & s\^fa.e\hliii{zin} (s\^fa.ezin) & s\^fa.e\hliii{ril} (s\^fa.eril) \\
     \hline
     \multicolumn{3}{|p{\linewidth}|}{(Note that the final consonant is preserved only in the direct nominative form.)} \\
     \hline
@@ -362,7 +362,7 @@ Note that noun declensions for countable and measurable respect vowel harmony. F
     \multicolumn{3}{|l|}{\textnormal{Non-sentient: \hortho{*.imen} ``house''}} \\
     \hline
     Nominative & .ime\hliii{n} (.imen) & .ime\hliii{.i} (.imei.) \\
-    Accusative & .ime\hliii{rim} (.imerim) & .imeri\hliii{fi} (.imerifi) \\
+    Accusative & .ime\hliii{zim} (.imezim) & .imeri\hliii{fi} (.imerifi) \\
 \end{longtabu}
 
 \subsection{Measurable and uncountable classes}
@@ -395,7 +395,7 @@ Note that noun declensions for countable and measurable respect vowel harmony. F
     \multicolumn{2}{|l|}{\textnormal{Measure: \hortho{*mel} ``volume'' (in expressions such as \hortho{*mel-yqso} ``cupful'')}} \\
     \hline
     Nominative & me\hliii{l} (mel) \\
-    Accusative & me\hliii{rin} (merin) \\
+    Accusative & me\hliii{zin} (mezin) \\
     \hline
     \multicolumn{2}{|l|}{\textnormal{Edible: \hortho{*ter.i} ``beef''}} \\
     \hline
@@ -427,6 +427,8 @@ Note that noun declensions for countable and measurable respect vowel harmony. F
     Nominative & gis (gis) \\
     Accusative & gis\hliii{in\^g} (gisin\^g) \\
 \end{longtabu}
+
+(NB: be sure to change any \hortho{k} and \hortho{t} into \hortho{t\^y} and \hortho{t\^x} respectively before \hortho{i})
 
 \section{Pronouns}
 
@@ -476,7 +478,7 @@ If a clause has no explicit arguments, the first argument is understood to be th
 
 \subsection{Last-clause pronouns}
 
-The anaphoric pronoun \hortho{bes} (accusative: \hortho{bezen}) is grammatically an other pronoun, and it refers to the previous clause said. Likewise, \hortho{bpeis} (accusative: \hortho{bpein}) refers to the clause before the previous one.
+The anaphoric pronoun \hortho{ebs} (accusative: \hortho{bezen}) is grammatically an other pronoun, and it refers to the previous clause said. Likewise, \hortho{bpeis} (accusative: \hortho{bpein}) refers to the clause before the previous one. All of these pronouns should undergo phonorun reduction inside a compound.
 
 \section{Compounding}
 
@@ -509,6 +511,170 @@ Observe that possession marks the head, and \hortho{\=/ma} is a clitic, not an a
 \textkardinal{\hli{mqmqn\^go-f\^xqru}\hliv{-ma} \hlii{s\^ha.en}} \\
 \hli{\tsc{def}\tl{}rabbit-water}\hliv{=\tsc{gen}} \hlii{magician} \\
 \hlii{the magician}\hliv{'s} \hli{water rabbit}
+
+\chapter{Verbs}
+
+Verbs are conjugated for person of the subject, tense, polarity and tellicity, in two paradigms. Conjugation respects vowel harmony.
+
+The dictionary lists the stem of the verb and the conjugation scheme used.
+
+\begin{table}[h]
+  \centering
+  \caption{Person-tense conjugations for first-conjugation verbs, using \hortho{mak-} ``(S) eats (O)'', before and after phonorun reduction.}
+  \label{table:conjperstens}
+  \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+    \hline
+    & \textnormal{Nonpast} & \textnormal{Past} \\
+    \hline
+    Near & mak\hliii{an} (makan) & mak\hliii{at} (maakt) \\
+    Far & mak\hliii{an} (makan) & mak\hliii{qs} (makqs) \\
+    Other & mak\hliii{a} (kmaa) & mak\hliii{q} (makq) \\
+    Anaph. Sub. & mak\hliii{e} (kmae) & mak\hliii{el} (kmael) \\
+    Anaph. Obj. & mak\hliii{i.e} (mak.ie) & mak\hliii{i.el} (mak.iel) \\
+    Generic & mak\hliii{i} (kmai) & mak\hliii{i} (kmai) \\
+    \hline
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+  \centering
+  \caption{Person-tense conjugations for second-conjugation verbs, using \hortho{nun-} ``(S) kills (O), (O) dies'', before and after phonorun reduction.}
+  \label{table:conjperstens}
+  \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+    \hline
+    & \textnormal{Nonpast} & \textnormal{Past} \\
+    \hline
+    Near & nun\hliii{an} (nunan) & nun\hliii{at} (nunat) \\
+    Far & nun\hliii{an} (nunan) & nun\hliii{qs} (nunqs) \\
+    Other & nun\hliii{a} (nuna) & nun\hliii{q} (nunq) \\
+    Anaph. Sub. & nun\hliii{o} (nuno) & nun\hliii{el} (nunol) \\
+    Anaph. Obj. & nun\hliii{u.o} (nunu.o) & nun\hliii{u.ol} (nunu.ol) \\
+    Generic & nun\hliii{u} (nunu) & nun\hliii{u} (nunu) \\
+    \hline
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+  \centering
+  \caption{Person-tense conjugations for third-conjugation verbs, using \hortho{rev-} ``(S) spreads (O)'', before and after phonorun reduction.}
+  \label{table:conjperstensb}
+  \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
+    \hline
+    & \textnormal{Nonpast} & \textnormal{Past} \\
+    \hline
+    Near & rev\hliii{in} (revin) & rev\hliii{it} (revit) \\
+    Far & rev\hliii{an} (revan) & rev\hliii{qs} (revqs) \\
+    Other & rev\hliii{a} (reva) & rev\hliii{q} (revq) \\
+    Anaph. Sub. & rev\hliii{e} (reve) & re\hliii{el} (revel) \\
+    Anaph. Obj. & rev\hliii{i.e} (revi.e) & rev\hliii{i.el} (revi.el) \\
+    Generic & rev\hliii{q} & rev\hliii{q} \\
+    \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{Polarity-tellicity suffixes for verbs (before phonorun reduction). The interrogative affix can also follow a negative affix.}
+  \label{table:conjpoltell}
+  \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|>{\kardinal}l|}
+      \hline
+      & \textnormal{Positive} & \textnormal{Negative} & \textnormal{Interrogative} \\
+      \hline
+      Telic & -∅ & -ke / -ko & -k\^xa \\
+      Atelic & -mi / -mu & -sa & -xq \\
+      \hline
+  \end{tabular}
+\end{table}
+
+Notes:
+
+\begin{itemize}
+  \item The polarity-tellicity suffix is added after the person-tense ending.
+  \item ``Negative atelic'' means something akin to ``unsuccessfully tried to avoid doing X''.
+  \item The interrogative polarity, in addition to marking questions, is used to mark clauses that may or may not be true but are referred to later in the sentence.
+\end{itemize}
+
+\sloppy{
+  Some examples: \\
+  ~\\
+  \textkardinal{\hli{makan} \hlii{x\^lace} \hliii{t\^xozo.}} \\
+  \hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower} \\
+  \hlii{Fish} \hli{eat} \hliii{flowers.} \\
+  ~\\
+  \textkardinal{\hli{makan} \hlii{x\^lace} \hliii{t\^xozo,} \hliv{makan} \hlv{nyaza} \hlvi{ra.}} \\
+  \hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower,} \hliv{eat-\tsc{near}.\tsc{nonpast}} \hlv{cat} \hlvi{\tsc{pr}.\tsc{anaph\_sub}} \\
+  \hlii{Fish} \hli{eat} \hliii{flowers, and} \hlv{cats} \hliv{eat} \hlvi{fish.} \\
+  ~\\
+  \textkardinal{\hli{makan} \hlii{x\^lace} \hliii{t\^xozo,} \hliv{kmae} \hlv{ratbae.}} \\
+  \textkardinal{\hli{makan} \hlii{x\^lace} \hliii{t\^xozo,} \hliv{make} \hlv{ratabe.}} \\
+  \hli{eat-\tsc{near}.\tsc{nonpast}} \hlii{fish} \hliii{flower,} \hliv{eat-\tsc{anaph\_sub}.\tsc{nonpast}} \hlv{grass-\tsc{acc}} \\
+  \hlii{Fish} \hli{eat} \hliii{flowers, and} \hliv{they eat} \hlv{grass.} \\
+  (Grass is inedible to humans, but edible to fish.) \\
+  ~\\
+  \textkardinal{\hli{makan}\hliv{ek} \hlii{t\^xoro} \hliii{x\^lace.}} \\
+  \textkardinal{\hli{makan}\hliv{ke} \hlii{t\^xoro} \hliii{x\^lace.}} \\
+  \hli{eat-\tsc{near}.\tsc{nonpast}-}\hliv{\tsc{neg}} \hlii{flower} \hliii{fish} \\
+  \hlii{Flowers} \hliv{don't} \hli{eat} \hliii{fish.} \\
+  ~\\
+  \textkardinal{\hli{prin} \hlii{ni} \hliii{k\^xrik\^xriden,} \hliv{senan} \hlv{ta} \hlvi{ebs.}} \\
+  \textkardinal{\hli{prin} \hlii{ni} \hliii{k\^xrik\^xriden,} \hliv{senan} \hlv{ta} \hlvi{bes.}} \\
+  \hli{carry-\tsc{near}.\tsc{nonpast}} \hlii{\tsc{pr.other}} \hliii{\tsc{def}\tl{book},} \hliv{worry-\tsc{near}.\tsc{nonpast}} \hlv{\tsc{pr.near}} \hlvi{\tsc{pr.last\_clause}} \\
+  \hlii{He} \hli{has} \hliii{the book;} \hlvi{that} \hliv{worries} \hlv{me.} \\
+  or: \hlvi{That} \hlii{he} \hli{has} \hliii{the book} \hliv{worries} \hlv{me.} \\
+  ~\\
+  \textkardinal{\hli{prinak\^x} \hlii{ni} \hliii{k\^xrik\^xriden,} \hliv{senan} \hlv{ta} \hlvi{ebs.}} \\
+  \textkardinal{\hli{prink\^xa} \hlii{ni} \hliii{k\^xrik\^xriden,} \hliv{senan} \hlv{ta} \hlvi{bes.}} \\
+  \hli{carry-\tsc{near}.\tsc{nonpast}-\tsc{interrogative}} \hlii{\tsc{pr.other}} \hliii{\tsc{def}\tl{book},} \hliv{worry-\tsc{near}.\tsc{nonpast}} \hlv{\tsc{pr.near.int}} \hlvi{\tsc{pr.last\_clause}} \\
+  \hlii{He} \hli{might have} \hliii{the book;} \hlvi{that} \hliv{worries} \hlv{me.} \\
+  or: \hlvi{That} \hlii{he} \hli{might have} \hliii{the book} \hliv{worries} \hlv{me.}
+}
+
+\section{Aspect}
+
+Verbs can also be marked for aspect, either using a rod sign directly on the verb, or a particle with a rod sign, placed anywhere between the verb it modifies and the next verb.
+
+\begin{longtabu} to \linewidth {|l|>{\kardinal}l|Y|}
+    \caption{Aspect markers. Those with hyphens are attached to verb. Those without hyphens are placed as separate particles anywhere after the verb. \label{table:aspects}} \\
+    
+    \hline
+    Aspect name & \textnormal{Marking} & Meaning \\
+    \endfirsthead
+    
+    \hline
+    Aspect name & \textnormal{Marking} & Meaning \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \hline
+    Imperfect & -1 & An action that is currently going on. Also used to distinguish static actions as opposed to dynamic (e.~g. \emph{wear} as opposed to \emph{put on}). \\
+    Interrupted & txil1 & An action that was interrupted. \\
+    Perfect & -2 & An action that has already finished. Changes present tense to immediate past. Also used to distinguish dynamic actions as opposed to static (e.~g. \emph{put on} as opposed to \emph{wear}). \\
+    Gnomic & -3 & A general truth or aphorism, or an action done habitually. \\
+    Gnomic dubitative & txil3 & A general truth or aphorism that the speaker considers to be false. \\
+    Deontic necessity & -4 & An action that the speaker insists on happening. \\
+    Epistemic necessity & kum4 & An action that the speaker infers is happening. \\
+    Deontic potential & -5 & An action that the speaker permits to occur. \\
+    Epistemic potential & kum5 & An action that the speaker infers that might happen. \\
+    Unexpected & -6 & An action that is unexpected (akin to using ``but''). \\
+    Comparative & pe6 & Indicates an action of greater intensity than what was described in the previous clause. \\
+    Nonexclusive subject & t\^yi1 & Indicates that the subject comprises not only of what is explicitly mentioned, but also other things. \\
+    Nonexclusive object & it\^y3 & Indicates that the object comprises not only of what is explicitly mentioned, but also other things. \\
+    Nonexclusive argument & it\^y4 & Combination of both nonexclusive subject and nonexclusive object. \\
+\end{longtabu}
+
+An attached rod signal reverts \hortho{s\^f z\^v} to \hortho{s\^h z\^h}, respectively, and might affect phonorun reduction.
+
+An example: \\
+~\\
+\textkardinal{\hli{t\^xalaktmi1} \hlii{ta} \hliii{ni,} \hliv{xini.el6} \hlv{pqn\^gafu-ra.}} \\
+\textkardinal{\hli{t\^xalkatmi1} \hlii{ta} \hliii{ni,} \hliv{xini.el6} \hlv{pqn\^gafu-ra.}} \\
+\hli{fight-\tsc{near.past}-\tsc{atelic}-\tsc{imperfect}} \hlii{\tsc{pr.near}} \hliii{\tsc{pr.other},} \hliv{shoot-\tsc{anaph\_obj.past}-\tsc{unexpected}} \hlv{knee-\tsc{inv.acc}-\tsc{pr.anaph\_sub}} \\
+\hlii{I} \hli{tried to fight} \hliii{them,} \hliv{but they shot} \hlv{my knee.}
 
 \appendix
 
