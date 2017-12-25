@@ -209,9 +209,9 @@ A \emph{phonorun}, then, is a maximal sequence of phonemes that are either all o
   %\tikzset{level distance=100pt,sibling distance=10pt}
   %\Tree [.S [.NP LaTeX ] [.VP [.V is ] [.NP fun ] ] ]
   \Tree [
-      .$\omega$
-      [.$\rho_c$ [.$fc$ \textkardinal{s\^f} ] [.$fc$ \textkardinal{.} ] ]
-      [.$\rho_o$ [.$o$ \textkardinal{a} ] [.$fo$ \textkardinal{e} ] [.$ho$ \textkardinal{n} ] ]
+    .$\omega$
+    [.$\rho_c$ [.$fc$ \textkardinal{s\^f} ] [.$fc$ \textkardinal{.} ] ]
+    [.$\rho_o$ [.$fo$ \textkardinal{a} ] [.$fo$ \textkardinal{e} ] [.$ho$ \textkardinal{n} ] ]
   ]
   \end{tikzpicture}
 \end{center}
@@ -236,11 +236,27 @@ All of the rules above move from right to left and do not occur across compound 
 
 In the example above, \hortho{*s\^fa.en} had $4 > \lceil 5 / 2 \rceil$ phonoruns, so the third rule was applied. This changed the word into \hortho{s\^f.aen}, which has $2 \le \lceil 5 / 2 \rceil$ phonoruns.
 
+An example where phonorun reduction does not result in a word with few enough phonoruns is \hortho{x\^lapsi} \emph{soup}, which has the starting phonoruns
+
+\begin{center}
+  \begin{tikzpicture}
+  \Tree [
+    .$\omega$
+    [.$\rho_c$ [.$n$ \textkardinal{x\^l} ] ]
+    [.$\rho_o$ [.$fo$ \textkardinal{a} ] ]
+    [.$\rho_c$ [.$fc$ \textkardinal{p} ] [.$n$ \textkardinal{s} ] ]
+    [.$\rho_o$ [.$fo$ \textkardinal{i} ] ]
+  ]
+  \end{tikzpicture}
+\end{center}
+
+Obviously, the first four rules do not match anywhere in the word. The sixth rule seems promising because it matches the pattern at \hortho{x\^laps-}, but the required sum is $0 + 2 + 2 + 0 < 6$, so this rule does not match. In addition, the last two rules do not match, and we encounter a fixed point. In such cases, the anomaly is allowed to pass.
+
 The dictionary lists forms of roots \emph{before} the phonorun reduction happens, because affixes can radically affect which phonemes are switched.
 
 \section{Vowel harmony}
 
-\lname{} inherits vowel harmony from Lek-Tsaro. Thus \hortho{i e} are front vowels, \hortho{u o} are back vowels and \hortho{a q} are neutral. A root with neither front nor back vowels acts as if it has front vowels. Many affixes will change depending on which vowels are present.
+\lname{} inherits vowel harmony from Lek-Tsaro. Thus \hortho{i e} are front vowels, \hortho{u o} are back vowels and \hortho{a q} are neutral. Most roots with neither front nor back vowels act as if they had front vowels, though some might behave as if they had back vowels. Many affixes will change depending on which vowels are present.
 
 If by some odd chance a word has both front and back vowels, then the rightmost vowel (before phonorun reduction) takes precedence.
 
@@ -697,12 +713,28 @@ Consider the preposition \hortho{kn} \emph{in, on, at (location)} (from Lek-Tsar
 \textkardinal{\hli{kn} \hlii{tovok} \hliii{nerfe1} \hliv{tan} \hlv{\bs{}rqze}} \\
 \hli{in} \hlii{tree} \hliii{hide-\tsc{anaph\_sub.nonpast}-\tsc{imperfect}} \hliv{\tsc{pr.near.acc}} \hlv{Ryze} \\
 
-Now say that we want to translate \emph{Ryze is hiding from me in the tree with fruit.} \emph{With} would be translated as \hortho{pr} (from Lek-Tsaro \hortho{prin} \emph{hold, carry}, which also begets \hortho{rn}), but now we have nested obliques, which means we need to use \hortho{kan} as a postposition: \\
+Now say that we want to translate \emph{Ryze is hiding from me in the tree with fruit.} \emph{With} would be translated as \hortho{pr} (from Lek-Tsaro \hortho{prin} \emph{hold, carry}, which also begets \hortho{rn}), but now we have nested obliques, which means we need to use \hortho{kn} as a postposition: \\
 ~\\
 \textkardinal{\hli{tovok} \hlii{rn} \hliii{t\^sozu} \hliv{knt} \hlv{nerfe1} \hlvi{tan} \hlvii{\bs{}rqze}} \\
 \hli{tree} \hlii{with} \hliii{fruit} \hliv{in-\tsc{post}} \hlv{hide-\tsc{anaph\_sub.nonpast}-\tsc{imperfect}} \hlvi{\tsc{pr.near.acc}} \hlvii{Ryze} \\
 
 Deriving a postposition from a preposition is done \emph{after} phonorun reduction. Prepositions that end with a closed phonorun receive \hortho{-t}, and those that end with an open phonorun receive \hortho{-z}.
+
+\subsection{Conjunctions}
+
+Conjunctions are derived from verbs as well; for instance, \hortho{fn} \emph{and} is derived from Lek-Tsaro \hortho{fin} \emph{join}. However, in \lname{}, conjunctions are infixed: \\
+~\\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{kmae} \hlv{teri..}} \\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{make} \hlv{ter.i.}} \\
+\hli{Ryze} \hlii{and} \hliii{Tazyl} \hliv{eat-\tsc{anaph\_sub.nonpast}} \hlv{beef} \\
+
+(Note that as long as S still precedes O, no case marking is needed.)
+
+Unlike Lek-Tsaro's approach, this approach works well with more complex sentences: \\
+~\\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{teri.} \hlv{fn} \hlvi{x\^lapsi} \hlvii{kmae.}} \\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{ter.i} \hlv{fn} \hlvi{x\^lapsi} \hlvii{make.}} \\
+\hli{Ryze} \hlii{and} \hliii{Tazyl} \hliv{beef} \hlv{and} \hlvi{soup} \hliv{eat-\tsc{anaph\_sub.nonpast}} \\
 
 \appendix
 
@@ -748,6 +780,41 @@ Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached 
 \ortho{ŋ} should be capitalised as \ortho{Ŋ} only if one can depend on the majuscule glyph appearing like an N with a hook. Otherwise, it should be spelled \ortho{Ng}.
 
 \chapter{Dictionary}
+
+An entry looks like this:
+
+\textkardinal{mak-} \textit{v1}
+\quad (S) eats (O)
+
+From left to right:
+
+\begin{enumerate}
+    \item The entry -- the \lname{} term listed.
+    \item The part of speech of the corresponding entry:
+    \begin{itemize}
+        \item \textit{n} -- a noun
+        \begin{itemize}
+          \item \textit{-d-} -- inherently dual
+          \item \textit{-sent} -- sentient noun
+          \item \textit{-nonsent} -- nonsentient noun
+          \item \textit{-meas} -- measure noun
+          \item \textit{-edib} -- edible noun
+          \item \textit{-ined} -- inedible noun
+          \item \textit{-abst} -- abstract noun
+        \end{itemize}
+        \item \textit{v1}, \textit{v2}, \textit{v3} -- first-, second- and third- conjugation verbs
+        \item \textit{desc} -- a descriptor
+        \item \textit{pp} -- a preposition
+        \item \textit{-(b)} -- this entry has only neutral vowels but acts as if it had back vowels
+    \end{itemize}
+    \item The definition -- the gloss for the corresponding entry.
+    \begin{itemize}
+        \item (S) -- subject
+        \item (O) -- direct object
+    \end{itemize}
+    \item If applicable, any special grammatical or semantic notes for this term.
+    \item Optionally, examples of usage.
+\end{enumerate}
 
 \begin{multicols}{2}
     \input{7_1/dict/dict.tex}
