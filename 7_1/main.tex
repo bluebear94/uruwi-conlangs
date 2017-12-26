@@ -556,7 +556,7 @@ The dictionary lists the stem of the verb and the conjugation scheme used.
 \begin{table}[h]
   \centering
   \caption{Person-tense conjugations for second-conjugation verbs, using \hortho{nun-} ``(S) kills (O), (O) dies'', before and after phonorun reduction.}
-  \label{table:conjperstens}
+  \label{table:conjperstensa}
   \begin{tabular}{|l|>{\kardinal}l|>{\kardinal}l|}
     \hline
     & \textnormal{Nonpast} & \textnormal{Past} \\
@@ -735,6 +735,75 @@ Unlike Lek-Tsaro's approach, this approach works well with more complex sentence
 \textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{teri.} \hlv{fn} \hlvi{x\^lapsi} \hlvii{kmae.}} \\
 \textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{ter.i} \hlv{fn} \hlvi{x\^lapsi} \hlvii{make.}} \\
 \hli{Ryze} \hlii{and} \hliii{Tazyl} \hliv{beef} \hlv{and} \hlvi{soup} \hliv{eat-\tsc{anaph\_sub.nonpast}} \\
+
+An entire conjunctional phrase can be modified by treating the conjunction as a nominal antecedent: \\
+~\\
+\textkardinal{\hli{nyaza} \hlii{fn-ktua} \hliii{mqn\^go}} \\
+\textkardinal{\hli{nyaza} \hlii{fn-kuta} \hliii{mqn\^go}} \\
+\hli{cat} \hlii{and-old} \hliii{rabbit} \\
+\hlii{old} \hli{cats} \hlii{and} \hliii{rabbits}
+
+\section{Connectors}
+
+(This section will refer to section 2.11 of \textkardinal{\bs{}ybl m dld /td'\bs{}nn\^gln} extensively.)
+
+\lname{} uses connectors to express relationships between sentences like Jbl. In \lname{}, connectors do not occupy an indexed position in the sentence; however, they tend to be placed near items that should receive less emphasis than others. Two connectors cannot occur consecutively unless the number of connectors is more than one plus the number of other words.
+
+A connector is composed of three parts:
+
+\begin{itemize}
+  \item The \hlviii{\emph{type}} (see table \ref{table:contypes}) specifies the semantic role of the connector.
+  \item The \hlix{\emph{sequence identifier}} (hereafter \hlix{\emph{seqid}}) disambiguates the use of multiple connectors of the same \hlviii{type} within a sentence. This is an arbitrary continuation of the last phonorun of the \hlviii{type}.
+  \item The \hlx{\emph{parity}} allows the reuse of \hlix{seqids} within a \hlviii{type}. This is \hortho{-t} or \hortho{-k} if the \hlviii{type} ends with a closed phonorun, and \hortho{-a} or \hortho{-z} if it ends with an open phonorun.
+\end{itemize}
+
+Unlike most parts of speech, a complete connector, composed of the three parts above, does not undergo phonorun reduction.
+
+Connectors \hli{$x$} and \hlii{$y$} are part of the same \emph{set} \hliii{$S$} iff all of the following conditions hold:
+
+\begin{itemize}
+  \item \hli{$x$} and \hlii{$y$} are identical (i.~e. all three parts are the same between \hli{$x$} and \hlii{$y$})
+  \item they belong to sentences \hlv{$\alpha$} and \hlvi{$\beta$}, respectively (NB: it is possible that $\hlv{\alpha} = \hlvi{\beta}$)
+  \item there are no sentences between \hlv{$\alpha$} and \hlvi{$\beta$} that has a connector with the same \hlviii{type} and \hlix{seqid} but a different \hlx{parity} from \hli{$x$} or \hlii{$y$}
+\end{itemize}
+
+Note that ``belonging to the same connector set'' is an equivalence relation.
+
+\begin{table}[ht]
+  \caption{Connector types. \label{table:contypes}}
+  \centering
+  \begin{tabu} to \linewidth {ll>{\kardinal}lY}
+    Name & Arity & \textnormal{\lname} & Explanation \\
+    \hline
+    Ordinary & $n$ & as- & Covers both the sequential and parallel connectors of Jbl. \\
+    Analogous & 2 & ap- & ``For the same reason $\alpha$ is true, $\beta$ is also true.'' Also used as an ``and'' without stating any order. \\
+    Subversive & 2 & ad- & ``$\alpha$ but $\beta$.'' \\
+    Augmentative & $n$ & og\^j- & Later statements apply to a greater extent than earlier statements. \\
+    Explanatory & $n$ & im- & ``$\theta_1$ causes $\theta_2$ causes $\theta_3$ etc.'' \\
+    Conditional & 2 & is- & ``If $\alpha$, then $\beta$.'' \\
+  \end{tabu}
+\end{table}
+
+Sentences of a connector set are joined by the relation of the connector used therein: \\
+~\\
+\textkardinal{\hli{maakt} \hlii{x\^lace} \hliii{t\^xozo} \hliv{asea.}} \\
+\textkardinal{\hli{makat} \hlii{x\^lace} \hliii{t\^xozo} \hliv{asea.}} \\
+\hli{eat-\tsc{near.past}} \hlii{fish} \hliii{flower} \hliv{\tsc{ordinary}-\hortho{e}-0} \\
+\hlii{The fish} \hli{ate} \hliii{the flower.} \\
+~\\
+\textkardinal{\hli{asea} \hlii{nimit} \hliii{tcezi} \hliv{tovok.}} \\
+\hli{\tsc{ordinary}-\hortho{e}-0} \hlii{dance-\tsc{near.past}} \hliii{child} \hliv{tree} \\
+\hli{Then} \hliii{the child} \hlii{danced around} \hliv{the tree.} \\
+~\\
+\textkardinal{\hli{asea} \hlii{kmael} \hliii{x\^lax\^lacem.}} \\
+\textkardinal{\hli{asea} \hlii{makel} \hliii{x\^lax\^lacem.}} \\
+\hli{eat-\tsc{anaph\_sub.past}} \hlii{\tsc{ordinary}-\hortho{e}-0} \hliii{\tsc{def}\tl{}fish-\tsc{acc}} \\
+\hli{Then} \hlii{the child ate} \hliii{the fish.} \\
+~\\
+\textkardinal{\hli{melikt1} \hlii{grun\^g} \hliii{asez} \hliv{po.}} \\
+\textkardinal{\hli{melkit1} \hlii{grun\^g} \hliii{asez} \hliv{po.}} \\
+\hli{imitate-\tsc{near.past}-\tsc{imp}} \hlii{frog} \hliii{\tsc{ordinary}-\hortho{e}-1} \hliv{\tsc{pr.far}} \\
+\hliii{At another time,} \hlii{a frog} \hli{was imitating} \hliv{me.} (...) \\
 
 \appendix
 
