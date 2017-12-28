@@ -805,6 +805,54 @@ Sentences of a connector set are joined by the relation of the connector used th
 \hli{imitate-\tsc{near.past}-\tsc{imp}} \hlii{frog} \hliii{\tsc{ordinary}-\hortho{e}-1} \hliv{\tsc{pr.far}} \\
 \hliii{At another time,} \hlii{a frog} \hli{was imitating} \hliv{me.} (...) \\
 
+\section{Comparatives}
+
+The comparative is a function $\text{cmp}: A \times A \times (A \rightarrow \mathbb{R}) \times (A \times A \rightarrow \{0, 1\}) \rightarrow \{0, 1\}$, where $\text{cmp}(a, b, f, \sqsupset) = f(a) \sqsupset f(b)$.
+
+Consider the following sentences: \\
+~\\
+Fish eat flowers more than cats. \\
+More fish eat flowers than cats. \\
+
+Semantically, they can be translated to:
+
+\begin{gather}
+    \text{cmp}(\text{fish}, \text{cats}, a \mapsto (\text{\# of flowers eaten by } a), >) \\
+    \text{cmp}(\text{fish}, \text{cats}, a \mapsto (\text{\# of } a \text{ that eat flowers}), >)
+\end{gather}
+
+The heart of comparatives in \lname{} is the quadrivalent verb \hortho{dozan $a$ $b$ $f$ $\sqsupset$}. Thus: \\
+~\\
+\textkardinal{\hli{makik\^xa} \hlii{txozom-s\^fin,} \hliii{dozan} \hliv{x\^lace} \hlv{nyaza} \hlvi{ro} \hlvii{net.}} \\
+\hli{eat-\tsc{generic}-\tsc{q}} \hlii{flower-\tsc{acc}-how\_many,} \hliii{\tsc{cmp}-\tsc{near}} \hliv{fish} \hlv{cat} \hlvi{\tsc{pr.anaph\_obj}} \hlvii{$>$} \\
+\hliv{Fish} \hli{eat} \hlvii{more} \hlii{flowers} \hliii{than} \hlv{cats.} \\
+~\\
+\textkardinal{\hli{makik\^xa} \hlii{.u-s\^fin} \hliii{txozo,} \hliv{dozan} \hlv{x\^lace} \hlvi{nyaza} \hlvii{ra} \hlviii{net.}} \\
+\hli{eat-\tsc{generic}-\tsc{q}} \hlii{\tsc{pr.generic}-how\_many} \hliii{flower,} \hliv{\tsc{cmp}-\tsc{near}} \hlv{fish} \hlvi{cat} \hlvii{\tsc{pr.anaph\_sub}} \hlviii{$>$} \\
+\hlviii{More} \hlv{fish} \hli{eat} \hliii{flowers} \hliv{than} \hlvi{cats.} \\
+
+Note that we place a clause whose argument is the generic pronoun before the comparative clause. From the dozan-clause, we refer to the function using the anaphoric pronoun referring to the position of the return value.
+
+\begin{table}[h]
+    \caption{Comparators in \lname.}
+    \centering
+    \begin{tabular}{|l|>{\kardinal}l|}
+        \hline
+        $\sqsupset$ & \textnormal{Comparator} \\
+        \hline
+        $>$ & net \\
+        $<$ & fok \\
+        $=$ & ten\^g \\
+        $\ge$ & t\^yal \\
+        $\le$ & mis \\
+        $\ne$ & .qs \\
+        $\approx$ & res \\
+        $\gg$ & f\^he \\
+        $\ll$ & dan \\
+        \hline
+    \end{tabular}
+\end{table}
+
 \appendix
 
 \chapter*{Romanisation}
