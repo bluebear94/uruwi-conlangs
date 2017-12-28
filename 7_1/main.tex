@@ -254,6 +254,26 @@ Obviously, the first four rules do not match anywhere in the word. The sixth rul
 
 The dictionary lists forms of roots \emph{before} the phonorun reduction happens, because affixes can radically affect which phonemes are switched.
 
+\subsection{Prosody}
+
+The time taken to utter a phonorun is given by the model:
+
+\begin{align}
+  t_o &= K \cdot (1 + v \cdot \alpha + c \cdot \beta) & \text{ (phonorun is open)} \\
+  t_c &= K \cdot \eta \cdot (\gamma + v \cdot \alpha + c \cdot \beta) & \text{ (phonorun is closed)}
+\end{align}
+
+where $K$ is a constant varying from person to person, $v$ is the number of vowels and $c$ is the number of consonants in the run. $\alpha$, $\beta$, $\gamma$ and $\eta$ are also constants such that $\beta < \alpha$, and both $\gamma$ and $\eta$ are less than 1. In other words:
+
+\begin{itemize}
+  \item There is a fixed cost for starting a new phonorun. This cost is less for closed phonoruns than open.
+  \item Closed phonoruns are faster to say than open runs with the same number of consonants and vowels.
+  \item Closed phonoruns are also more length-dependent than open runs.
+  \item It takes less time to utter consonants than vowels.
+\end{itemize}
+
+An estimate of the constants for the standard dialect would be $\alpha = 0.37$, $\beta = 0.46$, $\gamma = 0.82$ and $\eta = 0.61$.
+
 \section{Vowel harmony}
 
 \lname{} inherits vowel harmony from Lek-Tsaro. Thus \hortho{i e} are front vowels, \hortho{u o} are back vowels and \hortho{a q} are neutral. Most roots with neither front nor back vowels act as if they had front vowels, though some might behave as if they had back vowels. Many affixes will change depending on which vowels are present.
@@ -670,10 +690,10 @@ Verbs can also be marked for aspect, either using a rod sign directly on the ver
     
     \hline
     Imperfect & -1 & An action that is currently going on. Also used to distinguish static actions as opposed to dynamic (e.~g. \emph{wear} as opposed to \emph{put on}). \\
-    Interrupted & txil1 & An action that was interrupted. \\
+    Interrupted & t\^xil1 & An action that was interrupted. \\
     Perfect & -2 & An action that has already finished. Changes present tense to immediate past. Also used to distinguish dynamic actions as opposed to static (e.~g. \emph{put on} as opposed to \emph{wear}). \\
     Gnomic & -3 & A general truth or aphorism, or an action done habitually. \\
-    Gnomic dubitative & txil3 & A general truth or aphorism that the speaker considers to be false. \\
+    Gnomic dubitative & t\^xil3 & A general truth or aphorism that the speaker considers to be false. \\
     Deontic necessity & -4 & An action that the speaker insists on happening. \\
     Epistemic necessity & kum4 & An action that the speaker infers is happening. \\
     Deontic potential & -5 & An action that the speaker permits to occur. \\
@@ -823,11 +843,11 @@ Semantically, they can be translated to:
 
 The heart of comparatives in \lname{} is the quadrivalent verb \hortho{dozan $a$ $b$ $f$ $\sqsupset$}. Thus: \\
 ~\\
-\textkardinal{\hli{makik\^xa} \hlii{txozom-s\^fin,} \hliii{dozan} \hliv{x\^lace} \hlv{nyaza} \hlvi{ro} \hlvii{net.}} \\
+\textkardinal{\hli{makik\^xa} \hlii{t\^xozom-s\^fin,} \hliii{dozan} \hliv{x\^lace} \hlv{nyaza} \hlvi{ro} \hlvii{net.}} \\
 \hli{eat-\tsc{generic}-\tsc{q}} \hlii{flower-\tsc{acc}-how\_many,} \hliii{\tsc{cmp}-\tsc{near}} \hliv{fish} \hlv{cat} \hlvi{\tsc{pr.anaph\_obj}} \hlvii{$>$} \\
 \hliv{Fish} \hli{eat} \hlvii{more} \hlii{flowers} \hliii{than} \hlv{cats.} \\
 ~\\
-\textkardinal{\hli{makik\^xa} \hlii{.u-s\^fin} \hliii{txozo,} \hliv{dozan} \hlv{x\^lace} \hlvi{nyaza} \hlvii{ra} \hlviii{net.}} \\
+\textkardinal{\hli{makik\^xa} \hlii{.u-s\^fin} \hliii{t\^xozo,} \hliv{dozan} \hlv{x\^lace} \hlvi{nyaza} \hlvii{ra} \hlviii{net.}} \\
 \hli{eat-\tsc{generic}-\tsc{q}} \hlii{\tsc{pr.generic}-how\_many} \hliii{flower,} \hliv{\tsc{cmp}-\tsc{near}} \hlv{fish} \hlvi{cat} \hlvii{\tsc{pr.anaph\_sub}} \hlviii{$>$} \\
 \hlviii{More} \hlv{fish} \hli{eat} \hliii{flowers} \hliv{than} \hlvi{cats.} \\
 
@@ -852,6 +872,50 @@ Note that we place a clause whose argument is the generic pronoun before the com
         \hline
     \end{tabular}
 \end{table}
+
+\section{Ditransitive-like constructions}
+
+In English, some verbs such as \emph{give} take two objects: the item being given and the recipient of the item. Because of \lname{}'s heritage, this is translated into a compound statement: \\
+~\\
+\textkardinal{\hli{taagt} \hlii{ta} \hliii{k\^xrik\^xriden,} \hliv{nebel} \hlv{\bs{}rqzen.}} \\
+\textkardinal{\hli{tagat} \hlii{ta} \hliii{k\^xrik\^xriden,} \hliv{nebel} \hlv{\bs{}rqzen.}} \\
+\hli{lose-\tsc{near.past}} \hlii{\tsc{pr.near}} \hliii{\tsc{def}\tl{}book,} \hliv{give\_to-\tsc{anaph\_sub.past}} \hlv{Ryze-\tsc{acc}} \\
+\hlii{I} \hliv{gave} \hliii{the book} \hlv{to Ryze.}
+
+\section{Transitivisation}
+
+Verbs that are used intransitively (i.~e. have no object passed at this time) can be turned into a causative form with the prefix \hortho{gi\=/}: \\
+~\\
+\textkardinal{\hli{t\^xicit} \hlii{frefren\^ye.}} \\
+\hli{fall-\tsc{near.past}} \hlii{\tsc{def}\tl{}coin} \\
+\hlii{The coins} \hli{fell.} \\
+~\\
+\textkardinal{\hliii{ta} \hliv{ig}\hli{t\^xicq} \hlii{frefren\^ye.}} \\
+\textkardinal{\hliii{ta} \hliv{gi}\hli{t\^xicq} \hlii{frefren\^ye.}} \\
+\hliii{\tsc{pr.near}} \hliv{\tsc{trans}-}\hli{fall-\tsc{other.past}} \hlii{\tsc{def}\tl{}coin} \\
+\hliii{I} \hliv{dropped} \hlii{the coins.} \\
+
+Due to historical sound changes:
+
+\begin{itemize}
+  \item An initial fricative or lateral fricative followed by a vowel is voiced.
+  \item An initial \hortho{r} followed by a vowel turns into \hortho{z}.
+  \item A word that started with \hortho{n\^g} in Lek-Tsaro but \hortho{n\^y} in \lname{} has the initial consonant revert to \hortho{n\^g}.
+\end{itemize}
+
+Note that the word order changes to SVO. (In this case, HCAs fall before S.) In addition, the verb is conjugated for its object, rather than the subject as expected. If the following clause uses an anaphoric subject, it refers to the object of the current clause.
+
+Moreover, the verb does not need to be one that can never take an object. In the above example, \hortho{t\^xicin} means ``(S) falls on (O)''. However, if the verb in question is taking an object, it cannot be transitivised directly and a more roundabout way is required: \\
+~\\
+\textkardinal{\hli{t\^xicit} \hlii{frefren\^ye} \hliii{rata.}} \\
+\hli{fall-\tsc{near.past}} \hlii{\tsc{def}\tl{}coin} \hliii{grass} \\
+\hlii{The coins} \hli{fell} \hliii{on the grass.} \\
+~\\
+\textkardinal{\hliii{ta} \hliv{ig}\hli{t\^xicq} \hlii{frefren\^ye,} \hlv{t\^xicel} \hlvi{raatbe.}} \\
+\textkardinal{\hliii{ta} \hliv{gi}\hli{t\^xicq} \hlii{frefren\^ye,} \hlv{t\^xicel} \hlvi{ratabe.}} \\
+\hliii{\tsc{pr.near}} \hliv{\tsc{trans}-}\hli{fall-\tsc{other.past}} \hlii{\tsc{def}\tl{}coin,} \hlv{fall-\tsc{anaph\_sub.past}} \hlvi{grass-\tsc{acc}} \\
+\hliii{I} \hliv{dropped} \hlii{the coins;} \hlv{they fell} \hlvi{on grass.} \\
+or: I dropped the coins on grass.
 
 \appendix
 
@@ -923,6 +987,7 @@ From left to right:
         \item \textit{desc} -- a descriptor
         \item \textit{pp} -- a preposition
         \item \textit{-(b)} -- this entry has only neutral vowels but acts as if it had back vowels
+        \item \textit{-(ŋ)} -- this entry came from a word that started with \hortho{n\^g-} and thus certain prefixes will revert it back
     \end{itemize}
     \item The definition -- the gloss for the corresponding entry.
     \begin{itemize}
