@@ -951,6 +951,64 @@ Modifying nouns is done through compounding, but there are special forms for mod
 
 Note that a final \hortho{-s} or \hortho{-z} in a stem becomes whistled in the generic form.
 
+\chapter{Tree mode}
+
+As mentioned in section \ref{sec:conjunctions}, anaphoric referents in a linked-list sentence are sometimes insufficient for expressing complex sentence structures. While the easiest method of resolving this issue is using definite nouns, \lname{} also provides a mode where sentences are not linked lists of clauses, but rather (binary) trees.
+
+\section{Activation}
+
+Tree mode is enabled automatically when the treeing particle \hortho{n\^ya7} is used, and disabled at the end of a sentence.
+
+\section{Branch-switching}
+
+The aforementioned particle \hortho{n\^ya7} marks the beginning of the right branch of the tree. The right branch is ended by the particle \hortho{n\^ya8}, which causes the next clause to join the left and right branches.
+
+(N.~B. \hortho{n\^ya7} and \hortho{n\^ya8} can occur only between clauses. If the particles are represented by left and right brackets, respectively, then the brackets should match.)
+
+\section{Anaphoric pronouns in joiner clauses}
+
+In clauses that join two branches, anaphoric pronouns require marking whether the antecedent occurs in the left predecessor \hortho{n\^ya7} or the right predecessor \hortho{n\^ya8}. This is done by marking the pronoun with \hortho{\=/7} or \hortho{\=/8}.
+
+Likewise, verbs can be modified with \hortho{\=/7} or \hortho{\=/8} to indicate which branch the subject came from.
+
+\section{Errors}
+
+The following are ungrammatical:
+
+\begin{itemize}
+    \item Using the particle \hortho{n\^ya8} or the branched anaphoric pronouns when tree mode is disabled
+    \item Using the particle \hortho{n\^ya8} other than to close a corresponding \hortho{n\^ya7}
+    \item Using the unbranched anaphoric pronouns in clauses with two predecessors
+    \item Using the branched anaphoric pronouns in clauses with one predecessor
+    \item Starting a new branch with \hortho{n\^ya7} when the current branch is empty
+\end{itemize}
+
+\section{Example}
+
+\textkardinal{\hli{as\^ht} \hlii{ni,} \hliii{n\^ya7} \hliv{nai.t} \hlv{ni,} \hlvi{pcizel,} \hlvii{n\^ya8} \hlviii{ptool8} \hlix{ran7.}} \\
+\textkardinal{\hli{s\^hat} \hlii{ni,} \hliii{n\^ya7} \hliv{na.it} \hlv{ni,} \hlvi{pcizel,} \hlvii{n\^ya8} \hlviii{potol8} \hlix{ran7.}} \\
+\hli{go-\tsc{near.past}} \hlii{\tsc{pr.other},} \hliii{\tsc{branch}} \hliv{wait-\tsc{near.past}} \hlv{\tsc{pr.other},} \hlvi{stand\_up-\tsc{anaph\_sub.past},} \hlvii{\tsc{join}} \hlviii{chase-\tsc{anaph\_sub.past}-\tsc{right}} \hlix{\tsc{pr.anaph\_sub.acc}-\tsc{left}} \\
+\hliv{When} \hlii{they\^{(i)}} \hli{arrived,} \hlv{they\^{(j)}} \hlvi{stood up and} \hlviii{chased} \hlix{them\^{(i)}} \hlviii{away.} \\
+
+The resulting tree is shown below:
+
+\newcommand{\trcapt}[2]{\textkardinal{#1}\\{\small \textit{#2}}}
+
+\begin{center}
+  \begin{tikzpicture}
+    \tikzset{grow'=left}
+    \tikzset{every tree node/.style={anchor=base east,align=center}}
+    \tikzset{execute at begin node=\strut}
+    \tikzset{level distance=110pt,sibling distance=10pt}
+    %\Tree [.S [.NP LaTeX ] [.VP [.V is ] [.NP fun ] ] ]
+    \Tree [
+        .\trcapt{ptool8 ran7}{they\^{(j)} chased them\^{(i)} away}
+        [.\trcapt{pcizel}{they\^{(j)} stood up} \trcapt{nai.t ni}{(they\^{(j)} waited)} ]
+        \trcapt{as\^ht ni}{they\^{(i)} arrived}
+    ]
+  \end{tikzpicture}
+\end{center}
+
 \appendix
 
 \chapter*{Romanisation}
