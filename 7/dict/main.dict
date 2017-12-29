@@ -876,3 +876,27 @@ grammar
 # f^eo^e.on^g
 : nabst
 description
+
+# fire
+: nabst
+light
+
+# to^elu^i
+: nedib
+ice
+
+# txirpin
+: v
+(O) breaks (S)
+
+# mepin
+: v
+err, miss
+
+# mon^g
+: nanim
+head
+
+# fi.ik
+: nabst
+centre, origin
