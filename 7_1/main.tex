@@ -548,7 +548,13 @@ Observe that possession marks the head, and \hortho{\=/ma} is a clitic, not an a
 \textkardinal{\hli{mqmqn\^go-f\^xqru}\hliv{-ma} \hlii{s\^h.aen}} \\
 \textkardinal{\hli{mqmqn\^go-f\^xqru}\hliv{-ma} \hlii{s\^ha.en}} \\
 \hli{\tsc{def}\tl{}rabbit-water}\hliv{=\tsc{gen}} \hlii{magician} \\
-\hlii{the magician}\hliv{'s} \hli{water rabbit}
+\hlii{the magician}\hliv{'s} \hli{water rabbit} \\
+
+This construction is also used when compounding would otherwise be used, but the dependent is larger than a single noun or descriptor: \\
+~\\
+\textkardinal{\hli{nyaza}\hliv{ma} \hlii{a.xxe} \hliii{fn} \hlv{tas}} \\
+\hli{cat}\hliv{=\tsc{gen}} \hlii{4096} \hliii{and} \hlv{two} \\
+\hliii{4098} \hli{cats}
 
 \chapter{Verbs}
 
@@ -1008,6 +1014,81 @@ The resulting tree is shown below:
     ]
   \end{tikzpicture}
 \end{center}
+
+\chapter{Numerals}
+
+Unlike Lek-Tsaro, which used a downright unusual numbering system, \lname{} uses base 16 consistently.
+
+\section{Irregular numerals}
+
+Here are the numerals that do not follow the usual pattern, before phonorun reduction:
+
+\begin{longtable}[c]{|r|>{\kardinal}r|>{\kardinal}l|}
+    \caption{Irregular numerals. \label{table:num1}} \\
+    
+    \hline
+    base 10 & \textnormal{base 16} & \textnormal{word} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    base 10 & \textnormal{base 16} & \textnormal{word} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    0 & 0 & rqm \\
+    1 & 1 & fql \\
+    2 & 2 & tas \\
+    3 & 3 & d\^yon \\
+    4 & 4 & f\^xar \\
+    5 & 5 & gis \\
+    6 & 6 & mye \\
+    7 & 7 & t\^sis \\
+    8 & 8 & pun \\
+    9 & 9 & k\^xep \\
+    10 & T & bqn\^g \\
+    11 & K & nu \\
+    12 & X & xe \\
+    13 & S & s\^fip \\
+    14 & N & yan \\
+    15 & V & t\^yel \\
+    16 & 10 & .ar \\
+    17 & 11 & x\^lel \\
+    18 & 12 & x\^lelfql \\
+    19 & 13 & x\^leltas \\
+    33 & 21 & fmalk \\
+    34 & 22 & mal \\
+    119 & 77 & mlt\^s \\
+    256 & 100 & t\^yx\^lfo \\
+    323 & 143 & k\^xazatan \\
+    4199 & 1067 & k.olu \\
+\end{longtable}
+
+Note that digits above 9 use capital hacm letters.
+
+\section{Double-digit numerals}
+
+Numerals of the form $x \cdot 16$ with $1 \le x < 16$ are formed by concatenating \hortho{.ar} $x$. For instance, $128 = 80_{16}$ is written \hortho{.arpun} → \hortho{.arupn}.
+
+Numerals for integers of the form $x \cdot 16 + y$ with both $x$ and $y$ between 1 and 15, inclusive, and not listed in table \ref{table:num1}, are formed by concatenating $x$ \hortho{r} $y$ \hortho{r} (before PR). For instance, $89 = 59_{16}$ is written \hortho{gisrk\^xepr} → \hortho{gisrk\^xper}.
+
+\section{Numerals up to 4096}
+
+Numerals for integers of the form $x \cdot 256 + y$ with $0 \le x < 16$ and $0 \le y < 256$, and not listen in table \ref{table:num1}, are formed by concatenating $y$ \hortho{t\^yx\^lfo} $x$. This is done after phonorun reduction. For instance, $2018 = 7E2_{16}$ is written \hortho{yanrtasrt\^yx\^lfoit\^ss}.
+
+Note that there is no special case for $y = 0$; $512 = 200_{16}$ is written \hortho{rqmt\^yx\^lfotas}.
+
+\section{Larger numerals}
+
+Multiples of 4096 (up to 65536) are written by concatenating \hortho{.xex} $x$ before phonorun reduction: $8192 = 2000_{16}$ is written \hortho{.xextas}. The exception is 4096 itself, which is \hortho{a.xxe}.
+
+Then other numerals up to 65536 are written as a conjunctional phrase: $10000 = 2710_{16}$ is written \hortho{.xextas fn .art\^yx\^lfoit\^ss} -- $2 \cdot 4096 + 16 + 7 \cdot 256$.
 
 \appendix
 
