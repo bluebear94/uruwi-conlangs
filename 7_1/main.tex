@@ -178,7 +178,7 @@ As opposed to Lek-Tsaro, which uses syllables, \lname{} uses \emph{phonoruns}. T
 \begin{table}[ht]
   \caption{Categories of phonemes. \label{table:phonemecats}}
   \centering
-  \begin{tabu} to \linewidth {l|>{\kardinal}X}
+  \begin{tabu} to \linewidth {l|>{\kardinal}Y}
       Category & \textnormal{Phonemes} \\
       \hline
       Full-open & a e i o u r v z\^v z z\^w j g\^j j\^l y w 5 6 \\
@@ -232,7 +232,7 @@ Note that two phonemes in the word were metathesised when it was derived from Le
 
 where $R$ means a rod signal, $X$ represents a spoken phoneme and $op$ stands for \emph{openness} (full-open = $2$, neutral = $0$, full-closed = $-2$). $do$ is short for $op > 0$, and $dc$ is short for $op < 0$. 
 
-All of the rules above move from right to left and do not occur across compound boundaries. The last two rules are executed alternately in a loop until the number of phonoruns is reduced to an acceptable number or both rules converge to a fixed point. This process will hereafter be called \emph{phonorun reduction}.
+All of the rules above move from right to left and do not occur across compound boundaries. The last two rules are executed in parallel in a loop until the number of phonoruns is reduced to an acceptable number or both rules converge to a fixed point. This process will hereafter be called \emph{phonorun reduction}.
 
 In the example above, \hortho{*s\^fa.en} had $4 > \lceil 5 / 2 \rceil$ phonoruns, so the third rule was applied. This changed the word into \hortho{s\^f.aen}, which has $2 \le \lceil 5 / 2 \rceil$ phonoruns.
 
@@ -288,7 +288,7 @@ The basic word order is VSO. Descriptors follow what they modify.
 
 However, unlike Lek-Tsaro, \lname{} has oblique arguments. As these were historically formed from a preclause, all obliques precede V. Likewise, any arguments with conjunctions also precede V. Such arguments that were formed from a clause will be called \emph{historically clausal arguments} (HCAs).
 
-Usually, oblique arguments are prepared by prepositions and fall before what they modify, but if an oblique argument is a conjunctional phrase or governs an HCA, it uses a postposition instead and precedes its antecedent.
+Usually, oblique arguments are prepared by prepositions and fall after what they modify (unless the antecedent is V), but if an oblique argument is a conjunctional phrase or governs an HCA, it uses a postposition instead and precedes its antecedent.
 
 \section{Questions}
 
@@ -360,7 +360,7 @@ The definite form of a noun is formed regularly by reduplicating the first sylla
 
 Here, the inflected forms of words are shown both before and after phonorun reduction to illustrate the pattern. The declension patterns for each class is shown, both for roots ending with consonants and those ending with vowels.
 
-Note that noun declensions for countable respect vowel harmony. For nouns with back vowels, replace the front vowels with the back vowels of the same height and rounding, and vice versa. (Noun declensions for measurable and uncountable classes do not respect vowel harmony.)
+Note that noun declensions for countable classes respect vowel harmony. For nouns with back vowels, replace the front vowels with the back vowels of the same height and rounding, and vice versa. (Noun declensions for measurable and uncountable classes do not respect vowel harmony.)
 
 \subsection{Countable classes}
 
