@@ -181,7 +181,7 @@ As opposed to Lek-Tsaro, which uses syllables, \lname{} uses \emph{phonoruns}. T
   \begin{tabu} to \linewidth {l|>{\kardinal}Y}
       Category & \textnormal{Phonemes} \\
       \hline
-      Full-open & a e i o u r v z\^v z z\^w j g\^j j\^l y w 5 6 \\
+      Full-open & a e i o u v z\^v z z\^w j g\^j j\^l y w 5 6 \\
       Half-open & q r l m n n\^y n\^g s\^l 7 \\
       Neutral & s s\^w x x\^l v\^h z\^h v\^j 1 2 \\
       Half-closed & f x k\^x c 8 \\
@@ -230,7 +230,7 @@ Note that two phonemes in the word were metathesised when it was derived from Le
   X_1[dc] X_2[do] X_3[dc] &\rightarrow X_2 X_1 X_3 &\quad\text{for ever} \\
 \end{alignat*}
 
-where $R$ means a rod signal, $X$ represents a spoken phoneme and $op$ stands for \emph{openness} (full-open = $2$, neutral = $0$, full-closed = $-2$). $do$ is short for $op > 0$, and $dc$ is short for $op < 0$. 
+where $R$ means a rod signal, $X$ represents a spoken phoneme and $op$ stands for \emph{openness} (full-open = $2$, neutral = $0$, full-closed = $-2$). $do$ is short for $op > 0$, and $dc$ is short for $op < 0$. (The same rule can occur multiple times within a word, although such invocations may not intersect each other.)
 
 All of the rules above move from right to left and do not occur across compound boundaries. The last two rules are executed in parallel in a loop until the number of phonoruns is reduced to an acceptable number or both rules converge to a fixed point. This process will hereafter be called \emph{phonorun reduction}.
 
@@ -296,7 +296,7 @@ In all questions, the intonation of the second word of the last clause is lowere
 
 Binary questions have the interrogative polarity marker and no change to syntax.
 
-In wh-questions, the wh-word is pulled to the front (i.~e. before the verb). This requires case marking for the wh-word: \\
+In wh-questions, the wh-word is pulled to the front (i.~e.~before the verb). This requires case marking for the wh-word: \\
 ~\\
 \textkardinal{\hli{t\^xezin} \hlii{refqsk\^xa} \hliii{po?}} \\
 \hli{who-\tsc{acc}} \hlii{speak-\tsc{far.past}-\tsc{q}} \hliii{\tsc{pr.far}} \\
@@ -442,7 +442,7 @@ Note that noun declensions for countable classes respect vowel harmony. For noun
     \multicolumn{2}{|l|}{\textnormal{Edible: \hortho{*ter.i} ``beef''}} \\
     \hline
     Nominative & ter.i (teri.) \\
-    Accusative & ter.i\hliii{n} (terin.) \\
+    Accusative & ter.i\hliii{n} (teri.n) \\
     \hline
     \multicolumn{2}{|l|}{\textnormal{Edible: \hortho{*man} ``rice''}} \\
     \hline
@@ -578,10 +578,10 @@ The dictionary lists the stem of the verb and the conjugation scheme used.
     \hline
     Near & mak\hliii{an} (makan) & mak\hliii{at} (maakt) \\
     Far & mak\hliii{an} (makan) & mak\hliii{qs} (makqs) \\
-    Other & mak\hliii{a} (kmaa) & mak\hliii{q} (makq) \\
-    Anaph. Sub. & mak\hliii{e} (kmae) & mak\hliii{el} (kmael) \\
+    Other & mak\hliii{a} (maak) & mak\hliii{q} (makq) \\
+    Anaph. Sub. & mak\hliii{e} (maek) & mak\hliii{el} (makel) \\
     Anaph. Obj. & mak\hliii{i.e} (mak.ie) & mak\hliii{i.el} (mak.iel) \\
-    Generic & mak\hliii{i} (kmai) & mak\hliii{i} (kmai) \\
+    Generic & mak\hliii{i} (maik) & mak\hliii{i} (maik) \\
     \hline
   \end{tabular}
 \end{table}
@@ -756,7 +756,7 @@ Deriving a postposition from a preposition is done \emph{after} phonorun reducti
 
 Conjunctions are derived from verbs as well; for instance, \hortho{fn} \emph{and} is derived from Lek-Tsaro \hortho{fin} \emph{join}. However, in \lname{}, conjunctions are infixed: \\
 ~\\
-\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{kmae} \hlv{teri..}} \\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{maek} \hlv{teri..}} \\
 \textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{make} \hlv{ter.i.}} \\
 \hli{Ryze} \hlii{and} \hliii{Tazyl} \hliv{eat-\tsc{anaph\_sub.nonpast}} \hlv{beef} \\
 
@@ -764,7 +764,7 @@ Conjunctions are derived from verbs as well; for instance, \hortho{fn} \emph{and
 
 Unlike Lek-Tsaro's approach, this approach works well with more complex sentences: \\
 ~\\
-\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{teri.} \hlv{fn} \hlvi{x\^lapsi} \hlvii{kmae.}} \\
+\textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{teri.} \hlv{fn} \hlvi{x\^lapsi} \hlvii{maek.}} \\
 \textkardinal{\hli{\bs{}rqze} \hlii{fn} \hliii{\bs{}tazql} \hliv{ter.i} \hlv{fn} \hlvi{x\^lapsi} \hlvii{make.}} \\
 \hli{Ryze} \hlii{and} \hliii{Tazyl} \hliv{beef} \hlv{and} \hlvi{soup} \hliv{eat-\tsc{anaph\_sub.nonpast}} \\
 
@@ -794,7 +794,7 @@ Unlike most parts of speech, a complete connector, composed of the three parts a
 Connectors \hli{$x$} and \hlii{$y$} are part of the same \emph{set} \hliii{$S$} iff all of the following conditions hold:
 
 \begin{itemize}
-  \item \hli{$x$} and \hlii{$y$} are identical (i.~e. all three parts are the same between \hli{$x$} and \hlii{$y$})
+  \item \hli{$x$} and \hlii{$y$} are identical (i.~e.~all three parts are the same between \hli{$x$} and \hlii{$y$})
   \item they belong to clauses \hlv{$\alpha$} and \hlvi{$\beta$}, respectively (NB: it is possible that $\hlv{\alpha} = \hlvi{\beta}$)
   \item there are no clauses between \hlv{$\alpha$} and \hlvi{$\beta$} that has a connector with the same \hlviii{type} and \hlix{seqid} but a different \hlx{parity} from \hli{$x$} or \hlii{$y$}
 \end{itemize}
@@ -827,7 +827,6 @@ Clauses of a connector set are joined by the relation of the connector used ther
 \hli{\tsc{ordinary}-\hortho{e}-0} \hlii{dance-\tsc{near.past}} \hliii{child} \hliv{tree} \\
 \hli{Then} \hliii{the child} \hlii{danced around} \hliv{the tree.} \\
 ~\\
-\textkardinal{\hli{asea} \hlii{kmael} \hliii{x\^lax\^lacem.}} \\
 \textkardinal{\hli{asea} \hlii{makel} \hliii{x\^lax\^lacem.}} \\
 \hli{eat-\tsc{anaph\_sub.past}} \hlii{\tsc{ordinary}-\hortho{e}-0} \hliii{\tsc{def}\tl{}fish-\tsc{acc}} \\
 \hli{Then} \hlii{the child ate} \hliii{the fish.} \\
@@ -896,7 +895,7 @@ In English, some verbs such as \emph{give} take two objects: the item being give
 
 \section{Transitivisation}
 
-Verbs that are used intransitively (i.~e. have no object passed at this time) can be turned into a causative form with the prefix \hortho{gi\=/}: \\
+Verbs that are used intransitively (i.~e.~have no object passed at this time) can be turned into a causative form with the prefix \hortho{gi\=/}: \\
 ~\\
 \textkardinal{\hli{t\^xicit} \hlii{frefren\^ye.}} \\
 \hli{fall-\tsc{near.past}} \hlii{\tsc{def}\tl{}coin} \\
