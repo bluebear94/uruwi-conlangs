@@ -1,0 +1,66 @@
+001 Inflections use dick jokes as an analogy
+
+5+ "genders" (or none)
+* PENIS – generally, a long object or an object in a container
+* TROUSERS – container or clothing that covers (at least) the lower body
+* AROUSAL – arousal, as well as expanding, growing or hard objects
+* INTERCOURSE – intercourse, as well as combat-related actions,
+  as well as placing an object into a container
+* SEMEN – milky substances, as well as objects escaping or leaving
+
+not fixed
+
+Fish eat flowers.
+^T       ^P
+here, flowers are being contained by the fish
+
+I tried to fight them, but they shot me in the knee.
+           ^I                   ^P
+
+Have the neighbors gone away for the winter?
+         ^S
+
+Near the mouth of the river, its course turns sharply towards the East.
+         ^T           ^P                ^S
+
+Among the wheat grew tall red poppies.
+^I        ^A    ^A            ^A
+
+002 Heck, express sentences in terms of sexual intercourse
+
+Sentences have:
+* MALE: this is just an analogy for the brains behind the action.
+* PENIS: tool used?
+* INTERCOURSE: describes the nature of the thing or action analogised to intercourse
+* VAGINA: ???
+* FEMALE: owner of V, probably
+
+Fish eat flowers.
+M = fish, P = flowers, I = T1R0M1F1L0, V = mouth, F = fish
+
+I tried to fight them, but they shot me in the knee.
+M = I, P = weapon, I = T0R0M1F0L0, V = them, F = them
+M = they, P = arrow, I = T1R0M1F0L0, V = knee, F = me
+
+Alas! that news is sad indeed!
+M = nature, P = sadness, I = T, V = news, F = nature
+M = nature, P = news, I = TRM, V = mind, F = me
+
+On a fine summer evening, the two old people were sitting outside the door of their cottage.
+M = nature, P = sun, I = RMF/PC=10, V = west, F = ground
+M = nature, P = two, I = TRMF, V = id, F = people
+M = nature, P = aging, I = TM, V = id, F = people
+M = people, P = people, I = TRM/PC=00, V = door, F = cottage
+M = nature, P = grass, I = RMF, V = buttocks, F = people
+
+Flags for INTERCOURSE:
+* TELIC: true if successful
+* REVERSIBLE: true if able to be reversed; false if permanent
+* MALE_CONSENTS: true if M consents to action
+* FEMALE_CONSENTS: true if F consents to action
+* LITERAL: true if describing a literal act of sexual intercourse, false otherwise
+* P, C:
+  * 1, 1: inside
+  * 1, 0: entering
+  * 0, 1: exiting
+  * 0, 0: outside

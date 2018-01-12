@@ -264,7 +264,7 @@ err, miss
 
 # y-
 : v1
-(S) sees (O), because
+(S) sees (O), because, (S) illuminates (O)
 
 # meby-
 : v1
@@ -321,3 +321,123 @@ who?
 # mir
 : ndnonsent
 hand
+
+# mukon^g
+: nsent
+servant
+
+# knk-
+: v1
+(S) lives in (O)
+
+# mika
+: desc
+far
+
+# mk
+: pp
+far away from
+
+# t^xazis
+: nnonsent
+river
+
+# s^h
+: pp
+toward
+
+# tomor
+: nnonsent
+bedroom
+
+# dem-
+: v1
+(S) sleeps
+
+# n.k
+: pp
+in, on, at (time)
+
+# kan
+: nmeas
+1/23 of a tidal day
+
+# mekan
+: nmeas
+hour
+
+# krak
+: nnonsent
+stairs
+
+# n.r
+: pp
+through
+
+# somente
+: nabst
+dawn, wee hours
+
+# tran^g
+: nnonsent
+cloud
+
+# pcatsran^g
+: nnonsent
+mist, fog
+
+# ment-
+: v1
+begin, start
+
+# kon-
+: desc
+entire, complete
+
+# na.ez-
+: v3
+(S) covers, spans (O)
+
+# preme
+: nnonsent
+city
+
+# .iksr-
+: desc
+new, next
+
+# rqko
+: nabst
+nighttime
+
+# duzo
+: nnonsent
+pathway, street, road
+
+# kstam
+: nnonsent
+window
+
+# patr-
+: v1
+(S) sits at (O)
+
+# mzapr
+: nsent
+nobleman, gentleman
+
+# t^skor-
+: desc
+handsome, beautiful
+
+# rkp
+: pp
+with (colour) hair
+
+# rakpo
+: nnonsent
+hair
+
+# t^sis^h-
+: v1
+(S) follows (O)
