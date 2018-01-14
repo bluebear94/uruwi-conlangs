@@ -723,6 +723,27 @@ An example: \\
 \hli{fight-\tsc{near.past}-\tsc{atelic}-\tsc{imperfect}} \hlii{\tsc{pr.near}} \hliii{\tsc{pr.other},} \hliv{shoot-\tsc{anaph\_obj.past}-\tsc{unexpected}} \hlv{knee-\tsc{inv.acc}-\tsc{pr.anaph\_sub}} \\
 \hlii{I} \hli{tried to fight} \hliii{them,} \hliv{but they shot} \hlv{my knee.}
 
+\subsection{Simultaneous temporal and spatial aspects}
+
+A verb may be modified by both temporal and spatial aspects, in which case their mutual order is significant:
+
+\begin{table}[h]
+    \caption{Behaviour when both temporal and spatial markers exist, where $t$ is a time variable and $\vec{x}$ is a space variable.}
+    \centering
+    \begin{tabu}{>{\kardinal}lll}
+        \textnormal{Marking} & Definition & Equivalent \\
+        \hline
+        -9\^89\^7 & $\forall t \forall \vec{x} : P(t, \vec{x})$ & $\forall t \forall \vec{x} : P(t, \vec{x})$ \\
+        -9\^8 s\^w9\^7 & $\lnot \forall t \forall \vec{x} : P(t, \vec{x})$ & $\exists t \exists \vec{x} : \lnot P(t, \vec{x})$ \\
+        s\^w9\^89\^7 & $\forall t \lnot \forall \vec{x} : P(t, \vec{x})$ & $\forall t \exists \vec{x} : \lnot P(t, \vec{x})$ \\
+        s\^w9\^8 s\^w9\^7 & $\lnot \forall t \lnot \forall \vec{x} : P(t, \vec{x})$ & $\exists t \forall \vec{x} : P(t, \vec{x})$ \\
+        -9\^79\^8 & $\forall \vec{x} \forall t : P(t, \vec{x})$ & $\forall \vec{x} \forall t : P(t, \vec{x})$ \\
+        -9\^7 s\^w9\^8 & $\lnot \forall \vec{x} \forall t : P(t, \vec{x})$ & $\exists \vec{x} \exists t : \lnot P(t, \vec{x})$ \\
+        s\^w9\^79\^8 & $\forall \vec{x} \lnot \forall t : P(t, \vec{x})$ & $\forall \vec{x} \exists t : \lnot P(t, \vec{x})$ \\
+        s\^w9\^7 s\^w9\^8 & $\lnot \forall \vec{x} \lnot \forall t : P(t, \vec{x})$ & $\exists \vec{x} \forall t : P(t, \vec{x})$ \\
+    \end{tabu}
+\end{table}
+
 \section{Historically clausal arguments}
 
 \emph{Historically clausal arguments} (HCAs) are arguments of a sentence that are derived from clausal constructions. They include obliques and conjunctions. HCAs precede V.
