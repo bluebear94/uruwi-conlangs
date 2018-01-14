@@ -33,3 +33,6 @@ out/%.pdf: %/main.tex common/uruwi.sty
 
 clean:
 	rm -rf out
+
+yukkuri:
+	@echo "ゆっくりしていってね！"

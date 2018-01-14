@@ -126,7 +126,10 @@ In addition to consonants and vowels, \lname{} has rod signals, represented by n
     \item Rods A and B are extended, facing forward.
     \item Rod A is raised forward, while B is pointed to the side.
     \item Rod B is raised forward, while A is pointed to the side.
+    \item Rod A is raised besides one's head, while Rod B is extended toward the side of the dominant hand. This rod signal does not exist alone, but rather as a transition to the seventh or eighth rod signal.
 \end{enumerate}
+
+In addition, the fourth rod signal has a ``halfway'' form where Rod A is retracted away from the nondominant arm.
 
 Lowering both rods is interpreted as an absence of a rod signal.
 
@@ -167,7 +170,7 @@ As using IPA is quite wieldly, we shall use the following hacmisation, with supe
     \end{tabular}
 \end{table}
 
-Rod signs are represented by the hacm digits \hortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Proper words are preceded by a backslash \hortho{\bs{}}.
+Rod signs are represented by the hacm digits \hortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Halfway rod signals are represented by a subscript digit: \hortho{\,4}. Transitions from the ninth rod signal are written \hortho{9\^7 9\^8}. Proper words are preceded by a backslash \hortho{\bs{}}.
 
 Note that the hacmisation is slightly different from Lek-Tsaro's use of hacm. Lek-Tsaro's \hortho{h j} are now written using \hortho{k\^x x\^l}, for instance.
 
@@ -182,10 +185,10 @@ As opposed to Lek-Tsaro, which uses syllables, \lname{} uses \emph{phonoruns}. T
       Category & \textnormal{Phonemes} \\
       \hline
       Full-open & a e i o u v z\^v z z\^w j g\^j j\^l y w 5 6 \\
-      Half-open & q r l m n n\^y n\^g 7 \\
+      Half-open & q r l m n n\^y n\^g 7 9\^7 \\
       Neutral & s s\^w x\^l v\^h z\^h v\^j 1 2 \\
-      Half-closed & f x k\^x c 8 \\
-      Full-closed & s\^f f\^h s\^h f\^x p b t d t\^y d\^y k g t\^s t\^x . 3 4 \\
+      Half-closed & f x k\^x c 8 9\^8 \\
+      Full-closed & s\^f f\^h s\^h f\^x p b t d t\^y d\^y k g t\^s t\^x . 3 4 \,4 \\
   \end{tabu}
 \end{table}
 
@@ -696,7 +699,8 @@ Verbs can also be marked for aspect, either using a rod sign directly on the ver
     Gnomic & -3 & A general truth or aphorism, or an action done habitually. \\
     Gnomic dubitative & t\^xil3 & A general truth or aphorism that the speaker considers to be false. \\
     Deontic necessity & -4 & An action that the speaker insists on happening. \\
-    Epistemic necessity & kum4 & An action that the speaker infers is happening. \\
+    Deontic recommendation & -\,4 & An action that the speaker recommends that happens. \\
+    Epistemic necessity & kum4 & An action that the speaker infers is happening. \emph{(Situational necessitative and potential moods are grouped with their epistemic versions.)} \\
     Deontic potential & -5 & An action that the speaker permits to occur. \\
     Epistemic potential & kum5 & An action that the speaker infers that might happen. \\
     Unexpected & -6 & An action that is unexpected (akin to using ``but''). \\
@@ -704,6 +708,10 @@ Verbs can also be marked for aspect, either using a rod sign directly on the ver
     Nonexclusive subject & t\^yi1 & Indicates that the subject comprises not only of what is explicitly mentioned, but also other things. \\
     Nonexclusive object & it\^y3 & Indicates that the object comprises not only of what is explicitly mentioned, but also other things. \\
     Nonexclusive argument & it\^y4 & Combination of both nonexclusive subject and nonexclusive object. \\
+    Temporal universal & -9\^7 & The statement is always true (``never true'' when negative). \\
+    Temporal non-universal & s\^w9\^7 & The statement is not always true (``sometimes true'' when negative). \\
+    Spatial universal & -9\^8 & The statement is true (false) everywhere. \\
+    Spatial non-universal & s\^w9\^8 & The statement is false (true) somewhere. \\
 \end{longtabu}
 
 An attached rod signal reverts \hortho{s\^f z\^v} to \hortho{s\^h z\^h}, respectively, and might affect phonorun reduction.
@@ -1078,6 +1086,76 @@ Multiples of 4096 (up to 65536) are written by concatenating \hortho{.xex} $x$ b
 
 Then other numerals up to 65536 are written as a conjunctional phrase: $10000 = 2710_{16}$ is written \hortho{.xextas fn .art\^yx\^lfoit\^ss} -- $2 \cdot 4096 + 16 + 7 \cdot 256$.
 
+\chapter{Derivational morphology}
+
+The following methods are used to derive related terms from existing ones.
+
+\section{Abstraction}
+
+Abstraction is a derivation that takes a non-abstract noun and returns the abstract noun representing the concept of the argument. Before pronoun reduction, this formation appends \hortho{\=/ne} or \hortho{\=/no} to the noun. In addition, any final fricatives or lateral fricatives after a vowel are voiced, and a final \hortho{r} after a vowel is changed to \hortho{z}.
+
+Examples:
+
+\begin{itemize}
+    \item \hortho{k\^xriden} \emph{book} → \hortho{k\^xridene} \emph{literature}
+    \item \hortho{k\^xoka} \emph{cart} → \hortho{k\^xokano} (→ \hortho{k\^xkoano}) \emph{transportation}
+    \item \hortho{mir} \emph{hand} → \hortho{mizne} \emph{technique}
+\end{itemize}
+
+\section{Dematuration}
+
+Dematuration is a derivation that takes a noun and returns a noun of the same class that represents an immature form of the argument (not necessarily a diminuitive). \hortho{t\^xi\=/} or \hortho{tu\=/} are prepended to nouns that begin in \hortho{s}, \hortho{x} or \hortho{s\^w}, or \hortho{si\=/} or \hortho{su\=/} otherwise. In addition, an initial fricative or lateral fricative before a vowel is voiced, and an initial \hortho{r} before a vowel is changed to \hortho{z}.
+
+Examples:
+
+\begin{itemize}
+    \item \hortho{maza} \emph{person} → \hortho{simaza} \emph{child}
+    \item \hortho{t\^sozu} \emph{fruit} → \hortho{sut\^sozu} (→ \hortho{st\^suozu}) \emph{unripe fruit}
+    \item \hortho{secakin} \emph{essay} → \hortho{t\^xizecakin} \emph{draft}
+\end{itemize}
+
+\section{Verb-to-noun conversions}
+
+To derive a noun from a verb, an affix is added to the verb stem:
+
+\begin{longtable}[c]{|l|>{\kardinal}l|}
+    \caption{Conversion affixes.} \\
+    
+    \hline
+    Name & \textnormal{Affix} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    Name & \textnormal{Affix} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    Agent & -en\^g / -on\^g \\
+    Patient & -ep / -op \\
+    Location & -er / -or \\
+    Instrument & -at\^s \\
+\end{longtable}
+
+Then the resulting word is declined as an abstract noun, and phonorun reduction happens. After phonorun reductions, the order of phonoruns is reversed, such that the last phonorun becomes the first, for instance. Finally, the final phonorun is continued by appending \hortho{-i} or \hortho{-t}.
+
+The following words are derived from \hortho{nub-} (v2) \emph{to steal}:
+
+\begin{itemize}
+    \item Agent: \hortho{nubon\^g} → \hortho{on\^gbnui} \emph{thief}
+    \item Patient: \hortho{nubop} → \hortho{nuobp} → \hortho{bpnuoi} \emph{stolen goods}
+    \item Location: \hortho{nubor} → \hortho{orbnui} \emph{site of theft}
+    \item Instrument: \hortho{nubat\^s} → \hortho{nuabt\^s} → \hortho{bt\^snuai} \emph{tools used for theft}
+\end{itemize}
+
+Occasionally, a word derived by this method might become lexicalised. In that case, it moves to the noun class of best semantic fit and its declension is regularised (based on the nominative form).
+
 \appendix
 
 \chapter*{Romanisation}
@@ -1117,7 +1195,7 @@ In this text, the romanisation is used only to transcribe names into English. Wh
 
 The digraphs \ortho{fh vħ þh ðħ fš vž ts tš} correspond to coärticulated consonants and affricates. An apostrophe can be placed between the two letters if this is not desired.
 
-Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Proper words are preceded by a backslash \ortho{\bs{}}.
+Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Halfway rod signals are represented by subscript digits \ortho{₄}. Transitions from the ninth rod signal are written \hortho{9⁷ 9⁸}. Proper words are preceded by a backslash \ortho{\bs{}}.
 
 \ortho{ŋ} should be capitalised as \ortho{Ŋ} only if one can depend on the majuscule glyph appearing like an N with a hook. Otherwise, it should be spelled \ortho{Ng}.
 
