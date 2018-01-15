@@ -283,6 +283,18 @@ An estimate of the constants for the standard dialect would be $\alpha = 0.37$, 
 
 If by some odd chance a word has both front and back vowels, then the rightmost vowel (before phonorun reduction) takes precedence.
 
+\section{Rod signal sandhi}
+
+The following rules influence rod signals depending on the previous rod signal (of the current or previous word):
+
+\begin{itemize}
+    \item \hortho{4} is realised as \hortho{2} after \hortho{4} or \hortho{\,4}.
+    \item \hortho{7} is realised as \hortho{9\^7} after \hortho{7} or \hortho{9\^7}.
+    \item \hortho{8} is realised as \hortho{9\^8} after \hortho{8} or \hortho{9\^8}.
+\end{itemize}
+
+Rod sandhi does not affect the orthography or phonorun reduction.
+
 \chapter{Syntax}
 
 \section{Basic word order}
@@ -733,13 +745,13 @@ A verb may be modified by both temporal and spatial aspects, in which case their
     \begin{tabu}{>{\kardinal}lll}
         \textnormal{Marking} & Definition & Equivalent \\
         \hline
-        -9\^89\^7 & $\forall t \forall \vec{x} : P(t, \vec{x})$ & $\forall t \forall \vec{x} : P(t, \vec{x})$ \\
+        -9\^87 & $\forall t \forall \vec{x} : P(t, \vec{x})$ & $\forall t \forall \vec{x} : P(t, \vec{x})$ \\
         -9\^8 s\^w9\^7 & $\lnot \forall t \forall \vec{x} : P(t, \vec{x})$ & $\exists t \exists \vec{x} : \lnot P(t, \vec{x})$ \\
-        s\^w9\^89\^7 & $\forall t \lnot \forall \vec{x} : P(t, \vec{x})$ & $\forall t \exists \vec{x} : \lnot P(t, \vec{x})$ \\
+        s\^w9\^87 & $\forall t \lnot \forall \vec{x} : P(t, \vec{x})$ & $\forall t \exists \vec{x} : \lnot P(t, \vec{x})$ \\
         s\^w9\^8 s\^w9\^7 & $\lnot \forall t \lnot \forall \vec{x} : P(t, \vec{x})$ & $\exists t \forall \vec{x} : P(t, \vec{x})$ \\
-        -9\^79\^8 & $\forall \vec{x} \forall t : P(t, \vec{x})$ & $\forall \vec{x} \forall t : P(t, \vec{x})$ \\
+        -9\^78 & $\forall \vec{x} \forall t : P(t, \vec{x})$ & $\forall \vec{x} \forall t : P(t, \vec{x})$ \\
         -9\^7 s\^w9\^8 & $\lnot \forall \vec{x} \forall t : P(t, \vec{x})$ & $\exists \vec{x} \exists t : \lnot P(t, \vec{x})$ \\
-        s\^w9\^79\^8 & $\forall \vec{x} \lnot \forall t : P(t, \vec{x})$ & $\forall \vec{x} \exists t : \lnot P(t, \vec{x})$ \\
+        s\^w9\^78 & $\forall \vec{x} \lnot \forall t : P(t, \vec{x})$ & $\forall \vec{x} \exists t : \lnot P(t, \vec{x})$ \\
         s\^w9\^7 s\^w9\^8 & $\lnot \forall \vec{x} \lnot \forall t : P(t, \vec{x})$ & $\exists \vec{x} \forall t : P(t, \vec{x})$ \\
     \end{tabu}
 \end{table}
@@ -1216,7 +1228,7 @@ In this text, the romanisation is used only to transcribe names into English. Wh
 
 The digraphs \ortho{fh vħ þh ðħ fš vž ts tš} correspond to coärticulated consonants and affricates. An apostrophe can be placed between the two letters if this is not desired.
 
-Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Halfway rod signals are represented by subscript digits \ortho{₄}. Transitions from the ninth rod signal are written \hortho{9⁷ 9⁸}. Proper words are preceded by a backslash \ortho{\bs{}}.
+Rod signs are represented by the Arabic digits \ortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Halfway rod signals are represented by subscript digits \ortho{₄}. Transitions from the ninth rod signal are written \ortho{9⁷ 9⁸}. Proper words are preceded by a backslash \ortho{\bs{}}.
 
 \ortho{ŋ} should be capitalised as \ortho{Ŋ} only if one can depend on the majuscule glyph appearing like an N with a hook. Otherwise, it should be spelled \ortho{Ng}.
 
