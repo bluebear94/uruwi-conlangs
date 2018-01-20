@@ -1174,6 +1174,7 @@ To derive a noun from a verb, an affix is added to the verb stem:
     Patient & -ep / -op \\
     Location & -er / -or \\
     Instrument & -at\^s \\
+    Causer & -ed\^yp / -ogp \\
 \end{longtable}
 
 Then the resulting word is declined as an abstract noun, and phonorun reduction happens. After phonorun reductions, the order of phonoruns is reversed, such that the last phonorun becomes the first, for instance. Finally, the final phonorun is continued by appending \hortho{-i} or \hortho{-t}.
@@ -1185,9 +1186,20 @@ The following words are derived from \hortho{nub-} (v2) \emph{to steal}:
     \item Patient: \hortho{nubop} → \hortho{nuobp} → \hortho{bpnuoi} \emph{stolen goods}
     \item Location: \hortho{nubor} → \hortho{orbnui} \emph{site of theft}
     \item Instrument: \hortho{nubat\^s} → \hortho{nuabt\^s} → \hortho{bt\^snuai} \emph{tools used for theft}
+    \item Causer: \hortho{nubogp} → \hortho{nuobgp} → \hortho{bgpnuo} \emph{person or factor that caused the theft}
 \end{itemize}
 
 Occasionally, a word derived by this method might become lexicalised. In that case, it moves to the noun class of best semantic fit and its declension is regularised (based on the nominative form).
+
+\section{Verb-to-verb conversions}
+
+The main productive verb-to-verb conversion is the \emph{immediate reversal}, which is expressed with an infix \hortho{-amz-} or \hortho{-pqd-} immediately before the ending, depending on whether the last phonorun of the stem (before phonorun reduction) is open or closed, respectively. This conversion is often associated with the lack of volition.
+
+\begin{itemize}
+    \item \hortho{dem-} \emph{sleep} → \hortho{demamz-} \emph{be woken up forcibly} (→ \hortho{gidemamz-} \emph{wake someone up forcibly})
+    \item \hortho{mez-} \emph{ride, board} → \hortho{mezamz-} \emph{be forcefully ejected from a ride} (→ \hortho{gimezamz-} \emph{eject someone from a ride})
+    \item \hortho{nerf-} \emph{hide} → \hortho{nerfpqd-} \emph{be uncovered} (→ \hortho{ginerfpqd-} \emph{uncover something})
+\end{itemize}
 
 \chapter{Names}
 
@@ -1196,6 +1208,7 @@ Names fall into two grammatical categories:
 \begin{itemize}
     \item \emph{Nominal names} act as nouns. They are usually single words.
     \item \emph{Clausal names} are entire clauses. These names usually refer to places, although a few people have clausal names. In extreme cases, such a name can span multiple clauses.
+    \item \emph{Station names} are used for places where a medium of transportation stops to exchange passengers according to a regular schedule (e.~g. a train station or a bus stop). These are verbs.
 \end{itemize}
 
 \section{Nominal names}
@@ -1269,6 +1282,49 @@ An example of usage: \\
 \textkardinal{\hli{[muta preme rik-\bs{xedre}],} \hlii{n.k} \hliii{banen-.iksra} \hliv{s\^he} \hlv{mamaza} \hlvi{ra.}} \\
 \hli{(name),} \hlii{in\_time} \hliii{year-next} \hliv{go-\tsc{anaph\_sub}} \hlv{\tsc{def}\tl{}person} \hlvi{\tsc{pr.anaph\_sub}} \\
 \hlv{He} \hliv{will go} \hlvi{to} \hli{Muta Pröme Ryk-Šedrŷ} \hliii{next year.}
+
+\section{Station names}
+
+These names describe places where a medium of transportation stops to exchange passengers according to a regular schedule (e.~g. a train station or a bus stop). Station names are (usually first- or second-conjugation) verbs whose base meaning is \emph{(S) goes to \$station via \$transportation}. They are marked with a per cent sign \hortho{\%} before the name.
+
+Unlike with other verbs, the immediate reversal does not necessarily suggest a lack of volition. The reversal of a station name, rather, simply means \emph{(S) goes from \$station}.
+
+The other derivations have the following meanings:
+
+\begin{table}[h]
+    \centering
+    \caption{Derivations of station names.}
+    \begin{tabu} to \linewidth {l|YY}
+        & (base) & Immediate reversal \\
+        \hline
+        (base verb) & (S) goes to \$station & (S) goes from \$station \\
+        Agent & A passenger going to \$station & A passenger going from \$station \\
+        Patient & \multicolumn{2}{c}{(undefined)} \\
+        Location & The \$path to \$station & The \$path from \$station \\
+        Instrument & The \$transporation going to \$station & The \$transportation going from \$station \\
+        Causer & \multicolumn{2}{c}{The driver of said \$transportation} \\
+    \end{tabu}
+\end{table}
+
+In addition, the aspect marker \hortho{-2} changes the meaning from \emph{(S) goes from \$station} to \emph{(S) boards the \$transportation to \$station}. Similarly, combining both the immediate reversal infix and the perfect aspect marker yields \emph{(S) boards the \$transportation from \$station}.
+
+There are several ways a station name can be derived:
+
+\begin{itemize}
+    \item From a nominal name: if it does not end in a verbal affix, then one is attached: e.~g. \hortho{preme-\bs{}waxa.i} → \hortho{\%waxa.-} (v3).
+    \item From a clausal name wherein the referent is S or O: Let C be the nonreferent among S and O (or empty if none). Then the station name comes from a compound of C-V: \hortho{[muta PREME rik-\bs{xedre}]} → \hortho{\%rik-\bs{xedre}-mut-} (v2). (In a name with multiple clauses, ignore those that do not contain the referent.)
+    \item From a clausal name with V as the referent: If neither S nor O exists, let C be empty. If S xor O is a ``common word'', then let C be the one that is not common. Otherwise, let C be S. Then the station name comes from a compound of C-V: \hortho{[NERFI pcat\^sa tofok]} → \hortho{\%pcat\^sa-nerf-} (v3).
+\end{itemize}
+
+\subsection{Common words}
+
+``Common words'', in the context of deriving station names, include:
+
+\begin{itemize}
+    \item Numerals
+    \item Sentient nouns that are neither personal names nor modified by \hortho{=ma}
+    \item \hortho{pcat\^sa} \emph{ground}, \hortho{tovok} \emph{tree}, \hortho{kacas} \emph{stone} or \hortho{t\^xazis} \emph{river}, as well as their Lek-Tsaro equivalents in frozen names, not modified by any nominal names (but names for a specific kind of tree, etc., e.~g. \hortho{nisfa} \emph{birch} are not common words)
+\end{itemize}
 
 \appendix
 
