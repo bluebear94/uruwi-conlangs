@@ -16,7 +16,7 @@ house
 
 # rqmq
 : nmeas
-day (continuous)
+(tidal) day (continuous)
 
 # mel
 : nmeas
@@ -489,3 +489,51 @@ year
 # nisfa
 : nnonsent
 birch
+
+# prav-
+: v1
+(S) passes (O)
+
+# nis
+: nnonsent
+face
+
+# fdasl
+: nnonsent
+stick, rod
+
+# beg^ja
+: nedib
+sea
+
+# fqlkeg^ja
+: nnonsent
+key
+
+# keg^ja
+: nnonsent
+tooth
+
+# nevi
+: nined
+fire
+
+# .inf-
+: desc
+hot
+
+# pakro
+: nnonsent
+pecan
+
+# rqk
+: nnonsent
+star
+
+# k^xaspe
+: nnonsent
+leaf
+
+# k^xaspezqk
+: nnonsent
+spark

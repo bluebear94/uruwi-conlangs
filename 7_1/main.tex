@@ -992,7 +992,7 @@ Note that a final \hortho{-s} or \hortho{-z} in a stem becomes whistled in the g
 
 \chapter{Tree mode}
 
-As mentioned in section \ref{sec:conjunctions}, anaphoric referents in a linked-list sentence are sometimes insufficient for expressing complex sentence structures. While the easiest method of resolving this issue is using definite nouns, \lname{} also provides a mode where sentences are not linked lists of clauses, but rather (binary) trees.
+Anaphoric referents in a linked-list sentence are sometimes insufficient for expressing complex sentence structures. While the easiest method of resolving this issue is using definite nouns, \lname{} also provides a mode where sentences are not linked lists of clauses, but rather (binary) trees.
 
 \section{Activation}
 
@@ -1325,6 +1325,126 @@ There are several ways a station name can be derived:
     \item Sentient nouns that are neither personal names nor modified by \hortho{=ma}
     \item \hortho{pcat\^sa} \emph{ground}, \hortho{tovok} \emph{tree}, \hortho{kacas} \emph{stone} or \hortho{t\^xazis} \emph{river}, as well as their Lek-Tsaro equivalents in frozen names, not modified by any nominal names (but names for a specific kind of tree, etc., e.~g. \hortho{nisfa} \emph{birch} are not common words)
 \end{itemize}
+
+\chapter{Calendar}
+
+Domain II, which contains \emph{Rymako}, has a day that is 26.99410 hours long. Other figures are given in terms of local days:
+
+\begin{table}[ht]
+    \caption{Astronomical measures for Domain II.}
+    \centering
+    \begin{tabular}{|l|r|}
+        \hline
+        Period & Length in local days \\
+        \hline
+        Local (synodic) day & 1.00000 \\
+        Sidereal day & 0.99699 \\
+        Tropical year ($l_y$) & 301.94714 \\
+        Sidereal year & 302.03719 \\
+        Synodic month ($l_m$) & 30.80152 \\
+        Sidereal month & 27.95032 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Tides}
+
+In Domain II, the offset of the sea level due to the tide can be modeled by the following equations:
+
+\begin{align}
+    y &= y_s + y_m \\
+    y_s &= A_s \cdot \left(1 + A_{sa} \cdot \cos(\tau \cdot t)\right) \cdot \cos(2 \cdot \tau \cdot t) \\
+    y_m &= A_m \cdot \left(1 + A_{ma} \cdot \cos\left(\dfrac{\tau \cdot t}{l_m}\right)\right) \cdot \cos\left(\dfrac{2 \cdot \tau \cdot (1 - l_m) \cdot t}{l_m}\right)
+\end{align}
+
+where:
+
+\begin{align*}
+    \tau &= 2 \cdot \pi \\
+    A_s &\approx 0.675 \\
+    A_{sa} &\approx 0.0532 \\
+    A_m &\approx 1.267 \\
+    A_{ma} &\approx 0.176 \\
+    y &= \text{offset of sea level in metres} \\
+    t &= \text{time since HAT in local synodic days}
+\end{align*}
+
+An exact solution to $dy/dt = 0$ is not known to exist. However, the solutions to this equation can be found numerically. Consult Section \ref{sec:listingtides} for a Sage program to do so.
+
+As the calendar used by \lname{} uses the high and low tides to count time, it is not synchronised even with days. The basic unit of time in the calendar is the \emph{tidal day} \hortho{rqmq} ($l_t$) -- the amount of time between a high tide and the second high tide thereafter, which is, on average, 1.03356 local synodic days, but can vary considerably. Thus:
+
+\begin{align}
+    l_m / l_t &\approx 29.80148 \\
+    &\approx 4053/136 \\
+    l_y / l_m &\approx 9.80299 \\
+    &\approx 7215/736
+\end{align}
+
+This suggests that:
+
+\begin{enumerate}
+    \item most months will have 30 days, but every 136 months, 27 months will have only 29.
+    \item most years will have 10 months, but every 736 years, 145 years will have only 9.
+\end{enumerate}
+
+\section{Months}
+
+Months follow a 136-month cycle wherein the $5n + 2$-numbered months (zero-indexed, $n \in \mathbb{N}$) have 29 days and the other months have 30.
+
+The names of months, on the other hand, are determined from their positions relative to the first month of the year:
+
+\begin{table}[ht]
+    \caption{The months of the year.}
+    \centering
+    \begin{tabular}{|l|>{\kardinal}l|}
+        \hline
+        \# & \textnormal{Name} \\
+        \hline
+        0 & fubu \\
+        1 & rq.em \\
+        2 & t\^sagol \\
+        3 & mzqsa \\
+        4 & kcezam \\
+        5 & tomqt \\
+        6 & n\^yqzut \\
+        7 & xibila \\
+        8 & bomuk \\
+        \hline
+        9* & .izeza \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Days within a month}
+
+Tidal days have their own names, as follow:
+
+\begin{longtable}[c]{l|>{\kardinal}l>{\kardinal}l}
+    \caption{Day names.} \\
+    
+    & \multicolumn{2}{c}{Year number plus month number} \\
+    Day \# & \textnormal{Even} & \textnormal{Odd} \\
+    \hline
+    \endfirsthead
+    
+    & \multicolumn{2}{c}{Year number plus month number} \\
+    Day \# & \textnormal{Even} & \textnormal{Odd} \\
+    \hline
+    \endhead
+    
+    \endfoot
+    
+    \endlastfoot
+    
+    1 & s\^wurak & salro.u \\
+    2 & zaxta & fqlk.inefa \\
+    3 & cifka & x\^lazal \\
+    4 & mazeg\^ji & k\^xaspez \\
+    5 & pakro & nyez \\
+    \hline
+    6 & v\^hardak & vint\^sa \\
+    %7 & 
+\end{longtable}
 
 \appendix
 
