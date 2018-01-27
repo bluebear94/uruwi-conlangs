@@ -1,7 +1,7 @@
 TEX=xelatex
 TEXFLAGS=-interaction=nonstopmode -halt-on-error
 
-all: out/5.pdf out/6.pdf out/7.pdf out/oz.pdf out/4.pdf out/8.pdf out/8.5.pdf out/7_1.pdf
+all: out/5.pdf out/6.pdf out/7.pdf out/oz.pdf out/4.pdf out/8.pdf out/8.5.pdf out/7_1.pdf out/9.pdf
 
 out/4.pdf: 4/dict/dict.tex
 
@@ -16,6 +16,8 @@ out/7_1.pdf: 7_1/dict/dict.tex
 out/8.pdf: 8/dict/dict.tex
 
 out/8.5.pdf: 8.5/dict/dict.tex
+
+out/9.pdf: 9/dict/dict.tex
 
 %/dict/dict.tex: \
 		%/dict/main.dict \

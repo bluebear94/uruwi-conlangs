@@ -1,0 +1,139 @@
+\documentclass{book}
+
+\usepackage[shortsuper,hacm,ltfont]{common/uruwi}
+
+\newcommand{\lname}{aaaaaaaaaaaaa}
+
+\title{aaaaaaaaaaaaaaaaaaaaaa}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{Chartreuse1!25}
+
+\begin{titlepage}
+  \makeatletter
+  \begin{center}
+    {\color{Green3} \hprule \vspace{1.5ex} \\}
+    %{\Huge \ltfont \textcolor{Plum}{LKe\bs{}TSxaRMoa SL LKeMa SL STfXe\bs{}RMyaKo}\\}
+    {\Huge \sffamily \textcolor{SpringGreen4}{\@title} \\}
+    {\large \textit{\lname}, the language of \textit{???} \\}
+    {\color{Green3} \hprule \vspace{1.5ex} \\}
+    % ----------------------------------------------------------------
+    \vspace{1.5cm}
+    {\Large\bfseries \@author}\\[5pt]
+    %uruwi@protonmail.com\\[14pt]
+    % ----------------------------------------------------------------
+    \vspace{2cm}
+    %{\Large\textlt{IVvoQMxeBPieLBxf TXxeKy}} \\
+    \textnormal{een\^gs.-meibpelbe-kona} \\[5pt]
+    \emph{A complete grammar}\\[2cm]
+    %{in partial fulfilment for the award of the degree of} \\[2cm]
+    %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+    %{in some subject} \vspace{0.4cm} \\[2cm]
+    % {By}\\[5pt] {\Large \sc {Me}}
+    \vfill
+    % ----------------------------------------------------------------
+    %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+    %{blah}\\[5pt]
+    %{blahblah}\\[5pt]
+    %{blahblah}\\
+    \vfill
+    {\@date}
+  \end{center}
+  \makeatother
+\end{titlepage}
+
+\pagecolor{Chartreuse1!15}
+
+\begin{center}
+    \textit{Dedicated to Gufferdk.}
+\end{center}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2018-01-27 (29 lis vio)
+\end{verbatim}
+
+(C)opyright 2017 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Phoneme inventory and romanisation}
+
+\lname uses the following phonemes:
+
+\begin{table}[h]
+  \caption{The consonants of \lname{}.}
+  \centering
+  \begin{tabular}{l|llllll}
+      & Linguolabial & Alveolar & Palatal \\
+      \hline
+      Plosive & p b /t̼ d̼/ & t d /t d/ & k g /c ɟ/ \\
+      Fricative & f /θ̼/ & þ /θ̠/ & \\
+      (sibilant) & & s /s/ & \\
+      (lateral) & ḟ /ɬ̼/ & ṡ ż /ɬ ɮ/ & \\
+      (nareal) & & h /n̥͋/ & \\
+      Approximant & & r /ɹ̥/ & j /j/ \\
+      Nasal & m /n̼/ & & n /ɲ/ \\
+  \end{tabular}
+\end{table}
+\begin{table}[h]
+\centering
+  \caption{The vowels of \lname.}
+  \begin{tabular}{l|lll}
+    & Front & Central & Back \\
+    \hline
+    High & i î /i iː/ & & u û /u uː/ \\
+    Mid & & & o ô /ɔ oː/ \\
+    Low & & a â /a aː/ & \\
+  \end{tabular}
+\end{table}
+
+In addition, short vowels other than /i/ can be diphthongised with /i̯/ = /j/ to form, for instance, \ortho{aj} /ai̯/ or \ortho{ja} /i̯a/. However, at the start of a syllable, /j/ is treated as a consonant.
+
+\section{Phonotactics}
+
+Syllables are composed of:
+
+\begin{itemize}
+  \item An onset: any consonant other than \ortho{m} /n̼/
+  \item A rime – one of:
+  \begin{itemize}
+    \item A long vowel or diphthong, and nothing else (diphthongs with onglides are not allowed if the onset is \ortho{j} /j/)
+    \item A short vowel followed by one of \ortho{þ m r} /θ̠ n̼ ɹ̥/
+  \end{itemize}
+\end{itemize}
+
+Double instances of a consonant between syllables are resolved as such:
+
+\begin{itemize}
+  \item /θ̠.θ̠/ → [θ̠.t]
+  \item /n̼.n̼/ → [n̼.d̼]
+  \item /ɹ̥.ɹ̥/ → [ɹ̥.l̥]
+\end{itemize}
+
+These are not respelt.
+
+\section{Allophony}
+
+The following rules are applied:
+
+\begin{alignat*}{3}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \{\text{u}, \text{uː}\} &\rightarrow \{\text{y}, \text{ʉː}\} &\quad(C_1\{+ll\} \blacklozenge) \\
+  \{\text{ɔ}, \text{oː}\} &\rightarrow \{\text{ɔ̜}, \text{ɵ̜u̯}\} &\quad(C_1\{+ll\} \blacklozenge) \\
+  \text{ɹ̥} &\rightarrow \text{ɹ̼̊} &\quad(\blacklozenge C_1\{+ll\}) \\
+  \{\text{t}, \text{d}\} &\rightarrow \{\text{t̼}, \text{d̼}\} &\quad(\text{n̼} \blacklozenge) \\
+  \text{n̼} &\rightarrow \text{n} &\quad(\blacklozenge C_1\{+av\}) \\
+  \text{θ̠} &\rightarrow \text{θ̠ə̆} &\quad(\blacklozenge C_1\{+ll\}) \\
+  \text{θ̠} &\rightarrow \text{θ̠ʲ} &\quad(\blacklozenge \{\text{a}, \text{aː}, \text{ɔ}, \text{oː}\})
+    &\quad\left[\text{frac}\left(\sqrt{\#\sigma + \#C}\right) < 0.5\right] \\
+\end{alignat*}
+
+\end{document}
