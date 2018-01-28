@@ -47,7 +47,7 @@
 \pagecolor{Chartreuse1!15}
 
 \begin{center}
-    \textit{Dedicated to Gufferdk.}
+    \textit{Dedicated to pecan.}
 \end{center}
 
 \begin{verbatim}
@@ -102,7 +102,12 @@ In addition, short vowels other than /i/ can be diphthongised with /i̯/ = /j/ t
 Syllables are composed of:
 
 \begin{itemize}
-  \item An onset: any consonant other than \ortho{m} /n̼/. At the beginning of the word, this is optional, but any medial syllables with an empty onset will receive an epethentic [ɹ̥] at that position.
+  \item An onset -- either:
+  \begin{itemize}
+    \item any consonant other than \ortho{m} /n̼/
+    \item one of \ortho{sþ tþ tr þr sr hr þt ht rt þd rṡ rḟ þtr htr} /sθ̠ tθ̠ tɹ̥ θ̠ɹ̥ sɹ̥ n̥͋ɹ̥ θ̠t n̥͋t ɹ̥t ɹ̥ɬ θ̠d ɹ̥ɬ̼ θ̠tɹ̥ n̥͋tɹ̥/
+    \item at the beginning of the word, nothing at all, but any medial syllables with an empty onset will receive an epethentic [ɹ̥] at that position.
+  \end{itemize}
   \item A rime – one of:
   \begin{itemize}
     \item A long vowel or diphthong, and nothing else (diphthongs with onglides are not allowed if the onset is \ortho{j} /j/)
@@ -134,6 +139,7 @@ The following rules are applied:
   \text{θ̠} &\rightarrow \text{θ̠ə̆} &\quad(\blacklozenge C_1[+ll]) \\
   \text{θ̠} &\rightarrow \text{θ̠ʲ} &\quad(\blacklozenge \{\text{a}, \text{aː}, \text{ɔ}, \text{oː}\})
     &\quad\left[\text{frac}\left(\sqrt{\#\sigma + \#C}\right) < 0.5\right] \\
+  \text{θ̠} &\rightarrow \text{ð̠} &\quad(\blacklozenge C_1[+v]) \\
   C_1[-v] &\rightarrow C_1[+a] &\quad(\blacklozenge V_1[+s]) \\
 \end{alignat*}
 
@@ -149,5 +155,47 @@ Much like Ḋraħýl Rase, \lname{} has the concept of natural stress. That is, 
 \end{itemize}
 
 However, \lname{} is less free with deviations from this pattern. Notably, if the last three syllables are short, then the antepenultimate syllable can receive the stress instead. In the romanisation, this is marked with an acute accent.
+
+\chapter{Syntax}
+
+The basic word order of \lname{} is one of $\{N_1VN_2, N_1N_2V, VN_1N_2, N_1V, VN_2\}$. $N_1$ and $N_2$ are the ``subject'' and ``object'' of a verb, in either order.
+
+Adjectives are placed farther from the verb than their antecedents. If an adjective $A$ modifies an $N$, then the onsets of $A$ and $N$ are switched. Adverbs occur at either the beginning or the end of the clause.
+
+\section{Pivots}
+
+When two clauses $\alpha$ and $\beta$ are joined by a clausal conjunction, some arguments may be omitted in the second clause.
+
+\begin{itemize}
+  \item If $\beta.N_1$ is omitted, then it defaults to $\alpha.N_2$ (inner pivot).
+  \item If $\beta.N_2$ is omitted, then it defaults to $\alpha.N_1$ (outer pivot).
+  \item If $\beta.V$ is omitted, then it defaults to $\alpha.V$ (verb pivot).
+\end{itemize}
+
+Noun phrases joined by nominal conjunctions work differently. The rules for those that occur after the verb are listed:
+
+\begin{align}
+  N_1^i A_1^i + N_2^j A_2^j &\rightarrow N_1 A_1 + N_2 A_2 \\
+  N_1^i A_1^j + N_2^j A_2^i &\rightarrow (N_1 + N_2) (A_1 + A_2) \\
+  N_1^i A^i + N_2 &\rightarrow N_1 A + N_2 A \\
+  N_1 A^i + N_2^i &\rightarrow (N_1 + N_2) A \\
+  N^i A_1^i +^j A_2^j &\rightarrow N A_1 + N A_2 \\
+  N^i A_1^j +^j A_2^i &\rightarrow N (A_1 + A_2) \\
+  N_1 + N_2^i A^i &\rightarrow N_1 A + N_2 \emptyset
+\end{align}
+
+The sequences are reversed before the verb.
+
+For instance, using \ortho{ki} \emph{and}\footnote{There are two meanings that correspond to English's \emph{and}. The first is a bundle of both arguments present; the second is an object that has the properties of both arguments. Consider \emph{The dog and bird are a mammal and\,1 bipedal} versus \emph{The human is a mammal and\,2 bipedal}. \ortho{ki} uses the former interpretation for nouns and the latter for adjectives. \ortho{aþ} uses the latter interpretation for both nouns and adjectives.}, \ortho{napu} \emph{fish}, \ortho{pjiko} \emph{cat}, \ortho{karaha} \emph{fast} and \ortho{dombu} \emph{heavy}, we have the following (assuming that these NPs follow the verb):
+
+\begin{itemize}
+  \item \ortho{\hliii{kapu naraha} ki \hliv{djiko pombu}} \emph{the fast fish and the heavy cat}
+  \item \ortho{\hliii{dapu} \hliv{paraha} ki \hliv{njiko} \hliii{kombu}} \emph{the (fast and heavy) (fish and cat)}
+  \item \ortho{\hliii{kapu naraha} ki pjiko} \emph{the fast fish and the fast cat}
+  \item \ortho{napu \hliii{paraha} ki \hliii{kjiko}} \emph{the fast (fish and cat)}
+  \item \ortho{\hliii{kapu naraha} \hliv{di kombu}} \emph{the fast fish and the heavy fish}
+  \item \ortho{\hliii{kapu} \hliv{daraha} \hliii{ni} \hliv{kombu}} \emph{the (fast and heavy) fish}
+  \item \ortho{napu ki \hliii{kjiko paraha}} \emph{the (fast fish) and the cat}
+\end{itemize}
 
 \end{document}
