@@ -102,7 +102,7 @@ In addition, short vowels other than /i/ can be diphthongised with /i̯/ = /j/ t
 Syllables are composed of:
 
 \begin{itemize}
-  \item An onset: any consonant other than \ortho{m} /n̼/
+  \item An onset: any consonant other than \ortho{m} /n̼/. At the beginning of the word, this is optional, but any medial syllables with an empty onset will receive an epethentic [ɹ̥] at that position.
   \item A rime – one of:
   \begin{itemize}
     \item A long vowel or diphthong, and nothing else (diphthongs with onglides are not allowed if the onset is \ortho{j} /j/)
@@ -128,12 +128,26 @@ The following rules are applied:
   % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
   \{\text{u}, \text{uː}\} &\rightarrow \{\text{y}, \text{ʉː}\} &\quad(C_1\{+ll\} \blacklozenge) \\
   \{\text{ɔ}, \text{oː}\} &\rightarrow \{\text{ɔ̜}, \text{ɵ̜u̯}\} &\quad(C_1\{+ll\} \blacklozenge) \\
-  \text{ɹ̥} &\rightarrow \text{ɹ̼̊} &\quad(\blacklozenge C_1\{+ll\}) \\
+  \text{ɹ̥} &\rightarrow \text{ɹ̼̊} &\quad(\blacklozenge C_1[+ll]) \\
   \{\text{t}, \text{d}\} &\rightarrow \{\text{t̼}, \text{d̼}\} &\quad(\text{n̼} \blacklozenge) \\
-  \text{n̼} &\rightarrow \text{n} &\quad(\blacklozenge C_1\{+av\}) \\
-  \text{θ̠} &\rightarrow \text{θ̠ə̆} &\quad(\blacklozenge C_1\{+ll\}) \\
+  \text{n̼} &\rightarrow \text{n} &\quad(\blacklozenge C_1[+av]) \\
+  \text{θ̠} &\rightarrow \text{θ̠ə̆} &\quad(\blacklozenge C_1[+ll]) \\
   \text{θ̠} &\rightarrow \text{θ̠ʲ} &\quad(\blacklozenge \{\text{a}, \text{aː}, \text{ɔ}, \text{oː}\})
     &\quad\left[\text{frac}\left(\sqrt{\#\sigma + \#C}\right) < 0.5\right] \\
+  C_1[-v] &\rightarrow C_1[+a] &\quad(\blacklozenge V_1[+s]) \\
 \end{alignat*}
+
+\section{Stress}
+
+Much like Ḋraħýl Rase, \lname{} has the concept of natural stress. That is, if syllables with short vowels are considered short and those with long vowels or diphthongs are long, then:
+
+\begin{itemize}
+  \item if the penultimate syllable is long, then it is stressed
+  \item if the antepenultimate syllable is long, then it is stressed
+  \item if the ultimate syllable is long, then it is stressed
+  \item otherwise, the penultimate syllable is stressed
+\end{itemize}
+
+However, \lname{} is less free with deviations from this pattern. Notably, if the last three syllables are short, then the antepenultimate syllable can receive the stress instead. In the romanisation, this is marked with an acute accent.
 
 \end{document}
