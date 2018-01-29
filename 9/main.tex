@@ -119,7 +119,7 @@ Double instances of a consonant between syllables are resolved as such:
 
 \begin{itemize}
   \item /θ̠.θ̠/ → [θ̠.t]
-  \item /n̼.n̼/ → [n̼.d̼]
+  \item /θ̠.θ̠t/ → [θ̠.tʼ]
   \item /ɹ̥.ɹ̥/ → [ɹ̥.l̥]
 \end{itemize}
 
@@ -197,5 +197,82 @@ For instance, using \ortho{ki} \emph{and}\footnote{There are two meanings that c
   \item \ortho{\hliii{kapu} \hliv{daraha} \hliii{ni} \hliv{kombu}} \emph{the (fast and heavy) fish}
   \item \ortho{napu ki \hliii{kjiko paraha}} \emph{the (fast fish) and the cat}
 \end{itemize}
+
+\chapter{Nouns}
+
+\section{Conceptualisation}
+
+Nouns are declined for the following categories:
+
+\begin{itemize}
+  \item number-emergence
+  \item similitude
+  \item specificity
+\end{itemize}
+
+\subsection{Number-emergence}
+
+Number and emergence (cf. \emph{The Avonian Language} 8.13.1 40) describes not only the quantity of an object but also any additional properties borne by the group.
+
+\begin{itemize}
+  \item \emph{Unmarked} is the default form of the noun.
+  \item \emph{Reduced} is closest to English's plural form and confers no additional properties to a group of objects. Compared with the unmarked N-E, the reduced N-E is used the most often with human nouns, less often with other animates and rarely with inanimate nouns. With uncountable nouns, the unmarked form is always used.
+  \item \emph{Emergent} describes a group of objects with properties extending beyond its components but also individual qualities.
+  \item \emph{Coherent} describes an entity that cannot be meaningfully divided into its individual parts.
+\end{itemize}
+
+\subsection{Similitude}
+
+Similitude (cf. \emph{The Avonian Language} 8.13.2 41) describes the differences among different objects of a group.
+
+\begin{itemize}
+  \item \emph{Identical} means that a similar group with $n$ elements as the one mentioned fall into $O(\log \log n)$ identities (to a margin of error) -- e.~g. a pile of candies or an orchard of apple trees.
+  \item \emph{Similative} means that the members of the group in question are similar in name only -- e.~g. a forest with different species of plants.
+  \item \emph{Related} means that at least one entity is the item in question and the others are related to it -- e.~g. spoons and other utensils.
+\end{itemize}
+
+\subsection{Specificity}
+
+This refers to whether a noun phrase is unique in a given context and has two values: \emph{specific} and \emph{nonspecific}.
+
+\section{Application}
+
+In \lname{}, the default form of the noun is the \emph{unmarked similative specific} form.
+
+% \ortho{napu} \emph{fish}
+
+\subsection{The stem and the ending}
+
+The ending of a noun is the rime of the last syllable, and the stem everything before that. For instance, the ending of \ortho{napu} \emph{fish} is \ortho{-u} and its stem \ortho{nap-}.
+
+\subsection{Stem alternation}
+
+If the noun is not stressed on the last syllable, then the consonant cluster after the stressed vowel is lenited as shown in table \ref{table:stemalt} in the weak form of the stem.
+
+\begin{table}[ht]
+  \caption{Lenitions of consonant clusters. \label{table:stemalt}}
+  \centering
+  \begin{tabular}{r|llll|l|llll}
+    Onset \bs{} Coda & ∅ & þ & m & r & Onset \bs{} Coda & ∅ & þ & m & r \\
+    \hline
+    p & b & f & mb & rb & n & h & þn & n & n \\
+    b & b & þ & ḟ & f & sþ & s & þþ & f & rþ \\
+    f & ḟ & f & mb & rf & tþ & þ & þþ & mþ & rþ \\
+    ḟ & ḟ & ḟ & mḟ & rḟ & tr & g & þr & mþr & rr \\
+    t & d & þ & md & rd & þr & r & þr & mþ & rþ \\
+    d & r & þ & md & r & sr & r & þr & md & rr \\
+    þ & þ & þ & f & rd & hr & r & þr & mr & rr \\
+    s & ṡ & þ & f & r & þt & þ & þt & mþ & rþ \\
+    ṡ & ż & ṡ & mż & rż & ht & t & þt & mt & rt \\
+    ż & r & ż & mż & r & rt & rd & þr & md & rd \\
+    h & n & þn & n & r & þd & þ & þþ & mþ & rþ \\
+    r & r & dr & r & r & rṡ & rż & þż & mż & rż \\
+    k & g & þg & n & rg & rḟ & rḟ & þḟ & mḟ & rb \\
+    g & g & þg & n & r & þtr & þr & þtr & mþr & rþr \\
+    j & j & \invalid & \invalid & \invalid & htr & tr & þtr & mtr & rtr \\
+  \end{tabular}
+\end{table}
+
+For instance, the weak form of the stem for \ortho{napu} is \ortho{nab-}.
 
 \end{document}
