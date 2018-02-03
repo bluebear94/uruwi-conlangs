@@ -1543,7 +1543,7 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
     \begin{itemize}
         \item Bit 0: Past if set, nonpast if reset.
         \item Bit 1: Atelic if set, telic if reset.
-        \item Bit 2: Positive if set, negative if reset.
+        \item Bit 2: Negative if set, positive if reset.
         \item Bit 3: Interrogative if set, affirmative if reset.
     \end{itemize}
     \\
@@ -1595,6 +1595,7 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
     041 & none & Pop a noun $n_p$, an adposition $p$ and a verb $v$. Then push $v$ modified by $[p, n_p]$. \\
     042 & none & Pop an adposition $p$ and push its negated version. \\
     043 & none & Pop a conjunction $c$ and two nouns $n_2$ and $n_1$. Push the compound NP $[n_1, c, n_2]$. \\
+    050 & none & Pop a verb $v$ and push its transitivised version on the stack. \\
     060 & $x: Byte$ & Push a connector according to the bits of $x$:
     \begin{itemize}
         \item Bits 0 -- 2: the type of the connector (0 = ordinary, 1 = analogous, 2 = subversive, 3 = augmentative, 4 = explanatory, 5 = conditional).
@@ -1603,6 +1604,12 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
         \item Bits 5 -- 8: one of 16 intrinsic seqids. These depend on the dialect, but in the standard dialect these are \hortho{a p e t i d o g u k z t\^x v s\^h ar pr}. Unused if bit 4 is not set.
     \end{itemize}
     \\
+    061 & none & Pop a connector $c$ and a clause $\alpha$ and push $\alpha$ with $c$ attached. \\
+    700 & $x: Byte[4], a: Byte[x]$ & Pushes the two's-complement integer represented by $a$ to the stack. \\
+    701 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a + b$. \\
+    702 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a - b$. \\
+    703 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a / b$. \\
+    704 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a \cdot b$. \\
 \end{longtabu}
 
 \appendix
