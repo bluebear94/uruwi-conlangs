@@ -29,6 +29,8 @@
 \RequirePackage{footnote}
 \RequirePackage[UKenglish]{babel}
 \RequirePackage[UKenglish]{isodate}
+\RequirePackage{placeins}
+\RequirePackage{caption}
 \RequirePackage{etoolbox}
 \RequirePackage{xstring}
 \RequirePackage{expl3}
@@ -233,6 +235,13 @@
 \tabucolumn Y
 
 \cleanlookdateon
+
+\renewcommand\topfraction{0.9}
+\renewcommand\textfraction{0.35}
+\renewcommand\floatpagefraction{0.8}
+
+% \DeclareCaptionType{mytype}[Typename][List of mytype]
+\newenvironment{tablenf}{\vspace{0.2cm}\begin{minipage}{\textwidth}\captionsetup{type=table}}{\end{minipage}\vspace{0.2cm}}
 
 \ExplSyntaxOn
 \cs_new_protected:Npn \Evaluate #1 {
