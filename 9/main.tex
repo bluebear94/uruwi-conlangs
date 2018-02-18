@@ -158,7 +158,7 @@ However, \lname{} is less free with deviations from this pattern. Notably, if th
 
 \chapter{Syntax}
 
-The basic word order of \lname{} is one of $\{N_1VN_2, N_1N_2V, VN_1N_2, N_1V, VN_2\}$. $N_1$ and $N_2$ are the ``subject'' and ``object'' of a verb, in either order.
+The basic word order of \lname{} is one of $\{N_1VN_2, N_1N_2V, VN_1N_2, N_1V, VN_2\}$. $N_1$ and $N_2$ are the ``subject'' and ``object'' of a verb, in either order. In the absence of pivot constraints, $N_1$ is usually $S$, unless $S$ is semantically an experiencer, in which case $N_1$ is $O$.
 
 Adjectives are placed farther from the verb than their antecedents. If an adjective $A$ modifies an $N$, then the onsets of $A$ and $N$ are switched. Adverbs occur at either the beginning or the end of the clause.
 
@@ -215,10 +215,10 @@ Nouns are declined for the following categories:
 Number and emergence (cf. \emph{The Avonian Language} 8.13.1 40) describes not only the quantity of an object but also any additional properties borne by the group.
 
 \begin{itemize}
-  \item \emph{Unmarked} is the default form of the noun.
-  \item \emph{Reduced} is closest to English's plural form and confers no additional properties to a group of objects. Compared with the unmarked N-E, the reduced N-E is used the most often with human nouns, less often with other animates and rarely with inanimate nouns. With uncountable nouns, the unmarked form is always used.
-  \item \emph{Emergent} describes a group of objects with properties extending beyond its components but also individual qualities.
-  \item \emph{Coherent} describes an entity that cannot be meaningfully divided into its individual parts.
+  \item \emph{Unmarked} (\tsc{unm}) is the default form of the noun.
+  \item \emph{Reduced} (\tsc{red}) is closest to English's plural form and confers no additional properties to a group of objects. Compared with the unmarked N-E, the reduced N-E is used the most often with human nouns, less often with other animates and rarely with inanimate nouns. With uncountable nouns, the unmarked form is always used.
+  \item \emph{Emergent} (\tsc{emg}) describes a group of objects with properties extending beyond its components but also individual qualities.
+  \item \emph{Coherent} (\tsc{coh}) describes an entity that cannot be meaningfully divided into its individual parts.
 \end{itemize}
 
 \subsection{Similitude}
@@ -226,14 +226,14 @@ Number and emergence (cf. \emph{The Avonian Language} 8.13.1 40) describes not o
 Similitude (cf. \emph{The Avonian Language} 8.13.2 41) describes the differences among different objects of a group. This category is not marked in unmarked-NE nouns.
 
 \begin{itemize}
-  \item \emph{Identical} means that a similar group with $n$ elements as the one mentioned fall into $O(\log \log n)$ identities (to a margin of error) -- e.~g. a pile of candies or an orchard of apple trees.
-  \item \emph{Similative} means that the members of the group in question are similar in name only -- e.~g. a forest with different species of plants.
-  \item \emph{Related} means that at least one entity is the item in question and the others are related to it -- e.~g. spoons and other utensils.
+  \item \emph{Identical} (\tsc{id}) means that a similar group with $n$ elements as the one mentioned fall into $O(\log \log n)$ identities (to a margin of error) -- e.~g. a pile of candies or an orchard of apple trees.
+  \item \emph{Similative} (\tsc{sim}) means that the members of the group in question are similar in name only -- e.~g. a forest with different species of plants.
+  \item \emph{Related} (\tsc{rel}) means that at least one entity is the item in question and the others are related to it -- e.~g. spoons and other utensils.
 \end{itemize}
 
 \subsection{Specificity}
 
-This refers to whether a noun phrase is unique in a given context and has two values: \emph{specific} and \emph{nonspecific}.
+This refers to whether a noun phrase is unique in a given context and has two values: \emph{specific} (\tsc{spc}) and \emph{nonspecific} (\tsc{nsp}).
 
 \section{Application}
 
@@ -493,5 +493,43 @@ In tables \ref{table:declensionfirst} to \ref{table:declensionlast}, S and W rep
     Coherent & hrisaþ & hrisar & hrisajaþ & hriṡiþraþ & hriṡiþta & hriṡirjaþ \\
   \end{tabular}
 \end{tablenf}
+
+\chapter{Verbs}
+
+\section{Conceptualisation}
+
+Verbs are conjugated for the following categories:
+
+\begin{itemize}
+  \item assignment of $N_1$ and $N_2$ to $S$ and $O$: whether $N_1 = S$ (direct) or $N_1 = O$ (inverse)
+  \item aspect: either \emph{simple} or \emph{prospective}
+  \item voice: either \emph{active} or \emph{antiapplicative} (demotes S or O to X)
+\end{itemize}
+
+(Tense per se is expressed through periphrasis.)
+
+\section{Application}
+
+The base form of a verb is the \emph{direct simple active} form. Sometimes, there will be a noun and a verb whose base forms are the same as each other, possibly creating ambiguity. Other conjugations of a verb are assigned to noun declensions as such:
+
+\begin{tablenf}
+  \caption{Conjugations of a verb. \label{table:conjugations}}
+  \centering
+  \begin{tabular}{r|ll}
+    Voice \bs{} Aspect & Simple & Prospective \\
+    \hline
+    \multicolumn{3}{c}{Direct assignment} \\
+    \hline
+    Active & \tsc{unm.spc} & \tsc{emg.sim.nsp} \\
+    Antiapplicative & \tsc{red.sim.nsp} & \tsc{coh.id.nsp} \\
+    \hline
+    \multicolumn{3}{c}{Inverse assignment} \\
+    \hline
+    Active & \tsc{unm.nsp} & \tsc{emg.sim.spc} \\
+    Antiapplicative & \tsc{red.sim.spc} & \tsc{coh.rel.spc} \\
+  \end{tabular}
+\end{tablenf}
+
+\section{Auxiliary verb constructions}
 
 \end{document}

@@ -8,7 +8,7 @@
     "d", "d^y", "g", "g^j", "p", "b",
     "y", "c", "r",
     "z", "z^v", "z^h", "z^w", "j", "j^l", "w", "l",
-    "a", "i", "i^o", "i^u", "o", "o^e", "e", "e^o", "u", "u^i", "u^o"
+    "a", "i", "o", "e", "u", "q"
   ],
   "sectionstyle": "\\section*{\\textkardinal{%s}}\n"
 }
