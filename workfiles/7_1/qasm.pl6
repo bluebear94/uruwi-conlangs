@@ -257,6 +257,21 @@ sub assemble(IO::Handle $fh) returns Blob {
       for @bytes {
         $b ~= bitToStr($_);
       }
+    } elsif $cname eq "quote" {
+      my $dir = $fh.path;
+      if $dir ~~ IO::Special {
+        $dir = $*CWD;
+      } else {
+        $dir = $dir.parent;
+      }
+      my $fh2 = open $dir.add(@args[1]).resolve;
+      my $b2 = assemble($fh2);
+      if ($b2.bytes >= 512) {
+        die "Literal is more than 512 chars long";
+      }
+      $b ~= bitToStr(0o010);
+      $b ~= bitToStr($b2.bytes);
+      $b ~= $b2;
     } else {
       die "Unrecognised instruction \"$cname\"!";
     }

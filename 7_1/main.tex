@@ -1464,7 +1464,7 @@ $q$ corresponds to one of 86 consonant clusters. Let
     P &= (\kd{t} \kd{s} \kd{p} \kd{f} \kd{k} \kd{k\^x} \kd{d} \kd{b} \kd{z\^w} \kd{v} \kd{g} \kd{f\^h} \kd{s\^h} \kdf{f\^x}) & \text{(14 entries)} \\
     N &= (\kd{n} \kd{n\^y} \kd{m} \kdf{n\^g}) & \text{(4 entries)} \\
     L &= (\kd{r} \kd{l} \kd{y} \kdf{w}) & \text{(4 entries)} \\
-    M &= (\kd{t\^x} \kd{t\^s} \kd{j\^l} \kd{x} \kd{t\^y} \kd{j} \kdf{d\^y}) & \text{(7 entries)} \\
+    M &= (\kd{t\^x} \kd{t\^s} \kd{j\^l} \kd{x} \kd{t\^y} \kd{j} \kdf{d\^y}) & \text{(7 entries)}
 \end{align}
 
 Then:
@@ -1653,7 +1653,7 @@ The ASTs for all seven clauses are shown in figure \ref{fig:clauseast1}.
 % \newcommand{\trcapt}[2]{\textkardinal{#1}\\{\small \textit{#2}}}
 
 \begin{figure}
-    \caption{ASTs for the clauses at the deepest nesting level. \label{fig:clauseast1}}
+    \caption{ASTs for the clauses at the deepest nesting level. NB: We translate \emph{role} as \hortho{skofl}, which has a connotation of normalcy, so we need not explicitly state that it is ``proper''. \label{fig:clauseast1}}
     \centering
     \begin{tikzpicture}
         \tikzset{every tree node/.style={align=center}}
@@ -1698,7 +1698,7 @@ The ASTs for all seven clauses are shown in figure \ref{fig:clauseast1}.
             \Tree [.S
                 [.V return [.\tsc{past-q} ] ]
                 [.N \tsc{pr.anaph\_sub} ]
-                [.N [.role\footnote{We use \hortho{skofl}, which has a connotation of normalcy, so we need not explicitly state that it is ``proper''.} [.GEN [.slavery lifelong ] ] ] ]
+                [.N [.role [.GEN [.slavery lifelong ] ] ] ]
             ]
         \end{scope}
         \begin{scope}[yshift=-13cm]
@@ -1906,6 +1906,22 @@ This chapter describes a mnemonic language to assist in the process of quoting a
     703 & div & \\
     704 & mul & \\
 \end{longtabu}
+
+\chapter{Listings of programs}
+
+\section{7\_1/listings/example-nestedquote.qasm}
+\label{sec:listingnestedquote}
+
+\texttt{
+    \lstinputlisting[]{7_1/listings/example-nestedquote.qasm}
+}
+
+\section{7\_1/listings/example-quote.qasm}
+\label{sec:listingquote}
+
+\texttt{
+    \lstinputlisting[]{7_1/listings/example-quote.qasm}
+}
 
 \chapter{Dictionary}
 

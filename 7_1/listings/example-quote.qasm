@@ -43,9 +43,7 @@
   setvopt past
   setaspect epis_pot perf
   pronoun anaph_sub
-  # Generated from example-nestedquote.qasm.
-  # I might support a macro that does this automatically.
-  literal nsent "tq.enebpa.isu.asu.itiba.obite.efuzpa.ipi.q.a.atqtinabusun^gso.qtq.of^xoton^gso.qtitu.icpa.isu.afatitq.etagpa.itq.of^xoton^gso.qtatu.icpa.itq.umazaso.qfatitu.impatesu.use.oskoflse.uwat^sasa.uunun.i.etitu.icpatetq.umazaso.qfatiba.obi"
+  quote example-nestedquote.qasm
   sentence
 # Clause #5: Vladimir let either one of the above happen.
   literal v3 "c" # = allow
