@@ -33,6 +33,12 @@ sub parseStr(Str $s) returns Blob {
 sub getStr(Blob $b) returns Str {
   return $b.map({@ALLTABLE[$_]}).join;
 }
+sub getStrBrace(Blob $b) returns Str {
+  return $b.map({
+    my $s = @ALLTABLE[$_];
+    $s.chars > 1 ?? '{' ~ $s ~ '}' !! $s;
+  }).join;
+}
 
 sub bitToStr(int $x) returns Blob {
   sub f(int $q) {
@@ -62,7 +68,9 @@ constant %ATOMIC_INSTRUCTIONS = %(
   negadp => 0o042,
   conj => 0o043,
   trans => 0o050,
+  modverb => 0o051,
   attachconn => 0o061,
+  setnname => 0o100,
   add => 0o701,
   sub => 0o702,
   div => 0o703,
@@ -142,7 +150,7 @@ sub paramList(Str @df, Str @nd, Str @args) returns Int {
 
 sub unquote(Str $s) {
   if !($s.starts-with($dq) && $s.ends-with($dq)) {
-    note "WARN: literal is not enclosed in double quotes";
+    note "WARN: literal $s is not enclosed in double quotes";
     return $s;
   } else {
     return $s.substr(1, * - 1);
@@ -236,6 +244,19 @@ sub assemble(IO::Handle $fh) returns Blob {
       $b ~= bitToStr($flags +& 0o777);
       $b ~= bitToStr(($flags +> 9) +& 0o777);
       $b ~= bitToStr(($flags +> 18) +& 0o777);
+    } elsif $cname eq 'pushint' {
+      my Int $a = +@args[1];
+      my @bytes = $a.polymod(512 xx *);
+      my $nbytes = @bytes.elems;
+      die 'Integer larger than $nbits bits'
+        if $nbytes >= 512 ** 4;
+      $b ~= bitToStr(0o700);
+      for ^4 -> $i {
+        $b ~= bitToStr(($nbytes +> (9 * $i)) +& 0o777);
+      }
+      for @bytes {
+        $b ~= bitToStr($_);
+      }
     } else {
       die "Unrecognised instruction \"$cname\"!";
     }
@@ -243,9 +264,9 @@ sub assemble(IO::Handle $fh) returns Blob {
   return $b;
 }
 
-sub MAIN(Str $fname, Bool :$escape) {
+sub MAIN(Str $fname, Bool :$escape, Bool :$brace) {
   my $fh = open $fname;
-  my $s = getStr(assemble($fh));
+  my $s = ($brace ?? &getStrBrace !! &getStr)(assemble($fh));
   $fh.close;
   if $escape {
     $s = $s.subst("^", "\\^", :g);

@@ -1599,6 +1599,7 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
     042 & none & Pop an adposition $p$ and push its negated version. \\
     043 & none & Pop a conjunction $c$ and two nouns $n_2$ and $n_1$. Push the compound NP $[n_1, c, n_2]$. \\
     050 & none & Pop a verb $v$ and push its transitivised version on the stack. \\
+    051 & none & Pop $v$ from the stack and then $n$ from the stack. Treating $v$ as a verb and $a$ as an descriptor, push the verb $[b, a]$ to the stack. \\
     060 & $x: Byte$ & Push a connector according to the bits of $x$:
     \begin{itemize}
         \item Bits 0 -- 2: the type of the connector (0 = ordinary, 1 = analogous, 2 = subversive, 3 = augmentative, 4 = explanatory, 5 = conditional).
@@ -1608,11 +1609,12 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
     \end{itemize}
     \\
     061 & none & Pop a connector $c$ and a clause $\alpha$ and push $\alpha$ with $c$ attached. \\
-    700 & $x: Byte[4], a: Byte[x]$ & Pushes the two's-complement integer represented by $a$ to the stack. \\
-    701 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a + b$. \\
-    702 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a - b$. \\
-    703 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a / b$. \\
-    704 & none & Pops $b$ and $a$ from the stack as numbers and pushes $a \cdot b$. \\
+    100 & none & Pop a literal and push it with information that it is a nominal name. \\
+    700 & $x: Byte[4], a: Byte[x]$ & Push the two's-complement integer represented by $a$ to the stack. \\
+    701 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a + b$. \\
+    702 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a - b$. \\
+    703 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a / b$. \\
+    704 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a \cdot b$. \\
 \end{longtabu}
 
 \section{Example}
@@ -1714,6 +1716,30 @@ The seven clauses together thus form the word
 \hortho{\seqsplit{%
     kldtq.enebpa.isu.asu.itiba.obite.efuzpa.ipi.q.a.atqtinabusu{n\^g}so.qtq.o{f\^x}oto{n\^g}so.qtitu.icpa.isu.afatitq.etagpa.itq.o{f\^x}oto{n\^g}so.qtatu.icpa.itq.umazaso.qfatitu.impatesu.use.oskoflse.uwa{t\^s}asa.uunun.i.etitu.icpatetq.umazaso.qfatiba.obi%
     }}.
+(See \texttt{7\_1/listings/example-nestedquote.qasm} for how this was derived.)
+
+Now we work on the middle clause, which can be unfolded as:
+
+\begin{itemize}
+    \item I have known Vladimir for 12 years.
+    \item You have known Vladimir for $12 / 2 = 6$ years.
+    \item Maria could have taken the opportunity to quit the Assembly without repercussions.
+    \item She could have announced (...).
+    \item Vladimir let either one of the above to happen. (1)
+    \item She dared to listen to Vladimir.
+    \item Therefore, she was ridiculed by her brothers. This was done despite (1).
+    \item I found the above surprising.
+    \item I do not find it surprising right now.
+\end{itemize}
+
+For the sake of brevity, we will not show the ASTs for these clauses, but see \texttt{7\_1/listings/example-quote.qasm} for how this is derived. The part outside the quotation is straightforward. Thus we have:
+
+\begin{quote}
+    \textkardinal{
+        mejat .imir-ni ta, revi.el ra
+        \seqsplit{te.emunpa.ipi.i.a.atq.qneto.ubane{f\^x}wu.i.a.a.asa.qkesu.atqtqvladimicvutite.emunpa.ipi.i.a.atq.qneto.ubane{f\^x}wu.i.a.a.asa{f\^x}wu.i.a.a.a.qri.qkesu.isutatitutivirlastpa.ipi.qsu.atq.upcen{k\^x}otqtafilmap{k\^x}otqtamaci.avuse.omalnaso.qtitq.erevpa.ipi.qsu.asu.utqkletq.enebpa.isu.asu.itiba.obite.efuzpa.ipi.q.a.atqtinabusu{n\^g}so.qtq.o{f\^x}oto{n\^g}so.qtitu.icpa.isu.afatitq.etagpa.itq.o{f\^x}oto{n\^g}so.qtatu.icpa.itq.umazaso.qfatitu.impatesu.use.oskoflse.uwa{t\^s}asa.uunun.i.etitu.icpatetq.umazaso.qfatiba.obititu.ictqtqvladimicvufafitq.izkotibakubitq.uvenspa.isa.o.adaz{k\^x}otqtamaci.avusu.utiba.ubitq.e{k\^x}a.pa.itq.ofqltoso.isu.utiba.ubibakubitq.emejpa.ifasu.ititq.emejpa.utq.emif{k\^x}ofisu.iti}.
+    }
+\end{quote}
 
 \appendix
 
@@ -1870,8 +1896,10 @@ This chapter describes a mnemonic language to assist in the process of quoting a
     042 & negadp & \\
     043 & conj & \\
     050 & trans & \\
+    051 & modverb & \\
     060 & conn \seqsplit{<ordinary|analogous|subversive|augmentative|explanatory|conditional>} <0|1> \textit{seqid} [noimm] & If \textit{seqid} is one of the intrinsic seqids, then the instruction is converted to not pop a seqid unless the noimm option is set. If a default seqid is not used and \textit{seqid} is not \texttt{-}, then a literal instruction is generated before this instruction. \\
     061 & attachconn & \\
+    100 & setnname & \\
     700 & pushint \textit{a} & \\
     701 & add & \\
     702 & sub & \\
