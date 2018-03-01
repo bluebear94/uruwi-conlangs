@@ -66,7 +66,7 @@ Date: 2018-01-27 (29 lis vio)
 
 \section{Phoneme inventory and romanisation}
 
-\lname uses the following phonemes:
+\lname{} uses the following phonemes:
 
 \begin{table}[h]
   \caption{The consonants of \lname{}.}
@@ -530,6 +530,90 @@ The base form of a verb is the \emph{direct simple active} form. Sometimes, ther
   \end{tabular}
 \end{tablenf}
 
+\subsection{Examples}
+
+\hli{Napuhta} \hlii{nigî} \hliii{ḟiruhta.} \\
+\hli{fish-\tsc{unm.nsp}} \hlii{eat-\tsc{d.s.act}} \hliii{flower-\tsc{unm.nsp}} \\
+\hli{Fish} \hlii{eat} \hliii{flowers.}
+
 \section{Auxiliary verb constructions}
+
+Auxiliary verbs are ordered in a spiralling manner, with the head verb at the centre and the dependent verbs at the periphery. As shown in figure \ref{fig:auxiliaryorder}, the head verb occupies position 0 and its dependent occupies position 1. If the dependent has another dependent, then the latter occupies position 2, and so on.
+
+\begin{figure}[h]
+  \caption{Ordering of auxiliary verbs. \label{fig:auxiliaryorder}}
+  \centering
+  \begin{tikzpicture}
+    \tikzset{
+      angledArrow/.style={arrow,to path={(\tikztostart) -- ++(0pt,#1) \tikztonodes -| (\tikztotarget)}}
+    }
+    \node[stem] (v0) {0};
+    \node[requiredAffix] (v1) [left=of v0] {1};
+    \node[requiredAffix] (v2) [right=of v0] {2};
+    \node[requiredAffix] (v3) [left=of v1] {3};
+    \node[requiredAffix] (v4) [right=of v2] {4};
+    
+    % arrows
+    \draw[arrow] (v0) to (v1);
+    \draw[angledArrow=-1cm] (v1) to (v2);
+    \draw[angledArrow=1cm] (v2) to (v3);
+    \draw[angledArrow=-1.5cm] (v3) to (v4);
+  \end{tikzpicture}
+\end{figure}
+
+All verbs that are in a position other than 0 are in the infinitive form, which involves suffixing \ortho{-þa}.
+
+\begin{table}
+  \caption{Common auxiliary verbs.}
+  \centering
+  \begin{tabular}{ll}
+    Verb & Definition \\
+    \hline
+    imeþ & (void) \\
+    kadasu & past \\
+    amriki & atelic \\
+    imriþ & potential \\
+    fajpa & necessitative \\
+  \end{tabular}
+\end{table}
+
+\subsection{A note about \ortho{imeþ}}
+
+The dummy verb \ortho{imeþ} can disambiguate the verb of a sentence when it is not already clear.
+
+\appendix
+
+\chapter{Dictionary}
+
+An entry looks like this:
+
+\textkardinal{napu} \textit{n}
+\quad fish
+
+From left to right:
+
+\begin{enumerate}
+    \item The entry -- the \lname{} term listed.
+    \item The part of speech of the corresponding entry:
+    \begin{itemize}
+        \item \textit{n} -- a noun
+        \item \textit{vt} -- a transitive verb
+        \item \textit{vi} -- an intransitive verb
+        \item \textit{adj} -- an adjective
+        \item \textit{adv} -- an adverb
+        \item \textit{cp} -- a circumposition
+    \end{itemize}
+    \item The definition -- the gloss for the corresponding entry.
+    \begin{itemize}
+        \item (S) -- subject
+        \item (O) -- direct object
+    \end{itemize}
+    \item If applicable, any special grammatical or semantic notes for this term.
+    \item Optionally, examples of usage.
+\end{enumerate}
+
+\begin{multicols}{2}
+    \input{9/dict/dict.tex}
+\end{multicols}
 
 \end{document}

@@ -71,6 +71,7 @@ constant %ATOMIC_INSTRUCTIONS = %(
   modverb => 0o051,
   attachconn => 0o061,
   setnname => 0o100,
+  concat => 0o200,
   add => 0o701,
   sub => 0o702,
   div => 0o703,

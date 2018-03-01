@@ -1610,12 +1610,22 @@ Note that the bytecode is not \emph{purely} bytecode; some sections are composed
     \\
     061 & none & Pop a connector $c$ and a clause $\alpha$ and push $\alpha$ with $c$ attached. \\
     100 & none & Pop a literal and push it with information that it is a nominal name. \\
+    200 & none & Pop roots $b$ and $a$ from the stack and push the concatenation of $a$ and $b$ on the stack with the attribute being the bitwise xor of those of $a$ and $b$. \\
     700 & $x: Byte[4], a: Byte[x]$ & Push the two's-complement integer represented by $a$ to the stack. \\
     701 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a + b$. \\
     702 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a - b$. \\
     703 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a / b$. \\
     704 & none & Pop $b$ and $a$ from the stack as numbers and pushes $a \cdot b$. \\
 \end{longtabu}
+
+\section{Limitations}
+
+The quoting sublanguage has a few limitations compared to \lname{} proper:
+
+\begin{itemize}
+    \item A sentence with a copula and an adjective as the ``object'' cannot have any attributes attached to the copula. The workaround is to refrain from using instruction 025 and instead create a normal sentence (via 007) whose object is a dummy noun (e.~g. \hortho{maza}, \hortho{vik}) modified by the adjective.
+    \item It is not possible to specify the order of the subject relative to the object. Some nonstandard dialects have extensions that allow this; for instance, the Myðun dialect reserves instruction 633 to be equivalent to 007 but with inverted S-O order. Other dialects might provide an instruction to explicitly mark accusative arguments if needed, as \lname{} itself does.
+\end{itemize}
 
 \section{Example}
 
@@ -1900,6 +1910,7 @@ This chapter describes a mnemonic language to assist in the process of quoting a
     060 & conn \seqsplit{<ordinary|analogous|subversive|augmentative|explanatory|conditional>} <0|1> \textit{seqid} [noimm] & If \textit{seqid} is one of the intrinsic seqids, then the instruction is converted to not pop a seqid unless the noimm option is set. If a default seqid is not used and \textit{seqid} is not \texttt{-}, then a literal instruction is generated before this instruction. \\
     061 & attachconn & \\
     100 & setnname & \\
+    200 & concat & \\
     700 & pushint \textit{a} & \\
     701 & add & \\
     702 & sub & \\
