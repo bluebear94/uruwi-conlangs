@@ -847,6 +847,73 @@ Sometimes, the status of a word as proper might be ambiguous without hints. Opti
 
 Note that \hortho{ybl} \emph{Jbl} is not a proper word.
 
+\section{Variables}
+
+\synopsis{\hlx{Variables} provide a more explicit alternative to pro-forms.}
+
+Variables are declared to be of a type (implicitly). A type is one of the following:
+
+\begin{itemize}
+  \item a concrete
+  \item an abstract
+  \item a numeral (of which Boolean values are a subset)
+  \item an array consisting of elements of the same type
+  \item a function receiving zero or more parameters and returning a value
+\end{itemize}
+
+Concrete variables are divided into generic and specialised variables:
+
+\begin{itemize}
+  \item Generic variables can refer to different objects depending on how they are used (e.~g. \emph{\hli{X}} in \emph{if there are at least six \hli{X}es in the pile, then take one \hli{X} from your pocket and throw it in}).
+  \item Specialised variables refer to the same entity every time they are used (e.~g. \emph{\hlii{Y}} in \emph{if \hlii{Y} is here, then give \hlii{Y} this paper}).
+\end{itemize}
+
+Generic variables are inflected for mutability, but they are always of the first gender.
+
+A variable can be referred to by an arbitrary string, although in practice, generic variables have a minimum identifier length of three characters. Orthographically, they receive the sigil \hortho{\$}.
+
+Variables can be bound by using \hlvii{lambdas}.
+
+\subsection{Lambdas}
+
+The syntax for a lambda is
+
+\begin{equation}
+  \text{\hortho{tmlb}}\ ((v\ \text{\hortho{n}})^* v)?\ \text{\hortho{ks}}\ body\ \text{\hortho{sk}}
+\end{equation}
+
+where $v$ is an identifier. A function can subsequently be called with the following syntax:
+
+\begin{equation}
+  f\ \text{\hortho{blmt}}\ ((x\ \text{\hortho{n}})^* x)?\ \text{\hortho{gs}}
+\end{equation}
+
+Note the analogy with the lambda syntax in the argument list. $f$ need not be bound to a variable; in fact, the lack of such a requirement is the only way to bind variables!
+
+\subsection{Arrays}
+
+The syntax for an array is
+
+\begin{equation}
+  \text{\hortho{mtyw}}\ ((x\ \text{\hortho{n}})^* x)?\ \text{\hortho{wytm}}
+\end{equation}
+
+and an array is indexed as such:
+
+\begin{equation}
+  \hortho{mtk}\ A\ \text{\hortho{sg}}\ n\ \text{\hortho{gs}}
+\end{equation}
+
+As with lambdas, arrays do not need to be bound to a variable to be used. \\
+~\\
+\textkardinal{\hli{\bs{}gyn} \hlii{mc/klbm} \hliii{lk} \hliv{bl\bs{}yxn\^gw} \hlv{/nkhgm}} \\
+\textkardinal{\hli{gyn} \hlii{mcs->h:lbm} \hliii{lk} \hliv{bls->n\^g:xn\^gw} \hlv{>nkhgm}} \\
+\hli{\tsc{qp.num}} \hlii{\tsc{pr0.listener}-0-$\Omega$} \hliii{want} \hliv{piece-1-$\Sigma$} \hlv{\tsc{desc}-sugar} \\
+\textkardinal{\hli{mtk} \hlii{mtyw} \hliii{jn\^g} \hliv{n} \hlv{jy} \hlvi{wytm} \hlvii{sg} \hlviii{yng} \hlix{gs}} \\
+\hli{\tsc{index}(} \hlii{\tsc{array}(} \hliii{two} \hliv{,} \hlv{three} \hlvi{)\tsc{array}} \hlvii{\tsc{index,}} \hlviii{\tsc{qw.num}} \hlix{)\tsc{index}} \\
+\emph{What is the number $i$ for which you want $[2, 3][i]$ pieces of sugar?} \\
+or more idiomatically: \emph{Do you want two or three pieces of sugar?}
+
 \chapter{Numerals}
 \label{chapter:numerals}
 

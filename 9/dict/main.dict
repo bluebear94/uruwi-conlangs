@@ -2,6 +2,10 @@
 : conj
 and
 
+# aþ
+: conj
+and (intersection semantics for both nouns and adjectives)
+
 # napu
 : n
 fish
@@ -50,7 +54,7 @@ bird
 : n
 crane (bird)
 
-# þtarhaspa
+# þtarhaþpa
 : n
 willow
 
@@ -77,3 +81,19 @@ to the left of
 # bimka
 : n
 left side, left hand
+
+# bana
+: p1
+used the most frequently
+
+# uku
+: p2
+used toward equals or subservients
+
+# sîþiga
+: p1
+used by royals
+
+# rtodo
+: p3
+refers to a member of the speaker's social circle
