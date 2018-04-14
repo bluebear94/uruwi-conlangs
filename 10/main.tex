@@ -1,0 +1,250 @@
+\documentclass{book}
+
+\usepackage[shortsuper,hacm,ltfont]{common/uruwi}
+
+\newcommand{\lname}{aaaaaaaaaaaaa}
+
+\title{aaaaaaaaaaaaaaaaaaaaaa}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{LightSkyBlue2!25}
+
+\begin{titlepage}
+  \makeatletter
+  \begin{center}
+    {\color{DeepSkyBlue3} \hprule \vspace{1.5ex} \\}
+    %{\Huge \ltfont \textcolor{Plum}{LKe\bs{}TSxaRMoa SL LKeMa SL STfXe\bs{}RMyaKo}\\}
+    {\Huge \sffamily \textcolor{SteelBlue3}{\@title} \\}
+    {\large \textit{\lname}, the language of \textit{???} \\}
+    {\color{DeepSkyBlue3} \hprule \vspace{1.5ex} \\}
+    % ----------------------------------------------------------------
+    \vspace{1.5cm}
+    {\Large\bfseries \@author}\\[5pt]
+    %uruwi@protonmail.com\\[14pt]
+    % ----------------------------------------------------------------
+    \vspace{2cm}
+    %{\Large\textlt{IVvoQMxeBPieLBxf TXxeKy}} \\
+    \textnormal{een\^gs.-meibpelbe-kona} \\[5pt]
+    \emph{A complete grammar}\\[2cm]
+    %{in partial fulfilment for the award of the degree of} \\[2cm]
+    %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+    %{in some subject} \vspace{0.4cm} \\[2cm]
+    % {By}\\[5pt] {\Large \sc {Me}}
+    \vfill
+    % ----------------------------------------------------------------
+    %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+    %{blah}\\[5pt]
+    %{blahblah}\\[5pt]
+    %{blahblah}\\
+    \vfill
+    {\@date}
+  \end{center}
+  \makeatother
+\end{titlepage}
+
+\pagecolor{LightSkyBlue2!15}
+
+\begin{center}
+    \textit{Dedicated to someone.}
+\end{center}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2018-04-14 (29 ful lax)
+\end{verbatim}
+
+(C)opyright 2018 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Phoneme inventory and (roman|hacm)isation}
+
+Phonemes may have a noninitial or initial variant, or both. Initial phonemes are marked with a capital letter in both the romanisation and the hacmisation.
+
+\begin{table}[h]
+  \caption{Phonemes of \lname.}
+  \centering
+  \begin{tabular}{l|ll|l>{\kardinal}l}
+    \# & NI & I & Roman & \textnormal{Hacm} \\
+    \hline
+    0 & m & & m & m \\
+    27 & n & & n & n \\
+    54 & ŋ & .ŋ & ŋ & n\^g \\
+    162 & p & .p & p & p \\
+    189 & & .t & t & t \\
+    190 & ts & .ts & c & t\^s \\
+    191 & tɬ & .tɬ & ċ & t\^x \\
+    192 & tˤ & & ṭ & t\^a \\
+    216 & k & & k & k \\
+    217 & q & & q & k\^a \\
+    324 & & .f & f & f \\
+    350 & θ & .θx & þ & s\^f \\
+    351 & s & .s & s & s \\
+    352 & ɬ & & ṡ & x \\
+    378 & x & & h & h \\
+    379 & & .χ & ḥ & h\^a \\
+    380 & xʷ & & w & w \\
+    405 & ɹ & & r & r \\
+    486 & a & .a & a & a \\
+    513 & u & .u & u & u \\
+  \end{tabular}
+\end{table}
+
+(In this document, we use the romanisation.)
+
+Phoneme \#486 is an arbitrary open vowel, and \#513 is a closed or near-closed rounded vowel. Any other vowel may be inserted epenthetically.
+
+The phoneme numbers listed are \emph{initiality-independent} (we shall call them \emph{inumbers}). \emph{Initiality-dependent} numbers (\emph{dnumbers}) are derived from the the former by leaving them as-is for non-initials and adding 13 for initials.
+
+\section{Allophony}
+
+The exact realisations of /u/ varies depending on the preceding phoneme:
+
+\begin{table}[ht]
+  \caption{Allophony of /u/.}
+  \centering
+  \begin{tabu}{l|Y}
+    Allophone & Preceding \\
+    \hline
+    o & q χ \\
+    u & ŋ tˤ k x xʷ ɹ \\
+    ʉ & t ts s ɬ \\
+    ʏ & θ tɬ n \\
+    y & p f m \\
+    ø & a \\
+  \end{tabu}
+\end{table}
+
+\section{Phonotactics}
+
+In \lname, a \emph{phonorun} consists of one initial phoneme followed by zero or more noninitial phonemes.
+
+If a word begins with a non-initial phoneme, an initial vowel (usually /a/) is inserted at the front.
+
+{}[TODO: example]
+
+\subsection{Prosody}
+
+In speech, a phonorun fits into an integral number of fixed-size \emph{cells}. The number of cells taken by a phonorun is roughly proportional to the number of vowels (including epenthetic vowels) pronounced. The last formal (non-epenthetic) vowel of a phonorun (if any) receives the stress.
+
+\subsection{Syllabification}
+
+{}[TODO: need some example sentences to come up with something useful]
+
+A syllable contains a nucleus: one of the two formal vowels, an epenthetic vowel or a syllabic /ɹ/, in that order of preference.
+
+Generally, syllables prefer not to cross phonorun boundaries, unless  $\rho_1$ ends with a vowel then a consonant, and $\rho_2$ begins with a vowel.
+
+\chapter{Roots}
+
+A root consists of three consonants (initial or otherwise). For any root $r$ (represented by a triplet of dnumbers), the following predicate $P$ holds for a permutation $s$ of $r$ if and only if $r = s$:
+
+\begin{align*}
+  P(a, b, c) &= L(A, B) \land L(B, C) & \text{where} \\
+  L(p, q) &= ((q - p) \bmod 729) \le 364 \\
+  u &= (a + b + c) \bmod 729 \\
+  v &= (\min \{ w : w \ge v \land \gcd(w, 729) = 1 \}) \bmod 729 \\
+  A &= (va + 128) \bmod 729 \\
+  B &= (vb + 128) \bmod 729 \\
+  C &= (vc + 128) \bmod 729
+\end{align*}
+
+In addition, a root has a gender of $(\mathbb{Z} \cap [-13, 13])^3$. This is used for adjectives and adverbs.
+
+\chapter{Nouns}
+
+Nouns are marked for one of the following cases:
+
+\begin{table}[h]
+  \caption{Cases of \lname.}
+  \centering
+  \begin{tabu}{l|l|Y}
+    Case & Permutation & Explanation \\
+    \hline
+    Nominative & 123 & The subject of the sentence, as well as the possessor in a possessive phrase. \\
+    Accusative & 132 & The direct object of the sentence. Also used for durations of time. \\
+    Ablative & 213 & The origin of an action, either spatially or temporally. Also a vocative, instrumental or causal. \\
+    Benefactive & 231 & An entity on whose behalf an action is done. \\
+    Allative & 321 & The destination of an action, either spatially or temporally. The indirect object of the sentence (thus acting as a dative). Also a locative. \\
+    Comitative & 312 & An entity in whose company an action is done. \\
+  \end{tabu}
+\end{table}
+
+These other grammatical categories are marked:
+
+\begin{itemize}
+  \item Number-mutability: \emph{singular} (one object, and the quantity is unlikely to change), \emph{plural} (multiple, but the quantity does not change often) or \emph{mutable} (multiple, but the quantity changes often).
+  \item Subjective attractiveness: \emph{neutral}, \emph{attractive} or \emph{unattractive}.
+  \item Possession: if the noun is possessed, then it is marked for the person and NM of its possessor.
+\end{itemize}
+
+The schemata for number-mutability and subjective attractiveness is outlined in table \ref{table:declension1}.
+
+\begin{table}[h]
+  \caption{NM and attractiveness inflections in \lname.}
+  \label{table:declension1}
+  \centering
+  \begin{tabular}{l|lll}
+    NM \bs{} Attr & Neutral & Attractive & Unattractive \\
+    \hline
+    Singular & 1a23u & 12a3a & 1u2u3 \\
+    Plural & 12a3ṡu & 1ṡa2a3 & ṡ1u23u \\
+    Mutable & u12a3 & a1a23 & u1u23 \\
+  \end{tabular}
+\end{table}
+
+The possessive affixes are outlined in table \ref{table:declension2}.
+
+\begin{table}[h]
+  \caption{Possessive affixes in \lname.}
+  \label{table:declension2}
+  \centering
+  \begin{tabular}{l|lll}
+    Person \bs{} NM & Singular & Plural & Mutable \\
+    \hline
+    1 & -wa & -Ḥa & -Ŋa \\
+    2 & -pu & -Tu & -Ċu \\
+    3(prox) & -kþ & -kṡ & -kh \\
+    3(obv) & -qþ & -qṡ & -ra \\
+  \end{tabular}
+\end{table}
+
+\appendix
+
+\chapter{Dictionary}
+
+An entry looks like this:
+
+{}[placeholder]
+
+From left to right:
+
+\begin{enumerate}
+    \item The entry -- the \lname{} term listed.
+    \item The part of speech of the corresponding entry:
+    \begin{itemize}
+        \item \textit{r(\#, \#, \#)} -- a root of the specified gender
+    \end{itemize}
+    \item The definition -- the gloss for the corresponding entry.
+    \begin{itemize}
+        \item (S) -- nominative argument
+        \item (P) -- absolutive argument
+        \item (O) -- accusative argument
+        \item (A) -- ergative argument
+    \end{itemize}
+    \item If applicable, any special grammatical or semantic notes for this term.
+    \item Optionally, examples of usage.
+\end{enumerate}
+
+\begin{multicols}{2}
+    \input{10/dict/dict.tex}
+\end{multicols}
+
+\end{document}

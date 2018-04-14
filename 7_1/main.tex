@@ -1443,7 +1443,8 @@ Tidal days have their own names, as follow:
     5 & pakro & nyez \\
     \hline
     6 & v\^hardak & vint\^sa \\
-    %7 & 
+    7 & tkarxi & pei.qf \\
+    8 & milis\^f & kfadak \\
 \end{longtable}
 
 \chapter{Quoting direct speech}
@@ -1750,6 +1751,88 @@ For the sake of brevity, we will not show the ASTs for these clauses, but see \t
         \seqsplit{te.emunpa.ipi.i.a.atq.qneto.ubane{f\^x}wu.i.a.a.asa.qkesu.atqtqvladimicvutite.emunpa.ipi.i.a.atq.qneto.ubane{f\^x}wu.i.a.a.asa{f\^x}wu.i.a.a.a.qri.qkesu.isutatitutivirlastpa.ipi.qsu.atq.upcen{k\^x}otqtafilmap{k\^x}otqtamaci.avuse.omalnaso.qtitq.erevpa.ipi.qsu.asu.utqkletq.enebpa.isu.asu.itiba.obite.efuzpa.ipi.q.a.atqtinabusu{n\^g}so.qtq.o{f\^x}oto{n\^g}so.qtitu.icpa.isu.afatitq.etagpa.itq.o{f\^x}oto{n\^g}so.qtatu.icpa.itq.umazaso.qfatitu.impatesu.use.oskoflse.uwa{t\^s}asa.uunun.i.etitu.icpatetq.umazaso.qfatiba.obititu.ictqtqvladimicvufafitq.izkotibakubitq.uvenspa.isa.o.adaz{k\^x}otqtamaci.avusu.utiba.ubitq.e{k\^x}a.pa.itq.ofqltoso.isu.utiba.ubibakubitq.emejpa.ifasu.ititq.emejpa.utq.emif{k\^x}ofisu.iti}.
     }
 \end{quote}
+
+\chapter{Miscellanea}
+
+\section{Colour}
+
+\lname{} has eleven non-derived colour terms:
+
+\begin{tikzpicture}[x=1.25mm,y=1mm]
+    \definecolor{leftcolour}{hsb}{0,1,1}
+    \definecolor{rightcolour}{hsb}{1,1,1}
+    \foreach \pos in {0,...,99} {
+        \colorlet{current}[rgb]{rightcolour!\pos!leftcolour}
+        \pgfmathparse{\pos+1}
+        \colorlet{next}[rgb]{rightcolour!\pgfmathresult!leftcolour}
+        \shade[
+               left color=current,
+               right color=next]
+           (\pos,0) rectangle +(1,10mm);
+    }
+    \newcommand{\clabela}[3]{
+        \draw (#1, 10mm) -- +(0, #3);
+        \pgfmathparse{10 + #3}
+        \node[anchor=south, font=\strut] (temp) at (#1, \pgfmathresult) {
+            #2
+        };
+    }
+    \newcommand{\clabelb}[3]{
+        \draw (#1, 0mm) -- +(0, -#3);
+        \node[anchor=north, font=\strut] (temp) at (#1, -#3) {
+            #2
+        };
+    }
+    \clabela{5}{Red-orange}{10}
+    \clabelb{20}{Yellow-green}{10}
+    \clabela{33}{Green}{10}
+    \clabelb{43}{Aquamarine}{10}
+    \clabela{47}{Turquoise}{10}
+    \clabelb{51}{Cyan}{6}
+    \clabela{53}{Sky-blue}{6}
+    \clabelb{57}{Azure}{10}
+    \clabela{66}{Blue}{10}
+    \clabelb{79}{Violet}{10}
+    \shade[left color=Gray, right color=Gray]
+        (25, -18) rectangle (35, -28);
+    \node[anchor=west, font=\strut] (grey) at (35, -23) {
+        Grey
+    };
+\end{tikzpicture}
+
+Note that ``grey'' refers generically to a loss of chroma. There is no distinction between a decrease in saturation and a decrease in value.
+
+\lname{} works with colour \emph{transitions}, not static colours, and uses abstract nouns to represent them. See table \ref{tab:colourtrans}.
+
+\begin{table}[H]
+    \begin{adjustwidth}{-1cm}{}
+        \caption{Colour transitions in \lname. Each row represents a different starting colour; each column represents a different ending colour. \label{tab:colourtrans}}
+        \centering
+        \begin{tabular}{
+                l|
+                >{\kardinal}l>{\kardinal}l>{\kardinal}l
+                >{\kardinal}l>{\kardinal}l>{\kardinal}l
+                >{\kardinal}l>{\kardinal}l>{\kardinal}l
+                >{\kardinal}l>{\kardinal}l}
+            & \textnormal{RO} & \textnormal{YG} & \textnormal{Gn} &
+            \textnormal{Aq} & \textnormal{Tu} & \textnormal{Cy} &
+            \textnormal{SB} & \textnormal{Az} & \textnormal{Bl} &
+            \textnormal{Vi} & \textnormal{Gy} \\
+            \hline
+            RO & k\^xas & mek & d\^yen & fal & s\^fir & pql & bet & mal & f\^xop & ten\^g & mi.im \\
+            YG & mot & rum & k\^xop & dql & n\^yis & tek & n\^yar & f\^het & t\^sen & yep & puo \\
+            Gn & t\^yon & f\^xopo & x\^lek & cqm & got & nul & bon & xet & sqlq & s\^fus & koz \\
+            Aq & s\^far & tqr & rqm & wik & mirz & .uk & t\^xor & kros & nwep & cap & bea \\
+            Tu & ful & n\^yus & kek & d\^yqr & myen & ris & k\^xom & tyel & s\^wit & dur & cq.o \\
+            Cy & bqr & dot & nir & .it & cus & bcek & t\^xil & n\^yak & frin & but & noz \\
+            SB & pok & n\^yal & pen & t\^xel & f\^xem & t\^xur & wap & s\^forp & pen & cip & t\^sko \\
+            Az & mar & sok & xop & gces & dwor & n\^yat & fret & fwis & tir & rqp & wa \\
+            Bl & het & t\^son & f\^hqr & nyot & f\^hi.uk & s\^frun & bon & dul & k\^xak & kqn\^g & yuo \\
+            Vi & don\^g & wot & f\^his & drat & til & pik & rut & cit & gqn\^g & k\^xon & fa \\
+            Gy & do & bq & ke & pq & re & si & t\^sa & yaya & f\^he & s\^fi & .is \\
+        \end{tabular}
+    \end{adjustwidth}
+\end{table}
 
 \appendix
 
