@@ -125,7 +125,7 @@ grammar was developed. This update added considerable changes to the language:
 Ḋraħýl Rase uses the following phonemes:
 
 \begin{table}[h]
-    \caption{The consonants of Ḋraħýl Rase.}
+    \caption{The consonants of Ḋraħýl Rase, with their romanisations.}
     \centering
     \begin{tabular}{l|llllll}
         & Bilabial / & & & & & \\
@@ -141,7 +141,7 @@ grammar was developed. This update added considerable changes to the language:
 \end{table}
 \begin{table}[h]
 \centering
-    \caption{The vowels of Ḋraħýl Rase.}
+    \caption{The vowels of Ḋraħýl Rase, with their romanisations.}
     \begin{tabular}{lll}
         Short & Long & Semivowel \\
         \hline 
@@ -243,7 +243,7 @@ Note that /n/ does \emph{not} assimilate to [ŋ] before a velar consonant.
 
 \section{Stress}
 
-A word has one high syllable (and the rest are low). The natural location of the high syllable is determined by the following rules:
+A word has one stresed syllable. The natural location of the stressed syllable is determined by the following rules:
 
 \begin{itemize}
     \item If there is a long vowel or a diphthong in the last three syllables, then the stress falls on one of them, in the order 2nd-to-last → 3rd-to-last → last.
@@ -254,7 +254,7 @@ Stress will be indicated in this grammar. If it falls on its natural location, t
 
 If there is no other way to use diacritics to indicate that a diphthong is unstressed (i.~e. the stressed syllable is a long vowel), then a dot can be placed above the dominant vowel of the diphthong to force it to be unstressed, giving the letters \ortho{ȧ ė ị ȯ u̇ ẏ}.
 
-Hyphens may separate parts of words. In that case, only the last part will be counted.
+Hyphens may separate parts of words. In that case, only the last part will be counted toward translating between the romanisation and the actual location of stress.
 
 See table \ref{table:stress} for examples.
 
@@ -416,32 +416,23 @@ Diphthongs with the semivowel occuring second are written with the glyph for the
     \end{tabular}
 \end{table}
 
-As seen in the example below, names receive an overline. (The colours are solely for emphasis.)
-
-\begin{table}[h]
-    \caption{An example with names.}
-    \centering
-    \begin{tabu} to \linewidth {XX}
-        Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. ``Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?'' tes vanretara. \strut
-        &
-        \textdhr{
-            malnelkAjkane xAlemulama Danomulama luneksi \hli{\textoverline{alis}} ruselmara. sel ka mon Sunama Danos lumekAl sydasAW panetaki sydasAWma rihu ka tUrI \tl etera. [rihu ka tUrI \tl etekAl sydasAWma \tl lumetSalu] tes vanretara.
-        }
-        \\
-    \end{tabu}
-\end{table}
+As seen in Table \ref{table:scriptex}, names receive an overline.
 
 \section{Hacm}
 
 Ḋraħýl Rase can also be written in hacm. The orthography does not mark stress.
 
-\begin{longtabu}{>{\kardinal}ll|>{\kardinal}ll}
+\begin{longtabu}{>{\kardinal}ll|>{\kardinal}ll|>{\kardinal}ll|>{\kardinal}ll}
     \caption{Consonant, semivowels and vowels in hacm. Long vowels are written with doubled letters.} \\
+    \textnormal{Hacm} & Rom &
+    \textnormal{Hacm} & Rom &
     \textnormal{Hacm} & Rom &
     \textnormal{Hacm} & Rom \\
     \hline
     \endfirsthead
     
+    \textnormal{Hacm} & Rom &
+    \textnormal{Hacm} & Rom &
     \textnormal{Hacm} & Rom &
     \textnormal{Hacm} & Rom \\
     \hline
@@ -451,27 +442,51 @@ As seen in the example below, names receive an overline. (The colours are solely
     
     \endlastfoot
 
-    p & p & d & d \\
-    t & t & b & b \\
-    k & k & j & ż \\
-    s & s & z & z \\
-    f & f & g\^j & ġ \\
-    n & n & d\^a & ḋ \\
-    m & m & t\^a & ṫ \\
-    k\^x & ḣ & y & j \\
-    h\^a & ħ & w & w \\
-    h & h & w\^i & ẏ \\
-    r & r & a & a \\
-    x & ṡ & e & e \\
-    l & l & i & i \\
-    v & v & o & o \\
-    g & g & u & u \\
-    n\^g & ṅ & u\^i & y \\
+    p & p & d & d & t & t & b & b \\
+    k & k & j & ż & s & s & z & z \\
+    f & f & g\^j & ġ & n & n & d\^a & ḋ \\
+    m & m & t\^a & ṫ & k\^x & ḣ & y & j \\
+    h\^a & ħ & w & w & h & h & w\^i & ẏ \\
+    r & r & a & a & x & ṡ & e & e \\
+    l & l & i & i & v & v & o & o \\
+    g & g & u & u & n\^g & ṅ & u\^i & y \\
 \end{longtabu}
+
+The convention on notating numerals is divided. Some factions prefer to use the letters \hortho{t k} for 10 and 11, others prefer mirrored versions of \hortho{5 7} (\hortho{\reflectbox{5} \reflectbox{7}}), and yet others prefer to use the NTP numerals.
+
+Punctuation, on the other hand, is hardly controversial -- the hacm equivalents of the appropriate punctuation marks are used.
+
+\begin{table}
+    \caption{An example with names. The colours are solely for emphasis.}
+    \label{table:scriptex}
+    \centering
+    \begin{tabu} to \linewidth {X}
+        \hline
+        Romanisation \\
+        \hline
+        Malnelkajkáne ḣâle-mulama ḋano-mulama luneksi \hli{Alis} ruselmara. Sel ka mon ṡunama ḋanos lumekâl sydasaẏ panetaki sydasaẏmá rihu ka tūrî kêl etera. ``Rihu ka tūrî kêl etekâl sydasaẏmá kêl lumetṡalu?'' tes vanretara. \strut
+        \\
+        \hline
+        Nasél Tēkel Piva \\
+        \hline
+        \textdhr{
+            malnelkAjkane xAlemulama Danomulama luneksi \hli{\textoverline{alis}} ruselmara. sel ka mon Sunama Danos lumekAl sydasAW panetaki sydasAWma rihu ka tUrI \tl etera. [rihu ka tUrI \tl etekAl sydasAWma \tl lumetSalu] tes vanretara. \strut
+        }
+        \\
+        \hline
+        Hacm \\
+        \hline
+        \textkardinal{
+            malnelkaykane k\^xaale-mulama d\^aano-mulama luneksi \hli{alis} ruselmara. sel ka mon xunama d\^aanos lumekaal su\^idasaw\^i panetaki su\^idasaw\^ima rihu ka tuurii keel etera. "rihu ka tuurii keel etekaal su\^idasaw\^ima keel lumetxalu?" tes vanretara. \strut
+        }
+        \\
+        \hline
+    \end{tabu}
+\end{table}
 
 \section{Punctuation}
 
-Commas (both in the Latin script and NTP) are used to separate independent clauses (as with the semicolon in English). Slashes (interpuncts in  NTP) are sometimes used to separate two nouns that are juxtaposed. Periods and question marks are used for obvious purposes.
+Commas (both in the Latin script and NTP) are used to separate independent clauses (as with the semicolon in English). Slashes (interpuncts in NTP) are sometimes used to separate two nouns that are juxtaposed. Periods and question marks are used for obvious purposes.
 
 \chapter{Syntax}
 
@@ -1688,14 +1703,14 @@ When two predicates are joined, which of \tsc{erg}, \tsc{abs} or \tsc{acc} occur
 \hliv{dog} \hliii{human-\tsc{erg}} \hli{touch-3\tsc{anm}} \hlv{dance-3\tsc{anm}-\tsc{past}} \\
 \emph{\hliii{The person} \hli{pet} \hliv{the dog} and \hliv{the dog} \hlv{danced.}} \\
 ~\\
-\hliv{Ṅarku} \hlii{lavatu} \hli{neke,} \hliii{ej} \hlv{luṡuhatakjusit.} \\
-\hliv{Ṅarku} \hlii{bread-\tsc{additional}} \hli{dislike-3,} \hliii{\tsc{pr.1}} \hlv{annoy-1-3-\tsc{continuative}-\tsc{habitual}} \\
-\hliv{Ṅarku} \hli{dislikes} \hlii{even bread,} and \hlv{she keeps annoying} \hliii{me}. \\
+\hliv{Ṅarkus} \hlii{lavatu} \hli{neke,} \hliii{ej} \hlv{luṡuhatakjusit.} \\
+\hliv{Ṅarku-\tsc{erg}} \hlii{bread-\tsc{additional}} \hli{dislike-3,} \hliii{\tsc{pr.1}} \hlv{annoy-1-3-\tsc{continuative}-\tsc{habitual}} \\
+\emph{\hliv{Ṅarku} \hli{dislikes} \hlii{even bread,} and \hlv{she keeps annoying} \hliii{me}}. \\
 \emph{(Here, \tsc{abs} is occupied, so \ortho{Ṅarku} takes \tsc{erg} in the second clause.)}
 
 \section{\ortho{ka} and \ortho{gy}}
 
-\ortho{ka} (inclusive \emph{or}) and \ortho{gy} (exclusive \emph{or}) are explicit conjunctions that occur between what they join, and follow the same rules as juxtaposition.
+\ortho{ka} (inclusive \emph{or}) and \ortho{gy} (exclusive \emph{or}) are explicit conjunctions between what they join, and they follow the same rules as juxtaposition.
 
 When two or more of the three conjunctions occur in the same phrase, all three of these conjunctions have the same precedence level and are evaluated right to left. Explicit grouping is possible using \ortho{re ... zo}.
 
@@ -1757,7 +1772,7 @@ It is commonly said that there are no adverbs in Ḋraħýl Rase. This is not en
     \end{tabular}
 \end{table}
 
-It is more common to use the adverbial of a noun: \ortho{munuma} \emph{slowness} $\rightarrow$ \ortho{munumár} \emph{slowly}.
+It is more common to use the adverbial case: \ortho{munuma} \emph{slowness} $\rightarrow$ \ortho{munumár} \emph{slowly}.
 
 \chapter{Derivational rules}
 
@@ -2538,6 +2553,64 @@ A shape with \hli{lion} \hlii{body} and \hliv{head} \hliii{of a man}, \\
 \hli{Nakkelkajsáne} \hlii{Bêtleḣemé} \hliii{tanel?} \\
 \hli{be\_born-3\tsc{anm}-\tsc{content}-\tsc{benefactive}} \hlii{Betlehem-\tsc{dir}} \hliii{go-3\tsc{anm}} \\
 \hliii{Slouches} \hlii{toward Bethlehem} \hli{to be born?}
+
+\subsection{Tjalor}
+
+A translation of an Arka poem\footnote{\url{http://conlinguistics.org/arka/images/semaim.png}}. \\
+~\\
+\textdhr{kitOku malneltora} \\
+\hli{Kitôku} \hlii{malneltora} \\
+\hli{\tsc{dim}-cat} \hlii{pick\_up-3\tsc{anm}-1-\tsc{past}} \\
+\hlii{I picked up} \hli{a little cat} \\
+~\\
+\textdhr{tEdekli mevutanul mane} \\
+\hli{Tēdekli} \hlii{mevutanúl} \hliii{mane} \\
+\hli{Têdek-\tsc{gen}} \hlii{rain-\tsc{bounty}-\tsc{gen}} \hliii{day} \\
+\hlii{A rainy} \hliii{day} \hli{in June} \\
+~\\
+\textdhr{koval pSemadural tjAlorli setlamaGama} \\
+\hli{Kovál} \hlii{pṡema-durál} \hliii{tjalorlí} \hliv{setla-maġama} \\
+\hli{young-\tsc{gen}} \hlii{sprout-glue-\tsc{gen}} \hliii{hydrangea-\tsc{gen}} \hliv{leaf\bs{\tsc{pl}}-below-\tsc{loc}} \\
+\hliv{Under the leaves} \hliii{of the hydrangea} \hlii{with} \hli{young} \hlii{sprouts,} \\
+~\\
+\textdhr{mevun nepSelkerakAS kitOku malnelto} \\
+\hli{Mevun} \hlii{nepṡelkerakâṡ} \hliii{kitôku} \hliv{malnelto} \\
+\hli{rain-\tsc{acc}} \hlii{take\_shelter-3\tsc{anm}-\tsc{prog}-\tsc{past}-\tsc{rel.nonrestrictive}} \hliii{\tsc{dim}-cat} \hliv{pick\_up-3\tsc{anm}-1} \\
+\hliv{I picked up} \hliii{the little cat,} \hlii{hiding from} \hli{the rain} \\
+\emph{(Note the sequence of tenses.)} \\
+~\\
+\textdhr{revetli tOku rAjnetora} \\
+\hli{Revetlí} \hlii{tôku} \hliii{rajnetora} \\
+\hli{white-\tsc{gen}} \hlii{cat} \hliii{sleep-3-1-\tsc{past}} \\
+\hliii{I put} \hli{the white} \hlii{cat} \hliii{to rest} \\
+\emph{(The patient is considered inanimate here for somewhat obvious reasons.)} \\
+~\\
+\textdhr{tEdekli mevutanul mane} \\
+\hli{Tēdekli} \hlii{mevutanúl} \hliii{mane} \\
+\hli{Têdek-\tsc{gen}} \hlii{rain-\tsc{bounty}-\tsc{gen}} \hliii{day} \\
+\hlii{A rainy} \hliii{day} \hli{in June} \\
+~\\
+\textdhr{dunEwma tjAlorli setlamaGame} \\
+\hli{Dunewmá} \hlii{tjalorlí} \hliii{setla-maġame} \\
+\hli{encounter-\tsc{v>n}-\tsc{loc}} \hlii{hydrangea-\tsc{gen}} \hliii{leaf\bs{\tsc{pl}}-below-\tsc{dir}} \\
+\hliii{Under the leaves} \hlii{of the hydrangea} \hli{where we met,} \\
+~\\
+\textdhr{kolonelrakAS tOku rAjnetoTa} \\
+\hli{Kolonelrakâṡ} \hlii{tôku} \hliii{rajnetoṫa.} \\
+\hli{large-become-3\tsc{anm}-\tsc{past}-\tsc{rel}} \hlii{cat} \hliii{sleep-3-1-\tsc{fut}} \\
+\hliii{I put to rest} \hli{the grown} \hlii{cat} \\
+\emph{(Note the sequence of tenses again, as well as the use of both the animate and inanimate conjugations when referring to the cat.)} \\
+~\\
+\textdhr{misoto mik neSke bZyretora} \\
+\hli{Misoto} \hlii{mik} \hliii{neṡke} \hliv{bżyretora} \\
+\hli{thank-0-1} \hlii{\tsc{simul}} \hliii{dirt} \hliv{pile\_up-3-1-\tsc{past}} \\
+\hli{I gave thanks} \hlii{while} \hliv{laying down} \hliii{the dirt} \\
+\emph{(The sequence of tenses between independent clauses is different than when a dependent clause is involved.)} \\
+~\\
+\textdhr{misoto mik neSke bZyretora} \\
+\hli{Misoto} \hlii{mik} \hliii{neṡke} \hliv{bżyretora} \\
+\hli{thank-0-1} \hlii{\tsc{simul}} \hliii{dirt} \hliv{pile\_up-3-1-\tsc{past}} \\
+\hli{I gave thanks} \hlii{while} \hliv{laying down} \hliii{the dirt}
 
 \appendix
 

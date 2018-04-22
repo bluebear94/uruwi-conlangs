@@ -1825,7 +1825,7 @@ bring
 
 # dunek
 : v
-see, meet, intersect, collide
+see, meet, intersect, collide, encounter
 
 
 # mako
@@ -2011,6 +2011,7 @@ fight, struggle against
 # malnek
 : v
 be idle, have nothing to do
+(A) picks up (P)
 
 
 # rehu
@@ -3844,3 +3845,23 @@ hibiscus
 # dan
 : n
 colour
+
+# tjalor
+: n
+hydrangea
+
+# kova
+: n
+young (plant)
+
+# pṡama
+: n
+sprout, bud
+
+# nepṡek
+: vn
+(P) takes shelter from (O)
+
+# bżyrek
+: v
+(P) piles up, (A) piles up (P)
