@@ -1,6 +1,6 @@
 \documentclass{book}
 
-\usepackage[dhr]{common/uruwi}
+\usepackage[dhr,shortsuper,hacm]{common/uruwi}
 
 \title{Ḋraħýl Rásevek Ḋraħyn-Nȳrlí Rase}
 \author{uruwi}
@@ -241,16 +241,16 @@ The following allophonic rules are listed:
 
 Note that /n/ does \emph{not} assimilate to [ŋ] before a velar consonant.
 
-\section{Pitch accent}
+\section{Stress}
 
 A word has one high syllable (and the rest are low). The natural location of the high syllable is determined by the following rules:
 
 \begin{itemize}
-    \item If there is a long vowel or a diphthong in the last three syllables, then the pitch accent falls on one of them, in the order 2nd-to-last → 3rd-to-last → last.
-    \item Otherwise, the pitch accent falls on the second-to-last syllable.
+    \item If there is a long vowel or a diphthong in the last three syllables, then the stress falls on one of them, in the order 2nd-to-last → 3rd-to-last → last.
+    \item Otherwise, the stress falls on the second-to-last syllable.
 \end{itemize}
 
-Pitch accent will be indicated in this grammar. If it falls on its natural location, then it is not marked. Otherwise, long syllables that are forced unstressed will be written with macra, and short syllables that are forced stressed will be written with acutes.
+Stress will be indicated in this grammar. If it falls on its natural location, then it is not marked. Otherwise, long syllables that are forced unstressed will be written with macra, and short syllables that are forced stressed will be written with acutes.
 
 If there is no other way to use diacritics to indicate that a diphthong is unstressed (i.~e. the stressed syllable is a long vowel), then a dot can be placed above the dominant vowel of the diphthong to force it to be unstressed, giving the letters \ortho{ȧ ė ị ȯ u̇ ẏ}.
 
@@ -282,16 +282,16 @@ See table \ref{table:stress} for examples.
 Some affixes might cause a stress to shift. Such affixes are marked with one of the symbols on Table \ref{table:shift}.
 
 \begin{table}[ht]
-    \caption{Symbols used to show pitch accent shifting. \label{table:shift}}
+    \caption{Symbols used to show stress shifting. \label{table:shift}}
     \centering
     \begin{tabu} to \linewidth {lX}
         \hline
         Symbol & Meaning \\
         \hline
-        \sshift & Shift pitch accent one syllable forward \\
-        \sshiftp & Shift pitch accent to second-to-last syllable \\
-        \sshiftu & Shift pitch accent to last syllable \\
-        \sstay & Keep pitch accent on same syllable \\
+        \sshift & Shift stress one syllable forward \\
+        \sshiftp & Shift stress to second-to-last syllable \\
+        \sshiftu & Shift stress to last syllable \\
+        \sstay & Keep stress on same syllable \\
         \hline
     \end{tabu}
 \end{table}
@@ -345,7 +345,7 @@ Sometimes, appending two strings together will result in edge cases. Suppose we 
 
 \section{Nasél Tēkel Piva}
 
-Ḋraħýl Rase is written in \emph{Nasél Tēkel Piva} (\emph{lit.} New Sun Glyphs), a native script that uses dedicated glyphs for consonants and long vowels, plus diacritics for short vowels. It does not mark pitch accent.
+Ḋraħýl Rase is written in \emph{Nasél Tēkel Piva} (\emph{lit.} New Sun Glyphs), a native script that uses dedicated glyphs for consonants and long vowels, plus diacritics for short vowels. It does not mark stress.
 
 \begin{longtabu}{>{\dhrfont}llX|>{\dhrfont}llX}
     \caption{Consonant and long vowels in NTP.} \\
@@ -431,6 +431,44 @@ As seen in the example below, names receive an overline. (The colours are solely
     \end{tabu}
 \end{table}
 
+\section{Hacm}
+
+Ḋraħýl Rase can also be written in hacm. The orthography does not mark stress.
+
+\begin{longtabu}{>{\kardinal}ll|>{\kardinal}ll}
+    \caption{Consonant, semivowels and vowels in hacm. Long vowels are written with doubled letters.} \\
+    \textnormal{Hacm} & Rom &
+    \textnormal{Hacm} & Rom \\
+    \hline
+    \endfirsthead
+    
+    \textnormal{Hacm} & Rom &
+    \textnormal{Hacm} & Rom \\
+    \hline
+    \endhead
+    
+    \endfoot
+    
+    \endlastfoot
+
+    p & p & d & d \\
+    t & t & b & b \\
+    k & k & j & ż \\
+    s & s & z & z \\
+    f & f & g\^j & ġ \\
+    n & n & d\^a & ḋ \\
+    m & m & t\^a & ṫ \\
+    k\^x & ḣ & y & j \\
+    h\^a & ħ & w & w \\
+    h & h & w\^i & ẏ \\
+    r & r & a & a \\
+    x & ṡ & e & e \\
+    l & l & i & i \\
+    v & v & o & o \\
+    g & g & u & u \\
+    n\^g & ṅ & u\^i & y \\
+\end{longtabu}
+
 \section{Punctuation}
 
 Commas (both in the Latin script and NTP) are used to separate independent clauses (as with the semicolon in English). Slashes (interpuncts in  NTP) are sometimes used to separate two nouns that are juxtaposed. Periods and question marks are used for obvious purposes.
@@ -457,11 +495,43 @@ In addition to syntactic emphasis, arguments of a verb may receive morphological
 
 \section{Descriptors}
 
-Descriptors consist of genitives, numbers and relative clauses. They come \emph{before} the noun they modify.
+Descriptors, which modify nouns, consist of genitives, numerals, relative clauses, locatives and directionals, although instances of the latter two categories might be modifying a verb instead. They come \emph{before} the noun they modify.
+
+Let us define the following properties for descriptors:
+
+\begin{itemize}
+    \item A \emph{restrictive} descriptor narrows the set of objects that the antecedent refers to. A \emph{nonrestrictive} descriptor merely provides supplementary information. This distinction is shown in relative clauses using \ortho{\sshiftu \=/kâl} and \ortho{\sshiftu \=/kâṡ}, respectively, but for genitives, it must be inferred via word order.
+    \item An \emph{objective} descriptor names a property that can be agreed on by any two observers. A \emph{subjective} descriptor names a property that two observers might disagree on. \\
+    Ex: colour is objective, but beauty is subjective
+    \item An \emph{engineered} descriptor describes a property that the antecedent is engineered to bear. A \emph{natural} descriptor is the opposite. \\
+    Ex: size of a cultivated crop is engineered, but size of a wild plant is natural
+\end{itemize}
+
+Note that some of the properties above are dependent on the antecedent of a descriptor as well as the descriptor itself.
+
+The descriptors of a noun appear in the order described by table \ref{table:descriptor_order}.
+
+\begin{table}[h]
+    \caption{Order of descriptors, with the earliest at the top.}
+    \label{table:descriptor_order}
+    \centering
+    \begin{tabular}{r|l}
+        \# & Category \\
+        \hline
+        1 & Relative clauses \\
+        2 & Nonrestrictive genitives \\
+        3 & Restrictive subjective genitives \\
+        4 & Locatives and directionals \\
+        5 & Numerals \\
+        6 & Restrictive objective engineered genitives \\
+        7 & Restrictive objective natural genitives \\
+        8 & Genitives that act as determiners \\
+    \end{tabular}
+\end{table}
 
 \section{Adverbials}
 
-Adverbs and adverbials of nouns can occur anywhere before the verb they modify.
+Adverbials include true adverbs, adverbial forms of nouns, locatives and directionals. They can occur anywhere before the verb they modify, although true adverbs are more likely than other adverbials to appear at the very beginning of a clause.
 
 \section{Locatives and directionals}
 
@@ -547,8 +617,8 @@ Nouns in the genitive case can modify other nouns to indicate possession or desc
     \item but the genitive of \ortho{ej} (I, non-elite) is \ortho{ejlí}
     \item otherwise:
     \begin{itemize}
-        \item appending \ortho{\sshift -l} after a vowel if the pitch accent is not on the final syllable
-        \item appending \ortho{\sshift -li} after a consonant, or if the pitch accent is on the final syllable
+        \item appending \ortho{\sshift -l} after a vowel if the stress is not on the final syllable
+        \item appending \ortho{\sshift -li} after a consonant, or if the stress is on the final syllable
     \end{itemize}
 \end{itemize}
 
@@ -567,8 +637,8 @@ Nouns in the adverbial case can modify verbs to act as adverbs. It is formed lik
     \item but the adverbial of \ortho{ej} (I, non-elite) is \ortho{ejrí}
     \item otherwise:
     \begin{itemize}
-        \item appending \ortho{\sshift -r} after a vowel if the pitch accent is not on the final syllable
-        \item appending \ortho{\sshift -ri} after a consonant, or if the pitch accent is on the final syllable
+        \item appending \ortho{\sshift -r} after a vowel if the stress is not on the final syllable
+        \item appending \ortho{\sshift -ri} after a consonant, or if the stress is on the final syllable
     \end{itemize}
 \end{itemize}
 
@@ -707,7 +777,7 @@ Pronouns are separated by person and class (see table \ref{table:classes}). The 
 \begin{table}[h]
     \caption{The pronoun classes of Ḋraħýl Rase. \label{table:classes}}
     \centering
-    \begin{tabu} to \linewidth {|l|X|}
+    \begin{tabu} to \linewidth {|l|Y|}
         \hline
         Class & Things that fall under this class \\
         \hline
@@ -741,6 +811,26 @@ The dual and plural forms of pronouns are derived regularly.
 The dual and plural forms of first-person pronouns are exclusive. To convey the inclusive first-person plural, a first-person and second-person pronoun are used together.
 
 Note that the first-person plural pronouns are exclusive. Inclusive pronouns are expressed using the conjunction of two pronouns: \ortho{î suẏ} = \emph{we and you}.
+
+\subsection{Genitive pronouns}
+
+There are suppletive forms of genitive pronouns (table \ref{table:genpronouns}), but they are somewhat archaic. It is more common to derive them regularly from their absolutive forms.
+
+\begin{table}[ht]
+    \caption{Genitive pronouns. \label{table:genpronouns}} 
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Class \bs{} Person & 1st & 2nd & 3rd \\
+        \hline
+        Divine & erul & nîl & \invalid \\
+        Elite & nabál & rêl & ħranúl \\
+        Non-elite & êl & sûl & anél \\
+        Animate & \invalid & \invalid & nêl \\
+        Inanimate & \invalid & \invalid & val \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \chapter{Verbs}
 
@@ -819,7 +909,7 @@ Note that the only optional affix dependent on another optional affix is the dis
 
 \section{The infinitive form of a verb}
 
-The infinitive form of a verb ends in \ortho{\=/ek}. Additionally, the pitch accent does not fall on the last syllable.
+The infinitive form of a verb ends in \ortho{\=/ek}. Additionally, the stress does not fall on the last syllable.
 
 \section{Absolutive argument marking in finite forms}
 
@@ -1088,9 +1178,9 @@ A verb may have a relational marker before the directional marker.
 
 Note that relational markers do not act as applicatives.
 
-\section{Pitch accent}
+\section{Stress}
 
-If the pitch accent of the infinitive falls on the natural location, then it will for any conjugated form.
+If the stress of the infinitive falls on the natural location, then it will for any conjugated form.
 
 If it falls one syllable before it, then it will fall one syllable before the natural location for any conjugated form, unless the natural location is on the third-to-last syllable, in which case it falls on the third-to-last syllable.
 
@@ -1332,14 +1422,14 @@ In a single independent clause with one or more dependent clauses, the clause th
 
 Here, \ortho{\hlv{kotanelṫa}} indicates that the arrival of the young man happened after the speakers saw him (\ortho{\hlii{penarakâl}}).
 
-\chapter{Numbers}
+\chapter{Numerals}
 
-\section{Cardinal numbers}
+\section{Cardinal numerals}
 
-Ḋraħýl Rase uses a base-12 numbering system. The cardinal numbers from 0 -- 12 are given below:
+Ḋraħýl Rase uses a base-12 numbering system. The cardinal numerals from 0 -- 12 are given below:
 
 \begin{longtable}[c]{|l|l|}
-    \caption{The cardinal numbers from 0 -- 12.} \\
+    \caption{The cardinal numerals from 0 -- 12.} \\
     
     \hline
     \# & word \\
@@ -1372,9 +1462,9 @@ Here, \ortho{\hlv{kotanelṫa}} indicates that the arrival of the young man happ
     12 & vôn \\
 \end{longtable}
 
-Words for numbers in the form $x \cdot 12$ for $2 \le x < 12$ are expressed as \ortho{$x$-vôn} -- e.~g. \ortho{monvôn} = 24; \ortho{rejvôn} = 108.
+Words for integers in the form $x \cdot 12$ for $2 \le x < 12$ are expressed as \ortho{$x$-vôn} -- e.~g. \ortho{monvôn} = 24; \ortho{rejvôn} = 108.
 
-Words for numbers in the form $x \cdot 12 + y$ for $2 \le x < 12$ and $1 \le y < 12$ are expressed as \ortho{$x$-vôn-$y$}, but with a few exceptions:
+Words for integers in the form $x \cdot 12 + y$ for $2 \le x < 12$ and $1 \le y < 12$ are expressed as \ortho{$x$-vôn-$y$}, but with a few exceptions:
 
 \begin{itemize}
     \item Long vowels in $y$ are shortened; e.~g. $17 = 12 + 5$ is \ortho{vônbe}, not \wrong{vônbê}
@@ -1383,7 +1473,7 @@ Words for numbers in the form $x \cdot 12 + y$ for $2 \le x < 12$ and $1 \le y <
     \item \ortho{ko} (8) and \ortho{gym} (10) change the \ortho{n} or \ortho{vôn} to \ortho{ṅ} (though in the standard dialect, this is only an orthographic change); e.~g. $82 = 6 \cdot 12 + 10$ is \ortho{fûvôṅgym}, not \wrong{fûvôngym}
 \end{itemize}
 
-Words for numbers less than $12^6$ are expressed in the form \[a \cdot 12^5 + b \cdot 12^4 + c \cdot 12^3 + d \cdot 12^2 + (x \cdot 12 + y)\]
+Words for integers less than $12^6$ are expressed in the form \[a \cdot 12^5 + b \cdot 12^4 + c \cdot 12^3 + d \cdot 12^2 + (x \cdot 12 + y)\]
 where $(x \cdot 12 + y)$ is expressed using the rules above, and the remaining terms are expressed with the words:
 
 \begin{longtable}[c]{|l|l|}
@@ -1411,7 +1501,7 @@ where $(x \cdot 12 + y)$ is expressed using the rules above, and the remaining t
     $12^5$ & fegi \\
 \end{longtable}
 
-Words for numbers that are $12^6$ or greater are split into groups of six digits and use the following words for powers of $12^6$:
+Words for integers that are $12^6$ or greater are split into groups of six digits and use the following words for powers of $12^6$:
 
 \begin{longtable}[c]{|l|l|}
     \caption{The cardinal powers of $12^6$} \\
@@ -1446,9 +1536,9 @@ Words for numbers that are $12^6$ or greater are split into groups of six digits
     $12^{72}$ & vûnħada \\
 \end{longtable}
 
-\section{Ordinal numbers}
+\section{Ordinal numerals}
 
-The ordinal numbers for \emph{1st} and \emph{2nd} are the suppletive forms \ortho{troma} and \ortho{iramu}, respectively. Most ordinals after \emph{2nd} are expressed regularly with the suffix \ortho{\=/ru}.
+The ordinal numerals for \emph{1st} and \emph{2nd} are the suppletive forms \ortho{troma} and \ortho{iramu}, respectively. Most ordinals after \emph{2nd} are expressed regularly with the suffix \ortho{\=/ru}.
 
 Ordinals that end with the following roots are formed irregularly:
 
@@ -1537,12 +1627,12 @@ Notes:
     \item Fractions of the form $1/(n \cdot 12)$, $1/(n \cdot 144)$ or $1/(n \cdot 12^3)$ (with $n \ne 1$) are formed regularly; e.~g. $1/(3 \cdot 12^3)$ is \ortho{ṫakpôrekul}, not \wrong{ṫaknavam}
     \item But this does not apply to table \ref{table:supff2}; e.~g. $1/(11 \cdot 12^4)$ is \ortho{ħykrakirlo}, not \wrong{ħykrakirkul}
     \item The fractional forms of higher powers of $12^6$ are not suppleted; e.~g. $1/(12^{30})$ is \ortho{baħadakul}, not \wrong{baħadalo}
-    \item The pitch accent is shifted to the second-to-last syllable.
+    \item The stress is shifted to the second-to-last syllable.
 \end{itemize}
 
 Fractions of the form $x/y$, where $x \ne 1$, are written as \emph{$x$ $(1/y)$s}. For example, \ortho{ṫak kovōlinkul} means \emph{$3$ $(1/100)$s}, or $3/100$ (note the pluralisation). Likewise, $2/99$ would be written \ortho{mon kovônṫakkulte}. In the ergative case, for instance, this would be written as \ortho{mon kovônṫekkulzi}.
 
-\section{Distributive numbers}
+\section{Distributive numerals}
 
 These are formed by suffixing \ortho{\sshiftp-vin}, and carry a meaning similar to ``each'' or ``at a time''. \\
 ~\\
@@ -1554,7 +1644,7 @@ These are formed by suffixing \ortho{\sshiftp-vin}, and carry a meaning similar 
 \hli{door-through-\tsc{dir}} \hlii{one-}\hliv{\tsc{distributive}} \hliii{leave\bs{\tsc{pl}}-\tsc{past}} \\
 \emph{\hliii{They left} \hli{through the door} \hlii{one} \hliv{at a time.}}
 
-\section{Collective numbers}
+\section{Collective numerals}
 
 These are formed by suffixing \ortho{\sshiftu-kô}, and are equivalent to the English expression ``between them''. \\
 ~\\
@@ -1913,7 +2003,7 @@ These are called \ortho{hrenílaj} (sg. \ortho{hrenélaj}; lit. \emph{tying reci
 
 Example: \ortho{kensu} \emph{red} \ra{} \ortho{kensunek} \emph{redden}
 
-This is a simple suffix \ortho{\sshift-nek} and produces an intransitive verb. If the pitch accent somehow falls on the last syllable with the shift, it instead falls on the second-to-last: \ortho{ħajnek} instead of \wrong{ħajnék}.
+This is a simple suffix \ortho{\sshift-nek} and produces an intransitive verb. If the stress somehow falls on the last syllable with the shift, it instead falls on the second-to-last: \ortho{ħajnek} instead of \wrong{ħajnék}.
 
 \subsection{Measure}
 
@@ -2175,6 +2265,67 @@ Most citizens of Ḋraħyn-Nŷr have a familiar given-surname combination, in th
 \end{itemize}
 
 All parts of a name are inflected for case individually.
+
+\section{Colour}
+
+The traditional colour terms are listed in table \ref{table:colours}.
+
+\begin{table}[h]
+    \caption{Traditional colour terms in Ḋraħýl Rase.}
+    \label{table:colours}
+    \centering
+    \begin{tabular}{l|l}
+        Term & Translation \\
+        \hline
+        revet & white \\
+        moru & black \\
+        kensu & red \\
+        danen & yellow \\
+        rehen & green \\
+        suhor & blue \\
+        ḋalfo & grey \\
+    \end{tabular}
+\end{table}
+
+Over time, the words for ``red'' and ``green'' were reänalysed as the compounds ``magenta-yellow'' and ``cyan-yellow'', yielding \ortho{uksu} \emph{magenta} and \ortho{reh} \emph{cyan}. This also yielded one of the words for colour: \ortho{dan}. These terms, along with the bound root \ortho{en}, are combined to create terms for high-chroma colours such as those from table \ref{table:colours2}.
+
+\begin{table}[h]
+    \caption{Some terms derived from \ortho{uksu} and \ortho{reh}.}
+    \label{table:colours2}
+    \centering
+    \begin{tabu} to \linewidth {l|lY}
+        Term & Translation & Derivation \\
+        \hline
+        uksu & magenta & basickish \\
+        reh & cyan & basickish \\
+        \hline
+        leksubên & scarlet & len uksu + bê en \\
+        enuksun & orange & en + uksu + en \\
+        enbênreh & chartreuse & en + bê en + reh \\
+        enmorehen & green-yellow & en + mon rehen \\
+        morehselen & aquamarine & mon reh + sel en \\
+        resuhor & sky blue & reh + suhor \\
+        rehuksureh & purple & reh + uksu + reh \\
+        ṫaksumoreh & violet & ṫak uksu + mon reh \\
+        uksurehuksu & cerise & uksu + reh + uksu \\
+    \end{tabu}
+\end{table}
+
+Quite unsurprisingly, terms for tints are formed with the prefix \ortho{revet-} and those for shades are formed with the prefix \ortho{moru-}. Before a vowel or with the colour terms in table \ref{table:colours}, \ortho{mor-} is used for shades instead. Terms for tones are prefixed with \ortho{ḋalfo-} or \ortho{rem-}.
+
+There are also a few colour terms that do not fall in the above categories (table \ref{table:colours3}).
+
+\begin{table}[h]
+    \caption{Miscellaneous colour terms.}
+    \label{table:colours3}
+    \centering
+    \begin{tabu} to \linewidth {l|lY}
+        Term & Translation & Derivation \\
+        \hline
+        enḋalfo & warm grey & en + ḋalfo \\
+        neṡkemoru & brown & neṡke \emph{(dirt)} + moru \\
+    \end{tabu}
+\end{table}
 
 %\section{Composition}
 

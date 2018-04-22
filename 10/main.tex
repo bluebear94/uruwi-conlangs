@@ -2,7 +2,7 @@
 
 \usepackage[shortsuper,hacm,ltfont]{common/uruwi}
 
-\newcommand{\lname}{aaaaaaaaaaaaa}
+\newcommand{\lname}{ŊþaċaḤa}
 
 \title{aaaaaaaaaaaaaaaaaaaaaa}
 \author{uruwi}
@@ -62,6 +62,8 @@ Date: 2018-04-14 (29 ful lax)
 
 \section{Introduction}
 
+\emph{ŊþaċaḤa} /,ŋθatɬa,χa/ < \ortho{Ŋþċ} \emph{speech} in nominative singular attractive + \ortho{-Ḥa} first-person plural possessive suffix.
+
 \chapter{Phonology and orthography}
 
 \section{Phoneme inventory and (roman|hacm)isation}
@@ -76,24 +78,24 @@ Phonemes may have a noninitial or initial variant, or both. Initial phonemes are
     \hline
     0 & m & & m & m \\
     27 & n & & n & n \\
-    54 & ŋ & .ŋ & ŋ & n\^g \\
-    162 & p & .p & p & p \\
-    189 & & .t & t & t \\
-    190 & ts & .ts & c & t\^s \\
-    191 & tɬ & .tɬ & ċ & t\^x \\
+    54 & ŋ & ,ŋ & ŋ & n\^g \\
+    162 & p & ,p & p & p \\
+    189 & & ,t & t & t \\
+    190 & ts & ,ts & c & t\^s \\
+    191 & tɬ & ,tɬ & ċ & t\^x \\
     192 & tˤ & & ṭ & t\^a \\
     216 & k & & k & k \\
     217 & q & & q & k\^a \\
-    324 & & .f & f & f \\
-    350 & θ & .θx & þ & s\^f \\
-    351 & s & .s & s & s \\
+    324 & & ,f & f & f \\
+    350 & θ & ,θx & þ & s\^f \\
+    351 & s & ,s & s & s \\
     352 & ɬ & & ṡ & x \\
     378 & x & & h & h \\
-    379 & & .χ & ḥ & h\^a \\
+    379 & & ,χ & ḥ & h\^a \\
     380 & xʷ & & w & w \\
     405 & ɹ & & r & r \\
-    486 & a & .a & a & a \\
-    513 & u & .u & u & u \\
+    486 & a & ,a & a & a \\
+    513 & u & ,u & u & u \\
   \end{tabular}
 \end{table}
 
@@ -124,11 +126,11 @@ The exact realisations of /u/ varies depending on the preceding phoneme:
 
 \section{Phonotactics}
 
-In \lname, a \emph{phonorun} consists of one initial phoneme followed by zero or more noninitial phonemes.
+In \lname, a \emph{phonorun} consists of one initial phoneme followed by zero or more noninitial phonemes. In IPA, we shall mark phonorun boundaries by commas and syllable boundaries by full stops. When they coïncide, we shall use the semicolon.
 
-If a word begins with a non-initial phoneme, an initial vowel (usually /a/) is inserted at the front.
+If a word begins with a non-initial phoneme, an initial vowel (usually /a/) is inserted at the front. We will not write this vowel in the romanisation.
 
-{}[TODO: example]
+For instance, \ortho{raTnu} (\emph{flower}, in the accusative case) has two phonoruns: \ortho{(A)ra} and \ortho{Tnu}.
 
 \subsection{Prosody}
 
@@ -141,6 +143,28 @@ In speech, a phonorun fits into an integral number of fixed-size \emph{cells}. T
 A syllable contains a nucleus: one of the two formal vowels, an epenthetic vowel or a syllabic /ɹ/, in that order of preference.
 
 Generally, syllables prefer not to cross phonorun boundaries, unless  $\rho_1$ ends with a vowel then a consonant, and $\rho_2$ begins with a vowel.
+
+An epenthetic is most often inserted:
+
+\begin{itemize}
+  \item between two plosives within a phonorun
+  \item after a plosive and before a nasal within a phonorun
+  \item after a nasal and before a plosive at a different PoA, within a phonorun
+  \item after a consonant if it is the only one in a phonorun
+  \item between two copies of the same phoneme (ignoring initiality differences)
+\end{itemize}
+
+For instance, \ortho{raTnu} /ɹa,tnu/ could be syllabified as [a.ɹa;tə.nu]. [a.ɹa,t.nu] is suboptimal because one of the syllables crosses a phonorun boundary.
+
+\chapter{Syntax}
+
+Sentences prefer to be in verb-final order, although other word orders are permitted.
+
+Modifiers precede their antecedents.
+
+\section{The topic}
+
+The topic usually occurs at the beginning of the sentence and receives the \ortho{=Cu} clitic.
 
 \chapter{Roots}
 
@@ -157,6 +181,12 @@ A root consists of three consonants (initial or otherwise). For any root $r$ (re
 \end{align*}
 
 In addition, a root has a gender of $(\mathbb{Z} \cap [-13, 13])^3$. This is used for adjectives and adverbs.
+
+\section{Prefixed roots}
+
+These are like roots, but receive a prefix. Applying a prefixed root involves applying the base root and prepending the prefix.
+
+We notate a prefixed root by separating the prefix from the base root with a hyphen.
 
 \chapter{Nouns}
 
@@ -180,7 +210,7 @@ Nouns are marked for one of the following cases:
 These other grammatical categories are marked:
 
 \begin{itemize}
-  \item Number-mutability: \emph{singular} (one object, and the quantity is unlikely to change), \emph{plural} (multiple, but the quantity does not change often) or \emph{mutable} (multiple, but the quantity changes often).
+  \item Number-mutability: \emph{singular} (one object, and the quantity is unlikely to change), \emph{plural} (multiple, but the quantity does not change often) or \emph{mutable} (multiple, but the quantity changes often). Uncountable or abstract entities use the plural.
   \item Subjective attractiveness: \emph{neutral}, \emph{attractive} or \emph{unattractive}.
   \item Possession: if the noun is possessed, then it is marked for the person and NM of its possessor.
 \end{itemize}
@@ -216,13 +246,151 @@ The possessive affixes are outlined in table \ref{table:declension2}.
   \end{tabular}
 \end{table}
 
+\section{Degenerate cases}
+
+Duplicate consonants in roots do not occur in basic (non-derived) roots, and even in derived roots, they are quite rare. However, when this happens, there are three cases.
+
+(Here, $a_i$ is the dnumber of consonant $i$ and $S(a)$ is the next dnumber after $a$ that belongs to a consonant, wrapping around if necessary.)
+
+\subsection{1 = 2 = 3}
+
+In this case, let $a_4 = S(a_1)$ and $a_5 = S(a_4)$. Then the permutations change as shown in the second column of table \ref{table:degenerate}.
+
+\subsection{1 = 2 ≠ 3}
+
+In this case, let $a_4 = S(((a_3 - a_1) / 2 \bmod 729) + a_1)$. Then the permutations change as shown in the third column of table \ref{table:degenerate}.
+
+Note that in Case II, $a_4$ is not guaranteed to be different from both $a_1$ and $a_3$. \emph{C'est la vie.}
+
+\subsection{1 ≠ 2 = 3}
+
+In this case, let $a_4 = S(a_2)$. Then the permutations change as shown in the fourth column of table \ref{table:degenerate}.
+
+\begin{table}
+  \caption{Degenerate cases in \lname.}
+  \label{table:degenerate}
+  \centering
+  \begin{tabu}{l|lll}
+    Case & Case I & Case II & Case III \\
+    \hline
+    Nominative (123) & 111 & 113 & 122 \\
+    Accusative (132) & 151 & 131 & 142 \\
+    Ablative (213) & 411 & 413 & 212 \\
+    Benefactive (231) & 451 & 431 & 221 \\
+    Allative (321) & 541 & 341 & 421 \\
+    Comitative (312) & 511 & 311 & 412 \\
+  \end{tabu}
+\end{table}
+
+\section{Derivations}
+
+The basic process of derivation involves:
+
+\begin{itemize}
+  \item carrying one of the consonants of the root to a prefix, possibly with some more phonemes around it. If there is already a prefix, then the new prefix is appended to the old one.
+  \item inserting a new consonant to fill its place
+  \item reärranging the root part to satisfy the predicate
+\end{itemize}
+
+In more complex derivations, this is done multiple times (either in series or in parallel).
+
+\begin{longtabu}[c]{ll|Y}
+  \caption{Derivations in \lname.} \\
+  \label{tab:derivations}
+  Name & Derivation & Example \\
+  \hline
+  \endhead
+  \endfoot
+  Action & 3-(12m) & mpḤ \emph{write} → Ḥ-mmp \emph{writing} \\
+  & & Used only for roots with an explicit definition as a noun. For others, this is zero-derived: qṭF \emph{run, running}. \\
+  Agent & 1-(23p) & qṭF \emph{run} → q-pṭF \emph{runner} \\
+  Coägent & 1a3-(n2p) & mpḤ \emph{write} → maḤ-npp \emph{coäuthor} \\
+  Location & 2u-(13þ) & ṡwŋ \emph{cook} → wu-ŋþṡ \emph{kitchen} \\
+  Instrument & 1a-(23S) & mpḤ \emph{write} → ma-SḤp \emph{pen} \\
+  Patient & a3-(12P) & ṡwŋ \emph{cook} → aŋ-Pwṡ \emph{raw food} \\
+  Result & a2-(13F) & ṡwŋ \emph{cook} → aw-Fṡŋ \emph{cooked food} \\
+\end{longtabu}
+
+\chapter{Verbs}
+
+Verbs are conjugated for the following:
+
+\begin{itemize}
+  \item Person and number of the ergative (A) and the absolutive (P) arguments
+  \item Tense and aspect
+  \item Polarity and modality
+  \item Probability
+  \item Speaker desirability of action
+  \item Effect of action on the patient (intensity and duration)
+  \item Location or direction in relation to an object
+  \item Voice
+  \item Time of day
+  \item Shape and size of the noun in slot II
+\end{itemize}
+
+In addition, verbs can incorporate up to three nouns, with the following restrictions:
+
+\begin{itemize}
+  \item Compound words are not allowed.
+  \item The agent cannot be incorporated.
+  \item Other prefixed roots are allowed only in slot I.
+  \item Only the root (with case permutation) is visible in slot III, without any information about number-mutability or attractiveness.
+  \item Slot I must be filled if the other slots are filled.
+\end{itemize}
+
+These are ordered as such:
+
+\begin{table}[ht]
+  \caption{Order of categories in \lname. Categories in the same rank are fused or interleaved.}
+  \centering
+  \begin{tabular}{r|l}
+    Rank & Category \\
+    \hline
+    -7 & [Time of day] \\
+    -6 & [Location or direction] \\
+    -5 & [Noun III] \\
+    -5 & [Shape and size of noun II] \\
+    -4 & [Location of direction] \\
+    -3 & [Effect of action on patient] \\
+    -2 & [Noun I] \\
+    -1 & [Number of P] \\
+    0 & \underline{Root} \\
+    0 & Person of A and P \\
+    0 & Tense \\
+    1 & [Number of A] \\
+    2 & [Polarity and modality] \\
+    3 & [Probability] \\
+    4 & [Noun II] \\
+    5 & [Voice] \\
+    6 & [Desirability] \\
+  \end{tabular}
+\end{table}
+
+\section{Person of A and P and tense}
+
+These interact with the root as outlined in table \ref{table:conjugation0}.
+
+\lname{} does not distinguish the regular future from the present, but it has an \emph{imminent future} tense for actions that are ``about to happen at any second''.
+
+\begin{table}[ht]
+  \caption{Interactions with the root.}
+  \label{table:conjugation0}
+  \centering
+  \begin{longtable}[c]{r|l|lllll}
+    Tense & P \bs{} A & 0 & 1 & 2 & 3p & 3o \\
+    \hline
+    \multirow{5}{*}{Present} &
+  \end{longtable}
+\end{table}
+
 \appendix
 
 \chapter{Dictionary}
 
 An entry looks like this:
 
-{}[placeholder]
+\textsf{mpḤ} \textit{r(7, -7, 1)}
+\quad (n) written work \quad (vi, vt) write
 
 From left to right:
 
@@ -231,6 +399,9 @@ From left to right:
     \item The part of speech of the corresponding entry:
     \begin{itemize}
         \item \textit{r(\#, \#, \#)} -- a root of the specified gender
+        \item (n) -- usage as a noun
+        \item (vi) -- usage as an intransitive verb
+        \item (vt) -- usage as a transitive verb
     \end{itemize}
     \item The definition -- the gloss for the corresponding entry.
     \begin{itemize}
