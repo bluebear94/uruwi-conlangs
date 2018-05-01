@@ -1,0 +1,288 @@
+\documentclass{book}
+
+\usepackage[shortsuper,hacm,ltfont]{common/uruwi}
+
+\newcommand{\lname}{Modern Rymakonian}
+
+\title{lek-\bs{}rqmako-ma lek-ma st\^xee-\bs{}rqmako}
+\author{uruwi}
+
+\begin{document}
+
+\pagecolor{Thistle!25}
+
+\begin{titlepage}
+    \makeatletter
+    \begin{center}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        %{\Huge \ltfont \textcolor{Plum}{LKe\bs{}TSxaRMoa SL LKeMa SL STfXe\bs{}RMyaKo}\\}
+        {\Huge \kardinal \textcolor{Purple}{\@title} \\}
+        {\large \textit{\lname}, the language of \textit{Rymako} \\}
+        {\color{Orchid} \hprule \vspace{1.5ex} \\}
+        % ----------------------------------------------------------------
+        \vspace{1.5cm}
+        {\Large\bfseries \@author}\\[5pt]
+        %uruwi@protonmail.com\\[14pt]
+        % ----------------------------------------------------------------
+        \vspace{2cm}
+        %{\Large\textlt{IVvoQMxeBPieLBxf TXxeKy}} \\
+        \textkardinal{een\^gs.-meibpelbe-kona} \\[5pt]
+        \emph{A complete grammar}\\[2cm]
+        %{in partial fulfilment for the award of the degree of} \\[2cm]
+        %\tsc{\Large{{Doctor of Philosophy}}} \\[5pt]
+        %{in some subject} \vspace{0.4cm} \\[2cm]
+        % {By}\\[5pt] {\Large \sc {Me}}
+        \vfill
+        % ----------------------------------------------------------------
+        %\includegraphics[width=0.19\textwidth]{example-image-a}\\[5pt]
+        %{blah}\\[5pt]
+        %{blahblah}\\[5pt]
+        %{blahblah}\\
+        \vfill
+        {\@date}
+    \end{center}
+    \makeatother
+\end{titlepage}
+
+\pagecolor{Thistle!15}
+
+\begin{center}
+    \textit{Dedicated to Gufferdk.}
+\end{center}
+
+\begin{verbatim}
+Branch: canon
+Version: 0.1
+Date: 2018-04-30 (29 dyu mik)
+\end{verbatim}
+
+(C)opyright 2018 Uruwi. See README.md for details.
+
+\tableofcontents
+
+\section{Introduction}
+
+\chapter{Phonology and orthography}
+
+\section{Diachronics}
+
+\subsection{L-recession: Kasnepy 430 -- 490}
+
+The first set of sound changes involves the loss of /l/.
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \text{ʔ} &\rightarrow \emptyset \\
+  C_1[+ap] \text{l} &\rightarrow C_1 \\
+  C_1[+na] \text{l} &\rightarrow \text{ŋ} \\
+  \text{ɾl} &\rightarrow \text{r} \\
+  C_1[+lb] \text{l} &\rightarrow C_1[+velarised] \\
+  C_1[+ve] \text{l} &\rightarrow C_1 \\
+  C_1[+lf] \text{l} &\rightarrow C_1 \\
+  C_1[+whistled] \text{l} &\rightarrow C_1[+lf, -whistled] \\
+  C_1[+affricate] \text{l} &\rightarrow C_1 \\
+  C_1 \text{l} &\rightarrow C_1[+pharyngealised] \\
+  V_1 \text{l} &\rightarrow V_1[+lateralised] \\
+  \text{l} &\rightarrow \text{dˤ}  &\quad(\square \blacklozenge) \\
+  \{\text{ʌ}, \text{ɯ}\} &\rightarrow \{\text{o}, \text{u}\} &\quad \lnot(\text{w} \blacklozenge) \\
+  \text{ɯ} &\rightarrow \text{i}
+\end{alignat*}
+
+(The observant reader might notice the short timespan of these changes. This is not an error.)
+
+\subsection{Vocaloëxodus: Kasnepy 660 -- Nihel 50}
+
+At this point, vowels start to be lost. The first one to be lost is /ʉ̜/:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \text{ʉ̜} &\rightarrow \emptyset &\quad(\blacklozenge \square \lor \square \blacklozenge) \\
+  \text{ʉ̜} &\rightarrow \text{u} &\quad(C_1[+lb] \blacklozenge) \\
+  \text{wu} &\rightarrow \text{u} \\
+  \text{jʉ̜} &\rightarrow \text{i} \\
+  \text{ʉ̜} &\rightarrow \text{o} &\quad(C_1[+ve] \blacklozenge) \\
+  \text{ʉ̜} &\rightarrow \text{e} &\quad(C_1 \blacklozenge) \\
+  \text{ʉ̜} &\rightarrow \emptyset \\
+  \text{ʉ̜ˡ} &\rightarrow \text{ɹ}
+\end{alignat*}
+
+This is followed by vowel merging:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  V_1V_1 &\rightarrow V_1[+l] \\
+  \text{i} V_1 &\rightarrow \text{j} V_1 \\
+  \text{u} V_1 &\rightarrow \text{w} V_1
+\end{alignat*}
+
+After this change, \emph{lateral rotation} takes place: lateralisation transfers from one vowel to the next within a word, wrapping back to the first vowel from the last. Thus, /toˡu/ becomes /touˡ/ -- the lateralisation transfers from the first vowel to the second.
+
+(Short) /u/ is the next vowel to be lost:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \{\text{u}, \text{uˡ}\} &\rightarrow \emptyset &\quad(\square \blacklozenge) \\
+  \{\text{u}, \text{uˡ}\} &\rightarrow \text{v} &\quad(V_1 \blacklozenge) \\
+  C_1\{\text{k}, \text{ɡ}, \text{x}, \text{ɣ}, \text{ŋ}\} V_1\{\text{u}, \text{uˡ}\} &\rightarrow
+    C_1\{\text{p}, \text{b}, \text{f}, \text{v}, \text{m}\} V_1\{\text{a}, \text{aˡ}\} \\
+  C_1\{\text{fx}, \text{vɣ}, \text{θx}, \text{ðɣ}\} V_1\{\text{u}, \text{uˡ}\} &\rightarrow
+    C_1\{\text{f}, \text{v}, \text{θ̼}, \text{ð̼}\} V_1\{\text{e}, \text{eˡ}\} \\
+  C_1\{\text{s}, \text{z}, \text{ʃ}, \text{ʒ}\} \text{u} &\rightarrow
+    C_1\{\text{s͎}, \text{z͎}, \text{ʃ͎}, \text{ʒ͎}\} \text{e} \\
+  C_1\{\text{s}, \text{z}, \text{ʃ}, \text{ʒ}\} \text{uˡ} &\rightarrow
+    C_1\{\text{ɬ}, \text{ɮ}, \text{ɬ}, \text{ɮ}\} \text{e} \\
+  \text{u} &\rightarrow \emptyset \\
+  \text{uˡ} &\rightarrow \text{ɹ} \\
+  \text{w} &\rightarrow \text{v}
+\end{alignat*}
+
+After /u/, /i e ʌ/ (and their lateral counterparts) are lost:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \{\text{i}, \text{e}, \text{ʌ}\} &\rightarrow
+    \emptyset &\quad(\blacklozenge \square) \\
+  \{\text{iˡ}, \text{eˡ}, \text{ʌˡ}\} &\rightarrow
+    \{\text{l}, \text{l}, \text{ɫ}\} \\
+  \{\text{i}, \text{e}, \text{ʌ}\} C_1 &\rightarrow
+    \emptyset &\quad(C_1 \blacklozenge) &\quad[\#\delta > 3] \\
+  \text{e} &\rightarrow \emptyset &\quad(C_1[+whistled] \blacklozenge) \\
+  \{\text{i}, \text{e}, \text{ʌ}\} &\rightarrow
+    \{\text{ç}, \text{s}, \text{θx}\}
+\end{alignat*}
+
+/o/ is the next vowel to be lost:
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  \text{oˡ} &\rightarrow \text{ɫ} \\
+  C_1[+na] \text{o} &\rightarrow C_1[+nareal] \\
+  \{\text{p}, \text{t}, \text{c}\} \text{o} &\rightarrow
+    \{\text{ʘ}, \text{ǀ}, \text{ǂ}\} \\
+  \{\text{b}, \text{d}, \text{ɟ}, \text{ɡ}\} \text{o} &\rightarrow
+    \{\text{p}, \text{t}, \text{c}, \text{k}\} \\
+  \{\text{m}, \text{n}, \text{ɲ}, \text{ŋ}\} \text{o} &\rightarrow
+    \{\text{b}, \text{d}, \text{ɟ}, \text{ɡ}\} \\
+  \{\text{f}, \text{v}\} \text{o} &\rightarrow \text{p} &\quad(\blacklozenge \{\square, C_2[+ap], C_2[+la]\}) \\
+  \{\text{θ}, \text{ð}, \text{s}, \text{z}, \text{s͎}, \text{z͎}\} \text{o} &\rightarrow \text{t} &\quad(\ldots) \\
+  \{\text{ç}, \text{ʃ}, \text{ʒ}, \text{ʃ͎}, \text{ʒ͎}, \text{x}, \text{ɣ}\} \text{o} &\rightarrow \text{k} &\quad(\ldots) \\
+  \{\text{f}, \text{v}, \text{θ}, \text{ð}\} \text{o} &\rightarrow
+    \{\text{ʕ}, \text{ħ}, \text{ʁ}, \text{χ}\} \\
+  \text{o} &\rightarrow C_1[+fr] &\quad(\square \blacklozenge C_1[+pl]) \\
+  \text{o} &\rightarrow \text{ɣ}
+\end{alignat*}
+
+Finally /a/ is lost: $\{\text{a}, \text{aˡ}\} \rightarrow \emptyset$. The long vowels can subsequently be reänalysed as being short.
+
+It should be noted that epenthetic vowels are allowed between consonants.
+
+\subsection{Cluster reduction: Nihel 70 -- 130}
+
+The consonant clusters resulting from the previous vocaloëxodus turn out to be quite complex. Let $f$ be as such:
+
+\begin{align*}
+  f(p) &=
+  \begin{cases}
+    3 & p \text{ is voiced or pharyngealised} \\
+    2 & p = \text{k} \text{ or $p$ is velarised} \\
+    1 & p = \text{t} \\
+    0 & p \in \{\text{p}, \text{c}\}
+  \end{cases}
+\end{align*}
+
+Then
+
+\begin{alignat*}{2}
+  % \alpha &\rightarrow \omega &\quad(\lambda \blacklozenge \rho) &\quad[\Gamma]
+  C_1[+pl] C_2[+pl] &\rightarrow C_1 &\quad \lnot(V_1 \blacklozenge V_2) &\quad[f(C_1) \ge f(C_2)] \\
+  C_1[+pl] C_2[+pl] &\rightarrow C_2 &\quad \lnot(V_1 \blacklozenge V_2) &\quad[f(C_2) > f(C_1)] \\
+  C_1\{\text{l}, \text{ɫ}, \text{ɹ}\} C_2[+pl] &\rightarrow C_2 C_1 &\quad(C_3 \blacklozenge) \\
+  C_1[+na] &\rightarrow C_1[pa=x] &\quad(C_2[-na,pa=x]) \\
+  C_1[+click] C_2[+pl, -ve, -v] &\rightarrow C_2[+click] \\
+  C_1[+pl, -ve, -v] C_2[+click] &\rightarrow C_1[+click] \\
+  C_1[+click] C_2[+pl, -ve, +v] &\rightarrow C_2[+implosive] \\
+  C_1[+pl, -ve, +v] C_2[+click] &\rightarrow C_1[+implosive] \\
+  C_1[+nareal] &\rightarrow C_1[+fr, +v]
+\end{alignat*}
+
+\section{Phoneme inventory}
+
+Thus the following phonemes are present in \lname:
+
+\begin{table}[h]
+  \caption{The consonants of \lname.}
+  \centering
+  \begin{tabular}{l|lllllll}
+      & Bilabial & Dental & Alveolar & Palatal & Velar & Uvular & Pharyngeal \\
+      \hline
+      Nasal & m & & n & ɲ & ŋ & & \invalid \\
+      Plosive & p b & & t d & c ɟ & k ɡ & & \\
+      & pˠ bˠ & & tˤ dˤ & cˤ ɟˤ & & & \\
+      Fricative & f v & θ ð & s z & ʃ ʒ & x ɣ & χ ʁ & ħ ʕ \\
+      & fˠ vˠ & θˤ ðˤ & sˤ zˤ & ʃˤ ʒˤ & & & \\
+      (coärticulated) & fx vɣ & θx ðɣ & θ̼ ð̼ & fʃ vʒ & & \invalid & \invalid \\
+      & & & & fʃˠ vʒˠ & & \invalid & \invalid \\
+      (whistled) & \invalid & \invalid & s͎ z͎ & ʃ͎ ʒ͎ & \invalid & \invalid & \invalid \\ 
+      Affricate & & & ts & tʃ & & & \\
+      Lat. fricative & \invalid & & ɬ ɮ & & & & \invalid \\
+      Approximant & & & ɹ & & & & \\
+      Lat. approximant & \invalid & & l & & ɫ & & \invalid \\
+      Tap & & & ɾ & & \invalid & \invalid & \invalid \\
+      Trill & & & r & & \invalid & & \invalid \\
+      Click & ʘ & & ǀ & ǂ & \invalid & \invalid & \invalid \\
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+    \caption{The vowels of \lname.}
+    \begin{tabular}{l|lll}
+        & Front & Central & Back \\
+        \hline
+        High & i & & u \\
+        Mid & e & & o \\
+        Low & & a & \\
+    \end{tabular}
+\end{table}
+
+\section{Hacmisation}
+
+These are hacmised as such:
+
+\begin{table}[h]
+  \caption{The consonants of \lname.}
+  \centering
+  \begin{tabular}{l|>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l}
+      & \textnormal{Bilabial} & \textnormal{Dental} & \textnormal{Alveolar} & \textnormal{Palatal} & \textnormal{Velar} & \textnormal{Uvular} & \textnormal{Pharyngeal} \\
+      \hline
+      Nasal & m & & n & n\^y & n\^g & & \invalid \\
+      Plosive & p b & & t d & t\^y d\^y & k g & & \\
+      & p\,g b\,g & & t\,g d\,g & t\^y\,g d\^y\,g & & & \\
+      Fricative & f v & s\^f z\^v & s z & x j & k\^x g\^j & k\^. g\^. & h h\^j \\
+      & f\,g v\,g & s\^f\,g z\^v\,g & s\,g z\,g & x\,g j\,g & & & \\
+      (coärticulated) & f\^h v\^h & s\^h z\^h & f\^s v\^z & f\^x v\^z & & \invalid & \invalid \\
+      & & & & f\^x\,g v\^j\,g & & \invalid & \invalid \\
+      (whistled) & \invalid & \invalid & s\^w z\^w & x\^w z\^w & \invalid & \invalid & \invalid \\ 
+      Affricate & & & t\^s & t\^x & & & \\
+      Lat. fricative & \invalid & & x\^l j\^l & & & & \invalid \\
+      Approximant & & & r & & & & \\
+      Lat. approximant & \invalid & & l & & l\,g & & \invalid \\
+      Tap & & & c & & \invalid & \invalid & \invalid \\
+      Trill & & & c\^c & & \invalid & & \invalid \\
+      Click & p\^k & & t\^k & k\^k & \invalid & \invalid & \invalid \\
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+    \caption{The vowels of \lname.}
+    \begin{tabular}{l|>{\kardinal}l>{\kardinal}l>{\kardinal}l}
+        & \textnormal{Front} & \textnormal{Central} & \textnormal{Back} \\
+        \hline
+        High & i & & u \\
+        Mid & e & & o \\
+        Low & & a & \\
+    \end{tabular}
+\end{table}
+
+\end{document}
