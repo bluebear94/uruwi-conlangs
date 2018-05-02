@@ -52,12 +52,12 @@ sub MAIN(Str $src, Str $out, Str $opts) {
   my $section-fmter = $options<sectionstyle> //
     "\\section*\{%s\}\n";
   my $entry-fmter = $options<entryStyle> // DEFAULT_FMTER;
-  my @tagInfo = $options<tags> // [];
+  my @tagInfo = @($options<tags> // ());
   my @alphabet = @($options<alphabet>);
   my $aregex = /@alphabet/;
   my %amap = list-to-revmap(@alphabet);
   my $index-title-fmter = $options<indextitlestyle> // '\section*{%s}';
-  my @indices = @($options<indices>) // [];
+  my @indices = @($options<indices> // ());
   # Read input
   my $fh = open $src, :r;
   my @entries;
@@ -117,11 +117,11 @@ sub MAIN(Str $src, Str $out, Str $opts) {
     my $texname = to-tex $entry<name>, $options;
     my $texfmt = sprintf($word-fmter, $texname);
     my $pos = $entry<pos>;
-    my @tags = @tagInfo.map(-> ($i) {
+    my @tags = @tagInfo.map(sub ($i) {
       my $name = $i<name>;
       my $value = $entry<tags>{$name};
       return Any if !($value.defined);
-      sprintf $i<styling>, $value;
+      sprintf $i<styling>, to-tex($value, $options);
     }).grep(*.defined);
     my $def = $entry<def>;
     if $entry<etym> {
@@ -146,8 +146,7 @@ sub MAIN(Str $src, Str $out, Str $opts) {
       my $k = %e<tags>{$ikey} // %e{$ikey};
       (%e<name>, get-sort-key($k, %iamap, $iaregex), $k);
     });
-    @ientries.sort({$_[1]});
-    say @ientries;
+    @ientries .=sort({$_[1]});
     my $cur-first = -1;
     $fh.print("\\indent\n");
     for @ientries -> $ie {
@@ -163,7 +162,7 @@ sub MAIN(Str $src, Str $out, Str $opts) {
       $fh.printf($istyle, to-tex($ie[2], $options));
       $fh.print(" ");
       $fh.printf($word-fmter, to-tex($ie[0], $options));
-      $fh.print("\n");
+      $fh.print("\n\n");
     }
   }
   $fh.close;

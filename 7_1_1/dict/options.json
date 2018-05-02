@@ -1,6 +1,6 @@
 {
   "styling": "\\textkardinal{%s}",
-  "newline": "\\quad ",
+  "newline": "\\\\\\hspace*{3em} ",
   "alphabet": [
     "m", "n", "n^y", "n^g",
     "p", "b", "t", "d", "t^y", "d^y", "k", "g",
@@ -28,7 +28,7 @@
         "d", "ď", "g", "ħ", "p", "b",
         "j", "ř", "r",
         "z", "ð", "ðħ", "ž", "ż", "w", "l",
-        "a", "i", "o", "e", "u", "q"
+        "a", "i", "o", "e", "u", "y"
       ],
       "indextitle": "Entries by Neðam spelling",
       "indexsectionstyle": "\\subsection*{\\textnedham{%s}}"
@@ -38,6 +38,10 @@
     {
       "name": "nedham",
       "styling": "\\textnedham{%s}"
+    },
+    {
+      "name": "inflx",
+      "styling": "Inflections: \\hortho{%s}"
     }
   ]
 }
