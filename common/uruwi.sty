@@ -63,6 +63,11 @@
     \newcommand{\textvariko}[1]{{\variko #1}}
 }
 
+\DeclareOption{nedham}{
+    \newfontfamily{\nedham}[Path=./fonts/]{nedham.ttf}
+    \newcommand{\textnedham}[1]{{\nedham #1}}
+}
+
 \ProcessOptions\relax
 
 % Font settings

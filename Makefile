@@ -1,5 +1,12 @@
 TEX=xelatex
 TEXFLAGS=-interaction=nonstopmode -halt-on-error
+LATEXMK=latexmk
+LATEXMKFLAGS=\
+	-xelatex \
+	-output-directory=out \
+	-quiet \
+	-interaction=nonstopmode \
+	-latexoption=-halt-on-error
 
 all: out/5.pdf out/6.pdf out/7.pdf out/oz.pdf out/4.pdf out/8.pdf out/8.5.pdf out/7_1.pdf out/9.pdf out/wb.pdf out/10.pdf out/7_1_1.pdf
 
@@ -13,7 +20,7 @@ out/7.pdf: 7/dict/dict.tex
 
 out/7_1.pdf: 7_1/dict/dict.tex
 
-# out/7_1_1.pdf 7_1_1/dict/dict.tex
+out/7_1_1.pdf: 7_1_1/dict/dict.tex
 
 out/8.pdf: 8/dict/dict.tex
 
@@ -34,8 +41,8 @@ out/10.pdf: 10/dict/dict.tex
 
 out/%.pdf: %/main.tex common/uruwi.sty
 	mkdir -p out
-	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $< || (rm $@; false)
-	$(TEX) $(TEXFLAGS) -jobname=$* -output-directory=out $< || (rm $@; false)
+	$(LATEXMK) $(LATEXMKFLAGS) -jobname=$* $< || (rm $@; false)
+	$(LATEXMK) $(LATEXMKFLAGS) -jobname=$* $< || (rm $@; false)
 
 clean:
 	rm -rf out

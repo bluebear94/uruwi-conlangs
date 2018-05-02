@@ -1,0 +1,43 @@
+{
+  "styling": "\\textkardinal{%s}",
+  "newline": "\\quad ",
+  "alphabet": [
+    "m", "n", "n^y", "n^g",
+    "p", "b", "t", "d", "t^y", "d^y", "k", "g",
+    "p_g", "b_g", "t_g", "d_g", "t^y_g", "d^y_g",
+    "f", "v", "s^f", "z^v", "s", "z", "x", "j", "k^x", "g^j", "k^.", "g^.", "h", "h^j",
+    "f_g", "v_g", "s^f_g", "v^z_g", "s_g", "z_g",
+    "f^h", "v^h", "s^h", "z^h", "f^s", "v^z", "f^x", "v^z",
+    "f^x_g", "v^z_g",
+    "s^w", "z^w", "x^w", "j^w",
+    "t^s", "t^x",
+    "x^l", "j^l",
+    "r", "l", "l_g",
+    "c", "c^c",
+    "p^k", "t^k", "k^k"
+  ],
+  "sectionstyle": "\\section*{\\textkardinal{%s}}\n",
+  "indextitlestyle": "\\section*{%s}\n",
+  "indices": [
+    {
+      "key": "nedham",
+      "alphabet": [
+        ".",
+        "t", "č", "c", "ť", "k", "h", "š", "ṡ", "s", "þ", "þh", "ŝ",
+        "n", "ŋ", "ñ", "v", "vħ", "vž", "f", "fš", "fh", "m",
+        "d", "ď", "g", "ħ", "p", "b",
+        "j", "ř", "r",
+        "z", "ð", "ðħ", "ž", "ż", "w", "l",
+        "a", "i", "o", "e", "u", "q"
+      ],
+      "indextitle": "Entries by Neðam spelling",
+      "indexsectionstyle": "\\subsection*{\\textnedham{%s}}"
+    }
+  ],
+  "tags": [
+    {
+      "name": "nedham",
+      "styling": "\\textnedham{%s}"
+    }
+  ]
+}

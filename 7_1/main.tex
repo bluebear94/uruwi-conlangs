@@ -1,6 +1,6 @@
 \documentclass{book}
 
-\usepackage[shortsuper,hacm,ltfont]{common/uruwi}
+\usepackage[shortsuper,hacm,ltfont,nedham]{common/uruwi}
 
 \newcommand{\lname}{Middle Rymakonian}
 
@@ -140,7 +140,7 @@ If the use of rods are unavailable, the numerals of the positions may be pronoun
 As using IPA is quite wieldly, we shall use the following hacmisation, with superscript letters to indicate phonemes not found in Arka.
 
 \begin{table}[h]
-  \caption{The consonants of \lname. \label{table:hcons}}
+  \caption{The consonants of \lname{} in hacm. \label{table:hcons}}
   \centering
   \begin{tabular}{l|>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l>{\kardinal}l}
       & \textnormal{Bilabial} & \textnormal{Dental} & \textnormal{Alveolar} & \textnormal{Palatal} & \textnormal{Velar} & \textnormal{Glottal} \\
@@ -160,7 +160,7 @@ As using IPA is quite wieldly, we shall use the following hacmisation, with supe
 
 \begin{table}[h]
   \centering
-    \caption{The vowels of \lname. \label{table:hvows}}
+    \caption{The vowels of \lname{} in hacm. \label{table:hvows}}
     \begin{tabular}{l|>{\kardinal}l>{\kardinal}l>{\kardinal}l}
         & \textnormal{Front} & \textnormal{Central} & \textnormal{Back} \\
         \hline
@@ -173,6 +173,57 @@ As using IPA is quite wieldly, we shall use the following hacmisation, with supe
 Rod signs are represented by the hacm digits \hortho{1 2 3 4 5 6 7 8} attached to the end of the verbs they encompass. Halfway rod signals are represented by a subscript digit: \hortho{\,4}. Transitions from the ninth rod signal are written \hortho{9\^7 9\^8}. Proper words are preceded by a backslash \hortho{\bs{}}.
 
 Note that the hacmisation is slightly different from Lek-Tsaro's use of hacm. Lek-Tsaro's \hortho{h j} are now written using \hortho{k\^x x\^l}, for instance.
+
+\FloatBarrier
+
+\section{Neðam script}
+
+The \emph{Neðam} (\textkardinal{nez\^vam} / {\textnedham{neðam}}) script, which is used for \lname, is a boring old alphabet. The consonants and vowels are shown in tables \ref{table:ncons} and \ref{table:nvows}, respectively. Rod signals and punctuation are shown in table \ref{table:punct}.
+
+Interestingly, most glyphs are either made entirely of straight lines or made entirely of curves. In particular, consonants that were in Lek-Tsaro are made of straight lines, although it is \hortho{s\^f} rather than \hortho{s\^h} that corresponds to Lek-Tsaro's \hortho{s\^h}. Other consonants, as well as vowels, are made of curves.
+
+\begin{table}[h!]
+    \caption{The consonants of \lname{} in the Neðam script. \label{table:ncons}}
+    \centering
+    \begin{tabular}{l|>{\nedham}l>{\nedham}l>{\nedham}l>{\nedham}l>{\nedham}l>{\nedham}l}
+        & \textnormal{Bilabial} & \textnormal{Dental} & \textnormal{Alveolar} & \textnormal{Palatal} & \textnormal{Velar} & \textnormal{Glottal} \\
+        \hline
+        Nasal & m & & n & ñ & ŋ & \invalid \\
+        Plosive & p b & & t d & ť ď & k g & . \\
+        Fricative & f v & þ ð & s z & š ž & h ħ & \\
+        (coärticulated) & fh vħ & þh ðħ & & fš vž & & \invalid \\
+        (whistled) & \invalid & \invalid & ŝ ẑ & & \invalid & \invalid \\
+        Affricate & & & c & č & & \\
+        Lateral fricative & \invalid & & ṡ ż & & & \invalid \\
+        Approximant & & & r & j & w & \\
+        Lateral approximant & \invalid & & l & & & \invalid \\
+        Tap & & & ř & & \invalid & \invalid \\
+    \end{tabular}
+\end{table}
+  
+\begin{table}[h]
+    \centering
+    \caption{The vowels of \lname{} in the Neðam script. \label{table:nvows}}
+    \begin{tabular}{l|>{\nedham}l>{\nedham}l>{\nedham}l}
+        & \textnormal{Front} & \textnormal{Central} & \textnormal{Back} \\
+        \hline
+        High & i & y & u \\
+        Mid & e & & o \\
+        Low & & a & \\
+    \end{tabular}
+\end{table}
+
+\newcommand{\icp}[2]{\textnedham{#1} \textkardinal{#2}}
+\begin{table}[h]
+    \caption{Miscellaneous symbols in the Neðam script. \label{table:punct}}
+    \centering
+    \begin{tabular}{llllllll}
+        \icp{1}{1} & \icp{2}{2} & \icp{3}{3} & \icp{4}{4} & \icp{5}{5} & \icp{6}{6} & \icp{7}{7} & \icp{8}{8} \\
+        \icp{₄}{\,4} & \icp{9⁷}{9\^7} & \icp{9⁸}{9\^8} & \icp{;}{.} & \icp{,}{,} & \icp{\bs{}}{\bs{}} & \icp{[]}{[]} & \icp{-}{-} \\
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
 
 \section{Phonotactics}
 
@@ -1920,6 +1971,13 @@ Note that ``grey'' refers generically to a loss of chroma. There is no distincti
 
 \texttt{
     \lstinputlisting[language=Python]{workfiles/7/tides.sage}
+}
+
+\section{workfiles/7/bins.pl6}
+\label{sec:listingbins}
+
+\texttt{
+    \lstinputlisting[language=Perl]{workfiles/7/bins.pl6}
 }
 
 \chapter*{Romanisation}
