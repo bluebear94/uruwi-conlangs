@@ -115,8 +115,8 @@ The exact realisations of /u/ varies depending on the preceding phoneme:
   \begin{tabu}{l|Y}
     Allophone & Preceding \\
     \hline
-    o & q χ \\
-    u & ŋ tˤ k x xʷ ɹ \\
+    o & q χ xʷ \\
+    u & ŋ tˤ k x ɹ \\
     ʉ & t ts s ɬ \\
     ʏ & θ tɬ n \\
     y & p f m \\
@@ -318,8 +318,8 @@ Verbs are conjugated for the following:
 \begin{itemize}
   \item Person and number of the ergative (A) and the absolutive (P) arguments
   \item Tense and aspect
-  \item Polarity and modality
-  \item Probability
+  \item Polarity and epistemic modality
+  \item Mood (realis / irrealis / imperative / interrogative)
   \item Speaker desirability of action
   \item Effect of action on the patient (intensity and duration)
   \item Location or direction in relation to an object
@@ -359,7 +359,7 @@ These are ordered as such:
     0 & Tense \\
     1 & [Number of A] \\
     2 & [Polarity and modality] \\
-    3 & [Probability] \\
+    3 & [Mood] \\
     4 & [Noun II] \\
     5 & [Voice] \\
     6 & [Desirability] \\
@@ -372,15 +372,79 @@ These interact with the root as outlined in table \ref{table:conjugation0}.
 
 \lname{} does not distinguish the regular future from the present, but it has an \emph{imminent future} tense for actions that are ``about to happen at any second''.
 
-\begin{table}[ht]
+\begin{table}[h!]
   \caption{Interactions with the root.}
   \label{table:conjugation0}
   \centering
   \begin{longtable}[c]{r|l|lllll}
     Tense & P \bs{} A & 0 & 1 & 2 & 3p & 3o \\
     \hline
-    \multirow{5}{*}{Present} &
+    \multirow{5}{*}{Present} & 0 & u1a23 & 1u2a3u & u1a2a3 & ma123 & a1u2a3u \\
+    & 1 & 1a23a & ku123a & u1u2u3 & u12u3u & 1u23u \\
+    & 2 & u12u3 & u1a2u3u & a1u23a & a123a & 1a2a3u \\
+    & 3p & u1a2a3u & a1a2u3u & a12a3u & 123u & u1a2u3 \\
+    & 3o & a12a3a & 1a23 & u123u & a1u23u & a1a2u3 \\
+    \hline
+    \multirow{5}{*}{Past} & 0 & 12u3a & 1u2a3 & a1a2a3u & 1a2u3 & u1u23a \\
+    & 1 & u123a & 12u3u & u1u23u & u12a3a & a12u3 \\
+    & 2 & a1u2u3 & u1u2u3a & a1a2a3a & 1u2u3u & a12u3a \\
+    & 3p & 12a3 & u1a2a3a & u1a23a & u123 & a1a23u \\
+    & 3o & 1a2u3a & 1a2u3u & u1u2a3 & 12a3u & a12u3u \\
+    \hline
+    \multirow{5}{*}{Imminent future} & 0 & a1u2u3u & u12u3a & 1u2u3a & u1a23u & a123u \\
+    & 1 & u1u2u3u & a1a2a3 & 1a2a3a & u1u2a3u & u1a2u3a \\
+    & 2 & a1u23 & a1u2a3 & u12a3u & 12u3un & a1u2a3a \\
+    & 3p & a12a3 & 1a2a3 & a123 & a1a2u3a & 1u23 \\
+    & 3o & a1a23a & 1u2a3a & u1u2a3a & 1u23a & a1u2u3a \\
+    \hline
   \end{longtable}
+\end{table}
+
+\section{Number of A}
+
+This is optional, but if marked, the singular, plural and mutable affixes are \ortho{-nþ -ŋc -rṭ} respectively.
+
+\section{Polarity and modality}
+
+Only epistemic modality is reflected here. Deontic modality is expressed using periphrasis.
+
+\begin{table}[h!]
+  \caption{Polarity-modality affixes.}
+  \centering
+  \begin{tabular}{l|ll}
+    Mdl \bs{} Pol & Positive & Negative \\
+    \hline
+    -- & -- & -pk \\
+    possibility & -Fq & -Þm \\
+    necessity & -hw & -UT \\
+    probability & -þF & -ŋk \\
+  \end{tabular}
+\end{table}
+
+\section{Mood}
+
+\lname{} has four moods:
+
+\begin{itemize}
+  \item The \emph{realis mood} is used for statements known by the speaker as fact.
+  \item The \emph{irrealis mood} is used for conditionals, hypotheticals, dubitatives, desideratives \&c.
+  \item The \emph{imperative mood} is used for commands and optatives.
+  \item The \emph{interrogative mood} is used for questions.
+\end{itemize}
+
+Of course, some of these senses are supplemented with particles or subordinate clauses.
+
+\begin{table}[h!]
+  \caption{Mood affixes.}
+  \centering
+  \begin{tabular}{l|ll}
+    Mûd \bs{} Pol & Positive & Negative \\
+    \hline
+    realis & \multicolumn{2}{c}{--} \\
+    irrealis & \multicolumn{2}{c}{-wuṭ} \\
+    imperative & -rṡ & -rp \\
+    interrogative & \multicolumn{2}{c}{-wk} \\
+  \end{tabular}
 \end{table}
 
 \appendix
