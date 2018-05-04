@@ -198,12 +198,13 @@ Then
   C_1[+pl] C_2[+pl] &\rightarrow C_1 &\quad \lnot(V_1 \blacklozenge V_2) &\quad[f(C_1) \ge f(C_2)] \\
   C_1[+pl] C_2[+pl] &\rightarrow C_2 &\quad \lnot(V_1 \blacklozenge V_2) &\quad[f(C_2) > f(C_1)] \\
   C_1\{\text{l}, \text{ɫ}, \text{ɹ}\} C_2[+pl] &\rightarrow C_2 C_1 &\quad(C_3 \blacklozenge) \\
-  C_1[+na] &\rightarrow C_1[pa=x] &\quad(C_2[-na, -nareal, pa=x]) \\
+  C_1[+na] &\rightarrow C_1[pa=x] &\quad(C_2[-na, -nareal, -lateral, pa=x]) \\
   C_1[+click] C_2[+pl, -ve, -v] &\rightarrow C_2[+click] \\
   C_1[+pl, -ve, -v] C_2[+click] &\rightarrow C_1[+click] \\
   C_1[+click] C_2[+pl, -ve, +v] &\rightarrow C_2[+implosive] \\
   C_1[+pl, -ve, +v] C_2[+click] &\rightarrow C_1[+implosive] \\
-  C_1[+nareal] &\rightarrow C_1[+fr, +v]
+  C_1[+nareal] &\rightarrow C_1[+fr, +v] \\
+  C_1[+pa] C_2[+av] &\rightarrow C_2 C_1
 \end{alignat*}
 
 \section{Phoneme inventory}
@@ -348,9 +349,9 @@ A sentence might have multiple clauses. Each clause in a sentence follows the ba
 Relativisation is done using the non-reduction strategy. The relative clause is followed by one of the following particles:
 
 \begin{itemize}
-  \item \hortho{r} if the subject is the one participating in the main clause
-  \item \hortho{rg\^j} if the direct object is participating
-  \item \hortho{rkn} if the object of the preposition \hortho{kn} is participating
+  \item \hortho{r} / \northo{ra} if the subject is the one participating in the main clause
+  \item \hortho{rg\^j} / \northo{ro} if the direct object is participating
+  \item \hortho{rkn} / \northo{rkn} if the object of the preposition \hortho{kn} is participating
 \end{itemize}
 
 \chapter{Nouns}
@@ -508,7 +509,7 @@ In addition, Neðam orthography reflects Middle Rymakonian vowel harmony: \north
     Nominative & fhumo \\
     Accusative & fhumo\hliii{ŋ} \\
     \hline
-    \multicolumn{2}{|l|}{\textnormal{Abstract: \hortho{gxs} / \northo{gis} ``[the number] five''}} \\
+    \multicolumn{2}{|l|}{\textnormal{Abstract: \hortho{gsx} / \northo{gis} ``[the number] five''}} \\
     \hline
     Nominative & gis \\
     Accusative & gi\hliv{z}\hliii{iŋ} \\
@@ -526,6 +527,52 @@ The regular class is declined regularly:
     \hline
     Nominative & \hortho{-} / \northo{-} & \hortho{-a} / \northo{-aa} \\
     Accusative & \hortho{-n} / \northo{-n} & \hortho{-na} / \northo{-naa} \\
+  \end{tabular}
+\end{table}
+
+\section{Pronouns}
+
+Personal pronouns are not divided into first, second and third persons as in most languages. Instead, they fall into six categories that exhibit different behaviour depending on whether they occur as the first non-oblique noun in the clause or elsewhere (second noun, verb inflection, oblique):
+
+\begin{table}[h]
+    \caption{Pronoun persons and their functions.}
+    \centering
+    \begin{tabu} to \textwidth {|l|Y|Y|}
+        \hline
+        Person & Role in first position & Role elsewhere \\
+        \hline
+        Near & The speaker. & The first non-oblique argument of the clause. \\
+        Far & The listener. & The person with which the first argument is conversing. \\
+        Other & A third entity. & An entity that is neither the speaker, the listener nor the first argument. \\
+        \hline
+        Generic & \multicolumn{2}{l|}{A generic entity (akin to ``one'').}  \\
+        \hline
+        % no X in multicolumn
+        Anaphoric Subject & \multicolumn{2}{p{\dimexpr 2\tabucolX+2\tabcolsep+\arrayrulewidth\relax}|}{The subject of the previous clause. Also used on the verb when an oblique or conjunction is present.} \\
+        Anaphoric Object & \multicolumn{2}{l|}{The object of the previous clause.} \\
+        \hline
+    \end{tabu}
+\end{table}
+
+In wh-questions, the wh-word assumes the second position and the other argument becomes the first.
+
+If a clause has no explicit arguments, the first argument is understood to be the subject.
+
+\begin{table}[h]
+  \caption{Personal pronouns.}
+  \centering
+  \begin{tabular}{l|>{\kardinal}l>{\kardinal}l|>{\kardinal}l>{\kardinal}l}
+      & \multicolumn{2}{c|}{Nominative} & \multicolumn{2}{c}{Accusative} \\
+      \hline
+      & \textnormal{Non-dual} & \textnormal{Dual} & \textnormal{Non-dual} & \textnormal{Dual} \\
+      \hline
+      Near & ta \textnedham{taa} & fzx \textnedham{fizi} & tn \textnedham{tan} & fzxn \textnedham{fizen} \\
+      Far & po \textnedham{poo} & bra \textnedham{braa} & pn \textnedham{pon} & brn \textnedham{bran} \\
+      Other & ni \textnedham{nii} & kz \textnedham{kazi} & nin \textnedham{niin} & kzn \textnedham{kazen} \\
+      Anaph. Sub. & ra \textnedham{ra} & n\^yxr \textnedham{ñiri} & rn \textnedham{ran} & n\^yxrsn \textnedham{ñirin} \\
+      Anaph. Obj. & ro \textnedham{ro} & n\^yrg\^j \textnedham{ñuro} & rg\^jn \textnedham{ron} & n\^yrg\^jn \textnedham{ñuron} \\
+      \hline
+      Generic & \multicolumn{2}{>{\kardinal}c|}{u \textnedham{.uu}} & \multicolumn{2}{>{\kardinal}c}{un \textnedham{.uun}} \\
   \end{tabular}
 \end{table}
 
