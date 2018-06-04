@@ -1,5 +1,7 @@
 ## uruwi-conlangs
 
+**ALERT:** Moved to [GitLab](https://gitlab.com/Kyarei/uruwi-clongos).
+
 This is now the repository for my conlang grammars.
 
 ### Build directions
